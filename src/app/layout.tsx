@@ -8,8 +8,31 @@ import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.dgaudiosound.com"),
   title: "Tienda | DG Audiosound",
   description: "Soluciones integrales de audio, video e iluminación premium para hogares y negocios",
+  openGraph: {
+    title: "Tienda | DG Audiosound",
+    description: "Soluciones integrales de audio, video e iluminación premium para hogares y negocios",
+    url: "https://www.dgaudiosound.com",
+    siteName: "DG Audiosound",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "DG Audiosound - Soluciones integrales de audio, video e iluminación premium",
+      },
+    ],
+    locale: "es_MX",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tienda | DG Audiosound",
+    description: "Soluciones integrales de audio, video e iluminación premium para hogares y negocios",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
