@@ -9,7 +9,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Tienda | DG Audiosound",
-  description: "La mejor tienda de car audio y accesorios",
+  description: "Soluciones integrales de audio, video e iluminación premium para hogares y negocios",
 };
 
 export default function RootLayout({

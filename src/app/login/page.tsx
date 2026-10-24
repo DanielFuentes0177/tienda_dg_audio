@@ -28,8 +28,9 @@ export default function LoginPage() {
       if (res?.error) {
         setError("Credenciales inválidas. Inténtalo de nuevo.");
       } else {
-        router.push("/admin");
-        router.refresh();
+        const params = new URLSearchParams(window.location.search);
+        const callbackUrl = params.get("callbackUrl") || "/admin";
+        window.location.href = callbackUrl;
       }
     } catch (err) {
       setError("Ocurrió un error al intentar iniciar sesión.");
@@ -96,7 +97,7 @@ export default function LoginPage() {
         </form>
 
         <div style={{ marginTop: "2rem", textAlign: "center" }}>
-          <Link href="/" style={{ color: "var(--text-muted)", fontSize: "0.875rem", textDecoration: "underline" }}>
+          <Link href="/tienda" style={{ color: "var(--text-muted)", fontSize: "0.875rem", textDecoration: "underline" }}>
             Volver a la tienda
           </Link>
         </div>
