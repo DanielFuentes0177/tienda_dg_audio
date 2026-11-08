@@ -6,6 +6,7 @@ import { AddToCartButton } from "./AddToCartButton";
 import { ChevronRight, ShieldCheck, Truck, Headphones } from "lucide-react";
 import { Metadata } from "next";
 import { PRODUCT_SEO_PILOT_4, getProductIdForRoute, getProductUrl } from "@/lib/seo/productSeoPilot4";
+import { PRODUCT_SEO_PILOT_44 } from "@/lib/seo/productSeoPilot44";
 import { ProductCard } from "@/components/molecules/ProductCard";
 import { ProductGallery } from "@/components/organisms/ProductGallery";
 
@@ -53,21 +54,21 @@ function getShareImage(imageUrl: string | null, gallery: unknown) {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = await getActiveProduct((await params).id);
-  const seo = PRODUCT_SEO_PILOT_4[product.id];
+  // Las 44 fichas auditadas tienen prioridad sobre el piloto anterior de 4.
+  // Los productos sin aprobación mantienen sus metadatos actuales.
+  const seo = PRODUCT_SEO_PILOT_44[product.id] ?? PRODUCT_SEO_PILOT_4[product.id];
   if (!seo) {
     return {
       title: `${product.name} | DG Audiosound`,
       description: product.description.substring(0, 160),
     };
   }
-
   const { title, description } = seo;
   const url = getProductUrl(product.id);
   const image = getShareImage(product.imageUrl, product.images);
   const images = image ? [image] : [];
   return {
-    title,
-    description,
+    title, description,
     alternates: { canonical: url },
     openGraph: {
       title, description, url, images,
