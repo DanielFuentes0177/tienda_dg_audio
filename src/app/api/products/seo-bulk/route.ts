@@ -30,7 +30,9 @@ export async function POST(request: Request) {
     if (!configured || !process.env.STORE_ADMIN_IDS)
       return NextResponse.json({ error: "Administración SEO no configurada." }, { status: 503 });
     const expectedOrigin = new URL(configured).origin;
-    if (request.headers.get("origin") !== expectedOrigin || new URL(request.url).origin !== expectedOrigin)
+    // Behind Vercel/Next.js routing, request.url may use an internal hostname.
+    // The browser-supplied Origin must match the configured public origin exactly.
+    if (request.headers.get("origin") !== expectedOrigin)
       return NextResponse.json({ error: "Origen no autorizado." }, { status: 403 });
     const session = await getServerSession(authOptions);
     const userId = String((session?.user as { id?: string } | undefined)?.id || "").toLowerCase();
