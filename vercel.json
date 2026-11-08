@@ -1,0 +1,7 @@
+{
+  "git": {
+    "deploymentEnabled": {
+      "security/sec-03-dependency-patches": false
+    }
+  }
+}
