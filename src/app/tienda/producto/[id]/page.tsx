@@ -8,6 +8,8 @@ import { ChevronRight, ShieldCheck, Truck, Headphones } from "lucide-react";
 import { Metadata } from "next";
 import { ProductCard } from "@/components/molecules/ProductCard";
 import { ProductGallery } from "@/components/organisms/ProductGallery";
+import { PRODUCT_SEO_PILOT_44 } from "@/lib/seo/productSeoPilot44";
+import { productUrl, publicImage } from "@/lib/seo/productSeo";
 
 const getColorHex = (colorName: string) => {
   const lower = colorName.toLowerCase();
@@ -28,25 +30,35 @@ interface Props {
   params: Promise<{ id: string }>;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const resolvedParams = await params;
-  const product = await prisma.product.findUnique({
-    where: { id: resolvedParams.id },
+async function findPublicProduct(ref: string) {
+  return prisma.product.findFirst({
+    where: { isActive: true, OR: [{ id: ref }, { slug: ref }] },
   });
+}
 
-  if (!product) return { title: "Producto no encontrado" };
-
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const product = await findPublicProduct((await params).id);
+  if (!product) return { title: "Producto no encontrado", robots: { index: false } };
+  const approved = PRODUCT_SEO_PILOT_44[product.id];
+  const title = product.seoTitle || approved?.title || `${product.name} | DG Audiosound`;
+  const description = product.seoDescription || approved?.description || product.description.slice(0, 160);
+  const url = productUrl(product);
+  const image = publicImage(product.imageUrl);
+  const images = image ? [image] : [];
   return {
-    title: `${product.name} | DG Audiosound`,
-    description: product.description.substring(0, 160),
+    title, description,
+    alternates: { canonical: url },
+    openGraph: {
+      title, description, url, images,
+      siteName: "DG Audiosound", locale: "es_MX", type: "website",
+    },
+    twitter: { title, description, images, card: image ? "summary_large_image" : "summary" },
   };
 }
 
 export default async function ProductDetailsPage({ params }: Props) {
   const resolvedParams = await params;
-  const product = await prisma.product.findUnique({
-    where: { id: resolvedParams.id },
-  });
+  const product = await findPublicProduct(resolvedParams.id);
 
   if (!product || !product.isActive) {
     notFound();
@@ -69,6 +81,19 @@ export default async function ProductDetailsPage({ params }: Props) {
   const imagesArray = Array.isArray(product.images) && product.images.length > 0 
     ? product.images as string[] 
     : (product.imageUrl ? [product.imageUrl] : []);
+
+  const mainImage = publicImage(product.imageUrl);
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description,
+    url: productUrl(product),
+    ...(mainImage ? { image: [mainImage] } : {}),
+    ...(product.brand ? { brand: { "@type": "Brand", name: product.brand } } : {}),
+    ...(product.model ? { model: product.model } : {}),
+  };
+  const jsonLd = JSON.stringify(structuredData).replace(/</g, String.fromCharCode(92) + "u003c");
 
   return (
     <div style={{ minHeight: "100vh", backgroundColor: "#f9fafb" }}>
@@ -106,7 +131,7 @@ export default async function ProductDetailsPage({ params }: Props) {
           
           {/* Image Gallery Column */}
           <div style={{ height: '600px' }}>
-            <ProductGallery images={imagesArray} productName={product.name} />
+            <ProductGallery images={imagesArray} productName={product.seoImageAlt || product.name} />
           </div>
 
           {/* Product Details Column */}

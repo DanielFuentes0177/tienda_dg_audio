@@ -2,6 +2,10 @@ export interface Product {
   id: string;
   name: string;
   description: string;
+  seoTitle?: string | null;
+  seoDescription?: string | null;
+  slug?: string | null;
+  seoImageAlt?: string | null;
   stock: number;
   category: string | null;
   brand: string | null;
