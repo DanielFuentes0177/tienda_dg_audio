@@ -2,6 +2,9 @@ import prisma from "@/lib/prisma";
 import { Package, Users, ShoppingCart } from "lucide-react";
 import { DashboardCharts } from "@/components/organisms/DashboardCharts";
 
+// Dashboard no se debe prerenderizar durante builds de preview sin conexión a DB.
+export const dynamic = "force-dynamic";
+
 export default async function AdminIndexPage() {
   // Consultas a la base de datos para obtener las métricas
   const totalProducts = await prisma.product.count();

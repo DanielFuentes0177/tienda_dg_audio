@@ -1,174 +1,85 @@
-import { createHash } from "node:crypto";
 import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
 import type { Prisma } from "@prisma/client";
 import prisma from "@/lib/prisma";
 import { authOptions } from "@/lib/auth";
-import { STORE_ORIGIN } from "@/lib/seo/productSeo";
+import { parseSeoOnlyRows, inspectSeoOnlyRows, SeoOnlyInputError } from "@/lib/seo/seoOnlyRules.mjs";
+import type { SeoOnlyRow, SeoOnlyInspection } from "@/lib/seo/seoOnlyRules.mjs";
 
 export const runtime = "nodejs";
-type SeoRow = {
-  id: string;
-  name?: string;
-  seoTitle?: string;
-  seoDescription?: string;
-  slug?: string;
-  description?: string;
-  seoImageAlt?: string;
-};
-type SeoUpdate = Omit<SeoRow, "id">;
+const MAX_BYTES = 2_000_000;
+// This endpoint never writes without an explicitly enabled release flag.
+const WRITE_FLAG = "SEO_BULK_WRITE_ENABLED";
+const selectFields = {
+  id: true, brand: true, model: true, name: true, description: true,
+  category: true, subcategory: true, family: true, isActive: true,
+  updatedAt: true, seoTitle: true, seoDescription: true,
+} as const;
 
-const allowedFields = new Set(["id", "name", "seoTitle", "seoDescription", "slug", "description", "seoImageAlt"]);
-const limits: Record<keyof SeoUpdate, number> = {
-  name: 180, seoTitle: 150, seoDescription: 300, slug: 140, description: 16000, seoImageAlt: 180,
-};
-const uuidPattern = /^[a-f0-9]{8}-(?:[a-f0-9]{4}-){3}[a-f0-9]{12}$/i;
-const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
-const fields: Array<keyof SeoUpdate> = ["name", "seoTitle", "seoDescription", "slug", "description", "seoImageAlt"];
-
-class InvalidBatch extends Error {}
-
-function parseRows(value: unknown): SeoRow[] {
-  if (!Array.isArray(value) || value.length === 0 || value.length > 100) {
-    throw new InvalidBatch("Se permiten entre 1 y 100 productos por lote.");
-  }
-  const ids = new Set<string>();
-  const slugs = new Set<string>();
-  return value.map((entry, index): SeoRow => {
-    if (!entry || typeof entry !== "object" || Array.isArray(entry)) {
-      throw new InvalidBatch("Fila " + (index + 1) + ": formato inválido.");
-    }
-    const raw = entry as Record<string, unknown>;
-    if (Object.keys(raw).some(key => !allowedFields.has(key))) {
-      throw new InvalidBatch("Fila " + (index + 1) + ": contiene columnas no autorizadas.");
-    }
-    const id = String(raw.id || "").trim().toLowerCase();
-    if (!uuidPattern.test(id) || ids.has(id)) {
-      throw new InvalidBatch("Fila " + (index + 1) + ": ID inválido o repetido.");
-    }
-    ids.add(id);
-    const row: SeoRow = { id };
-    for (const field of fields) {
-      const value = raw[field];
-      if (value === undefined || value === "") continue;
-      if (typeof value !== "string") throw new InvalidBatch("Valor inválido en " + field);
-      const text = value.trim();
-      if (!text) continue;
-      if (text.length > limits[field]) throw new InvalidBatch(field + " excede el máximo de " + limits[field] + " caracteres.");
-      if (field === "slug") {
-        const slug = text.toLowerCase();
-        if (!slugPattern.test(slug) || uuidPattern.test(slug) || slugs.has(slug)) {
-          throw new InvalidBatch("Slug inválido o repetido: " + slug);
-        }
-        slugs.add(slug);
-        row.slug = slug;
-      } else {
-        row[field] = text;
-      }
-    }
-    if (fields.every(field => row[field] === undefined)) {
-      throw new InvalidBatch("Fila " + (index + 1) + ": no contiene datos SEO para actualizar.");
-    }
-    return row;
-  });
-}
-
-async function inspectBatch(client: any, rows: SeoRow[]) {
-  const ids = rows.map(x => x.id);
+type InspectClient = Pick<typeof prisma, "product">;
+async function inspectBatch(client: InspectClient, rows: SeoOnlyRow[]): Promise<SeoOnlyInspection> {
   const products = await client.product.findMany({
-    where: { id: { in: ids } },
-    select: { id: true, name: true, isActive: true, updatedAt: true, slug: true,
-      seoTitle: true, seoDescription: true, seoImageAlt: true, description: true },
+    where: { id: { in: rows.map(row => row.uuid) } },
+    select: selectFields,
   });
-  const byId = new Map<string, any>(products.map((x: any) => [x.id, x]));
-  if (products.length !== ids.length || rows.some(row => !byId.get(row.id)?.isActive)) {
-    throw new InvalidBatch("Hay IDs inexistentes o productos inactivos. No se aplicó ningún cambio.");
-  }
-  const wantedSlugs = rows.flatMap(row => row.slug ? [row.slug] : []);
-  if (wantedSlugs.length) {
-    const conflicts = await client.product.findMany({
-      where: { slug: { in: wantedSlugs }, id: { notIn: ids } },
-      select: { slug: true },
-    });
-    if (conflicts.length) throw new InvalidBatch("Uno o más slugs ya pertenecen a otro producto.");
-  }
-  const changes: Array<{ id: string; name: string; fields: string[]; patch: SeoUpdate }> = [];
-  for (const row of rows) {
-    const product = byId.get(row.id)!;
-    const patch: SeoUpdate = {};
-    for (const field of fields) {
-      if (row[field] !== undefined && row[field] !== product[field]) {
-        // El JSON aceptado solo contiene el subconjunto explícito de campos SEO.
-        Object.assign(patch, { [field]: row[field] });
-      }
-    }
-    if (Object.keys(patch).length) changes.push({
-      id: row.id, name: product.name, fields: Object.keys(patch), patch,
-    });
-  }
-  const snapshot = rows.map(row => {
-    const product = byId.get(row.id)!;
-    return { id: product.id, name: product.name, updatedAt: product.updatedAt.toISOString(),
-      slug: product.slug, seoTitle: product.seoTitle,
-      seoDescription: product.seoDescription, seoImageAlt: product.seoImageAlt,
-      description: product.description };
-  });
-  const fingerprint = createHash("sha256")
-    .update(JSON.stringify({ rows, snapshot })).digest("hex");
-  return { changes, fingerprint };
+  return inspectSeoOnlyRows(rows, products);
 }
-
 export async function POST(request: Request) {
   try {
+    const configured = process.env.NEXTAUTH_URL;
+    if (!configured || !process.env.STORE_ADMIN_IDS)
+      return NextResponse.json({ error: "Administración SEO no configurada." }, { status: 503 });
+    const expectedOrigin = new URL(configured).origin;
+    // Behind Vercel/Next.js routing, request.url may use an internal hostname.
+    // The browser-supplied Origin must match the configured public origin exactly.
+    if (request.headers.get("origin") !== expectedOrigin)
+      return NextResponse.json({ error: "Origen no autorizado." }, { status: 403 });
     const session = await getServerSession(authOptions);
-    const userId = (session?.user as { id?: string } | undefined)?.id?.toLowerCase();
+    const userId = String((session?.user as { id?: string } | undefined)?.id || "").toLowerCase();
     if (!userId) return NextResponse.json({ error: "Sesión requerida." }, { status: 401 });
-    const admins = (process.env.STORE_ADMIN_IDS || "").split(",")
-      .map(value => value.trim().toLowerCase()).filter(Boolean);
-    if (!admins.includes(userId)) return NextResponse.json({ error: "Acceso no autorizado." }, { status: 403 });
-
-    const configured = new URL(process.env.NEXTAUTH_URL || STORE_ORIGIN).origin;
-    if (request.headers.get("origin") !== configured) {
-      return NextResponse.json({ error: "Origen no permitido." }, { status: 403 });
-    }
-    if (!request.headers.get("content-type")?.startsWith("application/json")) {
-      return NextResponse.json({ error: "Se requiere JSON." }, { status: 415 });
-    }
-    const text = await request.text();
-    if (text.length > 2_000_000) throw new InvalidBatch("El lote supera el tamaño máximo.");
-    const body = JSON.parse(text);
-    if (body?.mode !== "preview" && body?.mode !== "commit") {
-      throw new InvalidBatch("Modo inválido.");
-    }
-    const rows = parseRows(body.rows);
+    const admins = new Set(process.env.STORE_ADMIN_IDS.split(",").map(x => x.trim().toLowerCase()).filter(Boolean));
+    if (!admins.has(userId)) return NextResponse.json({ error: "Administrador no autorizado." }, { status: 403 });
+    if (!request.headers.get("content-type")?.startsWith("application/json"))
+      return NextResponse.json({ error: "Solo se acepta JSON." }, { status: 415 });
+    const bodyText = await request.text();
+    if (bodyText.length > MAX_BYTES) throw new SeoOnlyInputError("Archivo mayor que 2 MB.");
+    const body = JSON.parse(bodyText) as { mode?: string; rows?: unknown; fingerprint?: unknown };
+    if (body.mode !== "preview" && body.mode !== "commit") throw new SeoOnlyInputError("Modo inválido.");
+    const rows = parseSeoOnlyRows(body.rows);
     if (body.mode === "preview") {
-      const result = await inspectBatch(prisma, rows);
+      const inspection = await inspectBatch(prisma, rows);
       return NextResponse.json({
-        fingerprint: result.fingerprint,
-        modifiedCount: result.changes.length,
-        unchangedCount: rows.length - result.changes.length,
-        changes: result.changes.map(({ id, name, fields }) => ({ id, name, fields })),
+        mode: "preview", requestedCount: rows.length, fingerprint: inspection.fingerprint,
+        modifiedCount: inspection.modifiedCount, unchangedCount: inspection.unchangedCount,
+        blockedCount: inspection.blockedCount, blocked: inspection.blocked,
+        ignoredColumns: inspection.ignoredColumns,
+        changes: inspection.changes.map(c => ({ uuid: c.uuid, name: c.name, fields: c.fields })),
+        writeEnabled: process.env[WRITE_FLAG] === "true",
+        canCommit: inspection.blockedCount === 0 && process.env[WRITE_FLAG] === "true",
       });
     }
-    if (typeof body.fingerprint !== "string" || !/^[a-f0-9]{64}$/.test(body.fingerprint)) {
-      throw new InvalidBatch("Primero ejecuta la vista previa.");
-    }
-    const result = await prisma.$transaction(async tx => {
-      const checked = await inspectBatch(tx, rows);
-      if (checked.fingerprint !== body.fingerprint) {
-        throw new InvalidBatch("Los datos cambiaron desde la vista previa. Vuelve a revisar el lote.");
-      }
+    if (process.env[WRITE_FLAG] !== "true")
+      return NextResponse.json({ error: "Publicación SEO deshabilitada por control de liberación." }, { status: 403 });
+    if (typeof body.fingerprint !== "string" || !/^[a-f0-9]{64}$/i.test(body.fingerprint))
+      throw new SeoOnlyInputError("Primero realiza la simulación.");
+    const count = await prisma.$transaction(async transaction => {
+      const checked = await inspectBatch(transaction, rows);
+      if (checked.blockedCount || checked.fingerprint !== body.fingerprint)
+        throw new SeoOnlyInputError("Lote no aprobado o cambiado desde la simulación; cero escrituras.");
       for (const change of checked.changes) {
-        await tx.product.update({
-          where: { id: change.id },
+        // No upsert, no create, no stock, images, status, name, description or slug.
+        await transaction.product.update({
+          where: { id: change.uuid },
           data: change.patch as Prisma.ProductUpdateInput,
         });
       }
-      return { count: checked.changes.length };
-    }, { timeout: 30000 });
-    return NextResponse.json({ success: true, updatedCount: result.count });
-  } catch (err) {
-    const message = err instanceof InvalidBatch ? err.message : "No se aplicó el lote. Revisa los datos y vuelve a intentar.";
-    return NextResponse.json({ error: message }, { status: err instanceof InvalidBatch ? 400 : 500 });
+      return checked.changes.length;
+    }, { timeout: 90_000 });
+    return NextResponse.json({ success: true, updatedCount: count });
+  } catch (error) {
+    if (error instanceof SeoOnlyInputError || error instanceof SyntaxError)
+      return NextResponse.json({ error: error.message }, { status: 400 });
+    console.error("SEO-only batch validation failed");
+    return NextResponse.json({ error: "No se pudo validar el lote. No se aplicó ningún cambio." }, { status: 500 });
   }
 }
