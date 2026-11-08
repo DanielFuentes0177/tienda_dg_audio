@@ -3,170 +3,144 @@
 import { useState, type ChangeEvent } from "react";
 import Papa from "papaparse";
 
-type SeoRow = {
-  id: string;
-  name?: string;
-  seoTitle?: string;
-  seoDescription?: string;
-  slug?: string;
-  description?: string;
-  seoImageAlt?: string;
-};
+type CsvRow = Record<string, string>;
 type Preview = {
-  fingerprint: string;
-  modifiedCount: number;
-  unchangedCount: number;
-  changes: Array<{ id: string; name: string; fields: string[] }>;
+  fingerprint: string; requestedCount: number; modifiedCount: number;
+  unchangedCount: number; blockedCount: number; writeEnabled: boolean; canCommit: boolean;
+  ignoredColumns: string[];
+  blocked: Array<{uuid: string; reason: string}>;
+  changes: Array<{uuid: string; name: string; fields: string[]}>;
 };
-const translations: Record<string, string> = {
-  name: "Nombre visible / H1", seoTitle: "Título SEO", seoDescription: "Metadescripción",
-  slug: "URL", description: "Descripción visible", seoImageAlt: "ALT de imagen",
-};
-const columns = {
-  name: ["Nombre_Producto"],
-  seoTitle: ["SEO_Titulo", "SEO_Title"],
-  seoDescription: ["Meta_Descripcion", "Meta_Description"],
-  slug: ["SEO_Slug"],
-  description: ["Descripcion_Comercial"],
-  seoImageAlt: ["SEO_ALT"],
-} as const;
-function cell(row: Record<string, unknown>, names: readonly string[]): string | undefined {
-  for (const name of names) {
-    const value = row[name];
-    if (typeof value === "string" && value.trim()) return value.trim();
-  }
-  return undefined;
-}
+const supportedHeaders = [
+  "CONTROL_NO_IMPORTAR", "uuid", "baseline_sha256", "baseline_updated_at",
+  "brand_solo_guard", "model_solo_guard", "seo_title", "seo_meta_description",
+  "seo_h1", "seo_body", "seo_slug_propuesto_no_aplicar",
+  "estado_revision", "validacion_fabricante", "fuente_oficial", "inmutables_guard",
+];
+const requiredHeaders = [
+  "CONTROL_NO_IMPORTAR", "uuid", "baseline_sha256", "baseline_updated_at",
+  "brand_solo_guard", "model_solo_guard", "seo_title", "seo_meta_description", "inmutables_guard",
+];
 
 export default function SeoProductsPage() {
-  const [rows, setRows] = useState<SeoRow[]>([]);
+  const [rows, setRows] = useState<CsvRow[]>([]);
   const [filename, setFilename] = useState("");
   const [preview, setPreview] = useState<Preview | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  function onFile(e: ChangeEvent<HTMLInputElement>) {
-    const file = e.target.files?.[0];
-    setError(""); setSuccess(""); setPreview(null); setRows([]);
+  function onFile(event: ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+    setRows([]); setPreview(null); setError(""); setSuccess(""); setFilename(file?.name || "");
     if (!file) return;
-    setFilename(file.name);
-    Papa.parse<Record<string, string>>(file, {
-      header: true,
-      skipEmptyLines: true,
+    Papa.parse<CsvRow>(file, {
+      header: true, skipEmptyLines: true,
+      transformHeader: h => h.replace(/^\uFEFF/, "").trim(),
       complete: result => {
         if (result.errors.length) {
-          setError("No se pudo leer el CSV. Verifica la codificación UTF-8 y las columnas.");
-          return;
+          setError("CSV inválido. Revisa las comillas y los separadores."); return;
         }
-        if (!result.meta.fields?.includes("ID_Producto")) {
-          setError("Falta la columna obligatoria ID_Producto.");
-          return;
+        const header = result.meta.fields || [];
+        if (requiredHeaders.some(h => !header.includes(h))) {
+          setError("Faltan columnas obligatorias del formato SEO-only del lote 002."); return;
+        }
+        if (header.some(h => !supportedHeaders.includes(h))) {
+          setError("El archivo contiene columnas prohibidas; no se aceptan precios, stock, imágenes ni estados."); return;
         }
         if (!result.data.length || result.data.length > 100) {
-          setError("Cada archivo debe contener entre 1 y 100 productos.");
-          return;
+          setError("Carga un lote de 1 a 100 productos."); return;
         }
-        const mapped = result.data.map(row => ({
-          id: (row.ID_Producto || "").trim(),
-          name: cell(row, columns.name),
-          seoTitle: cell(row, columns.seoTitle),
-          seoDescription: cell(row, columns.seoDescription),
-          slug: cell(row, columns.slug),
-          description: cell(row, columns.description),
-          seoImageAlt: cell(row, columns.seoImageAlt),
-        }));
-        if (mapped.some(row => !row.id)) {
-          setError("Todas las filas requieren ID_Producto.");
-          return;
-        }
-        if (mapped.some(row => Object.values(row).filter(Boolean).length < 2)) {
-          setError("Hay productos sin campos SEO para actualizar.");
-          return;
-        }
-        setRows(mapped);
+        setRows(result.data);
       },
-      error: () => setError("No se pudo leer el CSV."),
+      error: () => setError("No fue posible leer el CSV."),
     });
   }
 
-  async function callApi(mode: "preview" | "commit") {
+  async function execute(mode: "preview" | "commit") {
     if (!rows.length) return;
     setBusy(true); setError(""); setSuccess("");
     try {
       const response = await fetch("/api/products/seo-bulk", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+        method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ mode, rows, fingerprint: preview?.fingerprint }),
       });
-      const json = await response.json();
-      if (!response.ok) throw new Error(json.error || "Operación rechazada.");
-      if (mode === "preview") setPreview(json as Preview);
+      const payload = await response.json();
+      if (!response.ok) throw new Error(payload.error || "Solicitud rechazada.");
+      if (mode === "preview") setPreview(payload as Preview);
       else {
-        setSuccess(`Actualización concluida: ${json.updatedCount} productos modificados. Verifica las fichas antes del siguiente lote.`);
+        setSuccess("Actualización realizada: " + payload.updatedCount +
+          " fichas; únicamente título SEO y metadescripción.");
         setPreview(null); setRows([]); setFilename("");
       }
-    } catch (e) {
-      setError(e instanceof Error ? e.message : "Ocurrió un error.");
-      setPreview(null);
-    } finally {
-      setBusy(false);
-    }
+    } catch (caught) {
+      setError(caught instanceof Error ? caught.message : "Operación rechazada.");
+      if (mode === "commit") setPreview(null);
+    } finally { setBusy(false); }
   }
 
   function confirm() {
-    if (!preview?.modifiedCount) return;
-    const approved = window.confirm(`¿Publicar cambios SEO de ${preview.modifiedCount} productos en la tienda? No se alterarán existencias, imágenes ni estados.`);
-    if (approved) void callApi("commit");
+    if (!preview?.canCommit || !preview.modifiedCount) return;
+    if (window.confirm("¿Publicar los metadatos SEO de " + preview.modifiedCount +
+      " fichas? Nunca se cambian productos, precios, imágenes, stock, nombres ni URLs."))
+      void execute("commit");
   }
 
   return (
-    <main style={{ padding: "2rem", maxWidth: 1100, margin: "0 auto", color: "#222" }}>
+    <main style={{ margin: "auto", padding: "2rem", maxWidth: 1100, color: "#222" }}>
       <p><a href="/admin/products">← Volver a productos</a></p>
-      <h1>Actualización SEO por CSV</h1>
-      <p>Máximo 100 productos por lote. Esta herramienta modifica exclusivamente datos editoriales: nombre visible (H1), SEO, ALT y descripción comercial.</p>
-      <p style={{ background: "#f4f0e7", padding: "1rem", borderRadius: 8 }}>
-        No usar el botón general «Importar CSV» para estos lotes. Las celdas vacías no borran datos.
-        Primero revisa la vista previa; después confirma la publicación.
+      <h1>DG Audiosound · CSV SEO-only por UUID</h1>
+      <p>Máximo 100 fichas por lote. Primero realiza una simulación sin cambios.</p>
+      <p style={{ background: "#f9f1df", padding: 16, borderRadius: 8 }}>
+        <strong>NO utilices el importador general de productos.</strong> Esta herramienta
+        actualiza exclusivamente <strong>título SEO y metadescripción</strong>.
+        H1, texto y slugs del CSV son propuestas y se ignoran deliberadamente.
+        No modifica nombres, precios, stock, imágenes, categorías ni estatus.
       </p>
-      <section style={{ background: "white", padding: "1.5rem", border: "1px solid #ddd", borderRadius: 10 }}>
-        <label htmlFor="seo-file" style={{ display: "block", fontWeight: 600, marginBottom: 8 }}>
-          Archivo CSV UTF-8
+      <section style={{ background: "white", padding: 24, border: "1px solid #ddd", borderRadius: 10 }}>
+        <label htmlFor="seo-file" style={{ display: "block", fontWeight: 700, marginBottom: 8 }}>
+          CSV SEO-only del lote 002
         </label>
-        <input id="seo-file" type="file" accept=".csv,text/csv" onChange={onFile} disabled={busy} />
-        <p style={{ fontSize: 13, color: "#555", wordBreak: "break-word" }}>
-          Columnas: ID_Producto (obligatoria), Nombre_Producto, SEO_Titulo, Meta_Descripcion, SEO_Slug,
-          Descripcion_Comercial, SEO_ALT. Los modelos, marcas, precios, imágenes, existencias y publicaciones permanecen intactos.
+        <input id="seo-file" type="file" accept=".csv,text/csv" disabled={busy} onChange={onFile} />
+        <p style={{ fontSize: 13, color: "#555" }}>
+          Identificación: uuid, baseline_sha256, baseline_updated_at, brand_solo_guard,
+          model_solo_guard. SEO: seo_title y seo_meta_description.
+          Se exige la marca de control y la aprobación editorial/técnica.
         </p>
-        {filename && <p>Archivo: <strong>{filename}</strong> — {rows.length} registros</p>}
-        <button type="button" disabled={busy || !rows.length} onClick={() => void callApi("preview")}
-          style={{ padding: "0.7rem 1.2rem", background: "#2e2e2e", color: "white", border: 0, borderRadius: 6, cursor: "pointer" }}>
-          {busy ? "Procesando…" : "Validar y previsualizar"}
+        <p>Archivo: <strong>{filename || "Sin archivo"}</strong> — {rows.length} fichas</p>
+        <button type="button" onClick={() => void execute("preview")} disabled={busy || !rows.length}
+          style={{ padding: 12, color: "white", background: "#252525", border: 0, borderRadius: 6 }}>
+          {busy ? "Validando…" : "Simular sin aplicar cambios"}
         </button>
       </section>
-      {error && <p role="alert" style={{ color: "#b91c1c", fontWeight: 600 }}>{error}</p>}
-      {success && <p role="status" style={{ color: "#166534", fontWeight: 600 }}>{success}</p>}
-      {preview && (
-        <section style={{ marginTop: 20, padding: "1.5rem", border: "1px solid #ddd", borderRadius: 10, background: "white" }}>
-          <h2>Vista previa — sin cambios aplicados</h2>
-          <p>{preview.modifiedCount} a modificar · {preview.unchangedCount} sin cambios</p>
-          <div style={{ maxHeight: 380, overflow: "auto" }}>
-            <table style={{ width: "100%", borderCollapse: "collapse" }}>
-              <thead><tr><th style={{ textAlign: "left", padding: 8 }}>Producto</th><th style={{ textAlign: "left", padding: 8 }}>Campos a modificar</th></tr></thead>
-              <tbody>{preview.changes.map(c => (
-                <tr key={c.id} style={{ borderTop: "1px solid #eee" }}>
-                  <td style={{ padding: 8 }}>{c.name}<small style={{ display: "block", color: "#777" }}>{c.id}</small></td>
-                  <td style={{ padding: 8 }}>{c.fields.map(x => translations[x] || x).join(", ")}</td>
-                </tr>
-              ))}</tbody>
-            </table>
-          </div>
-          <button type="button" onClick={confirm} disabled={busy || !preview.modifiedCount}
-            style={{ marginTop: 20, padding: "0.75rem 1.4rem", background: "#146c43", color: "white", border: 0, borderRadius: 6, cursor: "pointer", fontWeight: 700 }}>
-            Confirmar y publicar {preview.modifiedCount} cambios
-          </button>
-        </section>
-      )}
+      {error && <p role="alert" style={{ color: "#a11" }}>{error}</p>}
+      {success && <p role="status" style={{ color: "#166534" }}>{success}</p>}
+      {preview && <section style={{ marginTop: 20, padding: 24, background: "white", border: "1px solid #ddd" }}>
+        <h2>Vista previa — cero escrituras</h2>
+        <p>
+          {preview.requestedCount} examinados · {preview.modifiedCount} propuestas de cambio SEO ·
+          {preview.blockedCount} bloqueados
+        </p>
+        {!preview.writeEnabled && <p style={{ color: "#a11" }}>
+          Escritura deshabilitada en este entorno.
+        </p>}
+        <p>Campos que <strong>no</strong> se actualizarán: {preview.ignoredColumns.join(", ")}.</p>
+        <div style={{ maxHeight: 360, overflow: "auto" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse" }}>
+            <thead><tr><th style={{ textAlign: "left" }}>UUID</th>
+              <th style={{ textAlign: "left" }}>Bloqueo</th></tr></thead>
+            <tbody>{preview.blocked.map(item => <tr key={item.uuid} style={{ borderTop: "1px solid #eee" }}>
+              <td style={{ padding: 7, fontSize: 12 }}>{item.uuid}</td>
+              <td style={{ padding: 7 }}>{item.reason}</td>
+            </tr>)}</tbody>
+          </table>
+        </div>
+        <button type="button" onClick={confirm} disabled={busy || !preview.canCommit || !preview.modifiedCount}
+          style={{ padding: 12, marginTop: 16, color: "white", background: preview.canCommit ? "#18653d" : "#888",
+            border: 0, borderRadius: 6 }}>
+          {preview.canCommit ? "Confirmar y publicar cambios SEO" : "Publicación bloqueada hasta aprobación"}
+        </button>
+      </section>}
     </main>
   );
 }
