@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import { Button } from "@/components/atoms/Button";
 import Link from "next/link";
 
@@ -11,7 +10,6 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,18 +19,18 @@ export default function LoginPage() {
     try {
       const res = await signIn("credentials", {
         redirect: false,
+        callbackUrl: new URLSearchParams(window.location.search).get("callbackUrl") || "/admin",
         email,
         password,
       });
 
-      if (res?.error) {
+      if (!res?.ok || !res.url || res.error) {
         setError("Credenciales inválidas. Inténtalo de nuevo.");
       } else {
-        const params = new URLSearchParams(window.location.search);
-        const callbackUrl = params.get("callbackUrl") || "/admin";
-        window.location.href = callbackUrl;
+        const destination = new URL(res.url, window.location.origin);
+        window.location.assign(destination.origin === window.location.origin ? destination.href : "/admin");
       }
-    } catch (err) {
+    } catch {
       setError("Ocurrió un error al intentar iniciar sesión.");
     } finally {
       setIsLoading(false);

@@ -1,8 +1,12 @@
+import { requireAdminPage } from "@/lib/admin-access";
 import prisma from "@/lib/prisma";
 import { Package, Users, ShoppingCart } from "lucide-react";
 import { DashboardCharts } from "@/components/organisms/DashboardCharts";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminIndexPage() {
+  await requireAdminPage();
   // Consultas a la base de datos para obtener las métricas
   const totalProducts = await prisma.product.count();
   

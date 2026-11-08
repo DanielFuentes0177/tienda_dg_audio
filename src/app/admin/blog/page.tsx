@@ -1,3 +1,4 @@
+import { requireAdminPage } from "@/lib/admin-access";
 import React from "react";
 import prisma from "@/lib/prisma";
 import BlogClientContainer from "./BlogClientContainer";
@@ -5,6 +6,7 @@ import BlogClientContainer from "./BlogClientContainer";
 export const dynamic = "force-dynamic";
 
 export default async function AdminBlogPage() {
+  await requireAdminPage();
   const posts = await prisma.post.findMany({
     orderBy: {
       createdAt: "desc",

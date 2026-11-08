@@ -1,7 +1,10 @@
+import { requireAdmin } from "@/lib/admin-access";
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 
 export async function POST(req: Request) {
+  const denied = await requireAdmin(req);
+  if (denied) return denied;
   try {
     const csvProducts = await req.json();
 
@@ -9,8 +12,8 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Formato inválido. Se esperaba un array de productos." }, { status: 400 });
     }
 
-    const newProducts: any[] = [];
-    const modifiedProducts: any[] = [];
+    const newProducts = [];
+    const modifiedProducts = [];
     let unmodifiedCount = 0;
     let imageConflictsCount = 0;
 
@@ -69,8 +72,8 @@ export async function POST(req: Request) {
       imageConflictsCount
     });
 
-  } catch (error: any) {
-    console.error("Error generating import preview:", error);
-    return NextResponse.json({ error: error.message || "Error al procesar la previsualización." }, { status: 500 });
+  } catch {
+    console.error("Error generating import preview");
+    return NextResponse.json({ error: "Error al procesar la previsualización." }, { status: 500 });
   }
 }
