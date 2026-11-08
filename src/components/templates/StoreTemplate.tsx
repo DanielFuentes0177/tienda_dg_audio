@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useCallback } from "react";
-import { Product } from "@prisma/client";
+import type { CatalogProduct } from "@/lib/public-product";
 import { ProductCard } from "@/components/molecules/ProductCard";
 import styles from "./StoreTemplate.module.css";
 import { Search, ChevronLeft, ChevronRight, SlidersHorizontal } from "lucide-react";
@@ -9,7 +9,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 
 interface StoreTemplateProps {
-  products: Product[];
+  products: CatalogProduct[];
   categories: string[];
   brands: string[];
   families: string[];

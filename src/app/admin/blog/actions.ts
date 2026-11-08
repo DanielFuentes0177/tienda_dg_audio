@@ -1,5 +1,7 @@
 "use server";
 
+import { requireAdminAction } from "@/lib/admin-access";
+
 import prisma from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 
@@ -33,6 +35,7 @@ interface PostInput {
 }
 
 export async function createPost(data: PostInput) {
+  await requireAdminAction();
   try {
     let finalSlug = slugify(data.slug || data.title);
     if (!finalSlug) {
@@ -69,13 +72,14 @@ export async function createPost(data: PostInput) {
     revalidatePath("/admin/blog");
     revalidatePath(`/blog/${post.slug}`);
     return { success: true, post };
-  } catch (error: any) {
+  } catch (error) {
     console.error("Error creating post:", error);
-    return { success: false, error: error.message || "Error al crear el artículo" };
+    return { success: false, error: error instanceof Error ? error.message : "Error al crear el artículo" };
   }
 }
 
 export async function updatePost(id: string, data: Partial<PostInput>) {
+  await requireAdminAction();
   try {
     let finalSlug = data.slug ? slugify(data.slug) : undefined;
 
@@ -122,13 +126,14 @@ export async function updatePost(id: string, data: Partial<PostInput>) {
       revalidatePath(`/blog/${currentPost.slug}`);
     }
     return { success: true, post };
-  } catch (error: any) {
+  } catch (error) {
     console.error("Error updating post:", error);
-    return { success: false, error: error.message || "Error al actualizar el artículo" };
+    return { success: false, error: error instanceof Error ? error.message : "Error al actualizar el artículo" };
   }
 }
 
 export async function deletePost(id: string) {
+  await requireAdminAction();
   try {
     const post = await prisma.post.delete({
       where: { id },
@@ -137,13 +142,14 @@ export async function deletePost(id: string) {
     revalidatePath("/admin/blog");
     revalidatePath(`/blog/${post.slug}`);
     return { success: true, post };
-  } catch (error: any) {
+  } catch (error) {
     console.error("Error deleting post:", error);
-    return { success: false, error: error.message || "Error al eliminar el artículo" };
+    return { success: false, error: error instanceof Error ? error.message : "Error al eliminar el artículo" };
   }
 }
 
 export async function togglePublishPost(id: string, published: boolean) {
+  await requireAdminAction();
   try {
     const post = await prisma.post.update({
       where: { id },
@@ -153,8 +159,8 @@ export async function togglePublishPost(id: string, published: boolean) {
     revalidatePath("/admin/blog");
     revalidatePath(`/blog/${post.slug}`);
     return { success: true, post };
-  } catch (error: any) {
+  } catch (error) {
     console.error("Error toggling post publish status:", error);
-    return { success: false, error: error.message || "Error al actualizar el estado de publicación" };
+    return { success: false, error: error instanceof Error ? error.message : "Error al actualizar el estado de publicación" };
   }
 }

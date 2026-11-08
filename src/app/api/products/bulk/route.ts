@@ -1,11 +1,15 @@
+import { Prisma } from "@prisma/client";
+import { requireAdmin } from "@/lib/admin-access";
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 
 export async function POST(req: Request) {
+  const denied = await requireAdmin(req);
+  if (denied) return denied;
   try {
     const body = await req.json();
     
-    let products: any[] = [];
+    let products: Prisma.ProductUncheckedCreateInput[] = [];
     let imageAction: "keep" | "replace" = "replace";
 
     if (Array.isArray(body)) {
@@ -46,7 +50,7 @@ export async function POST(req: Request) {
           const hasDbImage = !!(existing.imageUrl || (Array.isArray(existing.images) && (existing.images as string[]).length > 0));
           if (hasDbImage && imageAction === "keep") {
             finalImageUrl = existing.imageUrl;
-            finalImages = existing.images;
+            finalImages = existing.images ?? Prisma.DbNull;
           }
         }
 
@@ -77,8 +81,8 @@ export async function POST(req: Request) {
     }
 
     return NextResponse.json({ success: true, count: successCount }, { status: 201 });
-  } catch (error: any) {
-    console.error("Error en la subida masiva de productos:", error);
-    return NextResponse.json({ error: error.message || "Error al procesar la subida masiva." }, { status: 500 });
+  } catch {
+    console.error("Error en la subida masiva de productos");
+    return NextResponse.json({ error: "Error al procesar la subida masiva." }, { status: 500 });
   }
 }

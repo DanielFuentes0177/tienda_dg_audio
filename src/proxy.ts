@@ -1,36 +1,21 @@
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 import { getToken } from "next-auth/jwt";
+import { authSecret, isStoreAdmin } from "@/lib/admin-policy";
 
 export async function proxy(req: NextRequest) {
-  const secret = process.env.NEXTAUTH_SECRET || "fallback_secret_for_development_only";
-  const isSecure = req.cookies.has("__Secure-next-auth.session-token");
-  const cookieName = isSecure ? "__Secure-next-auth.session-token" : "next-auth.session-token";
-
-  const token = await getToken({
-    req,
-    secret,
-    cookieName,
-    secureCookie: isSecure,
-  });
-
+  const secret = authSecret();
+  if (!secret) return new NextResponse("Administración no disponible", { status: 503 });
+  const secureCookie = req.cookies.getAll().some(({ name }) =>
+    name === "__Secure-next-auth.session-token" || name.startsWith("__Secure-next-auth.session-token.")
+  );
+  const token = await getToken({ req, secret, secureCookie });
   if (!token) {
-    const signInUrl = new URL("/login", req.url);
-    signInUrl.searchParams.set("callbackUrl", req.nextUrl.pathname);
-    return NextResponse.redirect(signInUrl);
+    const login = new URL("/login", req.url);
+    login.searchParams.set("callbackUrl", req.nextUrl.pathname);
+    return NextResponse.redirect(login);
   }
-
+  if (!isStoreAdmin(token.id)) return new NextResponse("Acceso denegado", { status: 403 });
   return NextResponse.next();
 }
 
-export default proxy;
-
-export const config = {
-  matcher: [
-    /*
-     * Aplica el middleware (protección) a cualquier ruta que empiece con /admin
-     * No protege /login, /, ni /api (a menos que sean /api/admin)
-     */
-    "/admin/:path*",
-  ],
-};
+export const config = { matcher: ["/admin/:path*"] };
