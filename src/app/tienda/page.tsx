@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import { catalogProductSelect } from "@/lib/public-product";
 import { StoreTemplate } from "@/components/templates/StoreTemplate";
 import { Metadata } from "next";
 
@@ -34,6 +34,7 @@ async function CatalogDataFetcher() {
   const [products, categoriesRaw, brandsRaw, familiesRaw] = await Promise.all([
     prisma.product.findMany({ 
       where: { isActive: true }, 
+      select: catalogProductSelect,
       orderBy: { createdAt: 'desc' } 
     }),
     prisma.product.findMany({ select: { category: true }, distinct: ['category'], where: { isActive: true, category: { not: null } } }),

@@ -1,5 +1,5 @@
+import { publicProductSelect, catalogProductSelect } from "@/lib/public-product";
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import prisma from "@/lib/prisma";
 import { notFound } from "next/navigation";
@@ -31,7 +31,8 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
   const product = await prisma.product.findUnique({
-    where: { id: resolvedParams.id },
+    where: { id: resolvedParams.id, isActive: true },
+    select: publicProductSelect,
   });
 
   if (!product) return { title: "Producto no encontrado" };
@@ -45,10 +46,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ProductDetailsPage({ params }: Props) {
   const resolvedParams = await params;
   const product = await prisma.product.findUnique({
-    where: { id: resolvedParams.id },
+    where: { id: resolvedParams.id, isActive: true },
+    select: publicProductSelect,
   });
 
-  if (!product || !product.isActive) {
+  if (!product) {
     notFound();
   }
 
@@ -62,6 +64,7 @@ export default async function ProductDetailsPage({ params }: Props) {
         { brand: product.brand }
       ]
     },
+    select: catalogProductSelect,
     take: 4,
     orderBy: { createdAt: 'desc' }
   });

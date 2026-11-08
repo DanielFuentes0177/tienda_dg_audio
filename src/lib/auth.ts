@@ -53,11 +53,9 @@ export const authOptions: NextAuthOptions = {
     },
     async session({ session, token }) {
       if (token && session.user) {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (session.user as any).id = token.id;
+        Object.assign(session.user, { id: token.id });
       }
       return session;
     }
   },
-  secret: process.env.NEXTAUTH_SECRET || "fallback_secret_for_development_only",
 };

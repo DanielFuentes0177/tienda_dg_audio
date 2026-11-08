@@ -1,13 +1,13 @@
 "use client";
 
 import React from "react";
-import { Product } from "@prisma/client";
+import type { CatalogProduct } from "@/lib/public-product";
 import { useCart } from "@/context/CartContext";
 import { ShoppingCart } from "lucide-react";
 import styles from "./AddToCartButton.module.css";
 
 interface AddToCartButtonProps {
-  product: Product;
+  product: CatalogProduct;
 }
 
 export const AddToCartButton: React.FC<AddToCartButtonProps> = ({ product }) => {
