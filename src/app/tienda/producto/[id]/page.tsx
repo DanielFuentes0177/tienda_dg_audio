@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { AddToCartButton } from "./AddToCartButton";
 import { ChevronRight, ShieldCheck, Truck, Headphones } from "lucide-react";
 import { Metadata } from "next";
+import { PRODUCT_SEO_PILOT_4, getProductIdForRoute, getProductUrl } from "@/lib/seo/productSeoPilot4";
 import { ProductCard } from "@/components/molecules/ProductCard";
 import { ProductGallery } from "@/components/organisms/ProductGallery";
 
@@ -31,21 +32,25 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
   const product = await prisma.product.findUnique({
-    where: { id: resolvedParams.id },
+    where: { id: getProductIdForRoute(resolvedParams.id) },
   });
 
   if (!product) return { title: "Producto no encontrado" };
 
+  const seo = PRODUCT_SEO_PILOT_4[product.id];
   return {
-    title: `${product.name} | DG Audiosound`,
-    description: product.description.substring(0, 160),
+    title: seo?.title ?? `${product.name} | DG Audiosound`,
+    description: seo?.description ?? product.description.substring(0, 160),
+    ...(seo ? {
+      alternates: { canonical: getProductUrl(product.id) },
+    } : {}),
   };
 }
 
 export default async function ProductDetailsPage({ params }: Props) {
   const resolvedParams = await params;
   const product = await prisma.product.findUnique({
-    where: { id: resolvedParams.id },
+    where: { id: getProductIdForRoute(resolvedParams.id) },
   });
 
   if (!product || !product.isActive) {
