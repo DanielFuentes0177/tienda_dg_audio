@@ -1,10 +1,8 @@
 import { NextResponse } from 'next/server';
-import { PRODUCT_SEO_PILOT_4, getProductUrl } from "@/lib/seo/productSeoPilot4";
+import { getProductUrl } from "@/lib/seo/productSeoPilot4";
 import prisma from "@/lib/prisma";
 
 export async function GET() {
-  const baseUrl = 'https://www.dgaudiosound.com';
-  
   const products = await prisma.product.findMany({
     where: { isActive: true },
     select: { id: true, updatedAt: true },
@@ -13,7 +11,7 @@ export async function GET() {
 
   const urls = products.map((product) => `
   <url>
-    <loc>${PRODUCT_SEO_PILOT_4[product.id] ? getProductUrl(product.id) : `${baseUrl}/tienda/${product.id}`}</loc>
+    <loc>${getProductUrl(product.id)}</loc>
     <lastmod>${new Date(product.updatedAt).toISOString()}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>

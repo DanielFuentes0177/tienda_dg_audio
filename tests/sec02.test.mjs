@@ -36,8 +36,8 @@ mock.method(nextHeaders, "headers", async () => new Headers(requestOrigin ? { or
 after(() => mock.restoreAll());
 
 const active = randomUUID(), inactive = randomUUID();
-const rows = [{ id: active, name: "A", isActive: true, stock: 4 },
-  { id: inactive, name: "B", isActive: false, stock: 9 }];
+const rows = [{ id: active, name: "A", isActive: true, stock: 4, updatedAt: new Date(0) },
+  { id: inactive, name: "B", isActive: false, stock: 9, updatedAt: new Date(0) }];
 const calls = [];
 const track = (key, fn) => (...args) => { calls.push(key); return fn(...args); };
 function selected(row, select) {
@@ -155,6 +155,14 @@ test("public reads project active fields and withhold inactive details",async()=
   assert.deepEqual(await (await invoke("products/[id]","GET",null,active)).json(),list[0]);
   assert.equal((await invoke("products/[id]","GET",null,inactive)).status,404);
 });
+test("store sitemap links to the public detail page of an active non-pilot product", async () => {
+  const response = await app("src/app/sitemap-store.xml/route.ts").GET();
+  assert.equal(response.status, 200);
+  const xml = await response.text();
+  const locations = Array.from(xml.matchAll(/<loc>([^<]+)<\/loc>/g), match => match[1]);
+  assert.deepEqual(locations, [`https://www.dgaudiosound.com/tienda/producto/${active}`]);
+});
+
 const quote={customerName:"Synthetic",customerEmail:"buyer@example.invalid",items:[{productId:active,quantity:2}]};
 test("public quote uses original UUID, validates all active items before its only write",async()=>{
   cookie=""; calls.length=0;
