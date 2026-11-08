@@ -25,12 +25,12 @@ export const PRODUCT_SEO_PILOT_4: Record<string, ProductSeoPilotEntry> = {
   }
 };
 
-const SLUG_TO_ID: Record<string, string> = Object.fromEntries(
+const SLUG_TO_ID = new Map(
   Object.entries(PRODUCT_SEO_PILOT_4).map(([id, product]) => [product.slug, id])
 );
 
 export function getProductIdForRoute(param: string): string {
-  return SLUG_TO_ID[param] ?? param;
+  return SLUG_TO_ID.get(param) ?? param;
 }
 
 export function getProductPath(id: string): string {

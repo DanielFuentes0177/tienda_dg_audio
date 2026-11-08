@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { PRODUCT_SEO_PILOT_4, getProductUrl } from "@/lib/seo/productSeoPilot4";
 import prisma from "@/lib/prisma";
 
 export async function GET() {
@@ -12,7 +13,7 @@ export async function GET() {
 
   const urls = products.map((product) => `
   <url>
-    <loc>${baseUrl}/tienda/${product.id}</loc>
+    <loc>${PRODUCT_SEO_PILOT_4[product.id] ? getProductUrl(product.id) : `${baseUrl}/tienda/${product.id}`}</loc>
     <lastmod>${new Date(product.updatedAt).toISOString()}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
