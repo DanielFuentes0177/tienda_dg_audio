@@ -332,6 +332,7 @@ export default function AdminProductsPage() {
             ref={fileInputRef} 
             onChange={handleFileUpload} 
           />
+          <a href="/admin/products/seo" style={{ display: "inline-flex", alignItems: "center", padding: "0.6rem 1rem", background: "#e7e0cf", color: "#1e293b", borderRadius: 8, fontWeight: 600, textDecoration: "none" }}>SEO · Lotes de 100</a>
           <Button 
             onClick={() => fileInputRef.current?.click()} 
             disabled={isUploading}

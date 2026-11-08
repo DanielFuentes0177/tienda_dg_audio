@@ -11,6 +11,10 @@ model Product {
   id              String      @id @default(uuid())
   name            String
   description     String      @db.Text
+  seoTitle        String?     @db.VarChar(191)
+  seoDescription  String?     @db.Text
+  slug            String?     @unique @db.VarChar(191)
+  seoImageAlt     String?     @db.VarChar(191)
   stock           Int         @default(0)
   category        String?
   brand           String?
