@@ -5,6 +5,7 @@ import Papa from "papaparse";
 
 type SeoRow = {
   id: string;
+  name?: string;
   seoTitle?: string;
   seoDescription?: string;
   slug?: string;
@@ -18,10 +19,11 @@ type Preview = {
   changes: Array<{ id: string; name: string; fields: string[] }>;
 };
 const translations: Record<string, string> = {
-  seoTitle: "Título SEO", seoDescription: "Metadescripción",
+  name: "Nombre visible / H1", seoTitle: "Título SEO", seoDescription: "Metadescripción",
   slug: "URL", description: "Descripción visible", seoImageAlt: "ALT de imagen",
 };
 const columns = {
+  name: ["Nombre_Producto"],
   seoTitle: ["SEO_Titulo", "SEO_Title"],
   seoDescription: ["Meta_Descripcion", "Meta_Description"],
   slug: ["SEO_Slug"],
@@ -67,6 +69,7 @@ export default function SeoProductsPage() {
         }
         const mapped = result.data.map(row => ({
           id: (row.ID_Producto || "").trim(),
+          name: cell(row, columns.name),
           seoTitle: cell(row, columns.seoTitle),
           seoDescription: cell(row, columns.seoDescription),
           slug: cell(row, columns.slug),
@@ -121,7 +124,7 @@ export default function SeoProductsPage() {
     <main style={{ padding: "2rem", maxWidth: 1100, margin: "0 auto", color: "#222" }}>
       <p><a href="/admin/products">← Volver a productos</a></p>
       <h1>Actualización SEO por CSV</h1>
-      <p>Máximo 100 productos por lote. Esta herramienta modifica exclusivamente SEO, ALT y, si lo incluyes, la descripción comercial.</p>
+      <p>Máximo 100 productos por lote. Esta herramienta modifica exclusivamente datos editoriales: nombre visible (H1), SEO, ALT y descripción comercial.</p>
       <p style={{ background: "#f4f0e7", padding: "1rem", borderRadius: 8 }}>
         No usar el botón general «Importar CSV» para estos lotes. Las celdas vacías no borran datos.
         Primero revisa la vista previa; después confirma la publicación.
@@ -132,9 +135,8 @@ export default function SeoProductsPage() {
         </label>
         <input id="seo-file" type="file" accept=".csv,text/csv" onChange={onFile} disabled={busy} />
         <p style={{ fontSize: 13, color: "#555", wordBreak: "break-word" }}>
-          Columnas: ID_Producto (obligatoria), SEO_Titulo, Meta_Descripcion, SEO_Slug,
-          Descripcion_Comercial, SEO_ALT. Los nombres, modelos, precios, imágenes,
-          existencias y publicaciones permanecen intactos.
+          Columnas: ID_Producto (obligatoria), Nombre_Producto, SEO_Titulo, Meta_Descripcion, SEO_Slug,
+          Descripcion_Comercial, SEO_ALT. Los modelos, marcas, precios, imágenes, existencias y publicaciones permanecen intactos.
         </p>
         {filename && <p>Archivo: <strong>{filename}</strong> — {rows.length} registros</p>}
         <button type="button" disabled={busy || !rows.length} onClick={() => void callApi("preview")}

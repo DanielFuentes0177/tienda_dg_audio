@@ -1,6 +1,6 @@
 # DGAS — Importador SEO por lotes (máximo 100)
 
-Objetivo: actualizar datos editoriales SEO SIN tocar stock, precios, imágenes, marca,
+Objetivo: actualizar datos editoriales SEO (incluido nombre visible / H1 cuando está aprobado) SIN tocar stock, precios, imágenes, marca,
 modelo, categorías, estatus de publicación, IDs o tablas de cotizaciones.
 
 ## Flujo obligatorio
@@ -16,6 +16,7 @@ modelo, categorías, estatus de publicación, IDs o tablas de cotizaciones.
 
 ## Columnas soportadas
 - `ID_Producto` (obligatoria, UUID existente y activo).
+- `Nombre_Producto` (opcional; nombre editorial aprobado / H1).
 - `SEO_Titulo` (opcional).
 - `Meta_Descripcion` (opcional).
 - `SEO_Slug` (opcional; sin prefijo ni barras; único en toda la tienda).
@@ -30,7 +31,7 @@ Una celda vacía se ignora y conserva el valor actual. Nunca borra datos.
 - También se exige el mismo origen configurado en `NEXTAUTH_URL`.
 - Vista previa y confirmación tienen huella SHA-256 ligada a la versión del producto.
 - Actualización transaccional por lote: todo o nada.
-- Solo se actualizan `seoTitle`, `seoDescription`, `slug`,
+- Solo se actualizan `name`, `seoTitle`, `seoDescription`, `slug`,
   `description` y `seoImageAlt`; no se permite pasar otras propiedades.
 - Las URLs antiguas con UUID son redirigidas con HTTP 301 cuando tienen slug.
 - Los productos sin slug continúan en `/tienda/producto/{UUID}`.

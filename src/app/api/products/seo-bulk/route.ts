@@ -9,6 +9,7 @@ import { STORE_ORIGIN } from "@/lib/seo/productSeo";
 export const runtime = "nodejs";
 type SeoRow = {
   id: string;
+  name?: string;
   seoTitle?: string;
   seoDescription?: string;
   slug?: string;
@@ -17,13 +18,13 @@ type SeoRow = {
 };
 type SeoUpdate = Omit<SeoRow, "id">;
 
-const allowedFields = new Set(["id", "seoTitle", "seoDescription", "slug", "description", "seoImageAlt"]);
+const allowedFields = new Set(["id", "name", "seoTitle", "seoDescription", "slug", "description", "seoImageAlt"]);
 const limits: Record<keyof SeoUpdate, number> = {
-  seoTitle: 150, seoDescription: 300, slug: 140, description: 16000, seoImageAlt: 180,
+  name: 180, seoTitle: 150, seoDescription: 300, slug: 140, description: 16000, seoImageAlt: 180,
 };
 const uuidPattern = /^[a-f0-9]{8}-(?:[a-f0-9]{4}-){3}[a-f0-9]{12}$/i;
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
-const fields: Array<keyof SeoUpdate> = ["seoTitle", "seoDescription", "slug", "description", "seoImageAlt"];
+const fields: Array<keyof SeoUpdate> = ["name", "seoTitle", "seoDescription", "slug", "description", "seoImageAlt"];
 
 class InvalidBatch extends Error {}
 
@@ -107,7 +108,7 @@ async function inspectBatch(client: any, rows: SeoRow[]) {
   }
   const snapshot = rows.map(row => {
     const product = byId.get(row.id)!;
-    return { id: product.id, updatedAt: product.updatedAt.toISOString(),
+    return { id: product.id, name: product.name, updatedAt: product.updatedAt.toISOString(),
       slug: product.slug, seoTitle: product.seoTitle,
       seoDescription: product.seoDescription, seoImageAlt: product.seoImageAlt,
       description: product.description };
