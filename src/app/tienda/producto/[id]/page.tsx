@@ -1,11 +1,12 @@
 import { publicProductSelect, catalogProductSelect } from "@/lib/public-product";
-import React from "react";
+import React, { cache } from "react";
 import Link from "next/link";
 import prisma from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import { AddToCartButton } from "./AddToCartButton";
 import { ChevronRight, ShieldCheck, Truck, Headphones } from "lucide-react";
 import { Metadata } from "next";
+import { PRODUCT_SEO_PILOT_4, getProductIdForRoute, getProductUrl } from "@/lib/seo/productSeoPilot4";
 import { ProductCard } from "@/components/molecules/ProductCard";
 import { ProductGallery } from "@/components/organisms/ProductGallery";
 
@@ -28,31 +29,58 @@ interface Props {
   params: Promise<{ id: string }>;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const resolvedParams = await params;
+const getActiveProduct = cache(async (routeId: string) => {
   const product = await prisma.product.findUnique({
-    where: { id: resolvedParams.id, isActive: true },
+    where: { id: getProductIdForRoute(routeId), isActive: true },
     select: publicProductSelect,
   });
+  if (!product) notFound();
+  return product;
+});
 
-  if (!product) return { title: "Producto no encontrado" };
+function getShareImage(imageUrl: string | null, gallery: unknown) {
+  const candidates = [imageUrl, ...(Array.isArray(gallery) ? gallery : [])];
+  for (const candidate of candidates) {
+    if (typeof candidate !== "string") continue;
+    const value = candidate.trim();
+    if (!/^(?:https?:\/\/|\/(?!\/))/i.test(value) || value.includes("\\")) continue;
+    try {
+      const url = new URL(value, "https://www.dgaudiosound.com");
+      if (!url.username && !url.password) return url.href;
+    } catch {
+      // Try the next image saved for this product.
+    }
+  }
+}
 
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const product = await getActiveProduct((await params).id);
+  const seo = PRODUCT_SEO_PILOT_4[product.id];
+  if (!seo) {
+    return {
+      title: `${product.name} | DG Audiosound`,
+      description: product.description.substring(0, 160),
+    };
+  }
+
+  const { title, description } = seo;
+  const url = getProductUrl(product.id);
+  const image = getShareImage(product.imageUrl, product.images);
+  const images = image ? [image] : [];
   return {
-    title: `${product.name} | DG Audiosound`,
-    description: product.description.substring(0, 160),
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title, description, url, images,
+      siteName: "DG Audiosound", locale: "es_MX", type: "website",
+    },
+    twitter: { title, description, images, card: image ? "summary_large_image" : "summary" },
   };
 }
 
 export default async function ProductDetailsPage({ params }: Props) {
-  const resolvedParams = await params;
-  const product = await prisma.product.findUnique({
-    where: { id: resolvedParams.id, isActive: true },
-    select: publicProductSelect,
-  });
-
-  if (!product) {
-    notFound();
-  }
+  const product = await getActiveProduct((await params).id);
 
   // Fetch related products (same category or brand)
   const relatedProducts = await prisma.product.findMany({

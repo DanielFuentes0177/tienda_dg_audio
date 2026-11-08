@@ -1,7 +1,8 @@
 {
   "git": {
     "deploymentEnabled": {
-      "security/sec-03-dependency-patches": false
+      "security/sec-03-dependency-patches": false,
+      "integration/int-01-seo-security": false
     }
   }
 }
