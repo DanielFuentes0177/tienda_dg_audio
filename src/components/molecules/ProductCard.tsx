@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Product } from "@prisma/client";
 import { useCart } from "@/context/CartContext";
 import styles from "./ProductCard.module.css";
+import { getProductPath } from "@/lib/seo/productSeoPilot4";
 import { ShoppingCart } from "lucide-react";
 
 interface ProductCardProps {
@@ -22,7 +23,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   return (
     <div className={styles.card}>
-      <Link href={`/tienda/producto/${product.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+      <Link href={getProductPath(product.id)} style={{ textDecoration: 'none', color: 'inherit' }}>
         <div className={styles.imageContainer}>
           {product.imageUrl ? (
             <Image 
@@ -47,7 +48,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       
       <div className={styles.content}>
         <div className={styles.category}>{product.category || "General"}</div>
-        <Link href={`/tienda/producto/${product.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Link href={getProductPath(product.id)} style={{ textDecoration: 'none', color: 'inherit' }}>
           <h3 className={styles.title}>{product.name}</h3>
         </Link>
         {/* Price removed */}
