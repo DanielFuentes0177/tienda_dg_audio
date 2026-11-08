@@ -7,6 +7,7 @@ import { ChevronRight, ShieldCheck, Truck, Headphones } from "lucide-react";
 import { Metadata } from "next";
 import { PRODUCT_SEO_PILOT_4, getProductIdForRoute, getProductUrl } from "@/lib/seo/productSeoPilot4";
 import { PRODUCT_SEO_PILOT_44 } from "@/lib/seo/productSeoPilot44";
+import { PRODUCT_SEO_BATCH_002_100 } from "@/lib/seo/productSeoBatch002";
 import { ProductCard } from "@/components/molecules/ProductCard";
 import { ProductGallery } from "@/components/organisms/ProductGallery";
 
@@ -54,9 +55,9 @@ function getShareImage(imageUrl: string | null, gallery: unknown) {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = await getActiveProduct((await params).id);
-  // Las 44 fichas auditadas tienen prioridad sobre el piloto anterior de 4.
-  // Los productos sin aprobación mantienen sus metadatos actuales.
-  const seo = PRODUCT_SEO_PILOT_44[product.id] ?? PRODUCT_SEO_PILOT_4[product.id];
+  // Prioridad: 44 previamente liberados, luego lote 002 de 100 y piloto inicial de 4.
+  // Metadatos SEO solamente: no toca catálogo, DB, URLs ni descripciones visibles.
+  const seo = PRODUCT_SEO_PILOT_44[product.id] ?? PRODUCT_SEO_BATCH_002_100[product.id] ?? PRODUCT_SEO_PILOT_4[product.id];
   if (!seo) {
     return {
       title: `${product.name} | DG Audiosound`,
