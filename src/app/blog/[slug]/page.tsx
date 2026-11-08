@@ -51,6 +51,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export async function generateStaticParams() {
+  // Sin DATABASE_URL en Preview no se deben consultar publicaciones durante el build.
+  // En Production, con su base configurada, se preservan los slugs normales.
+  if (!process.env.DATABASE_URL) return [];
   const posts = await prisma.post.findMany({
     where: { published: true },
     select: { slug: true },
