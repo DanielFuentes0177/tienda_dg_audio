@@ -1,7 +1,10 @@
+import { requireAdmin } from "@/lib/admin-access";
 import { NextRequest, NextResponse } from "next/server";
 import sharp from "sharp";
 
 export async function POST(request: NextRequest) {
+  const denied = await requireAdmin(request);
+  if (denied) return denied;
   try {
     const data = await request.formData();
     const file: File | null = data.get("file") as unknown as File;

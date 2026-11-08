@@ -1,38 +1,33 @@
+import { Prisma } from "@prisma/client";
+import { readQuote } from "@/lib/quote-input";
+import { requireAdmin } from "@/lib/admin-access";
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    const { customerName, customerEmail, customerPhone, message, items } = body;
+    const input = await readQuote(req);
+    if (!input) return NextResponse.json({ error: "Datos de cotización inválidos" }, { status: 400 });
 
-    if (!customerName || !customerEmail || !items || !Array.isArray(items) || items.length === 0) {
-      return NextResponse.json(
-        { error: "Nombre, email y al menos un producto son requeridos." },
-        { status: 400 }
-      );
-    }
+    const { items, ...customer } = input;
+    const quote = await prisma.$transaction(async tx => {
+      const count = await tx.product.count({
+        where: { id: { in: items.map(item => item.productId) }, isActive: true },
+      });
+      if (count !== items.length) return null;
+      return tx.quote.create({
+        data: { ...customer, status: "PENDING", items: { create: items } },
+        select: { id: true },
+      });
+    }, { isolationLevel: "Serializable" });
 
-    // Create the quote and its items in a transaction
-    const quote = await prisma.quote.create({
-      data: {
-        customerName,
-        customerEmail,
-        customerPhone,
-        message,
-        status: "PENDING",
-        items: {
-          create: items.map((item: any) => ({
-            productId: item.productId,
-            quantity: item.quantity,
-          })),
-        },
-      },
-    });
-
+    if (!quote) return NextResponse.json({ error: "Producto no disponible" }, { status: 400 });
     return NextResponse.json({ success: true, quoteId: quote.id });
   } catch (error) {
-    console.error("Error creating quote:", error);
+    if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === "P2034") {
+      return NextResponse.json({ error: "El catálogo cambió. Vuelve a intentarlo." }, { status: 409 });
+    }
+    console.error("Error creating quote");
     return NextResponse.json(
       { error: "Error al guardar la cotización." },
       { status: 500 }
@@ -40,7 +35,9 @@ export async function POST(req: Request) {
   }
 }
 
-export async function GET() {
+export async function GET(request: Request) {
+  const denied = await requireAdmin(request);
+  if (denied) return denied;
   try {
     const quotes = await prisma.quote.findMany({
       include: {
@@ -55,7 +52,7 @@ export async function GET() {
       }
     });
 
-    return NextResponse.json(quotes);
+    return NextResponse.json(quotes, { headers: { "Cache-Control": "private, no-store" } });
   } catch (error) {
     console.error("Error fetching quotes:", error);
     return NextResponse.json(

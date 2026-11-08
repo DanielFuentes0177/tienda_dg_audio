@@ -1,3 +1,6 @@
+import { Prisma } from "@prisma/client";
+import { publicProductSelect } from "@/lib/public-product";
+import { requireAdmin } from "@/lib/admin-access";
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 
@@ -8,7 +11,8 @@ export async function GET(
   try {
     const { id } = await params;
     const product = await prisma.product.findUnique({
-      where: { id },
+      where: { id, isActive: true },
+      select: publicProductSelect,
     });
 
     if (!product) {
@@ -26,6 +30,8 @@ export async function PUT(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  const denied = await requireAdmin(request);
+  if (denied) return denied;
   try {
     const { id } = await params;
     const body = await request.json();
@@ -33,7 +39,7 @@ export async function PUT(
     // Filtramos solo los campos permitidos para actualizar
     const { name, description, stock, imageUrl, images, isActive } = body;
 
-    const dataToUpdate: any = {};
+    const dataToUpdate: Prisma.ProductUpdateInput = {};
     if (name !== undefined) dataToUpdate.name = name;
     if (description !== undefined) dataToUpdate.description = description;
     if (stock !== undefined) dataToUpdate.stock = parseInt(stock.toString());
@@ -57,6 +63,8 @@ export async function DELETE(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  const denied = await requireAdmin(request);
+  if (denied) return denied;
   try {
     const { id } = await params;
     
@@ -66,11 +74,11 @@ export async function DELETE(
     });
 
     return NextResponse.json({ success: true, product: deletedProduct });
-  } catch (error: any) {
+  } catch (error) {
     console.error("Error deleting product:", error);
     
     // Error típico de Prisma cuando hay registros relacionados (Foreign Key Constraint)
-    if (error.code === 'P2003') {
+    if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === 'P2003') {
       return NextResponse.json(
         { error: "No se puede borrar este producto porque ya tiene ventas (órdenes) asociadas. En su lugar, usa el botón de 'Deshabilitar' para ocultarlo de la tienda." }, 
         { status: 400 }

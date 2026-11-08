@@ -3,13 +3,13 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Product } from "@prisma/client";
+import type { CatalogProduct } from "@/lib/public-product";
 import { useCart } from "@/context/CartContext";
 import styles from "./ProductCard.module.css";
 import { ShoppingCart } from "lucide-react";
 
 interface ProductCardProps {
-  product: Product;
+  product: CatalogProduct;
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
