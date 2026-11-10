@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import prisma from "@/lib/prisma";
 
 export async function POST(req: Request) {
@@ -75,6 +76,8 @@ export async function POST(req: Request) {
       }
       successCount++;
     }
+
+    revalidatePath("/tienda");
 
     return NextResponse.json({ success: true, count: successCount }, { status: 201 });
   } catch (error: any) {

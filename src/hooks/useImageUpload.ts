@@ -20,9 +20,9 @@ export const useImageUpload = () => {
         throw new Error("Formato no soportado. Solo JPG, PNG o WEBP.");
       }
 
-      // 1. Comprimir en el cliente usando browser-image-compression
+      // 1. Comprimir en el cliente antes de enviar al servidor
       const options = {
-        maxSizeMB: 0.5,
+        maxSizeMB: 0.8,
         maxWidthOrHeight: 1200,
         useWebWorker: true,
         fileType: "image/webp" as any
@@ -30,15 +30,22 @@ export const useImageUpload = () => {
 
       const compressedFile = await imageCompression(file, options);
 
-      // 2. Convertir a cadena Base64
-      const base64 = await new Promise<string>((resolve, reject) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(compressedFile);
-        reader.onload = () => resolve(reader.result as string);
-        reader.onerror = error => reject(error);
+      // 2. Subir al endpoint /api/upload que guarda en Vercel Blob
+      const formData = new FormData();
+      formData.append("file", compressedFile, file.name || "image.webp");
+
+      const response = await fetch("/api/upload", {
+        method: "POST",
+        body: formData,
       });
 
-      return base64;
+      const data = await response.json();
+
+      if (!response.ok || !data.success || !data.url) {
+        throw new Error(data.message || "Error al subir la imagen al servidor");
+      }
+
+      return data.url;
     } catch (err: unknown) {
       const errorMessage = err instanceof Error ? err.message : "Error desconocido al procesar la imagen";
       setError(errorMessage);

@@ -24,7 +24,7 @@ const getColorHex = (colorName: string) => {
   return '#e5e7eb'; // default grey
 }
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 60;
 
 interface Props {
   params: Promise<{ id: string }>;

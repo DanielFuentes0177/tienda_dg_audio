@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import prisma from "@/lib/prisma";
 
 export async function GET(
@@ -46,6 +47,9 @@ export async function PUT(
       data: dataToUpdate,
     });
 
+    revalidatePath("/tienda");
+    revalidatePath(`/tienda/producto/${id}`);
+
     return NextResponse.json(updatedProduct);
   } catch (error) {
     console.error("Error updating product:", error);
@@ -64,6 +68,9 @@ export async function DELETE(
     const deletedProduct = await prisma.product.delete({
       where: { id },
     });
+
+    revalidatePath("/tienda");
+    revalidatePath(`/tienda/producto/${id}`);
 
     return NextResponse.json({ success: true, product: deletedProduct });
   } catch (error: any) {

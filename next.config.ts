@@ -1,6 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.public.blob.vercel-storage.com',
+      },
+    ],
+  },
   async redirects() {
     return [
       { source: '/tienda/producto/d40b51e9-bb0b-4aa6-bc97-ac9aae7dc1c3', destination: '/tienda/producto/biamp-voltera-d-1200-2m', statusCode: 301 },
@@ -24,4 +33,3 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
- 

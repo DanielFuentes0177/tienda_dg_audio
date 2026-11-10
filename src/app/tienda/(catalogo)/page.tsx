@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 import prisma from "@/lib/prisma";
-export const dynamic = 'force-dynamic';
+export const revalidate = 60;
 
 import { Suspense } from "react";
 
@@ -31,16 +31,36 @@ function CatalogLoader() {
 
 // Async component that fetches data and renders the template
 async function CatalogDataFetcher() {
-  const [products, categoriesRaw, brandsRaw, familiesRaw] = await Promise.all([
+  const [productsRaw, categoriesRaw, brandsRaw, familiesRaw] = await Promise.all([
     prisma.product.findMany({ 
       where: { isActive: true }, 
-      orderBy: { createdAt: 'desc' } 
+      orderBy: { createdAt: 'desc' },
+      select: {
+        id: true,
+        name: true,
+        description: true,
+        stock: true,
+        category: true,
+        brand: true,
+        family: true,
+        subcategory: true,
+        model: true,
+        imageUrl: true,
+        color: true,
+        warranty: true,
+        shipping: true,
+        storeClassification: true,
+        isActive: true,
+        createdAt: true,
+        updatedAt: true,
+      }
     }),
     prisma.product.findMany({ select: { category: true }, distinct: ['category'], where: { isActive: true, category: { not: null } } }),
     prisma.product.findMany({ select: { brand: true }, distinct: ['brand'], where: { isActive: true, brand: { not: null } } }),
     prisma.product.findMany({ select: { family: true }, distinct: ['family'], where: { isActive: true, family: { not: null } } })
   ]);
 
+  const products = productsRaw.map(p => ({ ...p, images: null }));
   const categories = categoriesRaw.map(c => c.category as string).sort();
   const brands = brandsRaw.map(b => b.brand as string).sort();
   const families = familiesRaw.map(f => f.family as string).sort();
