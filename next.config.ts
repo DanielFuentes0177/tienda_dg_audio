@@ -3,12 +3,6 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**.public.blob.vercel-storage.com',
-      },
-    ],
   },
   async redirects() {
     return [
@@ -25,7 +19,7 @@ const nextConfig: NextConfig = {
       fallback: [
         {
           source: '/:path*',
-          destination: 'https://html.dgaudiosound.com/:path*',
+          destination: 'https://estatico.dgaudiosound.com/:path*',
         },
       ],
     };

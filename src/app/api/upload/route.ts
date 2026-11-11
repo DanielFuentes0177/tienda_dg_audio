@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { put } from "@vercel/blob";
+import { promises as fs } from "fs";
+import path from "path";
+import { UPLOAD_DIR } from "@/lib/uploads";
 import sharp from "sharp";
 
 export async function POST(request: NextRequest) {
@@ -37,7 +39,7 @@ export async function POST(request: NextRequest) {
       .webp({ quality: 72, effort: 6 })
       .toBuffer();
 
-    // Limpiar nombre base del archivo y subir a Vercel Blob
+    // Limpiar nombre base del archivo y guardar en disco
     const cleanBaseName = (file.name || "imagen")
       .replace(/\.[^/.]+$/, "")
       .toLowerCase()
@@ -45,22 +47,22 @@ export async function POST(request: NextRequest) {
       .replace(/-+/g, "-")
       .slice(0, 60) || "imagen";
 
-    const filename = `uploads/${Date.now()}-${cleanBaseName}.webp`;
+    const filename = `${Date.now()}-${cleanBaseName}.webp`;
+    const dir = path.join(UPLOAD_DIR, "uploads");
+    await fs.mkdir(dir, { recursive: true });
+    await fs.writeFile(path.join(dir, filename), processedBuffer);
 
-    const blob = await put(filename, processedBuffer, {
-      access: "public",
-      contentType: "image/webp",
-    });
+    const url = `/uploads/uploads/${filename}`;
 
     return NextResponse.json({
       success: true,
-      url: blob.url,
-      base64: blob.url,
+      url,
+      base64: url,
     });
   } catch (error) {
     console.error("Upload error:", error);
     return NextResponse.json(
-      { success: false, message: "Error subiendo la imagen a Vercel Blob" },
+      { success: false, message: "Error guardando la imagen" },
       { status: 500 }
     );
   }

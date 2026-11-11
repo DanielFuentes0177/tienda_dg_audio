@@ -30,7 +30,7 @@ export const useImageUpload = () => {
 
       const compressedFile = await imageCompression(file, options);
 
-      // 2. Subir al endpoint /api/upload que guarda en Vercel Blob
+      // 2. Subir al endpoint /api/upload que guarda en el servidor
       const formData = new FormData();
       formData.append("file", compressedFile, file.name || "image.webp");
 
