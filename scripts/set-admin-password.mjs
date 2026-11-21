@@ -4,6 +4,7 @@
  *
  *   node scripts/set-admin-password.mjs --email nuevo@correo.com
  *   node scripts/set-admin-password.mjs --from admin@dgaudio.com --email nuevo@correo.com
+ *   node scripts/set-admin-password.mjs --check            (solo verifica, no cambia nada)
  *
  * Usa DATABASE_URL del .env (producción). Requiere contraseña de 12+ caracteres.
  */
@@ -24,7 +25,27 @@ function askHidden(question) {
   });
 }
 
+async function check() {
+  const users = await prisma.user.findMany({ select: { email: true, password: true } });
+  console.log(`Usuarios en la base: ${users.map((u) => u.email).join(", ")}`);
+  const email = (await askVisible("Correo: ")).trim().toLowerCase();
+  const pass = await askHidden("Contraseña: ");
+  const user = users.find((u) => u.email.toLowerCase() === email);
+  if (!user) return console.log("RESULTADO: ese correo NO existe en la base.");
+  const ok = await bcrypt.compare(pass, user.password);
+  console.log(`Longitud escrita: ${pass.length} caracteres (si es mayor a lo esperado, hay espacios o saltos de más).`);
+  console.log(ok ? "RESULTADO: correo y contraseña CORRECTOS en la base." : "RESULTADO: el correo existe pero la contraseña NO coincide.");
+}
+
+function askVisible(question) {
+  return new Promise((resolve) => {
+    const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+    rl.question(question, (a) => { rl.close(); resolve(a); });
+  });
+}
+
 async function main() {
+  if (process.argv.includes("--check")) return check();
   const users = await prisma.user.findMany({ select: { id: true, email: true } });
   const from = arg("from");
   const target = from ? users.find((u) => u.email === from) : users.length === 1 ? users[0] : null;
