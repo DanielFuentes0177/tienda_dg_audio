@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  experimental: {
+    // Menos workers y reintentos al generar páginas estáticas: evita agotar las conexiones de MySQL en el build
+    cpus: 6,
+    staticGenerationRetryCount: 2,
+  },
   images: {
     unoptimized: true,
   },
