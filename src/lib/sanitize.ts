@@ -22,6 +22,8 @@ export function sanitizePostHtml(html: string): string {
     },
     // Solo YouTube (el editor inserta videos con ese iframe).
     allowedIframeHostnames: ["www.youtube.com", "www.youtube-nocookie.com"],
+    // Un iframe cuyo src fue rechazado (host no permitido) se elimina por completo.
+    exclusiveFilter: (frame) => frame.tag === "iframe" && !frame.attribs.src,
     allowedClasses: { "*": [/^image-align-/, /^tiptap-/, /^dg-blog-/, "ProseMirror"] },
     allowedStyles: {
       "*": {
