@@ -46,6 +46,10 @@ def main(groups):
             if 'banner' in d['areas']: with_dims(d['areas']['banner']['image'])
             for s in d['hero']['slides']:
                 if s: copy_img(s)
+            if not os.path.exists(os.path.join(ROOT, d['seo']['ogImage'].lstrip('/'))):
+                # og:image roto en el HTML original: se usa la primera imagen del hero
+                print('  AVISO og:image inexistente en', slug, '->', d['hero']['slides'][0])
+                d['seo']['ogImage'] = d['hero']['slides'][0]
             copy_img(d['seo']['ogImage'])
             # migas de pan si faltan
             if not d['breadcrumbs']:

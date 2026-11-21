@@ -168,9 +168,6 @@ def extract_page(path):
         'gold':{'eyebrow':text(gd.find(class_='eyebrow')),'title':simple(inline(gd.find('h2'))),'items':[text(li) for li in gd.select('li')]},
         'brands':{'eyebrow':text(br.find(class_='eyebrow')),'title':inline(br.find('h2')),'subtitle':text(br.find(class_='section-subtitle')),
                   'names':[text(t) for t in s.select('.brands-ticker .ticker-item')]}}
-    half=len(d['differentiator']['brands']['names'])//2
-    n=d['differentiator']['brands']['names']
-    if half and n[:half]==n[half:]: d['differentiator']['brands']['names']=n[:half]
     # faq
     s=ctx['faq']; h=sec_header(s); h['items']=[{'question':text(i.select_one('.faq-lux-btn span')),'answer':text(i.select_one('.faq-lux-answer'))} for i in s.select('.faq-lux-item')]; d['faq']=h
     # contact

@@ -506,6 +506,21 @@ export const familyRoom: ServicePageContent = {
         "BIAMP",
         "ALLEN & HEATH",
         "OPTOMA",
+        "SHARP",
+        "SONOS",
+        "KEF",
+        "NAD",
+        "RUARK",
+        "PRO-JECT",
+        "ONKYO",
+        "SHURE",
+        "NEXO",
+        "QSC",
+        "BARCO",
+        "KRAMER",
+        "BIAMP",
+        "ALLEN & HEATH",
+        "OPTOMA",
         "SHARP"
       ]
     }

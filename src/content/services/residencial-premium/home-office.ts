@@ -531,6 +531,19 @@ export const homeOffice: ServicePageContent = {
         "BARCO",
         "QSC",
         "RUARK",
+        "PRO-JECT",
+        "SHURE",
+        "SONOS",
+        "KEF",
+        "NAD",
+        "KRAMER",
+        "BIAMP",
+        "ALLEN & HEATH",
+        "OPTOMA",
+        "SHARP",
+        "BARCO",
+        "QSC",
+        "RUARK",
         "PRO-JECT"
       ]
     }

@@ -3,7 +3,7 @@ import { RichText } from "@/components/atoms/RichText";
 import type { ServicePageContent } from "@/types/service.types";
 
 export const DifferentiatorSection = ({ data }: { data: ServicePageContent["differentiator"] }) => {
-  const ticker = [...data.brands.names, ...data.brands.names]; // duplicado para el bucle infinito
+  const ticker = data.brands.names; // lista completa (ya incluye la repetición para el bucle infinito)
   return (
     <section className="section section-white">
       <div className="container split-dark">
