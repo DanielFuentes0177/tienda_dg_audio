@@ -1,0 +1,37 @@
+/**
+ * 301 de la estructura antigua del sitio HTML (/subpage/...) a las URLs actuales.
+ * Portado del .htaccess del repo HTML antes de apagar el subdominio `estatico`.
+ */
+export const LEGACY_REDIRECTS: { source: string; destination: string }[] = [
+  { source: "/subpage/soluciones/residencial-premium", destination: "/residencial-premium" },
+  { source: "/subpage/cine_en_casa", destination: "/residencial-premium/cine-en-casa" },
+  { source: "/subpage/applications/audio-distribuido", destination: "/residencial-premium/audio-distribuido" },
+  { source: "/subpage/applications/audio-hi-fi", destination: "/residencial-premium/audio-hi-fi" },
+  { source: "/subpage/applications/terrazas-y-jardin", destination: "/residencial-premium/terrazas-y-jardin" },
+  { source: "/subpage/applications/family-room", destination: "/residencial-premium/family-room" },
+  { source: "/subpage/applications/home-office", destination: "/residencial-premium/home-office" },
+  { source: "/subpage/soluciones/negocios-y-experiencias", destination: "/negocios-y-experiencias" },
+  { source: "/subpage/applications/restaurantes", destination: "/negocios-y-experiencias/restaurantes" },
+  { source: "/subpage/applications/bares-antros", destination: "/negocios-y-experiencias/bares-antros" },
+  { source: "/subpage/applications/gimnasios", destination: "/negocios-y-experiencias/gimnasios" },
+  { source: "/subpage/applications/cafeterias", destination: "/negocios-y-experiencias/cafeterias" },
+  { source: "/subpage/applications/retail", destination: "/negocios-y-experiencias/retail" },
+  { source: "/subpage/applications/barberias", destination: "/negocios-y-experiencias/barberias" },
+  { source: "/subpage/soluciones/corporativo-e-institucional", destination: "/corporativo-e-institucional" },
+  { source: "/subpage/applications/salas-de-juntas", destination: "/corporativo-e-institucional/salas-de-juntas" },
+  { source: "/subpage/applications/auditorios-corporativos", destination: "/corporativo-e-institucional/auditorios-corporativos" },
+  { source: "/subpage/applications/educacion", destination: "/corporativo-e-institucional/educacion" },
+  { source: "/subpage/applications/hoteles", destination: "/corporativo-e-institucional/hoteles" },
+  { source: "/subpage/applications/oficinas-corporativas", destination: "/corporativo-e-institucional/oficinas-corporativas" },
+  { source: "/subpage/applications/gobierno", destination: "/corporativo-e-institucional/gobierno" },
+  { source: "/subpage/soluciones/eventos-y-produccion", destination: "/eventos-y-produccion" },
+  { source: "/subpage/applications/podcast", destination: "/eventos-y-produccion/podcast" },
+  { source: "/subpage/applications/streamers", destination: "/eventos-y-produccion/streamers" },
+  { source: "/subpage/applications/centros-de-culto", destination: "/eventos-y-produccion/centros-de-culto" },
+  { source: "/subpage/applications/musicos-vocalistas", destination: "/eventos-y-produccion/musicos-vocalistas" },
+  { source: "/subpage/applications/sonidos-dj", destination: "/eventos-y-produccion/sonidos-dj" },
+  { source: "/subpage/applications/cine-independiente", destination: "/eventos-y-produccion/cine-independiente" },
+  { source: "/subpage/soluciones", destination: "/soluciones" },
+  { source: "/subpage/aplicaciones", destination: "/aplicaciones" },
+  { source: "/subpage", destination: "/" },
+];

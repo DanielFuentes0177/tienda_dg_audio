@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { LEGACY_REDIRECTS } from "./src/content/legacyRedirects";
 
 const nextConfig: NextConfig = {
   experimental: {
@@ -29,6 +30,9 @@ const nextConfig: NextConfig = {
       // La home también existía como /index e /index.html
       { source: '/index', destination: '/', statusCode: 301 },
       { source: '/index.html', destination: '/', statusCode: 301 },
+      // Estructura antigua del sitio HTML (/subpage/...) y URLs con extensión .html
+      ...LEGACY_REDIRECTS.map((r) => ({ ...r, statusCode: 301 })),
+      { source: '/:path((?!_next|api).+)\\.html', destination: '/:path', statusCode: 301 },
       // /contacto no existe como página: el formulario vive en la home
       { source: '/contacto', destination: '/#contacto', statusCode: 301 },
       { source: '/tienda/producto/d40b51e9-bb0b-4aa6-bc97-ac9aae7dc1c3', destination: '/tienda/producto/biamp-voltera-d-1200-2m', statusCode: 301 },
@@ -51,16 +55,12 @@ const nextConfig: NextConfig = {
     ];
   },
   async rewrites() {
-    return {
-      beforeFiles: [],
-      afterFiles: [],
-      fallback: [
-        {
-          source: '/:path*',
-          destination: 'https://estatico.dgaudiosound.com/:path*',
-        },
-      ],
-    };
+    // Todo lo que Next no conoce se pide al sitio HTML (estatico). Con DG_DISABLE_FALLBACK=1 se desactiva
+    // (para auditar qué recursos aún dependen de él antes de apagar el subdominio).
+    const fallback = process.env.DG_DISABLE_FALLBACK === '1'
+      ? []
+      : [{ source: '/:path*', destination: 'https://estatico.dgaudiosound.com/:path*' }];
+    return { beforeFiles: [], afterFiles: [], fallback };
   },
 };
 
