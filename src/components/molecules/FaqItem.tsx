@@ -6,17 +6,19 @@ export interface FaqItemProps {
   question: string;
   answer: string;
   open: boolean;
+  /** Muestra el símbolo "+" (las páginas de servicio sí; los hubs no). */
+  plus?: boolean;
   onToggle: () => void;
 }
 
 /** Molécula presentacional del acordeón (la lógica de "uno abierto" vive en FaqSection). */
-export const FaqItem = ({ question, answer, open, onToggle }: FaqItemProps) => {
+export const FaqItem = ({ question, answer, open, plus = true, onToggle }: FaqItemProps) => {
   const answerRef = useRef<HTMLDivElement>(null);
   return (
     <div className={`faq-lux-item${open ? " active" : ""}`}>
       <button type="button" className="faq-lux-btn" aria-expanded={open} onClick={onToggle}>
         <span>{question}</span>
-        <span>+</span>
+        {plus && <span>+</span>}
       </button>
       <div
         ref={answerRef}

@@ -92,3 +92,114 @@ export interface ServicePageContent {
     pageHeading: string;
   };
 }
+
+/* ------------------------------------------------------------------ */
+/* Páginas HUB (índice de cada grupo: /residencial-premium, etc.)      */
+/* ------------------------------------------------------------------ */
+
+export interface HubImage {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
+export interface HubPageContent {
+  path: string;
+  seo: { title: string; description: string; ogImage: string; ogImageAlt: string };
+  breadcrumbs: { name: string; href: string }[];
+  jsonLd: Record<string, unknown>[];
+  floatMessage: string;
+  hero: {
+    slides: string[];
+    kicker: string;
+    title: InlinePart[];
+    subtitle: string;
+    ctaLabel: string;
+    ctaHref: string;
+    ctaStyle: string;
+    badges: { icon: string | null; label: string }[];
+  };
+  problem: {
+    kicker: string;
+    title: Inline;
+    lead: Inline;
+    leadStyle: string;
+    body: Inline | null;
+    bodyStyle: string;
+    cards: (IconCard & { iconStyle: string })[];
+    cardsStyle: string;
+    cardsReveal: boolean;
+    /** true: texto e imagen lado a lado (negocios). */
+    sideLayout: boolean;
+    image: { src: string; alt: string; style: string; width: number; height: number } | null;
+    imageWrapStyle: string;
+  };
+  showcase: {
+    kicker: string;
+    kickerStyle: string;
+    slides: string[];
+    linkLabel: string;
+    navLabels: string[];
+    /** Contenido del panel tal como viene en el HTML (la primera vez); después se usa `systems`, como en el JS original. */
+    initial: { title: Inline; desc: string; specs: string[]; link: string };
+    systems: { title: Inline; desc: string; specs: string[]; link: string }[];
+  };
+  blueprint: {
+    kicker: string;
+    title: Inline;
+    lead: Inline;
+    image: { src: string; alt: string; width: number; height: number };
+    hotspots: { key: string; spot: string; label: string }[];
+    panelHeader: string;
+    initial: BlueprintEntry;
+    entries: Record<string, BlueprintEntry & { header: string }>;
+  };
+  benefits: { kicker: string; title: Inline; subtitle: string; cards: { icon: string | null; title: string; text: string; style: string }[] };
+  process: {
+    kicker: string;
+    title: Inline;
+    subtitle: string;
+    steps: (IconCard & { num: string })[];
+    quote: string;
+    ctaLabel: string;
+    ctaMessage: string;
+    ctaStyle: string;
+  };
+  gateway: {
+    kicker: string;
+    title: Inline;
+    lead: Inline;
+    cards: { src: string; alt: string; title: string; text: string; href: string; linkLabel: string; style: string; width: number; height: number }[];
+  };
+  brands: { kicker: string; title: Inline; titleStyle: string; subtitle: string; names: string[]; sectionStyle: string };
+  faq: { kicker: string; title: Inline; items: { question: string; answer: string }[] };
+  contact: {
+    title: InlinePart[];
+    subtitle: string;
+    badge: string;
+    panelTitle: InlinePart[];
+    panelText: string;
+    methods: { icon: string | null; label: string; detail: string; href: string }[];
+    formTitle: string;
+    formDescription: string;
+    labels: Record<string, string>;
+    placeholders: Record<string, string>;
+    required: Record<string, boolean>;
+    selectPlaceholder: string;
+    projectTypes: { value: string; label: string }[];
+    submitLabel: string;
+    privacyNote: Inline;
+    /** Mensaje de WhatsApp con {name} {company} {phone} {city} {project} {message}. */
+    whatsappTemplate: string;
+  };
+}
+
+export interface BlueprintEntry {
+  title: Inline;
+  desc: string;
+  tech1Title: string;
+  tech1Desc: string;
+  tech2Title: string;
+  tech2Desc: string;
+}

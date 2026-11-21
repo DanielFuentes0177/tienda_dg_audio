@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 sys.path.insert(0, os.path.dirname(__file__))
 from extract import ROOT
 
-KEY = ['benefit-v2-card','antithesis-problem-card','include-card','area-card','process-bento-item','faq-lux-item','ticker-item','cb-method','hero-badge-item','slide','check-list','event-banner','dark-panel','gold-panel']
+KEY = ['benefit-v2-card','antithesis-problem-card','include-card','area-card','process-bento-item','faq-lux-item','ticker-item','cb-method','hero-badge-item','slide','check-list','event-banner','dark-panel','gold-panel','card-lux','gateway-lux-card','showcase-nav-btn','showcase-slide','hero-lux-badge','hero-lux-slide','blueprint-hotspot','faq-lux-btn','cb-field']
 
 def words(root):
     for t in root.find_all(['script','style','noscript']): t.decompose()
@@ -18,7 +18,9 @@ def counts(root):
 def main(base, paths):
     bad = 0
     for p in paths:
-        orig = BeautifulSoup(open(os.path.join(ROOT, p.strip('/') + '.html')).read(), 'html.parser').find('main')
+        f = os.path.join(ROOT, p.strip('/') + '.html')
+        if not os.path.exists(f): f = os.path.join(ROOT, p.strip('/'), 'index.html')
+        orig = BeautifulSoup(open(f).read(), 'html.parser').find('main')
         html = urllib.request.urlopen(base + p).read().decode()
         nxt = BeautifulSoup(html, 'html.parser').select_one('.svc')
         c1, c2 = counts(orig), counts(nxt)

@@ -9,6 +9,7 @@ copia las imágenes a public/assets/... (misma ruta) y regenera el registro y la
 import sys, os, re, json, glob, shutil
 sys.path.insert(0, os.path.dirname(__file__))
 from extract import extract_page, ROOT
+from extract_hub import extract_hub
 from PIL import Image
 
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
@@ -32,6 +33,47 @@ def copy_img(src):
 
 def with_dims(img):
     w, h = copy_img(img['src']); img['width'], img['height'] = w, h
+
+def hubs(groups):
+    out_dir = os.path.join(REPO, 'src', 'content', 'hubs'); os.makedirs(out_dir, exist_ok=True)
+    for g in groups:
+        d = extract_hub(g)
+        for sl in d['hero']['slides']: copy_img(sl)
+        for sl in d['showcase']['slides']: copy_img(sl)
+        w, h = copy_img(d['blueprint']['image']['src']); d['blueprint']['image'].update(width=w, height=h)
+        if d['problem']['image']:
+            w, h = copy_img(d['problem']['image']['src']); d['problem']['image'].update(width=w, height=h)
+        for c in d['gateway']['cards']:
+            c['width'], c['height'] = copy_img(c['src'])
+        if not os.path.exists(os.path.join(ROOT, d['seo']['ogImage'].lstrip('/'))):
+            print('  AVISO og:image inexistente en hub', g); d['seo']['ogImage'] = d['hero']['slides'][0]
+        copy_img(d['seo']['ogImage'])
+        if not d['breadcrumbs']:
+            d['breadcrumbs'] = [{'name': 'Inicio', 'href': '/'}, {'name': GROUPS[g], 'href': '/' + g}]
+        order = ['path','seo','breadcrumbs','jsonLd','floatMessage','hero','problem','showcase','blueprint','benefits','process','gateway','brands','faq','contact']
+        body = json.dumps({k: d[k] for k in order}, ensure_ascii=False, indent=2)
+        ts = ('import type { HubPageContent } from "@/types/service.types";\n\n'
+              '// GENERADO por scripts/migration/generate.py --hubs desde el sitio HTML. Se puede editar a mano.\n'
+              f'export const {camel(g)}Hub: HubPageContent = {body};\n')
+        open(os.path.join(out_dir, g + '.ts'), 'w').write(ts); print('ok hub', g)
+    lines = ['import type { HubPageContent } from "@/types/service.types";']
+    present = [g for g in GROUPS if os.path.exists(os.path.join(out_dir, g + '.ts'))]
+    for g in present: lines.append(f'import {{ {camel(g)}Hub }} from "./{g}";')
+    lines.append('\n/** Páginas hub servidas por Next (generado por scripts/migration/generate.py --hubs). */')
+    lines.append('export const HUBS: Record<string, HubPageContent> = {')
+    for g in present: lines.append(f'  "/{g}": {camel(g)}Hub,')
+    lines.append('};\n')
+    open(os.path.join(out_dir, 'index.ts'), 'w').write('\n'.join(lines))
+
+def write_paths():
+    svc_root = os.path.join(REPO, 'src', 'content', 'services')
+    entries = [(g, os.path.basename(f)[:-3]) for g in GROUPS for f in sorted(glob.glob(os.path.join(svc_root, g, '*.ts')))]
+    hub_dir = os.path.join(REPO, 'src', 'content', 'hubs')
+    hub_paths = [f'/{g}' for g in GROUPS if os.path.exists(os.path.join(hub_dir, g + '.ts'))]
+    paths = ',\n'.join([f'  "{p}"' for p in hub_paths] + [f'  "/{g}/{slug}"' for g, slug in entries])
+    open(os.path.join(REPO, 'src', 'content', 'servicePaths.ts'), 'w').write(
+        '/** Rutas de servicio y hubs servidas por Next (generado por scripts/migration/generate.py). Ligero: lo usa el cliente. */\n'
+        f'export const SERVICE_PATHS: string[] = [\n{paths},\n];\n')
 
 def main(groups):
     for g in groups:
@@ -84,10 +126,11 @@ def main(groups):
     lines.append('export const servicesInGroup = (group: string): ServicePageContent[] =>')
     lines.append('  Object.values(SERVICES).filter((s) => s.path.startsWith(`/${group}/`));\n')
     open(os.path.join(svc_root, 'index.ts'), 'w').write('\n'.join(lines))
-    paths = ',\n'.join(f'  "/{g}/{slug}"' for g, slug in entries)
-    open(os.path.join(REPO, 'src', 'content', 'servicePaths.ts'), 'w').write(
-        '/** Rutas de servicio servidas por Next (generado por scripts/migration/generate.py). Ligero: lo usa el cliente. */\n'
-        f'export const SERVICE_PATHS: string[] = [\n{paths},\n];\n')
+    write_paths()
 
 if __name__ == '__main__':
-    main(sys.argv[1:] or ['residencial-premium'])
+    args = sys.argv[1:]
+    if args and args[0] == '--hubs':
+        hubs(args[1:] or list(GROUPS)); write_paths()
+    else:
+        main(args or ['residencial-premium'])

@@ -2,6 +2,8 @@ import React from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { ServicePageTemplate } from "@/components/templates/ServicePageTemplate";
+import { HubPageTemplate } from "@/components/templates/HubPageTemplate";
+import { HUBS } from "@/content/hubs";
 import { SERVICES, servicesInGroup } from "@/content/services";
 import { serviceJsonLd, serviceMetadata } from "@/lib/seo/serviceSeo";
 
@@ -21,6 +23,22 @@ export function ServicePage({ group, slug }: { group: string; slug: string }) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd(content)) }} />
       <ServicePageTemplate content={content} />
+    </>
+  );
+}
+
+export function hubMeta(group: string): Metadata {
+  const content = HUBS[`/${group}`];
+  return content ? serviceMetadata(content) : {};
+}
+
+export function HubPage({ group }: { group: string }) {
+  const content = HUBS[`/${group}`];
+  if (!content) notFound();
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd(content)) }} />
+      <HubPageTemplate content={content} />
     </>
   );
 }

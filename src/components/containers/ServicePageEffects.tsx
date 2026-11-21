@@ -6,7 +6,7 @@ import { useEffect } from "react";
  * Contenedor (smart, sin UI): comportamientos de las páginas de servicio que en el sitio HTML
  * hacía subpage.js — revelado al hacer scroll y efecto de inclinación 3D en tarjetas.
  */
-export const ServicePageEffects = () => {
+export const ServicePageEffects = ({ variant = "service" }: { variant?: "service" | "hub" }) => {
   useEffect(() => {
     const root = document.querySelector(".svc");
     if (!root) return;
@@ -31,7 +31,7 @@ export const ServicePageEffects = () => {
     });
 
     // Carrusel del hero (crossfade cada 4 s)
-    const slides = Array.from(root.querySelectorAll<HTMLElement>(".corp-hero-v2 .slide"));
+    const slides = Array.from(root.querySelectorAll<HTMLElement>(variant === "hub" ? ".hero-lux-slide" : ".corp-hero-v2 .slide"));
     let slideTimer: ReturnType<typeof setInterval> | undefined;
     if (slides.length > 1) {
       let current = 0;
@@ -39,14 +39,14 @@ export const ServicePageEffects = () => {
         slides[current].classList.remove("active");
         current = (current + 1) % slides.length;
         slides[current].classList.add("active");
-      }, 4000);
+      }, variant === "hub" ? 5500 : 4000);
     }
 
     // Inclinación 3D (solo con puntero fino)
     const cleanups: Array<() => void> = [];
     if (window.matchMedia("(hover: hover)").matches) {
       root
-        .querySelectorAll<HTMLElement>(".benefit-v2-card, .process-bento-item, .include-card, .brand-marquee-item, .antithesis-problem-card")
+        .querySelectorAll<HTMLElement>(variant === "hub" ? ".card-lux, .process-bento-item" : ".benefit-v2-card, .process-bento-item, .include-card, .brand-marquee-item, .antithesis-problem-card")
         .forEach((card) => {
           const move = (e: MouseEvent) => {
             const rect = card.getBoundingClientRect();
@@ -83,7 +83,7 @@ export const ServicePageEffects = () => {
       if (slideTimer) clearInterval(slideTimer);
       cleanups.forEach((fn) => fn());
     };
-  }, []);
+  }, [variant]);
 
   return null;
 };

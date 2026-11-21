@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
 import { SITE } from "@/content/site";
-import type { ServicePageContent } from "@/types/service.types";
+import type { HubPageContent, ServicePageContent } from "@/types/service.types";
+
+type SeoSource = Pick<ServicePageContent, "path" | "seo">;
+type JsonLdSource = Pick<ServicePageContent, "path" | "jsonLd" | "breadcrumbs"> & {
+  faq: { items: { question: string; answer: string }[] };
+};
+export type PageSeoContent = ServicePageContent | HubPageContent;
 
 /** Metadata (title, description, canonical, OG, Twitter) de una página de servicio. */
-export function serviceMetadata(c: ServicePageContent): Metadata {
+export function serviceMetadata(c: SeoSource): Metadata {
   const url = `${SITE.url}${c.path}`;
   const image = `${SITE.url}${c.seo.ogImage}`;
   return {
@@ -31,7 +37,7 @@ const plain = (v: unknown): string =>
  * JSON-LD: conserva el grafo original de la página y añade BreadcrumbList / FAQPage
  * cuando faltan (el FAQ es visible en la página, así que es válido).
  */
-export function serviceJsonLd(c: ServicePageContent) {
+export function serviceJsonLd(c: JsonLdSource) {
   const url = `${SITE.url}${c.path}`;
   const graph = [...c.jsonLd];
   const has = (type: string) => graph.some((g) => g["@type"] === type);
