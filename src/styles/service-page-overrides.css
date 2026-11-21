@@ -1,0 +1,20 @@
+/* Ajustes para renderizar los íconos SVG (lucide) donde el CSS heredado esperaba Font Awesome. */
+.svc i.dg-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  line-height: 1;
+  vertical-align: -0.125em;
+}
+.svc i.dg-icon svg {
+  width: 1em;
+  height: 1em;
+  stroke-width: 2;
+}
+
+/* El sitio HTML no tiene regla base para .eyebrow (solo variantes por contexto); la regla global de
+   la tienda (mayúsculas, dorado, display:block) no debe filtrarse a estas páginas. */
+.svc .eyebrow {
+  all: unset;
+}

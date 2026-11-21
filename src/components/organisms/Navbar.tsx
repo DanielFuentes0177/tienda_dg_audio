@@ -21,6 +21,8 @@ export interface NavbarProps {
   pathname: string;
   homeHref: string;
   logoSrc?: string;
+  /** true: el tema claro/oscuro sigue a la sección visible (home y servicios). false: siempre claro fuera de la home. */
+  adaptiveTheme?: boolean;
 }
 
 const isActive = (pathname: string, href: string) => {
@@ -33,14 +35,14 @@ const isActive = (pathname: string, href: string) => {
  * Organismo presentacional. Recibe enlaces, CTA y ruta por props.
  * Estado local solo de UI (scroll, menú móvil, tema claro/oscuro según sección).
  */
-export const Navbar = ({ links, cta, pathname, homeHref, logoSrc = "/dg_logo@2x.webp" }: NavbarProps) => {
+export const Navbar = ({ links, cta, pathname, homeHref, logoSrc = "/dg_logo@2x.webp", adaptiveTheme = false }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   // El menú móvil se cierra solo al cambiar de ruta: se guarda en qué ruta se abrió.
   const [menuOpenPath, setMenuOpenPath] = useState<string | null>(null);
   const isMenuOpen = menuOpenPath === pathname;
   // Fuera de la home la barra es siempre clara; en la home depende de la sección visible.
   const [sectionLight, setSectionLight] = useState(false);
-  const isNavLight = pathname !== "/" || sectionLight;
+  const isNavLight = (!adaptiveTheme && pathname !== "/") || sectionLight;
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);

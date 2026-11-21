@@ -68,7 +68,12 @@ export const FOOTER_DESCRIPTION =
  * hasta terminar la migración: se enlaza con <a> (navegación completa, sin prefetch
  * de Next). Al migrar una página, añade aquí su prefijo.
  */
-export const NEXT_ROUTE_PREFIXES = ["/tienda", "/blog", "/checkout", "/login", "/admin"];
+export const NEXT_ROUTE_PREFIXES = ["/tienda", "/blog", "/checkout", "/login", "/admin", "/residencial-premium/cine-en-casa"];
+
+/** Páginas de servicio (barra de navegación adaptable al fondo y CTA a su propio formulario). */
+export const SERVICE_ROUTE_PREFIXES = ["/residencial-premium/cine-en-casa"];
+export const isServiceRoute = (pathname: string): boolean =>
+  SERVICE_ROUTE_PREFIXES.some((p) => pathname === p || pathname.startsWith(`${p}/`));
 
 export const isNextRoute = (href: string): boolean => {
   if (!href.startsWith("/") || href.startsWith("//")) return false;

@@ -28,6 +28,14 @@ Regla de dependencia: **solo hacia abajo** (página → template → organismo �
 - Contenedores (`src/components/containers/`, smart): `SiteNavbar`, `SiteFooter`, `ConsentManager` (consentimiento + WhatsApp flotante), `Analytics` (GTM + Consent Mode v2, desactivado en `/admin`).
 - El consentimiento usa la misma clave `dg_cookie_consent` que el sitio HTML: la elección se comparte entre ambos (mismo origen).
 
+## 1c. Páginas de servicio en Next (piloto: /residencial-premium/cine-en-casa)
+- Contenido tipado en `src/content/services/<slug>.ts` (`ServicePageContent`, `src/types/service.types.ts`). Una página nueva = un archivo de datos + un `page.tsx` de 8 líneas (ver `cine-en-casa/page.tsx`) + añadir su ruta a `NEXT_ROUTE_PREFIXES` y `SERVICE_ROUTE_PREFIXES` en `src/content/site.ts`.
+- Plantilla `templates/ServicePageTemplate` → organismos en `organisms/service/*` → moléculas `ServiceCards`, `FaqItem`. Estado/efectos en contenedores: `ServicePageEffects` (reveal + tilt), `ServiceContactContainer` (WhatsApp).
+- SEO por helper: `serviceMetadata()` y `serviceJsonLd()` (Service + BreadcrumbList + FAQPage) en `src/lib/seo/serviceSeo.ts`.
+- **CSS heredado:** `src/styles/service-page.css` está GENERADO desde `styles/bundle.min.css` del repo HTML con todos los selectores prefijados por `.svc` (script en `scripts/gen-service-css/`). Es deuda técnica controlada: se sustituye por CSS Modules por componente al terminar la migración. Ajustes propios en `service-page-overrides.css`.
+- Imágenes: copiar a `public/assets/...` con la MISMA ruta del sitio HTML (así Next las sirve directo, sin pasar por el proxy a `estatico`).
+- Rollback de una página migrada: borrar su `page.tsx` y redeployar (el fallback a `estatico` vuelve a servirla).
+
 ## 2. Componentes "dumb" (presentacionales)
 Un componente en `atoms/`, `molecules/`, `organisms/` y `templates/` es **dumb** salvo que esté en `containers/` o sea un formulario explícito:
 
