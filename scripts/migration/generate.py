@@ -29,6 +29,7 @@ def copy_img(src):
     """Copia /assets/... del repo HTML a public/ (misma ruta). Devuelve (w,h)."""
     s = os.path.join(ROOT, src.lstrip('/')); d = os.path.join(REPO, 'public', src.lstrip('/'))
     if not os.path.exists(s): raise FileNotFoundError(s)
+    if not s.lower().endswith(('.webp', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico')): raise ValueError('no es una imagen: ' + s)
     os.makedirs(os.path.dirname(d), exist_ok=True)
     if not os.path.exists(d): shutil.copy2(s, d)
     with Image.open(s) as im: return im.size
