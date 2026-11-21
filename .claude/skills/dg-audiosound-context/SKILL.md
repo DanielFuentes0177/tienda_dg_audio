@@ -7,6 +7,14 @@ description: Contexto completo de dgaudiosound.com (arquitectura mezclada HTML e
 
 Léela completa antes de cambiar nada. Si algo de aquí ya no es cierto, corrígelo en este archivo.
 
+## 0. Estado actual (21-nov-2026) — LEE ESTO PRIMERO
+- **Todo el sitio es Next.js.** El proxy a `estatico` está apagado y los subdominios `estatico`, `app` y `html` fueron eliminados de Hostinger. Las secciones 2 y 6 de abajo describen el pasado (migración); la meta ya se cumplió.
+- **Imágenes subidas desde el admin** viven en `UPLOAD_DIR=/home/u820012597/uploads-data` (carpeta propia en la raíz de la cuenta, fuera de cualquier sitio; subcarpetas `products/` y `blog/`). NUNCA apuntar `UPLOAD_DIR` dentro de la carpeta de un sitio: al borrar ese sitio se pierden las fotos (pasó al borrar `app`; se recuperó de la copia de seguridad de Hostinger). Quedó `domains/app.dgaudiosound.com/uploads-data.viejo` como copia de respaldo: borrarla solo con permiso del usuario.
+- **Despliegue:** `git archive HEAD | tar -x -C <carpeta limpia>` y `hosting_deploy` (domain dgaudiosound.com, type nodejs, appType next, node 22) sobre esa carpeta; nunca subir `node_modules`, `.next` ni `.env`. Si el build falla sin mensaje, reintentar con paquete limpio. Antes de borrar cualquier sitio/carpeta en Hostinger: revisar `UPLOAD_DIR`/`DATABASE_URL` y pedir confirmación explícita.
+- **Admin** (`/admin`): Resumen (cotizaciones + clics a WhatsApp), Productos (descarga Excel), Cotizaciones, Blog (pegar desde Word conserva formato; HTML sanitizado en `src/lib/sanitize.ts`), Textos SEO (`PageText`). Login: `scripts/set-admin-password.mjs` cambia correo/contraseña y `--check` verifica. Límite de intentos en `src/lib/rate-limit.ts`.
+- Tablas añadidas con `prisma db push` (autorizado): `PageText`, `WhatsappClick`. Clics a WhatsApp: `WhatsappTracker` + `trackWhatsapp()` + `POST /api/track/whatsapp`.
+- Las páginas de servicio se editan en `src/content/services/**` (JSON en .ts; el generador `generate.py` las pisaría si se vuelve a correr).
+
 ## 1. Qué es el sitio
 Integrador de audio y video (CDMX/México). Dominio canónico: **https://www.dgaudiosound.com** (siempre con www). Canal de contacto principal: **WhatsApp** (`https://wa.me/525537270177`), correo `contacto@dgaudiosound.com`.
 

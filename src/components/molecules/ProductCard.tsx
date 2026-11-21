@@ -16,6 +16,7 @@ interface ProductCardProps {
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const { items, addToCart } = useCart();
   
+  const [imgFailed, setImgFailed] = React.useState(false);
   const cartItem = items.find(item => item.product.id === product.id);
   const currentQuantity = cartItem?.quantity || 0;
 
@@ -25,13 +26,14 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     <div className={styles.card}>
       <Link href={getProductPath(product.id)} style={{ textDecoration: 'none', color: 'inherit' }}>
         <div className={styles.imageContainer}>
-          {product.imageUrl ? (
+          {product.imageUrl && !imgFailed ? (
             <Image 
               src={product.imageUrl} 
               alt={product.name}
               fill
               className={styles.image}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              onError={() => setImgFailed(true)}
             />
           ) : (
             <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--bg-secondary)', color: 'var(--text-subtle)' }}>
