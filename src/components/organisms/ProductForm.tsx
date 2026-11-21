@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Product } from "@/types/product.types";
-import { Button } from "@/components/atoms/Button";
+import styles from "./ProductForm.module.css";
 import { useImageUpload } from "@/hooks/useImageUpload";
 import toast from "react-hot-toast";
-import { ArrowLeft, ArrowRight, X, Star } from "lucide-react";
+import { ArrowLeft, ArrowRight, X, Star, UploadCloud, ImageOff } from "lucide-react";
 
 type ImageItem = 
   | { type: 'existing', url: string }
@@ -122,167 +122,115 @@ export const ProductForm = ({ initialData, onSubmit, onCancel }: ProductFormProp
     }
   };
 
-  const inputStyle = {
-    width: "100%",
-    padding: "0.75rem",
-    borderRadius: "8px",
-    border: "1px solid #ccc",
-    fontFamily: "var(--font-body)",
-    marginBottom: "1rem",
-  };
+  const MAX_IMAGES_HINT = "JPG, PNG o WEBP · máx. 5 MB por imagen";
+  const busy = isSubmitting || isUploading;
 
   return (
-    <form onSubmit={handleSubmit} style={{ backgroundColor: "var(--bg-primary)", padding: "2rem", borderRadius: "12px", boxShadow: "0 4px 6px rgba(0,0,0,0.05)" }}>
-      <h3 style={{ marginBottom: "1.5rem" }}>
-        {initialData ? "Editar Producto" : "Nuevo Producto"}
-      </h3>
-      
-      <div>
-        <label style={{ display: "block", marginBottom: "0.5rem", fontWeight: 500 }}>Nombre del producto</label>
-        <input required type="text" name="name" value={formData.name as string} onChange={handleChange} style={inputStyle} />
-      </div>
-
-      <div>
-        <label style={{ display: "block", marginBottom: "0.5rem", fontWeight: 500 }}>Descripción</label>
-        <textarea required name="description" value={formData.description as string} onChange={handleChange} style={{ ...inputStyle, minHeight: "100px" }} />
-      </div>
-
-      <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
-        <div style={{ flex: 1 }}>
-          <label style={{ display: "block", marginBottom: "0.5rem", fontWeight: 500 }}>Stock</label>
-          <input required type="number" name="stock" value={formData.stock as number} onChange={handleChange} style={inputStyle} />
-        </div>
-      </div>
-
-      <div>
-        <label style={{ display: "block", marginBottom: "0.5rem", fontWeight: 500 }}>Imágenes del Producto</label>
-        
-        <div 
-          onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
-          onDragLeave={() => setIsDragging(false)}
-          onDrop={(e) => {
-            e.preventDefault();
-            setIsDragging(false);
-            if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-              validateAndAddFiles(e.dataTransfer.files);
-            }
-          }}
-          style={{
-            border: `2px dashed ${isDragging ? 'var(--color-primary)' : '#ccc'}`,
-            borderRadius: '12px',
-            padding: '2rem',
-            textAlign: 'center',
-            backgroundColor: isDragging ? 'rgba(0,0,0,0.02)' : 'transparent',
-            transition: 'all 0.2s ease',
-            cursor: 'pointer',
-            position: 'relative',
-            marginBottom: '1rem'
-          }}
-          onClick={() => document.getElementById('image-upload')?.click()}
-        >
-          <div>
-            <div style={{ fontSize: '2rem', marginBottom: '1rem', color: '#888' }}>☁️</div>
-            <p style={{ margin: 0, fontWeight: 500 }}>Arrastra múltiples imágenes o haz clic para subir</p>
-            <p style={{ fontSize: '0.8rem', color: '#888', marginTop: '0.5rem' }}>Formatos: JPG, PNG, WEBP (Max 5MB)</p>
+    <form onSubmit={handleSubmit} className={styles.form}>
+      <div className={styles.col}>
+        <section className={styles.card}>
+          <h3 className={styles.cardTitle}>Información</h3>
+          <div className={styles.field}>
+            <label className={styles.label} htmlFor="pf-name">Nombre del producto</label>
+            <input id="pf-name" required type="text" name="name" value={formData.name as string} onChange={handleChange} className={styles.input} />
           </div>
-          <input 
-            id="image-upload" 
-            type="file" 
-            multiple
-            accept="image/jpeg, image/png, image/webp" 
-            onChange={(e) => {
-              if (e.target.files) validateAndAddFiles(e.target.files);
-              e.target.value = ''; // Reset input
-            }} 
-            style={{ display: 'none' }} 
-          />
-        </div>
+          <div className={styles.field}>
+            <div className={styles.rowBetween}>
+              <label className={styles.label} htmlFor="pf-desc">Descripción</label>
+              <span className={styles.hint}>{String(formData.description ?? "").length} caracteres</span>
+            </div>
+            <textarea id="pf-desc" required name="description" value={formData.description as string} onChange={handleChange} className={styles.textarea} />
+            <span className={styles.hint}>Es el texto que ve el cliente y el que usa Google. Conviene que tenga al menos 200 caracteres.</span>
+          </div>
+        </section>
 
-        {/* Previsualización de Imágenes */}
-        {images.length > 0 && (
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '1.5rem', backgroundColor: '#f9fafb', padding: '1rem', borderRadius: '8px', border: '1px solid #eee' }}>
-            {images.map((item, i) => (
-              <div key={i} style={{ 
-                position: 'relative', 
-                width: '120px', 
-                height: '140px',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                gap: '0.5rem',
-                padding: '0.5rem',
-                backgroundColor: 'white',
-                borderRadius: '8px',
-                boxShadow: i === 0 ? "0 0 0 2px var(--color-primary)" : "0 2px 4px rgba(0,0,0,0.05)"
-              }}>
-                {i === 0 && (
-                  <div style={{
-                    position: 'absolute', top: '-10px', left: '-10px',
-                    background: 'var(--color-primary)', color: 'white', padding: '4px 8px', borderRadius: '12px',
-                    fontSize: '0.7rem', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '4px',
-                    zIndex: 10, boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
-                  }}>
-                    <Star size={12} fill="white" /> Portada
+        <section className={styles.card}>
+          <h3 className={styles.cardTitle}>Imágenes <span className={styles.hint}>({images.length})</span></h3>
+          <div
+            className={`${styles.drop} ${isDragging ? styles.dropActive : ""}`}
+            onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
+            onDragLeave={() => setIsDragging(false)}
+            onDrop={(e) => {
+              e.preventDefault();
+              setIsDragging(false);
+              if (e.dataTransfer.files && e.dataTransfer.files.length > 0) validateAndAddFiles(e.dataTransfer.files);
+            }}
+            onClick={() => document.getElementById("image-upload")?.click()}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); document.getElementById("image-upload")?.click(); } }}
+          >
+            <UploadCloud size={28} />
+            <p className={styles.dropTitle}>Arrastra imágenes aquí o haz clic para elegirlas</p>
+            <p className={styles.dropHint}>{MAX_IMAGES_HINT}</p>
+            <input
+              id="image-upload"
+              type="file"
+              multiple
+              accept="image/jpeg, image/png, image/webp"
+              onChange={(e) => { if (e.target.files) validateAndAddFiles(e.target.files); e.target.value = ""; }}
+              style={{ display: "none" }}
+            />
+          </div>
+
+          {images.length > 0 && (
+            <div className={styles.grid}>
+              {images.map((item, i) => (
+                <div key={i} className={`${styles.tile} ${i === 0 ? styles.tileMain : ""}`}>
+                  {i === 0 && <span className={styles.badge}><Star size={11} fill="currentColor" /> Portada</span>}
+                  <div className={styles.imgBox}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={item.type === "existing" ? item.url : item.previewUrl}
+                      alt={`Imagen ${i + 1}`}
+                      onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+                    />
+                    <ImageOff size={22} />
                   </div>
-                )}
-                <div style={{ position: 'relative', width: '100%', height: '100px', borderRadius: '4px', overflow: 'hidden' }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={item.type === 'existing' ? item.url : item.previewUrl} alt={`img-${i}`} style={{ width: "100%", height: "100%", objectFit: 'cover' }} />
-                  <button 
-                    type="button"
-                    onClick={(e) => { e.stopPropagation(); removeImage(i); }}
-                    style={{
-                      position: 'absolute', top: '4px', right: '4px',
-                      background: 'rgba(239, 68, 68, 0.9)', color: 'white', border: 'none', borderRadius: '50%', width: '24px', height: '24px',
-                      cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'background 0.2s'
-                    }}
-                    title="Eliminar imagen"
-                  ><X size={14} /></button>
+                  <div className={styles.tileBar}>
+                    <button type="button" className={styles.tileBtn} disabled={i === 0} onClick={() => moveImage(i, "left")} title="Mover antes" aria-label="Mover imagen antes"><ArrowLeft size={15} /></button>
+                    <button type="button" className={styles.tileBtn} disabled={i === images.length - 1} onClick={() => moveImage(i, "right")} title="Mover después" aria-label="Mover imagen después"><ArrowRight size={15} /></button>
+                    <button type="button" className={`${styles.tileBtn} ${styles.tileDanger}`} onClick={() => removeImage(i)} title="Quitar imagen" aria-label="Quitar imagen"><X size={15} /></button>
+                  </div>
                 </div>
-                
-                <div style={{ display: 'flex', gap: '0.5rem', width: '100%', justifyContent: 'space-between' }}>
-                  <button 
-                    type="button"
-                    disabled={i === 0}
-                    onClick={() => moveImage(i, 'left')}
-                    style={{
-                      background: i === 0 ? '#f3f4f6' : '#e5e7eb', color: i === 0 ? '#d1d5db' : '#374151', 
-                      border: 'none', borderRadius: '4px', padding: '4px', flex: 1,
-                      cursor: i === 0 ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center'
-                    }}
-                    title="Mover a la izquierda"
-                  ><ArrowLeft size={16} /></button>
-                  <button 
-                    type="button"
-                    disabled={i === images.length - 1}
-                    onClick={() => moveImage(i, 'right')}
-                    style={{
-                      background: i === images.length - 1 ? '#f3f4f6' : '#e5e7eb', color: i === images.length - 1 ? '#d1d5db' : '#374151', 
-                      border: 'none', borderRadius: '4px', padding: '4px', flex: 1,
-                      cursor: i === images.length - 1 ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center'
-                    }}
-                    title="Mover a la derecha"
-                  ><ArrowRight size={16} /></button>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
+          )}
+          {images.length > 1 && <p className={styles.hint} style={{ marginTop: "0.75rem" }}>La primera imagen es la portada: aparece en el catálogo y al compartir el enlace.</p>}
+        </section>
+      </div>
+
+      <aside className={styles.col}>
+        <section className={styles.card}>
+          <h3 className={styles.cardTitle}>Publicación</h3>
+          <div className={styles.switchRow}>
+            <div>
+              <div className={styles.label}>Visible en la tienda</div>
+              <div className={styles.hint}>{formData.isActive ? "Los clientes pueden verlo." : "Oculto: no aparece en la tienda."}</div>
+            </div>
+            <span className={styles.switch}>
+              <input type="checkbox" id="isActive" name="isActive" checked={formData.isActive as boolean} onChange={handleChange} aria-label="Visible en la tienda" />
+              <span className={styles.track} />
+            </span>
           </div>
-        )}
-      </div>
+        </section>
 
-      <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "2rem" }}>
-        <input type="checkbox" id="isActive" name="isActive" checked={formData.isActive as boolean} onChange={handleChange} />
-        <label htmlFor="isActive" style={{ fontWeight: 500 }}>Producto Activo (Visible en tienda)</label>
-      </div>
+        <section className={styles.card}>
+          <h3 className={styles.cardTitle}>Inventario</h3>
+          <div className={styles.field}>
+            <label className={styles.label} htmlFor="pf-stock">Stock</label>
+            <input id="pf-stock" required type="number" min={0} name="stock" value={formData.stock as number} onChange={handleChange} className={styles.input} />
+            <span className={styles.hint}>El catálogo trabaja por cotización; puedes dejarlo en 0.</span>
+          </div>
+        </section>
 
-      <div style={{ display: "flex", justifyContent: "flex-end", gap: "1rem" }}>
-        <Button type="button" variant="outline" onClick={onCancel} style={{ backgroundColor: "transparent", color: "var(--text-main)", border: "1px solid #ccc" }}>
-          Cancelar
-        </Button>
-        <Button type="submit" disabled={isSubmitting || isUploading}>
-          {isSubmitting || isUploading ? "Guardando..." : "Guardar Producto"}
-        </Button>
-      </div>
+        <div className={styles.actions}>
+          <button type="submit" className={`${styles.btn} ${styles.btnPrimary}`} disabled={busy}>
+            {busy ? "Guardando..." : "Guardar producto"}
+          </button>
+          <button type="button" className={styles.btn} onClick={onCancel} disabled={busy}>Cancelar</button>
+        </div>
+      </aside>
     </form>
   );
 };

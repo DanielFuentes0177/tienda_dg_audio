@@ -264,6 +264,17 @@ export default function AdminProductsPage() {
 
   return (
     <div className={styles.page}>
+      {isFormOpen ? (
+        <div className={styles.header}>
+          <div>
+            <button type="button" className={styles.clear} onClick={handleCloseForm} style={{ marginBottom: "0.5rem", textDecoration: "none" }}>
+              ← Volver a productos
+            </button>
+            <h1 className={styles.title}>{editingProduct ? "Editar producto" : "Nuevo producto"}</h1>
+            {editingProduct && <p className={styles.subtitle}>{editingProduct.name}</p>}
+          </div>
+        </div>
+      ) : (
       <div className={styles.header}>
         <div>
           <h1 className={styles.title}>Productos</h1>
@@ -282,6 +293,7 @@ export default function AdminProductsPage() {
           </button>
         </div>
       </div>
+      )}
 
       {!isFormOpen && (
         <>
