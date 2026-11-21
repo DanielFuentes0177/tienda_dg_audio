@@ -3,53 +3,12 @@
 import React, { useState, useRef, useDeferredValue, useEffect } from "react";
 import { useAdminProducts } from "@/hooks/useAdminProducts";
 import { Product } from "@/types/product.types";
-import { Button } from "@/components/atoms/Button";
 import { ProductForm } from "@/components/organisms/ProductForm";
 import { ImportPreviewModal } from "@/components/organisms/ImportPreviewModal";
-import { Plus, Edit, Trash2, Eye, EyeOff, Upload, Download, Search, ChevronLeft, ChevronRight, ChevronDown, Check } from "lucide-react";
+import { Plus, Edit, Trash2, Eye, EyeOff, Upload, Download, Search, ChevronLeft, ChevronRight, ImageOff } from "lucide-react";
+import styles from "./products.module.css";
 import toast from "react-hot-toast";
 import Papa from "papaparse";
-
-const CustomAdminSelect = ({ value, options, onChange }: any) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-  
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setIsOpen(false);
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-  
-  return (
-    <div ref={ref} style={{ position: "relative", minWidth: "200px" }}>
-      <button 
-        onClick={() => setIsOpen(!isOpen)}
-        style={{ width: "100%", padding: "0.6rem 1rem", borderRadius: "8px", border: "1px solid var(--border-color)", backgroundColor: "white", fontSize: "0.9rem", color: "var(--text-primary)", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}
-      >
-        {options.find((o: any) => o.value === value)?.label}
-        <ChevronDown size={16} style={{ color: "#666", transform: isOpen ? "rotate(180deg)" : "none", transition: "transform 0.2s" }} />
-      </button>
-      {isOpen && (
-        <div style={{ position: "absolute", top: "100%", left: 0, width: "100%", marginTop: "0.25rem", backgroundColor: "white", border: "1px solid var(--border-color)", borderRadius: "8px", boxShadow: "0 4px 12px rgba(0,0,0,0.1)", zIndex: 50, padding: "0.25rem" }}>
-          {options.map((opt: any) => (
-            <button
-              key={opt.value}
-              onClick={() => { onChange(opt.value); setIsOpen(false); }}
-              style={{ width: "100%", padding: "0.5rem 0.75rem", textAlign: "left", background: value === opt.value ? "#f3f4f6" : "transparent", border: "none", borderRadius: "4px", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", transition: "background 0.1s" }}
-              onMouseEnter={(e) => e.currentTarget.style.background = "#f3f4f6"}
-              onMouseLeave={(e) => e.currentTarget.style.background = value === opt.value ? "#f3f4f6" : "transparent"}
-            >
-              <span style={{ fontSize: "0.85rem", color: value === opt.value ? "#111827" : "#4b5563", fontWeight: value === opt.value ? 600 : 400 }}>{opt.label}</span>
-              {value === opt.value && <Check size={14} style={{ color: "#111827" }} />}
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
 
 export default function AdminProductsPage() {
   const { products, isLoading, error, addProduct, updateProduct, toggleProductStatus, hardDeleteProduct } = useAdminProducts();
@@ -297,211 +256,158 @@ export default function AdminProductsPage() {
     currentPage * ITEMS_PER_PAGE
   );
 
+  const activeCount = products.filter((p) => p.isActive).length;
+  const withoutImageCount = products.filter((p) => !p.imageUrl).length;
+  const hasFilters = Boolean(searchTerm) || filterImage !== "all" || filterStatus !== "all";
+  const clearFilters = () => { setSearchTerm(""); setFilterImage("all"); setFilterStatus("all"); };
+  const applyStat = (status: typeof filterStatus, image: typeof filterImage) => { setFilterStatus(status); setFilterImage(image); };
+
   return (
-    <div className="section-light" style={{ paddingTop: "100px", paddingLeft: "2rem", paddingRight: "2rem", paddingBottom: "2rem", maxWidth: "1400px", margin: "0 auto" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "1.5rem", flexWrap: "wrap", marginBottom: "1.5rem" }}>
-        <div style={{ display: "flex", alignItems: "baseline", gap: "1rem", flexWrap: "wrap" }}>
-          <h1 className="section-title" style={{ margin: 0, fontSize: "2rem" }}>Gestión de Productos</h1>
-          {!isLoading && products.length > 0 && (
-            <button
-              type="button"
-              onClick={() => setFilterImage(filterImage === "without" ? "all" : "without")}
-              title="Filtrar productos sin imagen"
-              style={{ border: "1px solid var(--border-color)", background: "white", borderRadius: "999px", padding: "0.25rem 0.75rem", fontSize: "0.85rem", color: "var(--text-muted)", cursor: "pointer" }}
-            >
-              {products.length} productos · {products.filter((p) => !p.imageUrl).length} sin imagen
-            </button>
-          )}
+    <div className={styles.page}>
+      <div className={styles.header}>
+        <div>
+          <h1 className={styles.title}>Productos</h1>
+          <p className={styles.subtitle}>Administra el catálogo de la tienda: visibilidad, imágenes e importación.</p>
         </div>
-        
-        <div style={{ display: "flex", gap: "0.75rem", flexShrink: 0, justifyContent: "flex-end", alignItems: "center" }}>
-          <div style={{ display: "flex", gap: "0.75rem", flexWrap: "nowrap" }}>
-          <input 
-            type="file" 
-            accept=".csv" 
-            style={{ display: 'none' }} 
-            ref={fileInputRef} 
-            onChange={handleFileUpload} 
-          />
-          <Button 
-            onClick={() => fileInputRef.current?.click()} 
-            disabled={isUploading}
-            style={{ display: "flex", alignItems: "center", gap: "0.5rem", whiteSpace: "nowrap", backgroundColor: "var(--bg-secondary)", color: "var(--text-primary)", border: "1px solid var(--border-color)" }}
-          >
-            <Upload size={20} />
-            {isUploading ? "Subiendo..." : "Importar CSV"}
-          </Button>
-          <a
-            href="/api/products/export"
-            download
-            className="btn"
-            style={{ display: "flex", alignItems: "center", gap: "0.5rem", whiteSpace: "nowrap", backgroundColor: "var(--bg-secondary)", color: "var(--text-primary)", border: "1px solid var(--border-color)", textDecoration: "none" }}
-          >
-            <Download size={20} />
-            Descargar Excel
+        <div className={styles.actions}>
+          <input type="file" accept=".csv" style={{ display: "none" }} ref={fileInputRef} onChange={handleFileUpload} />
+          <button className={`${styles.btn} ${styles.btnGhost}`} onClick={() => fileInputRef.current?.click()} disabled={isUploading}>
+            <Upload size={18} /> {isUploading ? "Subiendo..." : "Importar CSV"}
+          </button>
+          <a className={`${styles.btn} ${styles.btnGhost}`} href="/api/products/export" download>
+            <Download size={18} /> Descargar Excel
           </a>
-          <Button onClick={() => handleOpenForm()} style={{ display: "flex", alignItems: "center", gap: "0.5rem", whiteSpace: "nowrap" }} disabled={isUploading}>
-            <Plus size={20} />
-            Nuevo Producto
-          </Button>
-        </div>
+          <button className={`${styles.btn} ${styles.btnPrimary}`} onClick={() => handleOpenForm()} disabled={isUploading}>
+            <Plus size={18} /> Nuevo producto
+          </button>
         </div>
       </div>
 
       {!isFormOpen && (
-        <div style={{ display: "flex", gap: "1rem", marginBottom: "1.5rem", flexWrap: "wrap", alignItems: "center" }}>
-          <div style={{ position: "relative", minWidth: "260px", flex: "1 1 280px", maxWidth: "380px" }}>
-            <input
-              type="text"
-              placeholder="Buscar productos..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              style={{
-                width: "100%",
-                padding: "0.5rem 1rem 0.5rem 2.5rem",
-                borderRadius: "8px",
-                border: "1px solid var(--border-color)",
-                boxSizing: "border-box",
-                outline: "none"
-              }}
-            />
-            <Search size={18} style={{ position: "absolute", left: "10px", top: "50%", transform: "translateY(-50%)", color: "var(--text-muted)" }} />
+        <>
+          <div className={styles.stats}>
+            <button type="button" className={`${styles.stat} ${filterStatus === "all" && filterImage === "all" ? styles.statActive : ""}`} onClick={() => applyStat("all", "all")}>
+              <span className={styles.statValue}>{products.length}</span><span className={styles.statLabel}>Productos en total</span>
+            </button>
+            <button type="button" className={`${styles.stat} ${filterStatus === "active" && filterImage === "all" ? styles.statActive : ""}`} onClick={() => applyStat("active", "all")}>
+              <span className={styles.statValue}>{activeCount}</span><span className={styles.statLabel}>Visibles en la tienda</span>
+            </button>
+            <button type="button" className={`${styles.stat} ${filterStatus === "inactive" && filterImage === "all" ? styles.statActive : ""}`} onClick={() => applyStat("inactive", "all")}>
+              <span className={styles.statValue}>{products.length - activeCount}</span><span className={styles.statLabel}>Ocultos</span>
+            </button>
+            <button type="button" className={`${styles.stat} ${styles.statWarn} ${filterImage === "without" && filterStatus === "all" ? styles.statActive : ""}`} onClick={() => applyStat("all", "without")}>
+              <span className={styles.statValue}>{withoutImageCount}</span><span className={styles.statLabel}>Sin imagen</span>
+            </button>
           </div>
-          <CustomAdminSelect 
-            value={filterImage} 
-            onChange={setFilterImage}
-            options={[
-              { value: "all", label: "Todas las imágenes" },
-              { value: "with", label: "Con Imagen" },
-              { value: "without", label: "Sin Imagen" }
-            ]}
-          />
-          <CustomAdminSelect 
-            value={filterStatus} 
-            onChange={setFilterStatus}
-            options={[
-              { value: "all", label: "Todos los estados" },
-              { value: "active", label: "Activos" },
-              { value: "inactive", label: "Inactivos" }
-            ]}
-          />
-        </div>
+
+          <div className={styles.toolbar}>
+            <div className={styles.search}>
+              <Search size={18} />
+              <input className={styles.input} type="search" placeholder="Buscar por nombre, modelo o descripción" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} aria-label="Buscar productos" />
+            </div>
+            <select className={styles.select} value={filterStatus} onChange={(e) => setFilterStatus(e.target.value as typeof filterStatus)} aria-label="Filtrar por estado">
+              <option value="all">Todos los estados</option>
+              <option value="active">Visibles</option>
+              <option value="inactive">Ocultos</option>
+            </select>
+            <select className={styles.select} value={filterImage} onChange={(e) => setFilterImage(e.target.value as typeof filterImage)} aria-label="Filtrar por imagen">
+              <option value="all">Con o sin imagen</option>
+              <option value="with">Con imagen</option>
+              <option value="without">Sin imagen</option>
+            </select>
+            {hasFilters && <button type="button" className={styles.clear} onClick={clearFilters}>Limpiar filtros</button>}
+            <span className={styles.count}>{filteredProducts.length} de {products.length} productos</span>
+          </div>
+        </>
       )}
 
-      {error && (
-        <div style={{ padding: "1rem", backgroundColor: "#ffebee", color: "#c62828", borderRadius: "8px", marginBottom: "2rem" }}>
-          Error: {error}
-        </div>
-      )}
+      {error && <div className={styles.error}>Error: {error}</div>}
 
       {isFormOpen ? (
         <div style={{ marginBottom: "2rem" }}>
-          <ProductForm 
-            initialData={editingProduct || undefined} 
-            onSubmit={handleSubmit} 
-            onCancel={handleCloseForm} 
-          />
+          <ProductForm initialData={editingProduct || undefined} onSubmit={handleSubmit} onCancel={handleCloseForm} />
         </div>
       ) : (
-        <div style={{ backgroundColor: "var(--bg-primary)", borderRadius: "12px", overflow: "hidden", boxShadow: "0 4px 6px rgba(0,0,0,0.05)" }}>
-          <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left" }}>
-            <thead style={{ backgroundColor: "var(--bg-secondary)", borderBottom: "1px solid #eee" }}>
-              <tr>
-                <th style={{ padding: "1rem", width: "60px" }}>Img</th>
-                <th style={{ padding: "1rem" }}>Producto</th>
-                <th style={{ padding: "1rem" }}>Estado</th>
-                <th style={{ padding: "1rem", textAlign: "right" }}>Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              {paginatedProducts.map((product) => (
-                <tr key={product.id} style={{ borderBottom: "1px solid #eee" }}>
-                  <td style={{ padding: "1rem" }}>
-                    <div style={{ width: "40px", height: "40px", borderRadius: "8px", overflow: "hidden", backgroundColor: "#f3f4f6", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                      {product.imageUrl ? (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img src={product.imageUrl} alt={product.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                      ) : (
-                        <span style={{ fontSize: "0.6rem", color: "#9ca3af" }}>N/A</span>
-                      )}
-                    </div>
-                  </td>
-                  <td style={{ padding: "1rem" }}>
-                    <div style={{ fontWeight: 600, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }} title={product.name}>{product.name}</div>
-                    <div style={{ fontSize: "0.875rem", color: "var(--text-muted)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", maxWidth: "560px" }}>
-                      {product.description ? String(product.description).replace(/\s+/g, " ") : ""}
-                    </div>
-                  </td>
-                  <td style={{ padding: "1rem" }}>
-                    {product.isActive ? (
-                      <span style={{ backgroundColor: "#e8f5e9", color: "#2e7d32", padding: "0.25rem 0.5rem", borderRadius: "4px", fontSize: "0.875rem", fontWeight: 600 }}>
-                        Activo
-                      </span>
-                    ) : (
-                      <span style={{ backgroundColor: "#ffebee", color: "#c62828", padding: "0.25rem 0.5rem", borderRadius: "4px", fontSize: "0.875rem", fontWeight: 600 }}>
-                        Inactivo
-                      </span>
-                    )}
-                  </td>
-                  <td style={{ padding: "1rem" }}>
-                    <div style={{ display: "flex", gap: "0.75rem", justifyContent: "flex-end", alignItems: "center", flexWrap: "nowrap" }}>
-                      <button 
-                        onClick={() => handleOpenForm(product)}
-                        style={{ border: "1px solid var(--border-color)", borderRadius: "8px", width: "34px", height: "34px", display: "inline-flex", alignItems: "center", justifyContent: "center", cursor: "pointer", background: "white", padding: 0, color: "var(--color-accent)" }}
-                        title="Editar" aria-label={`Editar ${product.name}`}
-                      >
-                        <Edit size={18} />
-                      </button>
-                      <button 
-                        onClick={() => handleToggleStatus(product.id, product.isActive)}
-                        style={{ border: "1px solid var(--border-color)", borderRadius: "8px", width: "34px", height: "34px", display: "inline-flex", alignItems: "center", justifyContent: "center", cursor: "pointer", background: "white", padding: 0, color: product.isActive ? "#666" : "#2e7d32" }}
-                        title={product.isActive ? "Deshabilitar (ocultar de la tienda)" : "Habilitar (mostrar en la tienda)"} aria-label={product.isActive ? `Deshabilitar ${product.name}` : `Habilitar ${product.name}`}
-                      >
-                        {product.isActive ? <EyeOff size={18} /> : <Eye size={18} />}
-                      </button>
-                      <button 
-                        onClick={() => confirmDelete(product.id, product.name)}
-                        style={{ border: "1px solid var(--border-color)", borderRadius: "8px", width: "34px", height: "34px", display: "inline-flex", alignItems: "center", justifyContent: "center", cursor: "pointer", padding: 0, color: "#c62828", marginLeft: "0.75rem", background: "#fff5f5", borderColor: "#f3c7c7" }}
-                        title="Eliminar permanentemente" aria-label={`Eliminar ${product.name}`}
-                      >
-                        <Trash2 size={18} />
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-              {filteredProducts.length === 0 && (
+        <div className={styles.card}>
+          <div className={styles.scroll}>
+            <table className={styles.table}>
+              <thead>
                 <tr>
-                  <td colSpan={4} style={{ padding: "2rem", textAlign: "center", color: "var(--text-muted)" }}>
-                    No hay productos registrados. Crea uno nuevo.
-                  </td>
+                  <th>Producto</th>
+                  <th style={{ width: "130px" }}>Estado</th>
+                  <th className={styles.thCenter} style={{ width: "230px" }}>Acciones</th>
                 </tr>
-              )}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {paginatedProducts.map((product) => (
+                  <tr key={product.id}>
+                    <td>
+                      <div className={styles.product}>
+                        <div className={styles.thumb}>
+                          {product.imageUrl ? (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img src={product.imageUrl} alt="" loading="lazy" />
+                          ) : (
+                            <ImageOff size={20} aria-label="Sin imagen" />
+                          )}
+                        </div>
+                        <div className={styles.info}>
+                          <div className={styles.name} title={product.name}>{product.name}</div>
+                          <div className={styles.meta}>
+                            {product.brand && <span className={styles.chip}>{product.brand}</span>}
+                            {product.model && <span className={styles.chip}>{product.model}</span>}
+                            {product.category && <span className={styles.chip}>{product.category}</span>}
+                            {!product.imageUrl && <span className={`${styles.chip} ${styles.noImg}`}>Sin imagen</span>}
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <span className={`${styles.badge} ${product.isActive ? styles.on : styles.off}`}>
+                        {product.isActive ? "Visible" : "Oculto"}
+                      </span>
+                    </td>
+                    <td>
+                      <div className={styles.rowActions}>
+                        <button className={styles.rowBtn} onClick={() => handleOpenForm(product)} aria-label={`Editar ${product.name}`}>
+                          <Edit size={15} /> Editar
+                        </button>
+                        <button
+                          className={`${styles.rowBtn} ${styles.iconBtn}`}
+                          onClick={() => handleToggleStatus(product.id, product.isActive)}
+                          title={product.isActive ? "Ocultar de la tienda" : "Mostrar en la tienda"}
+                          aria-label={product.isActive ? `Ocultar ${product.name}` : `Mostrar ${product.name}`}
+                        >
+                          {product.isActive ? <EyeOff size={16} /> : <Eye size={16} />}
+                        </button>
+                        <button
+                          className={`${styles.rowBtn} ${styles.iconBtn} ${styles.danger}`}
+                          onClick={() => confirmDelete(product.id, product.name)}
+                          title="Eliminar permanentemente"
+                          aria-label={`Eliminar ${product.name}`}
+                        >
+                          <Trash2 size={16} />
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          {filteredProducts.length === 0 && (
+            <div className={styles.empty}>
+              {products.length === 0 ? "Aún no hay productos. Crea el primero con “Nuevo producto”." : "Ningún producto coincide con los filtros."}
+              {hasFilters && <div style={{ marginTop: "0.5rem" }}><button type="button" className={styles.clear} onClick={clearFilters}>Limpiar filtros</button></div>}
+            </div>
+          )}
           {totalPages > 1 && (
-            <div style={{ padding: "1rem", display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid #eee", backgroundColor: "white" }}>
-              <div style={{ fontSize: "0.875rem", color: "var(--text-muted)" }}>
-                Mostrando {(currentPage - 1) * ITEMS_PER_PAGE + 1} a {Math.min(currentPage * ITEMS_PER_PAGE, filteredProducts.length)} de {filteredProducts.length} productos
-              </div>
-              <div style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
-                <button
-                  onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-                  disabled={currentPage === 1}
-                  style={{ padding: "0.5rem", borderRadius: "6px", border: "1px solid #ddd", background: currentPage === 1 ? "#f5f5f5" : "white", cursor: currentPage === 1 ? "not-allowed" : "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}
-                >
-                  <ChevronLeft size={18} />
-                </button>
-                <span style={{ fontSize: "0.875rem", fontWeight: 500, margin: "0 0.5rem" }}>
-                  Página {currentPage} de {totalPages}
-                </span>
-                <button
-                  onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
-                  disabled={currentPage === totalPages}
-                  style={{ padding: "0.5rem", borderRadius: "6px", border: "1px solid #ddd", background: currentPage === totalPages ? "#f5f5f5" : "white", cursor: currentPage === totalPages ? "not-allowed" : "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}
-                >
-                  <ChevronRight size={18} />
-                </button>
+            <div className={styles.pager}>
+              <span>Mostrando {(currentPage - 1) * ITEMS_PER_PAGE + 1}–{Math.min(currentPage * ITEMS_PER_PAGE, filteredProducts.length)} de {filteredProducts.length}</span>
+              <div className={styles.pagerBtns}>
+                <button className={`${styles.rowBtn} ${styles.iconBtn}`} onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))} disabled={currentPage === 1} aria-label="Página anterior"><ChevronLeft size={16} /></button>
+                <span>Página {currentPage} de {totalPages}</span>
+                <button className={`${styles.rowBtn} ${styles.iconBtn}`} onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))} disabled={currentPage === totalPages} aria-label="Página siguiente"><ChevronRight size={16} /></button>
               </div>
             </div>
           )}
