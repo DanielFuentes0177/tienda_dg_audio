@@ -1,0 +1,27 @@
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.gold {
+  background: rgba(212, 164, 55, 0.15);
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.dark {
+  background: var(--bg-dark);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--color-text-white);
+}
+
+.light {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: var(--text-main);
+}

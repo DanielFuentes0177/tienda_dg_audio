@@ -17,10 +17,10 @@ function CatalogLoader() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '400px', gap: '1.5rem' }}>
       <div style={{ position: 'relative', width: '60px', height: '60px' }}>
-        <div style={{ position: 'absolute', inset: 0, border: '2px solid rgba(212, 164, 55, 0.1)', borderTopColor: '#d4a437', borderRadius: '50%', animation: 'spin 1s linear infinite' }} />
+        <div style={{ position: 'absolute', inset: 0, border: '2px solid rgba(212, 164, 55, 0.1)', borderTopColor: 'var(--color-primary)', borderRadius: '50%', animation: 'spin 1s linear infinite' }} />
         <div style={{ position: 'absolute', inset: '15px', backgroundColor: 'rgba(212, 164, 55, 0.2)', borderRadius: '50%', animation: 'pulse 1.5s ease-in-out infinite', boxShadow: '0 0 15px rgba(212, 164, 55, 0.3)' }} />
       </div>
-      <p style={{ color: '#d4a437', fontWeight: 600, letterSpacing: '0.05em' }}>Cargando inventario...</p>
+      <p style={{ color: 'var(--color-primary)', fontWeight: 600, letterSpacing: '0.05em' }}>Cargando inventario...</p>
       <style>{`
         @keyframes spin { 100% { transform: rotate(360deg); } }
         @keyframes pulse { 0%, 100% { transform: scale(0.8); opacity: 0.5; } 50% { transform: scale(1.1); opacity: 1; } }
@@ -117,11 +117,11 @@ export default function TiendaPage() {
           <div 
             style={{ 
               display: 'inline-block', 
-              border: '1px solid #d4a437', 
+              border: '1px solid var(--color-primary)', 
               padding: '0.45rem 1.25rem', 
               borderRadius: '99px', 
               marginBottom: '1.75rem', 
-              color: '#d4a437', 
+              color: 'var(--color-primary)', 
               fontSize: '0.8rem', 
               fontWeight: 600, 
               letterSpacing: '0.15em', 
@@ -139,13 +139,13 @@ export default function TiendaPage() {
               marginBottom: '1.5rem', 
               fontWeight: 700, 
               letterSpacing: '-0.02em',
-              color: '#ffffff',
+              color: 'var(--text-inverse)',
               fontFamily: 'var(--font-heading)'
             }}
           >
             Equipos y componentes que <br />
-            <span style={{ color: '#d4a437' }}>elevan la experiencia</span> <br />
-            <span style={{ color: '#d4a437' }}>acústica de tu negocio.</span>
+            <span style={{ color: 'var(--color-primary)' }}>elevan la experiencia</span> <br />
+            <span style={{ color: 'var(--color-primary)' }}>acústica de tu negocio.</span>
           </h1>
           
           <p 
@@ -184,7 +184,7 @@ export default function TiendaPage() {
                   backgroundColor: 'rgba(255, 255, 255, 0.05)',
                   backdropFilter: 'blur(10px)',
                   border: '1px solid rgba(255, 255, 255, 0.1)',
-                  color: '#ffffff',
+                  color: 'var(--text-inverse)',
                   padding: '0.65rem 1.35rem',
                   borderRadius: '99px',
                   fontSize: '0.9rem',
@@ -220,7 +220,7 @@ export default function TiendaPage() {
               href="#catalogo-store"
               style={{
                 border: '1px solid rgba(255, 255, 255, 0.3)',
-                color: '#ffffff',
+                color: 'var(--text-inverse)',
                 backgroundColor: 'rgba(255,255,255,0.03)',
                 padding: '0.85rem 2rem',
                 borderRadius: '8px',
@@ -238,7 +238,7 @@ export default function TiendaPage() {
       </div>
 
       {/* Main Catalog Body */}
-      <div id="catalogo-store" className="section-light-alt" style={{ minHeight: '100vh', paddingBottom: '4rem', paddingTop: '3rem', backgroundColor: '#f5f5f7' }}>
+      <div id="catalogo-store" className="section-light-alt" style={{ minHeight: '100vh', paddingBottom: '4rem', paddingTop: '3rem', backgroundColor: 'var(--bg-secondary)' }}>
         <Suspense fallback={<CatalogLoader />}>
           <CatalogDataFetcher />
         </Suspense>

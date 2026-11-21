@@ -81,7 +81,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
             <h2 className={styles.emptyTitle}>{currentCategory ? "No hay artículos en esta categoría" : "Próximamente"}</h2>
             <p className={styles.emptyText}>Estamos preparando contenido increíble. ¡Vuelve pronto!</p>
             {currentCategory && (
-              <Link href="/blog" style={{ display: "inline-block", marginTop: "1.5rem", color: "#d4a437", fontWeight: 700, textDecoration: "none" }}>
+              <Link href="/blog" style={{ display: "inline-block", marginTop: "1.5rem", color: "var(--color-primary)", fontWeight: 700, textDecoration: "none" }}>
                 Ver todos los artículos
               </Link>
             )}

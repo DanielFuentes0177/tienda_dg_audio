@@ -89,8 +89,8 @@ export const StoreTemplate: React.FC<StoreTemplateProps> = ({
   return (
     <div className={styles.container}>
       <aside className={styles.sidebar}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem', paddingBottom: '1rem', borderBottom: '2px solid #e5e7eb' }}>
-          <SlidersHorizontal size={20} color="#d4a437" />
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem', paddingBottom: '1rem', borderBottom: '2px solid var(--border-soft)' }}>
+          <SlidersHorizontal size={20} color="var(--color-primary)" />
           <h2 style={{ fontSize: '1.25rem', fontWeight: 700, margin: 0 }}>Filtros</h2>
         </div>
 
@@ -107,13 +107,13 @@ export const StoreTemplate: React.FC<StoreTemplateProps> = ({
                 width: '100%',
                 padding: '0.75rem 1rem 0.75rem 2.5rem',
                 borderRadius: '8px',
-                border: '1px solid #e5e7eb',
+                border: '1px solid var(--border-soft)',
                 fontSize: '0.875rem',
                 outline: 'none',
                 boxSizing: 'border-box'
               }}
             />
-            <Search size={18} color="#9ca3af" style={{ position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)' }} />
+            <Search size={18} color="var(--text-subtle)" style={{ position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)' }} />
           </div>
         </div>
 
@@ -223,11 +223,11 @@ export const StoreTemplate: React.FC<StoreTemplateProps> = ({
       <div className={styles.grid}>
         <div className={styles.header}>
           <div className={styles.resultsCount}>
-            <span style={{ fontWeight: 700, color: '#111827' }}>{totalCount}</span> productos encontrados
+            <span style={{ fontWeight: 700, color: 'var(--text-main)' }}>{totalCount}</span> productos encontrados
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-            <label style={{ fontSize: '0.875rem', color: '#6b7280', fontWeight: 500 }}>Ordenar por:</label>
+            <label style={{ fontSize: '0.875rem', color: 'var(--text-muted)', fontWeight: 500 }}>Ordenar por:</label>
             <select 
               value={currentSort}
               onChange={(e) => setCurrentSort(e.target.value)}
@@ -290,11 +290,11 @@ export const StoreTemplate: React.FC<StoreTemplateProps> = ({
             animate={{ opacity: 1, scale: 1 }}
             className={styles.emptyState}
           >
-            <div style={{ backgroundColor: '#f3f4f6', padding: '1.5rem', borderRadius: '50%', marginBottom: '1.5rem' }}>
-              <Search size={40} color="#9ca3af" />
+            <div style={{ backgroundColor: 'var(--bg-secondary)', padding: '1.5rem', borderRadius: '50%', marginBottom: '1.5rem' }}>
+              <Search size={40} color="var(--text-subtle)" />
             </div>
-            <h3 style={{ fontSize: '1.5rem', fontWeight: 600, color: '#111827', marginBottom: '0.5rem' }}>No se encontraron productos</h3>
-            <p style={{ color: '#6b7280', fontSize: '1.1rem', maxWidth: '400px' }}>
+            <h3 style={{ fontSize: '1.5rem', fontWeight: 600, color: 'var(--text-main)', marginBottom: '0.5rem' }}>No se encontraron productos</h3>
+            <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', maxWidth: '400px' }}>
               Intenta cambiar o quitar algunos filtros de búsqueda para ver más resultados.
             </p>
             <button 
@@ -308,16 +308,16 @@ export const StoreTemplate: React.FC<StoreTemplateProps> = ({
               style={{
                 marginTop: '2rem',
                 padding: '0.75rem 1.5rem',
-                backgroundColor: '#111827',
-                color: 'white',
+                backgroundColor: 'var(--text-main)',
+                color: 'var(--text-inverse)',
                 border: 'none',
                 borderRadius: '8px',
                 fontWeight: 500,
                 cursor: 'pointer',
                 transition: 'background 0.2s'
               }}
-              onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#374151'}
-              onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#111827'}
+              onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'var(--text-muted)'}
+              onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'var(--text-main)'}
             >
               Limpiar todos los filtros
             </button>

@@ -98,11 +98,11 @@ export default function CheckoutPage() {
       <div className={styles.pageWrapper}>
         <div className={styles.container}>
           <div className={styles.emptyState}>
-            <div style={{ backgroundColor: "#ecfdf5", padding: "1.5rem", borderRadius: "50%", display: "inline-block", marginBottom: "1.5rem" }}>
-              <ShieldCheck size={64} strokeWidth={1.5} color="#10b981" />
+            <div style={{ backgroundColor: "var(--color-success-bg)", padding: "1.5rem", borderRadius: "50%", display: "inline-block", marginBottom: "1.5rem" }}>
+              <ShieldCheck size={64} strokeWidth={1.5} color="var(--color-success)" />
             </div>
-            <h2 style={{ color: "#111827", fontSize: "2rem", marginBottom: "1rem" }}>¡Solicitud Enviada con Éxito!</h2>
-            <p style={{ fontSize: "1.1rem", marginBottom: "2rem", color: "#4b5563" }}>
+            <h2 style={{ color: "var(--text-main)", fontSize: "2rem", marginBottom: "1rem" }}>¡Solicitud Enviada con Éxito!</h2>
+            <p style={{ fontSize: "1.1rem", marginBottom: "2rem", color: "var(--text-muted)" }}>
               Hemos registrado tu solicitud. Un asesor la revisará y te contactará a la brevedad.
             </p>
             <Link href="/tienda" className={styles.backToStoreBtn}>
@@ -119,7 +119,7 @@ export default function CheckoutPage() {
       <div className={styles.pageWrapper}>
         <div className={styles.container}>
           <div className={styles.emptyState}>
-            <ShoppingBag size={80} strokeWidth={1.5} color="#e5e7eb" style={{ margin: '0 auto 1.5rem' }} />
+            <ShoppingBag size={80} strokeWidth={1.5} color="var(--border-soft)" style={{ margin: '0 auto 1.5rem' }} />
             <h2>No tienes artículos en tu lista</h2>
             <p>Agrega equipos desde el catálogo para solicitar una cotización formal.</p>
             <Link href="/tienda" className={styles.backToStoreBtn}>
@@ -213,7 +213,7 @@ export default function CheckoutPage() {
               </button>
               
               <p className={styles.infoText}>
-                <ShieldCheck size={16} color="#10b981" />
+                <ShieldCheck size={16} color="var(--color-success)" />
                 Tus datos están seguros y serán usados únicamente para contactarte.
               </p>
             </form>
@@ -239,7 +239,7 @@ export default function CheckoutPage() {
                         style={{ objectFit: "cover", width: '100%', height: '100%' }}
                       />
                     ) : (
-                      <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9ca3af' }}>
+                      <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-subtle)' }}>
                         <ShoppingBag size={20} />
                       </div>
                     )}

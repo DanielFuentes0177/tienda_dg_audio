@@ -7,10 +7,10 @@
   padding: 1.25rem 2rem;
   font-size: 1.125rem;
   font-weight: 600;
-  color: #fff;
-  background: linear-gradient(135deg, #d4a437 0%, #b38520 100%);
+  color: var(--text-inverse);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
   border: none;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(212, 164, 55, 0.3);
@@ -19,7 +19,7 @@
 .addToCartBtn:hover:not(:disabled) {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(212, 164, 55, 0.4);
-  background: linear-gradient(135deg, #e5b548 0%, #c49631 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
 }
 
 .addToCartBtn:active:not(:disabled) {
@@ -27,7 +27,7 @@
 }
 
 .addToCartBtn:disabled {
-  background: #4b5563;
+  background: var(--text-muted);
   box-shadow: none;
   cursor: not-allowed;
   opacity: 0.7;

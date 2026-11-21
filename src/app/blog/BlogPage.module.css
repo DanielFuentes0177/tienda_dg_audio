@@ -1,5 +1,5 @@
 .pageWrapper {
-  background-color: #f8f9fa;
+  background-color: var(--bg-secondary);
   min-height: 100vh;
   padding-bottom: 6rem;
 }
@@ -28,7 +28,7 @@
   position: relative;
   z-index: 2;
   text-align: center;
-  color: white;
+  color: var(--text-inverse);
   max-width: 800px;
   animation: fadeUp 1s ease-out forwards;
 }
@@ -48,7 +48,7 @@
 }
 
 .titleAccent {
-  color: #d4a437; /* Gold */
+  color: var(--color-primary); /* Gold */
 }
 
 .subtitle {
@@ -89,7 +89,7 @@
 
 .categoryChip {
   padding: 0.6rem 1.25rem;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
@@ -98,20 +98,20 @@
 }
 
 .categoryChipActive {
-  background: #111827;
-  color: white;
-  border-color: #111827;
+  background: var(--text-main);
+  color: var(--text-inverse);
+  border-color: var(--text-main);
 }
 
 .categoryChipInactive {
   background: transparent;
-  color: #6b7280;
+  color: var(--text-muted);
   border-color: rgba(0,0,0,0.1);
 }
 
 .categoryChipInactive:hover {
-  border-color: #111827;
-  color: #111827;
+  border-color: var(--text-main);
+  color: var(--text-main);
 }
 
 .sortWrapper {
@@ -123,7 +123,7 @@
 .sortLabel {
   font-size: 0.75rem;
   font-weight: 700;
-  color: #9ca3af;
+  color: var(--text-subtle);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -136,12 +136,12 @@
 .customDropdownButton {
   width: 100%;
   padding: 0.75rem 1rem;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   border: 1px solid rgba(0,0,0,0.1);
-  background-color: white;
+  background-color: var(--bg-primary);
   font-size: 0.9rem;
   font-weight: 600;
-  color: #111827;
+  color: var(--text-main);
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -155,7 +155,7 @@
 }
 
 .dropdownIcon {
-  color: #6b7280;
+  color: var(--text-muted);
   transition: transform 0.2s ease;
 }
 
@@ -169,8 +169,8 @@
   right: 0;
   width: 100%;
   min-width: 200px;
-  background: white;
-  border-radius: 8px;
+  background: var(--bg-primary);
+  border-radius: var(--radius-sm);
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0,0,0,0.08);
   padding: 0.5rem;
@@ -192,7 +192,7 @@
   background: transparent;
   font-size: 0.85rem;
   font-weight: 500;
-  color: #4b5563;
+  color: var(--text-muted);
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -202,22 +202,22 @@
 
 .customDropdownItem:hover {
   background: rgba(0,0,0,0.04);
-  color: #111827;
+  color: var(--text-main);
 }
 
 .customDropdownItemActive {
   background: rgba(212, 164, 55, 0.1);
-  color: #d4a437; /* Gold */
+  color: var(--color-primary); /* Gold */
   font-weight: 600;
 }
 
 .customDropdownItemActive:hover {
   background: rgba(212, 164, 55, 0.15);
-  color: #d4a437;
+  color: var(--color-primary);
 }
 
 .checkIcon {
-  color: #d4a437;
+  color: var(--color-primary);
 }
 
 .grid {
@@ -229,7 +229,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  background: white;
+  background: var(--bg-primary);
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
@@ -249,7 +249,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 16/10;
-  background-color: #f3f4f6;
+  background-color: var(--bg-secondary);
   overflow: hidden;
 }
 
@@ -267,9 +267,9 @@
   top: 1.25rem;
   left: 1.25rem;
   background: rgba(0,0,0,0.7);
-  color: white;
+  color: var(--text-inverse);
   padding: 0.4rem 1rem;
-  border-radius: 20px;
+  border-radius: var(--radius-lg);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -288,7 +288,7 @@
 
 .date {
   font-size: 0.85rem;
-  color: #d4a437; /* DG Audio Gold */
+  color: var(--color-primary); /* DG Audio Gold */
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -298,18 +298,18 @@
 .cardTitle {
   font-size: 1.5rem;
   font-weight: 800;
-  color: #111827;
+  color: var(--text-main);
   margin: 0 0 1rem 0;
   line-height: 1.35;
   transition: color 0.2s;
 }
 
 .card:hover .cardTitle {
-  color: #d4a437;
+  color: var(--color-primary);
 }
 
 .excerpt {
-  color: #4b5563;
+  color: var(--text-muted);
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 2rem;
@@ -324,7 +324,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #111827;
+  color: var(--text-main);
   font-weight: 700;
   font-size: 0.95rem;
   transition: all 0.3s;
@@ -334,15 +334,15 @@
 }
 
 .card:hover .readMore {
-  color: #d4a437;
-  border-bottom-color: #d4a437;
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
   gap: 0.75rem; /* Slide arrow effect */
 }
 
 .emptyState {
   text-align: center;
   padding: 8rem 2rem;
-  background: white;
+  background: var(--bg-primary);
   border-radius: 24px;
   grid-column: 1 / -1;
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
@@ -351,12 +351,12 @@
 .emptyTitle {
   font-size: 1.8rem;
   font-weight: 800;
-  color: #111827;
+  color: var(--text-main);
   margin-bottom: 1rem;
 }
 
 .emptyText {
-  color: #6b7280;
+  color: var(--text-muted);
   font-size: 1.1rem;
 }
 

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 
 :root {
   /* Fondo principal y secundario (Light Mode por defecto) */
@@ -21,6 +21,49 @@
   /* Fuentes */
   --font-body: 'Inter', sans-serif;
   --font-heading: 'Outfit', sans-serif;
+
+  /* Tokens compartidos con el sitio HTML (misma paleta y escala) */
+  --color-primary: #d4a437;
+  --color-primary-hover: #a97b17;
+  --color-silver: #c9ccd3;
+  --color-text-light: #e7e7ea;
+  --color-text-white: #f5f5f7;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-hover: #128c7e;
+
+  /* Neutros y semánticos (usados por tienda, blog y carrito) */
+  --text-subtle: #8b93a1;
+  --border-soft: rgba(5, 5, 5, 0.08);
+  --color-gold-tint: rgba(212, 164, 55, 0.12);
+  --color-danger: #ef4444;
+  --color-danger-bg: #fee2e2;
+  --color-danger-border: #fca5a5;
+  --color-danger-strong: #991b1b;
+  --color-success: #16a34a;
+  --color-success-bg: #f0fdf4;
+
+  /* Espaciado */
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+  --space-xxl: 6rem;
+
+  /* Sombras */
+  --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-glow: 0 0 20px rgba(197, 160, 33, 0.4);
+
+  /* Radios */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  /* Transiciones */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {

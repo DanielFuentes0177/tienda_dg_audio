@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { Navbar } from "@/components/organisms/Navbar";
-import { Footer } from "@/components/organisms/Footer";
+import { SiteNavbar } from "@/components/containers/SiteNavbar";
+import { SiteFooter } from "@/components/containers/SiteFooter";
+import { ConsentManager } from "@/components/containers/ConsentManager";
+import { Analytics } from "@/components/containers/Analytics";
 import { Providers } from "@/components/providers";
 import { CartProvider } from "@/context/CartContext";
 import { CartDrawer } from "@/components/organisms/CartDrawer";
@@ -43,15 +45,17 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body>
+        <Analytics />
         <Providers>
           <CartProvider>
-            <Navbar />
+            <SiteNavbar />
             <CartDrawer />
             <Toaster position="bottom-right" />
             <main style={{ minHeight: "calc(100vh - 300px)" }}>
               {children}
             </main>
-            <Footer />
+            <SiteFooter />
+            <ConsentManager />
           </CartProvider>
         </Providers>
       </body>

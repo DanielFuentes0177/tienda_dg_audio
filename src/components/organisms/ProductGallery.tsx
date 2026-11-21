@@ -35,11 +35,11 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({ images, productN
               borderRadius: '8px', 
               overflow: 'hidden', 
               cursor: 'pointer',
-              border: activeIndex === index ? '2px solid #111827' : '1px solid #e5e7eb',
+              border: activeIndex === index ? '2px solid var(--text-main)' : '1px solid var(--border-soft)',
               opacity: activeIndex === index ? 1 : 0.6,
               transition: 'all 0.2s ease',
               flexShrink: 0,
-              backgroundColor: '#f3f4f6'
+              backgroundColor: 'var(--bg-secondary)'
             }}
           >
             {images && images.length > 0 ? (
@@ -51,7 +51,7 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({ images, productN
                 sizes="80px"
               />
             ) : (
-              <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9ca3af' }}>
+              <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-subtle)' }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
                   <circle cx="8.5" cy="8.5" r="1.5"></circle>
@@ -64,7 +64,7 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({ images, productN
       </div>
 
       {/* Main Image */}
-      <div style={{ flex: 1, backgroundColor: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.05)', position: 'relative', aspectRatio: '1/1' }}>
+      <div style={{ flex: 1, backgroundColor: 'var(--bg-primary)', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.05)', position: 'relative', aspectRatio: '1/1' }}>
         {images && images.length > 0 ? (
           <Image 
             src={displayImages[activeIndex]} 
@@ -75,7 +75,7 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({ images, productN
             priority
           />
         ) : (
-          <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f3f4f6', color: '#9ca3af' }}>
+          <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--bg-secondary)', color: 'var(--text-subtle)' }}>
             <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}>
               <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
               <circle cx="8.5" cy="8.5" r="1.5"></circle>

@@ -98,7 +98,7 @@
 .itemImage {
   width: 80px;
   height: 80px;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   object-fit: cover;
   background-color: var(--bg-secondary);
 }
@@ -164,7 +164,7 @@
 .removeBtn {
   background: none;
   border: none;
-  color: #ff4d4f;
+  color: var(--color-danger);
   font-size: 0.85rem;
   cursor: pointer;
   text-decoration: underline;
@@ -191,7 +191,7 @@
   background-color: var(--text-main);
   color: var(--text-inverse);
   border: none;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;

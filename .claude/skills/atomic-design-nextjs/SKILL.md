@@ -20,6 +20,14 @@ Complementa a `dg-audiosound-context` (arquitectura/SEO). Antes de escribir cód
 
 Regla de dependencia: **solo hacia abajo** (página → template → organismo → molécula → átomo). Un átomo nunca importa una molécula. Nada importa de `src/app/`.
 
+## 1b. Estado real de la estructura (etapa 1, nov-2026)
+- `src/content/site.ts`: datos únicos (contacto, enlaces de navegación/footer, IDs de analítica, clave de consentimiento) y `NEXT_ROUTE_PREFIXES`/`isNextRoute`. **Al migrar una página a Next, añade su prefijo ahí.**
+- Átomos: `Button` (botón o enlace), `Badge`, `FloatingWhatsApp`, `AppLink` (usa `next/link` solo para rutas de esta app; el resto —servidas aún por el HTML— va con `<a>` para evitar prefetch al proxy).
+- Moléculas: `CookieBanner` (dumb), `ProductCard`.
+- Organismos dumb: `Navbar` (recibe `links`, `cta`, `pathname`), `Footer` (recibe todo el contenido por props).
+- Contenedores (`src/components/containers/`, smart): `SiteNavbar`, `SiteFooter`, `ConsentManager` (consentimiento + WhatsApp flotante), `Analytics` (GTM + Consent Mode v2, desactivado en `/admin`).
+- El consentimiento usa la misma clave `dg_cookie_consent` que el sitio HTML: la elección se comparte entre ambos (mismo origen).
+
 ## 2. Componentes "dumb" (presentacionales)
 Un componente en `atoms/`, `molecules/`, `organisms/` y `templates/` es **dumb** salvo que esté en `containers/` o sea un formulario explícito:
 
