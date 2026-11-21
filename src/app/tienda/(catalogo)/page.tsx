@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import type { Product } from "@prisma/client";
 import { StoreTemplate } from "@/components/templates/StoreTemplate";
 import { Metadata } from "next";
 
@@ -43,16 +43,8 @@ async function CatalogDataFetcher() {
         category: true,
         brand: true,
         family: true,
-        subcategory: true,
         model: true,
         imageUrl: true,
-        color: true,
-        warranty: true,
-        shipping: true,
-        storeClassification: true,
-        isActive: true,
-        createdAt: true,
-        updatedAt: true,
       }
     }),
     prisma.product.findMany({ select: { category: true }, distinct: ['category'], where: { isActive: true, category: { not: null } } }),
@@ -60,7 +52,13 @@ async function CatalogDataFetcher() {
     prisma.product.findMany({ select: { family: true }, distinct: ['family'], where: { isActive: true, family: { not: null } } })
   ]);
 
-  const products = productsRaw.map(p => ({ ...p, images: null }));
+  // Payload liviano: la lista solo necesita lo que pinta la tarjeta y el buscador. La ficha completa
+  // se lee en /tienda/producto/[id]. Evita enviar ~2 MB de texto con las 2.100 descripciones.
+  // Solo viajan los campos que usan la tarjeta, el buscador y el carrito; el resto se omite a propósito.
+  const products = productsRaw.map(p => ({
+    ...p,
+    description: p.description.length > 120 ? p.description.slice(0, 120) : p.description,
+  })) as unknown as Product[];
   const categories = categoriesRaw.map(c => c.category as string).sort();
   const brands = brandsRaw.map(b => b.brand as string).sort();
   const families = familiesRaw.map(f => f.family as string).sort();

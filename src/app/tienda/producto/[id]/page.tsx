@@ -113,8 +113,37 @@ export default async function ProductDetailsPage({ params }: Props) {
     ? product.images as string[] 
     : (product.imageUrl ? [product.imageUrl] : []);
 
+  const productUrl = getProductUrl(product.id);
+  const productImage = getShareImage(product.imageUrl, product.images);
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "@id": `${productUrl}#product`,
+        name: product.name,
+        description: product.description.slice(0, 500),
+        url: productUrl,
+        ...(productImage ? { image: [productImage] } : {}),
+        ...(product.brand ? { brand: { "@type": "Brand", name: product.brand } } : {}),
+        ...(product.model ? { model: product.model, mpn: product.model } : {}),
+        ...(product.category ? { category: product.category } : {}),
+        ...(product.color ? { color: product.color } : {}),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.dgaudiosound.com/" },
+          { "@type": "ListItem", position: 2, name: "Tienda", item: "https://www.dgaudiosound.com/tienda" },
+          { "@type": "ListItem", position: 3, name: product.name, item: productUrl },
+        ],
+      },
+    ],
+  };
+
   return (
     <div style={{ minHeight: "100vh", backgroundColor: "var(--bg-secondary)" }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       {/* Breadcrumbs Header */}
       <div 
         className="section-black"
