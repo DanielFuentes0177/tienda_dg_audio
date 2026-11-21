@@ -30,6 +30,18 @@ export const ServicePageEffects = () => {
       io.observe(el);
     });
 
+    // Carrusel del hero (crossfade cada 4 s)
+    const slides = Array.from(root.querySelectorAll<HTMLElement>(".corp-hero-v2 .slide"));
+    let slideTimer: ReturnType<typeof setInterval> | undefined;
+    if (slides.length > 1) {
+      let current = 0;
+      slideTimer = setInterval(() => {
+        slides[current].classList.remove("active");
+        current = (current + 1) % slides.length;
+        slides[current].classList.add("active");
+      }, 4000);
+    }
+
     // Inclinación 3D (solo con puntero fino)
     const cleanups: Array<() => void> = [];
     if (window.matchMedia("(hover: hover)").matches) {
@@ -68,6 +80,7 @@ export const ServicePageEffects = () => {
 
     return () => {
       io.disconnect();
+      if (slideTimer) clearInterval(slideTimer);
       cleanups.forEach((fn) => fn());
     };
   }, []);

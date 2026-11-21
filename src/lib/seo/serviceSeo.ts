@@ -24,39 +24,39 @@ export function serviceMetadata(c: ServicePageContent): Metadata {
   };
 }
 
-/** JSON-LD: Service + BreadcrumbList + FAQPage (el FAQ es visible en la página). */
+const plain = (v: unknown): string =>
+  typeof v === "string" ? v : Array.isArray(v) ? v.map((p) => (p as { text: string }).text).join("") : "";
+
+/**
+ * JSON-LD: conserva el grafo original de la página y añade BreadcrumbList / FAQPage
+ * cuando faltan (el FAQ es visible en la página, así que es válido).
+ */
 export function serviceJsonLd(c: ServicePageContent) {
   const url = `${SITE.url}${c.path}`;
-  return {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Service",
-        name: c.schema.name,
-        serviceType: c.schema.serviceType,
-        category: c.schema.category,
-        url,
-        areaServed: c.schema.areaServed,
-        provider: { "@type": "Organization", name: SITE.name, url: `${SITE.url}/`, telephone: SITE.phoneDisplay },
-        description: c.schema.description,
-      },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: c.breadcrumbs.map((b, i) => ({
-          "@type": "ListItem",
-          position: i + 1,
-          name: b.name,
-          item: `${SITE.url}${b.href}`,
-        })),
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: c.faq.items.map((f) => ({
-          "@type": "Question",
-          name: f.question,
-          acceptedAnswer: { "@type": "Answer", text: f.answer },
-        })),
-      },
-    ],
-  };
+  const graph = [...c.jsonLd];
+  const has = (type: string) => graph.some((g) => g["@type"] === type);
+
+  if (!has("BreadcrumbList") && c.breadcrumbs.length > 0) {
+    graph.push({
+      "@type": "BreadcrumbList",
+      itemListElement: c.breadcrumbs.map((b, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: b.name,
+        item: `${SITE.url}${b.href}`,
+      })),
+    });
+  }
+  if (!has("FAQPage") && c.faq.items.length > 0) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      mainEntity: c.faq.items.map((f) => ({
+        "@type": "Question",
+        name: plain(f.question),
+        acceptedAnswer: { "@type": "Answer", text: plain(f.answer) },
+      })),
+    });
+  }
+  return { "@context": "https://schema.org", "@graph": graph };
 }

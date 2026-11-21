@@ -11,7 +11,7 @@ export const ServiceIntro = ({ intro }: { intro: ServicePageContent["intro"] }) 
         <span className="eyebrow">{intro.eyebrow}</span>
         <h2><RichText parts={intro.title} /></h2>
         {intro.paragraphs.map((p, i) => (
-          <p key={i} style={{ marginBottom: "1.5rem" }}>{p}</p>
+          <p key={i} style={{ marginBottom: "1.5rem" }}><RichText parts={p} /></p>
         ))}
       </div>
       <div className="reveal fade-left">

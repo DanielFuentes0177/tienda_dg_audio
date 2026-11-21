@@ -1,17 +1,23 @@
 import React from "react";
-import type { TextPart } from "@/types/service.types";
+import { AppLink } from "@/components/atoms/AppLink";
+import type { Inline, InlinePart } from "@/types/service.types";
 
-/** Átomo dumb: texto con partes resaltadas en dorado (clase heredada .text-accent). */
-export const RichText = ({ parts }: { parts: TextPart[] }) => (
-  <>
-    {parts.map((p, i) =>
-      p.accent ? (
-        <span key={i} className="text-accent">
-          {p.text}
-        </span>
-      ) : (
-        <React.Fragment key={i}>{p.text}</React.Fragment>
-      )
-    )}
-  </>
-);
+const renderPart = (p: InlinePart, i: number) => {
+  const lines = p.text.split("\n");
+  const content = lines.map((line, k) => (
+    <React.Fragment key={k}>
+      {k > 0 && <br />}
+      {line}
+    </React.Fragment>
+  ));
+  let node: React.ReactNode = content;
+  if (p.bold) node = <strong>{node}</strong>;
+  if (p.href) node = <AppLink href={p.href}>{node}</AppLink>;
+  if (p.accent) node = <span className="text-accent">{node}</span>;
+  if (p.gradient) node = <span className="text-gradient-gold">{node}</span>;
+  return <React.Fragment key={i}>{node}</React.Fragment>;
+};
+
+/** Átomo dumb: texto simple o con partes (acento dorado, enlaces, negritas, saltos). */
+export const RichText = ({ parts }: { parts: Inline }) =>
+  typeof parts === "string" ? <>{parts}</> : <>{parts.map(renderPart)}</>;

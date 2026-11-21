@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { RichText } from "@/components/atoms/RichText";
 import { FaqItem } from "@/components/molecules/FaqItem";
 import type { ServicePageContent } from "@/types/service.types";
 
@@ -11,8 +12,8 @@ export const FaqSection = ({ faq }: { faq: ServicePageContent["faq"] }) => {
     <section className="section section-light" id="faq">
       <div className="container" style={{ textAlign: "center", maxWidth: 800, marginBottom: "2rem" }}>
         <span className="eyebrow reveal fade-up">{faq.eyebrow}</span>
-        <h2>{faq.title}</h2>
-        <p className="section-subtitle reveal fade-up">{faq.subtitle}</p>
+        <h2><RichText parts={faq.title} /></h2>
+        <p className="section-subtitle reveal fade-up"><RichText parts={faq.subtitle} /></p>
       </div>
       <div className="faq-lux-wrap reveal fade-up">
         {faq.items.map((item, i) => (

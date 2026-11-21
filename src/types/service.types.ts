@@ -1,13 +1,13 @@
-export type IconName =
-  | "award" | "sliders" | "volume-off" | "display" | "lightbulb" | "alert"
-  | "clipboard" | "mic" | "video" | "couch" | "wrench" | "headset"
-  | "search-chart" | "ruler" | "file" | "user-check" | "whatsapp" | "mail" | "pin";
-
-/** Texto con partes resaltadas en dorado (accent). */
-export interface TextPart {
+/** Fragmento de texto con formato: acento dorado, enlace o negrita. "\n" = salto de línea. */
+export interface InlinePart {
   text: string;
-  accent?: boolean;
+  accent?: boolean; // .text-accent
+  gradient?: boolean; // .text-gradient-gold
+  href?: string;
+  bold?: boolean;
 }
+/** Texto simple o con formato. */
+export type Inline = string | InlinePart[];
 
 export interface ServiceImage {
   src: string;
@@ -16,8 +16,9 @@ export interface ServiceImage {
   height: number;
 }
 
+/** `icon` = clases de Font Awesome tal como están en el sitio HTML (p. ej. "fa-solid fa-award"). */
 export interface IconCard {
-  icon: IconName;
+  icon: string | null;
   title: string;
   text: string;
 }
@@ -25,60 +26,68 @@ export interface IconCard {
 export interface ServicePageContent {
   path: string; // "/residencial-premium/cine-en-casa"
   seo: { title: string; description: string; ogImage: string; ogImageAlt: string };
-  schema: { name: string; serviceType: string; category: string; areaServed: string; description: string };
   breadcrumbs: { name: string; href: string }[];
-  /** Texto base de WhatsApp para los botones de la página */
-  whatsappMessages: { quote: string; update: string };
-  hero: { kicker: string; title: TextPart[]; paragraphs: string[]; image: string; ctaLabel: string };
+  /** Grafo JSON-LD original de la página (se conserva tal cual; se completa con FAQPage/BreadcrumbList si faltan). */
+  jsonLd: Record<string, unknown>[];
+  /** Mensaje del botón flotante de WhatsApp (vacío = genérico). */
+  floatMessage: string;
+  hero: {
+    kicker: string;
+    title: InlinePart[];
+    paragraphs: string[];
+    badges: { icon: string | null; label: string }[];
+    slides: string[];
+    ctaLabel: string;
+    ctaIcon: string | null;
+    ctaMessage: string;
+  };
   intro: {
     eyebrow: string;
-    title: TextPart[];
-    paragraphs: string[];
+    title: InlinePart[];
+    paragraphs: Inline[];
     image: ServiceImage;
     benefits: IconCard[];
   };
-  problem: { eyebrow: string; title: string; paragraphs: string[]; cards: IconCard[] };
-  includes: {
-    eyebrow: string;
-    title: string;
-    subtitle: string;
-    related: { label: string; href: string };
-    items: IconCard[];
-  };
+  problem: { eyebrow: string; title: Inline; paragraphs: Inline[]; cards: IconCard[] };
+  /** Sección opcional "Qué hacemos" con tarjetas (presente en algunas páginas). */
+  extra?: { eyebrow: string; title: Inline; subtitle: Inline; items: IconCard[] };
+  includes: { eyebrow: string; title: Inline; subtitle: Inline; items: IconCard[] };
   areas: {
     eyebrow: string;
-    title: string;
-    subtitle: string;
+    title: Inline;
+    subtitle: Inline;
     items: { image: ServiceImage; label: string }[];
-    banner: { image: ServiceImage; eyebrow: string; title: string; text: string; ctaLabel: string };
+    banner?: { image: ServiceImage; eyebrow: string; title: Inline; text: string; ctaLabel: string; ctaMessage: string };
   };
   process: {
     eyebrow: string;
-    title: string;
-    subtitle: string;
-    steps: IconCard[];
-    quote: string;
+    title: Inline;
+    subtitle: Inline;
+    steps: (IconCard & { num?: string })[];
+    quote: string; // con sus comillas tal como en el sitio HTML
     ctaLabel: string;
+    ctaMessage: string;
   };
   differentiator: {
-    dark: { eyebrow: string; title: string; paragraphs: string[] };
-    gold: { eyebrow: string; title: string; items: string[] };
-    brands: { eyebrow: string; title: TextPart[]; subtitle: string; names: string[] };
+    dark: { eyebrow: string; title: Inline; paragraphs: Inline[] };
+    gold: { eyebrow: string; title: Inline; items: string[] };
+    brands: { eyebrow: string; title: InlinePart[]; subtitle: string; names: string[] };
   };
-  faq: { eyebrow: string; title: string; subtitle: string; items: { question: string; answer: string }[] };
+  faq: { eyebrow: string; title: Inline; subtitle: Inline; items: { question: string; answer: string }[] };
   contact: {
-    title: TextPart[];
+    title: InlinePart[];
     subtitle: string;
-    panelTitle: TextPart[];
+    badge: string;
+    panelTitle: InlinePart[];
     panelText: string;
-    whatsappDetail: string;
-    coverage: string;
-    formTitle: string;
+    methods: { icon: string | null; label: string; detail: string }[];
+    formTitle: Inline;
     formDescription: string;
-    projectFieldLabel: string;
-    projectFieldPlaceholder: string;
-    projectTypes: string[];
-    messagePlaceholder: string;
+    labels: Record<string, string>;
+    placeholders: Record<string, string>;
+    required: Record<string, boolean>;
+    selectPlaceholder: string;
+    projectTypes: { value: string; label: string }[];
     submitLabel: string;
     pageHeading: string;
   };

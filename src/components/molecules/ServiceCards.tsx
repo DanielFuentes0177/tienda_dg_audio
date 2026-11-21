@@ -30,10 +30,10 @@ export const IncludeCard = ({ icon, title, text }: IconCard) => (
   </div>
 );
 
-export const ProcessStep = ({ icon, title, text, step }: IconCard & { step: number }) => (
+export const ProcessStep = ({ icon, title, text, step, num }: IconCard & { step: number; num?: string }) => (
   <div className="process-bento-item">
     <div className="bento-header">
-      <span className="bento-num">{step}</span>
+      <span className="bento-num">{num ?? step}</span>
       <Icon name={icon} />
     </div>
     <h3>{title}</h3>

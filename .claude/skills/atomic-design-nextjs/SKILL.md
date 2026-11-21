@@ -28,7 +28,12 @@ Regla de dependencia: **solo hacia abajo** (página → template → organismo �
 - Contenedores (`src/components/containers/`, smart): `SiteNavbar`, `SiteFooter`, `ConsentManager` (consentimiento + WhatsApp flotante), `Analytics` (GTM + Consent Mode v2, desactivado en `/admin`).
 - El consentimiento usa la misma clave `dg_cookie_consent` que el sitio HTML: la elección se comparte entre ambos (mismo origen).
 
-## 1c. Páginas de servicio en Next (piloto: /residencial-premium/cine-en-casa)
+## 1c. Páginas de servicio en Next (etapa 3: grupo residencial migrado)
+- **Flujo de migración de un grupo:** `python3 scripts/migration/generate.py <grupo>` (lee el repo HTML, escribe `src/content/services/<grupo>/*.ts`, copia imágenes a `public/assets/...`, regenera `index.ts` y `servicePaths.ts`) → crear `src/app/<grupo>/[slug]/page.tsx` (copiar el de `residencial-premium`) → `python3 scripts/migration/parity.py http://localhost:3000 /<grupo>/<slug> ...` debe dar OK (texto y conteos idénticos) → deploy → `snapshot-seo diff`.
+- Los íconos son Font Awesome (`/assets/font-awesome.min.css`, con las reglas que faltaban añadidas al final); los datos guardan las clases (`fa-solid fa-award`).
+- Ya no se usa `cine-en-casa.ts` manual: todo sale del generador.
+
+### (histórico) piloto cine-en-casa
 - Contenido tipado en `src/content/services/<slug>.ts` (`ServicePageContent`, `src/types/service.types.ts`). Una página nueva = un archivo de datos + un `page.tsx` de 8 líneas (ver `cine-en-casa/page.tsx`) + añadir su ruta a `NEXT_ROUTE_PREFIXES` y `SERVICE_ROUTE_PREFIXES` en `src/content/site.ts`.
 - Plantilla `templates/ServicePageTemplate` → organismos en `organisms/service/*` → moléculas `ServiceCards`, `FaqItem`. Estado/efectos en contenedores: `ServicePageEffects` (reveal + tilt), `ServiceContactContainer` (WhatsApp).
 - SEO por helper: `serviceMetadata()` y `serviceJsonLd()` (Service + BreadcrumbList + FAQPage) en `src/lib/seo/serviceSeo.ts`.

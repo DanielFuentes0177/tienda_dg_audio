@@ -1,5 +1,6 @@
 import React from "react";
-import { Icon } from "@/components/atoms/Icon";
+import { Icon, WHATSAPP_ICON } from "@/components/atoms/Icon";
+import { RichText } from "@/components/atoms/RichText";
 import { ProcessStep } from "@/components/molecules/ServiceCards";
 import type { ServicePageContent } from "@/types/service.types";
 
@@ -8,8 +9,8 @@ export const ProcessSection = ({ process, ctaHref }: { process: ServicePageConte
     <div className="container">
       <div className="section-header reveal fade-up" style={{ textAlign: "center", maxWidth: 800, margin: "0 auto 5rem" }}>
         <span className="eyebrow">{process.eyebrow}</span>
-        <h2 className="section-title">{process.title}</h2>
-        <p className="section-subtitle">{process.subtitle}</p>
+        <h2 className="section-title"><RichText parts={process.title} /></h2>
+        <p className="section-subtitle"><RichText parts={process.subtitle} /></p>
       </div>
       <div className="process-bento-grid reveal fade-up">
         {process.steps.map((s, i) => (
@@ -17,7 +18,7 @@ export const ProcessSection = ({ process, ctaHref }: { process: ServicePageConte
         ))}
       </div>
       <div className="process-footer-clean reveal fade-up" style={{ textAlign: "center", marginTop: "5rem" }}>
-        <p className="process-quote-simple">&ldquo;{process.quote}&rdquo;</p>
+        <p className="process-quote-simple">{process.quote}</p>
         <div className="process-cta">
           <a
             className="btn btn-whatsapp-large"
@@ -30,7 +31,7 @@ export const ProcessSection = ({ process, ctaHref }: { process: ServicePageConte
               boxShadow: "0 10px 20px rgba(37,211,102,0.15)", transition: "all 0.3s ease",
             }}
           >
-            <Icon name="whatsapp" style={{ fontSize: "1.3rem" }} /> {process.ctaLabel}
+            <Icon name={WHATSAPP_ICON} style={{ fontSize: "1.3rem" }} /> {process.ctaLabel}
           </a>
         </div>
       </div>

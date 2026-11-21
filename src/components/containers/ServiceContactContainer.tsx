@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ContactSection } from "@/components/organisms/service/ContactSection";
+import { ContactSection, type ContactFormData } from "@/components/organisms/service/ContactSection";
 import { whatsappUrl } from "@/lib/whatsapp";
 import type { ServicePageContent } from "@/types/service.types";
 
@@ -13,9 +13,9 @@ export const ServiceContactContainer = ({
   contact: ServicePageContent["contact"];
   whatsappMessage: string;
 }) => {
-  const handleSubmit = (d: { name: string; project: string; phone: string; city: string; projectType: string; details: string }) => {
+  const handleSubmit = (d: ContactFormData) => {
     const msg =
-      `🎬 *DG Audiosound - ${contact.pageHeading}* 🎬\n\n` +
+      `🎬 *DG Audiosound - ${contact.pageHeading.toUpperCase()}* 🎬\n\n` +
       `• *Cliente:* ${d.name}\n` +
       `• *Residencia / Proyecto:* ${d.project}\n` +
       `• *Teléfono:* ${d.phone}\n` +
