@@ -4,8 +4,8 @@ import type { ServicePageContent } from "@/types/service.types";
 export const auditoriosCorporativos: ServicePageContent = {
   "path": "/corporativo-e-institucional/auditorios-corporativos",
   "seo": {
-    "title": "Audio y Video para Auditorios Corporativos | DG Audiosound",
-    "description": "Diseñamos audio y video para auditorios corporativos en CDMX y Estado de México: refuerzo sonoro, microfonía, proyección, video, control y puesta en marcha. Proyectos en México.",
+    "title": "Sonido y Proyección para Auditorios en CDMX | DG Audiosound",
+    "description": "Sonido, microfonía y proyección para auditorios y salas de conferencias en CDMX y Edomex: refuerzo sonoro, video, control y puesta en marcha.",
     "ogImage": "/assets/Imagenes/soluciones/corporativo-e-institucional/aplicacion-auditorios-corporativos-dg-audiosound.webp",
     "ogImageAlt": "Audio y video para auditorios corporativos por DG Audiosound"
   },
@@ -51,8 +51,8 @@ export const auditoriosCorporativos: ServicePageContent = {
       "@type": "WebPage",
       "@id": "https://www.dgaudiosound.com/corporativo-e-institucional/auditorios-corporativos#webpage",
       "url": "https://www.dgaudiosound.com/corporativo-e-institucional/auditorios-corporativos",
-      "name": "Audio y Video para Auditorios Corporativos | DG Audiosound",
-      "description": "Diseñamos audio y video para auditorios corporativos en CDMX y Estado de México: refuerzo sonoro, microfonía, proyección, video, control y puesta en marcha. Proyectos en México.",
+      "name": "Sonido y Proyección para Auditorios en CDMX | DG Audiosound",
+      "description": "Sonido, microfonía y proyección para auditorios y salas de conferencias en CDMX y Edomex: refuerzo sonoro, video, control y puesta en marcha.",
       "isPartOf": {
         "@id": "https://www.dgaudiosound.com/#website"
       },

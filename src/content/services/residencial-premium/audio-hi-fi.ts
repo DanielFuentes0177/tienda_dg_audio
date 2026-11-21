@@ -4,8 +4,8 @@ import type { ServicePageContent } from "@/types/service.types";
 export const audioHiFi: ServicePageContent = {
   "path": "/residencial-premium/audio-hi-fi",
   "seo": {
-    "title": "Sistemas de Audio Hi-Fi en CDMX | DG Audiosound",
-    "description": "Diseño e integración de sistemas de audio Hi-Fi en CDMX y México: bocinas estéreo, amplificación, tornamesas, streaming, DAC, instalación y ajuste.",
+    "title": "Audio Hi-Fi y Bocinas Estéreo en CDMX | DG Audiosound",
+    "description": "Sistemas de audio Hi-Fi en CDMX y México: bocinas estéreo, amplificadores, tornamesas, streaming y DAC. Diseño, instalación y ajuste a tu sala.",
     "ogImage": "/assets/Imagenes/aplicaciones/audio-hi-fi/audio-hi-fi-dg-audiosound-hero.webp",
     "ogImageAlt": "Sistema de audio Hi-Fi residencial de DG Audiosound"
   },
@@ -37,7 +37,7 @@ export const audioHiFi: ServicePageContent = {
         "url": "https://www.dgaudiosound.com/",
         "telephone": "+52 55 3727 0177"
       },
-      "description": "Diseño e integración de sistemas de audio Hi-Fi en CDMX y México: bocinas estéreo, amplificación, tornamesas, streaming, DAC, instalación y ajuste."
+      "description": "Sistemas de audio Hi-Fi en CDMX y México: bocinas estéreo, amplificadores, tornamesas, streaming y DAC. Diseño, instalación y ajuste a tu sala."
     },
     {
       "@type": "BreadcrumbList",

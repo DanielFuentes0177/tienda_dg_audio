@@ -4,8 +4,8 @@ import type { ServicePageContent } from "@/types/service.types";
 export const barberias: ServicePageContent = {
   "path": "/negocios-y-experiencias/barberias",
   "seo": {
-    "title": "Audio y Video para Barberías en CDMX | DG Audiosound",
-    "description": "Diseñamos e instalamos audio y video para barberías en CDMX y Estado de México: música ambiental, audio por zonas, bocinas, pantallas y control. Proyectos en México.",
+    "title": "Sonido y Música para Barberías en CDMX | DG Audiosound",
+    "description": "Sonido y música ambiental para barberías en CDMX y Edomex: audio por zonas, pantallas de servicios y control sencillo. Instalación limpia. Cotiza por WhatsApp.",
     "ogImage": "/assets/Imagenes/soluciones/negocios-y-experiencias-comerciales/aplicacion-barberia-audio-video-dg-audiosounddiosound.webp",
     "ogImageAlt": "Audio y video integrado para barberías por DG Audiosound"
   },
@@ -51,8 +51,8 @@ export const barberias: ServicePageContent = {
       "@type": "WebPage",
       "@id": "https://www.dgaudiosound.com/negocios-y-experiencias/barberias#webpage",
       "url": "https://www.dgaudiosound.com/negocios-y-experiencias/barberias",
-      "name": "Audio y Video para Barberías en CDMX | DG Audiosound",
-      "description": "Diseñamos e instalamos audio y video para barberías en CDMX y Estado de México: música ambiental, audio por zonas, bocinas, pantallas y control. Proyectos en México.",
+      "name": "Sonido y Música para Barberías en CDMX | DG Audiosound",
+      "description": "Sonido y música ambiental para barberías en CDMX y Edomex: audio por zonas, pantallas de servicios y control sencillo. Instalación limpia. Cotiza por WhatsApp.",
       "isPartOf": {
         "@id": "https://www.dgaudiosound.com/#website"
       },
@@ -251,8 +251,8 @@ export const barberias: ServicePageContent = {
     "eyebrow": "La Filosofía",
     "title": "Un sistema improvisado puede hacer que la barbería se sienta ruidosa, desordenada o poco profesional.",
     "paragraphs": [
-      "En muchos espacios se intenta cubrir todo con una bocina demasiado fuerte en una sola zona. Esto provoca áreas con volumen excesivo, otras sin claridad, música molesta para conversar, cables visibles o equipos difíciles de operar.",
-      "El reto no es solamente comprar bocinas o amplificadores por separado. Un sistema de audio distribuido requiere definir cobertura, cantidad y ubicación de altavoces, potencia, zonas, control, cableado y configuración para que la operación diaria sea sencilla."
+      "Una barbería combina conversación, máquinas de corte y música que forma parte de la identidad del lugar. Con una bocina portátil en el mostrador el sonido rebota en espejos y piso, las estaciones del fondo casi no escuchan y el cliente no logra platicar con su barbero.",
+      "Repartimos el audio entre recepción, estaciones y zona de espera, con niveles distintos para que la música sea de fondo y no compita con las máquinas, e integramos pantallas de servicios y promociones con cableado oculto para mantener el aspecto cuidado del local."
     ],
     "cards": [
       {
@@ -390,43 +390,43 @@ export const barberias: ServicePageContent = {
   },
   "process": {
     "eyebrow": "Proceso",
-    "title": "Un proceso claro para una solución profesional",
-    "subtitle": "Un proceso estructurado para definir alcance, equipos, instalación, configuración y operación antes de poner el sistema en servicio.",
+    "title": "Así dejamos listo el sonido de tu barbería",
+    "subtitle": "Un proceso corto: visitamos el local, proponemos la distribución de bocinas y pantallas, instalamos y te enseñamos a operarlo.",
     "steps": [
       {
         "icon": "fa-solid fa-headset",
-        "title": "Nos contactas",
-        "text": "Nos escribes por WhatsApp y nos cuentas cómo es tu barbería.",
+        "title": "Nos platicas tu barbería",
+        "text": "Número de estaciones, estilo del local y la música que manejas.",
         "num": "1"
       },
       {
         "icon": "fa-solid fa-magnifying-glass-chart",
-        "title": "Revisamos el local",
-        "text": "Analizamos fotos, medidas, estaciones, recepción, sala de espera y estilo del lugar.",
+        "title": "Visitamos el local",
+        "text": "Revisamos espejos, techo, recepción y espera para ubicar bocinas.",
         "num": "2"
       },
       {
         "icon": "fa-solid fa-pen-ruler",
-        "title": "Definimos solución",
-        "text": "Recomendamos bocinas, amplificación, pantallas, cableado, zonas y control.",
+        "title": "Diseñamos la distribución",
+        "text": "Audio por zonas y pantallas de servicios, sin cables a la vista.",
         "num": "3"
       },
       {
         "icon": "fa-solid fa-file-contract",
         "title": "Propuesta clara",
-        "text": "Te entregamos alcance, equipos, tiempos e inversión.",
+        "text": "Equipos, instalación y costo por escrito.",
         "num": "4"
       },
       {
         "icon": "fa-solid fa-screwdriver-wrench",
-        "title": "Instalamos",
-        "text": "Montaje, conexión, pruebas, configuración y puesta en marcha.",
+        "title": "Instalamos con orden",
+        "text": "Montaje limpio y ajuste de niveles con las estaciones ya armadas.",
         "num": "5"
       },
       {
         "icon": "fa-solid fa-user-check",
-        "title": "Te capacitamos",
-        "text": "Explicamos el uso básico para que tu equipo pueda operar el sistema.",
+        "title": "Te enseñamos a usarlo",
+        "text": "Cambias música, volumen y pantallas desde un control sencillo.",
         "num": "6"
       }
     ],
@@ -439,8 +439,8 @@ export const barberias: ServicePageContent = {
       "eyebrow": "Diferenciador",
       "title": "No se trata de colocar bocinas: se trata de diseñar el sistema para el espacio",
       "paragraphs": [
-        "Un sistema comercial bien planteado considera dimensiones, altura, cobertura, nivel esperado, ruido ambiental, zonas, potencia, cableado, fuentes y forma de operación del personal.",
-        "Nuestro enfoque es integrar audio, video y control de forma ordenada con la arquitectura de la barbería, buscando cobertura uniforme, operación sencilla y una instalación preparada para mantenimiento y posibles ampliaciones."
+        "En una barbería el sonido se nota por lo que no pasa: no hay zonas que ensordecen ni cables colgando. Una instalación ordenada, con bocinas discretas y niveles bien calibrados, refuerza la imagen del negocio tanto como el mobiliario.",
+        "Pensamos el sistema para que lo opere el propio barbero: una lista, un volumen y unas pantallas que se cambian sin ayuda técnica."
       ]
     },
     "gold": {

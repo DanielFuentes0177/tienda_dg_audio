@@ -4,8 +4,8 @@ import type { ServicePageContent } from "@/types/service.types";
 export const gimnasios: ServicePageContent = {
   "path": "/negocios-y-experiencias/gimnasios",
   "seo": {
-    "title": "Audio y Video para Gimnasios en CDMX | DG Audiosound",
-    "description": "Diseñamos audio y video para gimnasios en CDMX y Estado de México: sonido por zonas, microfonía para clases, pantallas, DSP, amplificación y control. Proyectos en México.",
+    "title": "Sonido para Gimnasios en CDMX | DG Audiosound",
+    "description": "Sonido para gimnasios en CDMX y Edomex: audio por zonas, microfonía para instructores, pantallas, DSP y control por salón. Cotiza por WhatsApp.",
     "ogImage": "/assets/Imagenes/soluciones/negocios-y-experiencias-comerciales/aplicacion-gimnasios-audio-video-dg-audiosound.webp",
     "ogImageAlt": "Audio y video profesional para gimnasios por DG Audiosound"
   },
@@ -51,8 +51,8 @@ export const gimnasios: ServicePageContent = {
       "@type": "WebPage",
       "@id": "https://www.dgaudiosound.com/negocios-y-experiencias/gimnasios#webpage",
       "url": "https://www.dgaudiosound.com/negocios-y-experiencias/gimnasios",
-      "name": "Audio y Video para Gimnasios en CDMX | DG Audiosound",
-      "description": "Diseñamos audio y video para gimnasios en CDMX y Estado de México: sonido por zonas, microfonía para clases, pantallas, DSP, amplificación y control. Proyectos en México.",
+      "name": "Sonido para Gimnasios en CDMX | DG Audiosound",
+      "description": "Sonido para gimnasios en CDMX y Edomex: audio por zonas, microfonía para instructores, pantallas, DSP y control por salón. Cotiza por WhatsApp.",
       "isPartOf": {
         "@id": "https://www.dgaudiosound.com/#website"
       },
@@ -249,8 +249,8 @@ export const gimnasios: ServicePageContent = {
     "eyebrow": "La Filosofía",
     "title": "Un gimnasio no debe sonar igual en todas sus áreas",
     "paragraphs": [
-      "En muchos espacios se intenta cubrir todo con una bocina demasiado fuerte en una sola zona. Esto provoca áreas con volumen excesivo, otras sin claridad, música molesta para conversar, cables visibles o equipos difíciles de operar.",
-      "El reto no es solamente comprar bocinas o amplificadores por separado. Un sistema para gimnasio requiere definir cobertura, cantidad y ubicación de altavoces, potencia, presión sonora esperada, microfonía, zonas, procesamiento, cableado y control."
+      "En un gimnasio conviven áreas que piden cosas opuestas: la sala de pesas necesita energía y presión sonora, el salón de clases necesita la voz clara del instructor y la recepción o los vestidores necesitan un nivel que no moleste. Un solo sistema a volumen parejo falla en todas.",
+      "Dimensionamos cada área por separado, con microfonía de diadema para instructores, procesamiento para evitar retroalimentación y distorsión, control independiente por salón y un nivel máximo definido para proteger al equipo y a los socios."
     ],
     "cards": [
       {
@@ -388,43 +388,43 @@ export const gimnasios: ServicePageContent = {
   },
   "process": {
     "eyebrow": "Proceso",
-    "title": "Un proceso claro para una solución profesional",
-    "subtitle": "Un proceso estructurado para definir cobertura, zonas, niveles, microfonía, video, equipos, cableado, instalación y operación antes de poner el sistema en servicio.",
+    "title": "Así diseñamos el sonido de tu gimnasio",
+    "subtitle": "Entendemos qué se entrena en cada área, dimensionamos el audio para ese uso y dejamos el control por salón en manos de tu equipo.",
     "steps": [
       {
         "icon": "fa-solid fa-headset",
         "title": "Entendemos tu gimnasio",
-        "text": "Conocemos el concepto, usuarios, clases, operación y necesidades.",
+        "text": "Disciplinas, horarios de clases y nivel de ruido que manejas.",
         "num": "1"
       },
       {
         "icon": "fa-solid fa-magnifying-glass-chart",
-        "title": "Revisamos tus áreas",
-        "text": "Analizamos pesas, cardio, salones, recepción y zonas comunes.",
+        "title": "Revisamos cada área",
+        "text": "Pesas, cardio, salones, recepción y vestidores, con sus alturas y acústica.",
         "num": "2"
       },
       {
         "icon": "fa-solid fa-pen-ruler",
-        "title": "Diseñamos la solución",
-        "text": "Definimos audio, video, zonas, equipos, conectividad y montaje.",
+        "title": "Diseñamos por área",
+        "text": "Altavoces, procesamiento, microfonía y pantallas según el uso.",
         "num": "3"
       },
       {
         "icon": "fa-solid fa-file-contract",
-        "title": "Propuesta clara",
-        "text": "Te entregamos alcance, equipos, tiempos e inversión.",
+        "title": "Propuesta por escrito",
+        "text": "Alcance, equipos, tiempos e inversión, área por área.",
         "num": "4"
       },
       {
         "icon": "fa-solid fa-screwdriver-wrench",
-        "title": "Instalamos",
-        "text": "Montaje, conexión, pruebas, ajustes y puesta en marcha.",
+        "title": "Instalamos y calibramos",
+        "text": "Montaje y ajuste de niveles en sitio, área por área.",
         "num": "5"
       },
       {
         "icon": "fa-solid fa-user-check",
-        "title": "Te capacitamos",
-        "text": "Explicamos el uso básico para una operación sencilla.",
+        "title": "Capacitamos a instructores",
+        "text": "Cómo usar micrófono, fuentes y control de cada salón.",
         "num": "6"
       }
     ],
@@ -437,8 +437,8 @@ export const gimnasios: ServicePageContent = {
       "eyebrow": "Diferenciador",
       "title": "No se trata de poner música fuerte: se trata de dimensionar el sistema para cada área",
       "paragraphs": [
-        "En un gimnasio deben revisarse dimensiones, altura, cobertura, presión sonora esperada, ruido ambiental, número de zonas, potencia, impedancia o línea distribuida cuando aplique, microfonía, cableado y fuentes.",
-        "Nuestro enfoque es integrar audio, video, microfonía y control con una arquitectura técnica clara, operación sencilla, capacidad de mantenimiento y margen para futuras ampliaciones cuando el proyecto lo requiera."
+        "No se trata de poner música fuerte: se trata de que cada área suene como necesita. La sala de pesas pide cobertura uniforme con buen nivel; el salón de clases pide inteligibilidad de la voz por encima de la música.",
+        "Integramos audio, pantallas y microfonía en un sistema que el personal puede operar por zona, con límites de nivel y cableado protegido para un espacio donde hay sudor, golpes y uso intensivo."
       ]
     },
     "gold": {

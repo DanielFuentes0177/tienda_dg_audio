@@ -4,8 +4,8 @@ import type { ServicePageContent } from "@/types/service.types";
 export const retail: ServicePageContent = {
   "path": "/negocios-y-experiencias/retail",
   "seo": {
-    "title": "Audio y Video para Retail en CDMX | DG Audiosound",
-    "description": "Diseñamos audio y video para retail en CDMX y Estado de México: música ambiental, señalización digital, pantallas, audio por zonas y control. Proyectos en México.",
+    "title": "Audio y Pantallas para Tiendas en CDMX | DG Audiosound",
+    "description": "Música ambiental, pantallas y señalización digital para tiendas en CDMX y Edomex: audio por zonas, control central y capacitación. Cotiza por WhatsApp.",
     "ogImage": "/assets/Imagenes/soluciones/negocios-y-experiencias-comerciales/aplicacion-retail-tiendas-audio-video-dg-audiosound.webp",
     "ogImageAlt": "Audio y video integrado para retail por DG Audiosound"
   },
@@ -51,8 +51,8 @@ export const retail: ServicePageContent = {
       "@type": "WebPage",
       "@id": "https://www.dgaudiosound.com/negocios-y-experiencias/retail#webpage",
       "url": "https://www.dgaudiosound.com/negocios-y-experiencias/retail",
-      "name": "Audio y Video para Retail en CDMX | DG Audiosound",
-      "description": "Diseñamos audio y video para retail en CDMX y Estado de México: música ambiental, señalización digital, pantallas, audio por zonas y control. Proyectos en México.",
+      "name": "Audio y Pantallas para Tiendas en CDMX | DG Audiosound",
+      "description": "Música ambiental, pantallas y señalización digital para tiendas en CDMX y Edomex: audio por zonas, control central y capacitación. Cotiza por WhatsApp.",
       "isPartOf": {
         "@id": "https://www.dgaudiosound.com/#website"
       },
@@ -249,8 +249,8 @@ export const retail: ServicePageContent = {
     "eyebrow": "La Filosofía",
     "title": "Un espacio retail no debe sentirse improvisado",
     "paragraphs": [
-      "En muchos espacios se intenta cubrir todo con una bocina demasiado fuerte en una sola zona. Esto provoca áreas con volumen excesivo, otras sin claridad, música molesta para conversar, cables visibles o equipos difíciles de operar.",
-      "El reto no es solamente comprar bocinas, amplificadores o pantallas por separado. Un sistema para retail requiere definir cobertura, cantidad y ubicación de altavoces, zonas, cableado, pantallas, fuentes de contenido y control según el espacio."
+      "En una tienda el audio y las pantallas guían el recorrido: la música debe ser consistente de la entrada a los probadores, y las pantallas del aparador y del piso de venta tienen que mostrar contenido actualizado sin que alguien cambie una memoria USB en cada sucursal.",
+      "Planteamos altavoces distribuidos por zona de venta, pantallas y señalización digital administradas desde un mismo punto, y un control sencillo para que el personal de tienda cambie lista o promoción sin entrar a la configuración técnica."
     ],
     "cards": [
       {
@@ -388,43 +388,43 @@ export const retail: ServicePageContent = {
   },
   "process": {
     "eyebrow": "Proceso",
-    "title": "Un proceso claro para una solución profesional",
-    "subtitle": "Un proceso estructurado para definir alcance, zonas, cobertura, pantallas, fuentes, cableado, instalación, configuración y operación antes de poner el sistema en servicio.",
+    "title": "Así diseñamos el audio y las pantallas de tu tienda",
+    "subtitle": "Revisamos el recorrido del cliente, definimos zonas y contenido, y dejamos el sistema listo para operar en una o varias sucursales.",
     "steps": [
       {
         "icon": "fa-solid fa-headset",
         "title": "Entendemos tu tienda",
-        "text": "Conocemos tu marca, cliente, concepto, operación y necesidades.",
+        "text": "Tipo de producto, flujo de clientes y la imagen que quieres proyectar.",
         "num": "1"
       },
       {
         "icon": "fa-solid fa-magnifying-glass-chart",
-        "title": "Revisamos tus áreas",
-        "text": "Analizamos piso de venta, aparador, caja, probadores y showroom.",
+        "title": "Recorremos el punto de venta",
+        "text": "Aparador, piso, caja, probadores y showroom.",
         "num": "2"
       },
       {
         "icon": "fa-solid fa-pen-ruler",
-        "title": "Diseñamos la solución",
-        "text": "Definimos audio, video, zonas, equipos, conectividad y montaje.",
+        "title": "Diseñamos audio y pantallas",
+        "text": "Zonas de música, ubicación de pantallas y señalización digital.",
         "num": "3"
       },
       {
         "icon": "fa-solid fa-file-contract",
-        "title": "Propuesta clara",
-        "text": "Te entregamos alcance, equipos, tiempos e inversión.",
+        "title": "Propuesta por escrito",
+        "text": "Alcance, equipos, tiempos e inversión, por sucursal si aplica.",
         "num": "4"
       },
       {
         "icon": "fa-solid fa-screwdriver-wrench",
-        "title": "Instalamos",
-        "text": "Montaje, conexión, pruebas, ajustes y puesta en marcha.",
+        "title": "Instalamos con orden",
+        "text": "Montaje ordenado y pruebas de nivel y contenido en sitio.",
         "num": "5"
       },
       {
         "icon": "fa-solid fa-user-check",
-        "title": "Te capacitamos",
-        "text": "Explicamos el uso básico para una operación sencilla.",
+        "title": "Capacitamos a tu personal",
+        "text": "Cambio de música, promociones y contenido sin ayuda técnica.",
         "num": "6"
       }
     ],
@@ -437,8 +437,8 @@ export const retail: ServicePageContent = {
       "eyebrow": "Diferenciador",
       "title": "No se trata de colocar bocinas y pantallas: se trata de diseñar un sistema para el punto de venta",
       "paragraphs": [
-        "En retail deben revisarse dimensiones, altura, cobertura, ruido ambiental, número de zonas, potencia, cableado, pantallas, resolución, fuentes, distribución de señal y forma de operación del personal.",
-        "Nuestro enfoque es integrar audio, video, señalización y control de forma ordenada con la arquitectura y el recorrido del cliente, buscando operación sencilla, consistencia entre áreas y capacidad de mantenimiento o crecimiento."
+        "En retail el sistema tiene que verse bien y funcionar sin atención: altavoces integrados al diseño de la tienda, pantallas alineadas con la imagen de marca y cableado que no se vea desde el piso de venta.",
+        "Si tienes varias sucursales, podemos plantear una configuración común para que el audio y el contenido se parezcan en todas y sean fáciles de mantener o ampliar."
       ]
     },
     "gold": {

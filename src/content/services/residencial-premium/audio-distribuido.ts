@@ -4,8 +4,8 @@ import type { ServicePageContent } from "@/types/service.types";
 export const audioDistribuido: ServicePageContent = {
   "path": "/residencial-premium/audio-distribuido",
   "seo": {
-    "title": "Audio Distribuido Residencial en CDMX | DG Audiosound",
-    "description": "Diseño e instalación de audio distribuido residencial en CDMX y México: sonido multiroom, control por zonas, bocinas, amplificación y configuración.",
+    "title": "Audio Multizona para Casa en CDMX | DG Audiosound",
+    "description": "Audio distribuido y sonido ambiental para casas en CDMX y México: música multiroom por zonas, bocinas de techo, terrazas y control por zonas.",
     "ogImage": "/assets/Imagenes/aplicaciones/audio-distribuido/audio-distribuido-dg-audiosound-hero.webp.webp",
     "ogImageAlt": "Sistema de audio distribuido residencial y sonido multiroom de DG Audiosound"
   },
@@ -37,7 +37,7 @@ export const audioDistribuido: ServicePageContent = {
         "url": "https://www.dgaudiosound.com/",
         "telephone": "+52 55 3727 0177"
       },
-      "description": "Diseño e instalación de audio distribuido residencial en CDMX y México: sonido multiroom, control por zonas, bocinas, amplificación y configuración."
+      "description": "Audio distribuido y sonido ambiental para casas en CDMX y México: música multiroom por zonas, bocinas de techo, terrazas y control por zonas."
     },
     {
       "@type": "BreadcrumbList",

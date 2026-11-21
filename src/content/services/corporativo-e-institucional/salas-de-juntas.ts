@@ -4,8 +4,8 @@ import type { ServicePageContent } from "@/types/service.types";
 export const salasDeJuntas: ServicePageContent = {
   "path": "/corporativo-e-institucional/salas-de-juntas",
   "seo": {
-    "title": "Audio y Video para Salas de Juntas | DG Audiosound",
-    "description": "Diseñamos audio y video para salas de juntas en CDMX y Estado de México: videoconferencia, microfonía, pantallas, cámaras, control y conectividad. Proyectos en México.",
+    "title": "Videoconferencia y Salas de Juntas en CDMX | DG Audiosound",
+    "description": "Equipamos salas de juntas y salas de videoconferencia en CDMX y Edomex: micrófonos, cámaras, pantallas, audio y control para reuniones híbridas.",
     "ogImage": "/assets/Imagenes/soluciones/corporativo-e-institucional/aplicacion-salas-de-juntas-dg-audiosound.webp",
     "ogImageAlt": "Audio y video para salas de juntas por DG Audiosound"
   },
@@ -51,8 +51,8 @@ export const salasDeJuntas: ServicePageContent = {
       "@type": "WebPage",
       "@id": "https://www.dgaudiosound.com/corporativo-e-institucional/salas-de-juntas#webpage",
       "url": "https://www.dgaudiosound.com/corporativo-e-institucional/salas-de-juntas",
-      "name": "Audio y Video para Salas de Juntas | DG Audiosound",
-      "description": "Diseñamos audio y video para salas de juntas en CDMX y Estado de México: videoconferencia, microfonía, pantallas, cámaras, control y conectividad. Proyectos en México.",
+      "name": "Videoconferencia y Salas de Juntas en CDMX | DG Audiosound",
+      "description": "Equipamos salas de juntas y salas de videoconferencia en CDMX y Edomex: micrófonos, cámaras, pantallas, audio y control para reuniones híbridas.",
       "isPartOf": {
         "@id": "https://www.dgaudiosound.com/#website"
       },

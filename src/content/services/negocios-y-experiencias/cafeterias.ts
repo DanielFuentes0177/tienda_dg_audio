@@ -4,8 +4,8 @@ import type { ServicePageContent } from "@/types/service.types";
 export const cafeterias: ServicePageContent = {
   "path": "/negocios-y-experiencias/cafeterias",
   "seo": {
-    "title": "Audio y Video para Cafeterías en CDMX | DG Audiosound",
-    "description": "Diseñamos audio y video para cafeterías en CDMX y Estado de México: música ambiental, audio por zonas, bocinas, pantallas de menú, terraza y control. Proyectos en México.",
+    "title": "Música Ambiental para Cafeterías en CDMX | DG Audiosound",
+    "description": "Música ambiental y sonido para cafeterías en CDMX y Edomex: bocinas por zonas, pantallas de menú y terraza con un solo control. Cotiza por WhatsApp.",
     "ogImage": "/assets/Imagenes/aplicaciones/cafeterias/audio-video-cafeterias-dg-audiosound-hero.webp",
     "ogImageAlt": "Audio y video integrado para cafeterías por DG Audiosound"
   },
@@ -51,8 +51,8 @@ export const cafeterias: ServicePageContent = {
       "@type": "WebPage",
       "@id": "https://www.dgaudiosound.com/negocios-y-experiencias/cafeterias#webpage",
       "url": "https://www.dgaudiosound.com/negocios-y-experiencias/cafeterias",
-      "name": "Audio y Video para Cafeterías en CDMX | DG Audiosound",
-      "description": "Diseñamos audio y video para cafeterías en CDMX y Estado de México: música ambiental, audio por zonas, bocinas, pantallas de menú, terraza y control. Proyectos en México.",
+      "name": "Música Ambiental para Cafeterías en CDMX | DG Audiosound",
+      "description": "Música ambiental y sonido para cafeterías en CDMX y Edomex: bocinas por zonas, pantallas de menú y terraza con un solo control. Cotiza por WhatsApp.",
       "isPartOf": {
         "@id": "https://www.dgaudiosound.com/#website"
       },
@@ -252,8 +252,8 @@ export const cafeterias: ServicePageContent = {
     "eyebrow": "La Filosofía",
     "title": "Cuando el audio está mal distribuido, la cafetería puede sentirse ruidosa, apagada o incómoda.",
     "paragraphs": [
-      "En muchos espacios se intenta cubrir todo con una bocina demasiado fuerte en una sola zona. Esto provoca áreas con volumen excesivo, otras sin claridad, música molesta para conversar, cables visibles o equipos difíciles de operar.",
-      "El reto no es solamente comprar bocinas o amplificadores por separado. Un sistema de audio distribuido requiere definir cobertura, cantidad y ubicación de altavoces, potencia, zonas, control, cableado y configuración según el espacio."
+      "En una cafetería la música marca el ritmo del local: debe acompañar la plática y el trabajo con laptop sin cansar a quien se queda dos horas. Una sola bocina cerca de la barra deja el fondo sin música y el frente demasiado fuerte, con la máquina de espresso encima.",
+      "Distribuimos altavoces pequeños y de bajo nivel sobre el área de mesas, definimos un volumen distinto para la barra y la terraza, y dejamos las pantallas de menú y promociones en el mismo sistema, para que el barista cambie música y contenido desde un solo control."
     ],
     "cards": [
       {
@@ -391,43 +391,43 @@ export const cafeterias: ServicePageContent = {
   },
   "process": {
     "eyebrow": "Proceso",
-    "title": "Un proceso claro para una solución profesional",
-    "subtitle": "Un proceso estructurado para definir alcance, zonas, equipos, cableado, instalación, configuración y operación antes de poner el sistema en servicio.",
+    "title": "Así resolvemos el sonido de tu cafetería",
+    "subtitle": "Revisamos el local, proponemos una distribución simple de bocinas y pantallas, y dejamos todo listo para que lo opere tu equipo desde el primer día.",
     "steps": [
       {
         "icon": "fa-solid fa-headset",
-        "title": "Nos contactas",
-        "text": "Nos escribes por WhatsApp y nos cuentas cómo es tu cafetería.",
+        "title": "Nos cuentas tu local",
+        "text": "Metros, número de mesas, terraza y el ambiente que buscas.",
         "num": "1"
       },
       {
         "icon": "fa-solid fa-magnifying-glass-chart",
-        "title": "Revisamos el local",
-        "text": "Analizamos fotos, medidas, zonas, barra, mesas, terraza y ruido del lugar.",
+        "title": "Visitamos la cafetería",
+        "text": "Revisamos altura de techo, barra, mesas y el equipo existente.",
         "num": "2"
       },
       {
         "icon": "fa-solid fa-pen-ruler",
-        "title": "Definimos solución",
-        "text": "Recomendamos bocinas, amplificación, pantallas, cableado, zonas y control.",
+        "title": "Proponemos la distribución",
+        "text": "Bocinas por zona, volumen por área y pantallas de menú.",
         "num": "3"
       },
       {
         "icon": "fa-solid fa-file-contract",
         "title": "Propuesta clara",
-        "text": "Te entregamos alcance, equipos, tiempos e inversión.",
+        "text": "Equipos, instalación, tiempos e inversión por escrito.",
         "num": "4"
       },
       {
         "icon": "fa-solid fa-screwdriver-wrench",
-        "title": "Instalamos",
-        "text": "Montaje, conexión, pruebas, configuración y puesta en marcha.",
+        "title": "Instalamos sin estorbar",
+        "text": "Montaje y cableado discreto, con pruebas de nivel en sitio.",
         "num": "5"
       },
       {
         "icon": "fa-solid fa-user-check",
-        "title": "Te capacitamos",
-        "text": "Explicamos el uso básico para que tu equipo pueda operar el sistema.",
+        "title": "Entregamos y explicamos",
+        "text": "Tu barista aprende a cambiar música, volumen y promociones.",
         "num": "6"
       }
     ],
@@ -440,8 +440,8 @@ export const cafeterias: ServicePageContent = {
       "eyebrow": "Diferenciador",
       "title": "No se trata de colocar bocinas: se trata de diseñar el sistema para el espacio",
       "paragraphs": [
-        "En una cafetería deben revisarse dimensiones, altura, cobertura, ruido ambiental, número de zonas, potencia, cableado, fuentes y forma de operación del personal.",
-        "Nuestro enfoque es integrar audio, video y control de forma ordenada con la arquitectura del local, buscando cobertura uniforme, operación sencilla y capacidad de mantenimiento o ampliación cuando el proyecto lo requiera."
+        "En una cafetería el sistema se escucha todo el día, así que lo importante es que sea discreto y estable: altavoces repartidos para que ninguna mesa quede bajo una bocina, y un volumen que baje en horas de trabajo y suba en horas de mayor movimiento.",
+        "Integramos música, pantallas de menú y, si hay terraza, una zona exterior independiente, con cableado oculto para conservar la decoración del lugar."
       ]
     },
     "gold": {

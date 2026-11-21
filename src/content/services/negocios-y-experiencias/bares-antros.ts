@@ -4,8 +4,8 @@ import type { ServicePageContent } from "@/types/service.types";
 export const baresAntros: ServicePageContent = {
   "path": "/negocios-y-experiencias/bares-antros",
   "seo": {
-    "title": "Audio, Video e Iluminación para Bares y Antros en CDMX | DG Audiosound",
-    "description": "Diseñamos audio, video e iluminación para bares y antros en CDMX y Estado de México: sonido de alto impacto, subwoofers, pantallas, zonas y control. Proyectos en México.",
+    "title": "Sonido e Iluminación para Bares en CDMX | DG Audiosound",
+    "description": "Sonido e iluminación para bares, antros y rooftops en CDMX y Edomex: subwoofers, audio por zonas, pantallas y control. Cotiza por WhatsApp.",
     "ogImage": "/assets/Imagenes/soluciones/negocios-y-experiencias-comerciales/aplicacion-bares-y-antros-audio-video-dg-audiosound.webp",
     "ogImageAlt": "Audio, video e iluminación integrados para bares y antros por DG Audiosound"
   },
@@ -51,8 +51,8 @@ export const baresAntros: ServicePageContent = {
       "@type": "WebPage",
       "@id": "https://www.dgaudiosound.com/negocios-y-experiencias/bares-antros#webpage",
       "url": "https://www.dgaudiosound.com/negocios-y-experiencias/bares-antros",
-      "name": "Audio, Video e Iluminación para Bares y Antros en CDMX | DG Audiosound",
-      "description": "Diseñamos audio, video e iluminación para bares y antros en CDMX y Estado de México: sonido de alto impacto, subwoofers, pantallas, zonas y control. Proyectos en México.",
+      "name": "Sonido e Iluminación para Bares en CDMX | DG Audiosound",
+      "description": "Sonido e iluminación para bares, antros y rooftops en CDMX y Edomex: subwoofers, audio por zonas, pantallas y control. Cotiza por WhatsApp.",
       "isPartOf": {
         "@id": "https://www.dgaudiosound.com/#website"
       },
@@ -249,8 +249,8 @@ export const baresAntros: ServicePageContent = {
     "eyebrow": "La Filosofía",
     "title": "Un bar o antro no vive solo de la música",
     "paragraphs": [
-      "En muchos espacios se intenta cubrir todo con una bocina demasiado fuerte en una sola zona. Esto provoca áreas con volumen excesivo, otras sin claridad, música molesta para conversar, cables visibles o equipos difíciles de operar.",
-      "El reto no es solamente comprar bocinas o amplificadores por separado. Un sistema para bares y antros requiere dimensionar cobertura, potencia, subwoofers, procesamiento, zonas, cableado, distribución de señal, control y protección del sistema."
+      "En un bar o antro el sonido es parte del producto: debe llenar la pista con graves firmes sin volverse agresivo en la barra, y permitir platicar en el lounge. Cuando se resuelve sumando bocinas, aparecen zonas saturadas, graves que invaden los privados y quejas por el nivel.",
+      "Diseñamos la cobertura con subwoofers y altavoces por zona, procesamiento y limitadores para controlar el nivel, y coordinamos pantallas e iluminación con la cabina del DJ para que el equipo del lugar opere todo sin depender de un técnico cada noche."
     ],
     "cards": [
       {
@@ -388,43 +388,43 @@ export const baresAntros: ServicePageContent = {
   },
   "process": {
     "eyebrow": "Proceso",
-    "title": "Un proceso claro para una solución profesional",
-    "subtitle": "Un proceso estructurado para definir objetivos, niveles, zonas, infraestructura, equipos, instalación, configuración y operación antes de poner el sistema en servicio.",
+    "title": "Así diseñamos el sistema de tu bar o antro",
+    "subtitle": "Del concepto a la noche de apertura: definimos cobertura, potencia y control, y probamos el sistema antes de entregarlo.",
     "steps": [
       {
         "icon": "fa-solid fa-headset",
         "title": "Entendemos tu concepto",
-        "text": "Conocemos tu negocio, ambiente, clientes y necesidades.",
+        "text": "Tipo de público, música, aforo y el ambiente de cada área.",
         "num": "1"
       },
       {
         "icon": "fa-solid fa-magnifying-glass-chart",
-        "title": "Revisamos tus áreas",
-        "text": "Analizamos barra, pista, lounge, terraza, VIP y accesos.",
+        "title": "Revisamos el espacio",
+        "text": "Pista, barra, lounge, rooftop y privados, con sus alturas y materiales.",
         "num": "2"
       },
       {
         "icon": "fa-solid fa-pen-ruler",
-        "title": "Diseñamos la solución",
-        "text": "Definimos audio, video, iluminación, zonas y conectividad.",
+        "title": "Diseñamos el sistema",
+        "text": "Altavoces, subwoofers, procesamiento, pantallas e iluminación.",
         "num": "3"
       },
       {
         "icon": "fa-solid fa-file-contract",
-        "title": "Propuesta clara",
-        "text": "Te entregamos alcance, equipos, tiempos e inversión.",
+        "title": "Propuesta por escrito",
+        "text": "Alcance, equipos, tiempos e inversión por escrito.",
         "num": "4"
       },
       {
         "icon": "fa-solid fa-screwdriver-wrench",
-        "title": "Instalamos",
-        "text": "Montaje, conexión, pruebas, ajustes y puesta en marcha.",
+        "title": "Instalamos y probamos",
+        "text": "Montaje, cableado y pruebas de nivel en cada zona.",
         "num": "5"
       },
       {
         "icon": "fa-solid fa-user-check",
-        "title": "Te capacitamos",
-        "text": "Explicamos el uso básico para una operación sencilla.",
+        "title": "Capacitamos a tu equipo",
+        "text": "Operación de cabina, zonas, niveles e iluminación.",
         "num": "6"
       }
     ],
@@ -437,8 +437,8 @@ export const baresAntros: ServicePageContent = {
       "eyebrow": "Diferenciador",
       "title": "No se trata de sumar equipos: se trata de dimensionar un sistema completo",
       "paragraphs": [
-        "En bares y antros deben revisarse cobertura, presión sonora esperada, potencia, subwoofers, procesamiento, número de zonas, impedancia o línea distribuida cuando aplique, cableado, fuentes y límites de operación.",
-        "Nuestro enfoque es integrar audio, video, iluminación y control con una arquitectura técnica clara, capacidad de mantenimiento y margen para futuras ampliaciones cuando el proyecto lo requiera."
+        "En un bar o antro el reto no es comprar más equipo, sino que el sistema completo trabaje coordinado: la potencia de los subwoofers contra la de los altavoces, los límites de nivel y la distribución de zonas.",
+        "Integramos sonido, video e iluminación para que el espacio cambie de ambiente a lo largo de la noche, con una cabina ordenada y controles que cualquier operador del lugar entienda."
       ]
     },
     "gold": {

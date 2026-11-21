@@ -4,8 +4,8 @@ import type { ServicePageContent } from "@/types/service.types";
 export const hoteles: ServicePageContent = {
   "path": "/corporativo-e-institucional/hoteles",
   "seo": {
-    "title": "Audio y Video para Hoteles y Hospitalidad | DG Audiosound",
-    "description": "Diseñamos audio y video para hoteles en CDMX y Estado de México: audio por zonas, salones, lobby, restaurantes, terrazas, pantallas, reuniones y control. Proyectos en México.",
+    "title": "Audio y Video para Hoteles y Salones de Eventos | DG Audiosound",
+    "description": "Audio, video y música ambiental para hoteles en CDMX y Edomex: lobby, salones de eventos, restaurantes, terrazas y salas de juntas con control por zonas.",
     "ogImage": "/assets/Imagenes/soluciones/corporativo-e-institucional/aplicacion-hoteles-audio-video-dg-audiosound.webp",
     "ogImageAlt": "Audio y video para hoteles y hospitalidad por DG Audiosound"
   },
@@ -51,8 +51,8 @@ export const hoteles: ServicePageContent = {
       "@type": "WebPage",
       "@id": "https://www.dgaudiosound.com/corporativo-e-institucional/hoteles#webpage",
       "url": "https://www.dgaudiosound.com/corporativo-e-institucional/hoteles",
-      "name": "Audio y Video para Hoteles y Hospitalidad | DG Audiosound",
-      "description": "Diseñamos audio y video para hoteles en CDMX y Estado de México: audio por zonas, salones, lobby, restaurantes, terrazas, pantallas, reuniones y control. Proyectos en México.",
+      "name": "Audio y Video para Hoteles y Salones de Eventos | DG Audiosound",
+      "description": "Audio, video y música ambiental para hoteles en CDMX y Edomex: lobby, salones de eventos, restaurantes, terrazas y salas de juntas con control por zonas.",
       "isPartOf": {
         "@id": "https://www.dgaudiosound.com/#website"
       },

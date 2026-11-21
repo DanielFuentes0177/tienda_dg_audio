@@ -4,8 +4,8 @@ import type { ServicePageContent } from "@/types/service.types";
 export const cineEnCasa: ServicePageContent = {
   "path": "/residencial-premium/cine-en-casa",
   "seo": {
-    "title": "Cine en Casa en CDMX | Diseño e Instalación | DG Audiosound",
-    "description": "Diseño e instalación de cine en casa en CDMX y México: proyección 4K, pantallas, audio envolvente, Dolby Atmos, integración, configuración y calibración.",
+    "title": "Home Theater y Cine en Casa en CDMX | DG Audiosound",
+    "description": "Home theater y cine en casa en CDMX y México: diseño e instalación de proyección 4K, pantallas, audio envolvente Dolby Atmos y calibración. Cotiza por WhatsApp.",
     "ogImage": "/assets/Imagenes/aplicaciones/cine-en-casa/cine-en-casa-premium-dg-audiosound-hero.webp",
     "ogImageAlt": "DG Audiosound — Diseño e instalación de cine en casa"
   },
@@ -37,7 +37,7 @@ export const cineEnCasa: ServicePageContent = {
         "url": "https://www.dgaudiosound.com/",
         "telephone": "+52 55 3727 0177"
       },
-      "description": "Diseño e instalación de cine en casa en CDMX y México: proyección 4K, pantallas, audio envolvente, Dolby Atmos, integración, configuración y calibración."
+      "description": "Home theater y cine en casa en CDMX y México: diseño e instalación de proyección 4K, pantallas, audio envolvente Dolby Atmos y calibración. Cotiza por WhatsApp."
     },
     {
       "@type": "BreadcrumbList",
@@ -80,7 +80,7 @@ export const cineEnCasa: ServicePageContent = {
       }
     ],
     "paragraphs": [
-      "Diseñamos e instalamos sistemas de cine en casa para salas, family rooms y cuartos dedicados, considerando distancia de visualización, iluminación, proyección o pantalla, audio envolvente, subwoofers, amplificación, cableado y configuración.",
+      "Diseñamos e instalamos sistemas de cine en casa (home theater) para salas, family rooms y cuartos dedicados, considerando distancia de visualización, iluminación, proyección o pantalla, audio envolvente, subwoofers, amplificación, cableado y configuración.",
       "Evaluamos el espacio, los hábitos de uso, los equipos existentes y el presupuesto para integrar una solución cómoda, estética y fácil de utilizar."
     ],
     "badges": [],

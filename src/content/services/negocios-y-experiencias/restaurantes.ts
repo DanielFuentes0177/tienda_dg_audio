@@ -4,8 +4,8 @@ import type { ServicePageContent } from "@/types/service.types";
 export const restaurantes: ServicePageContent = {
   "path": "/negocios-y-experiencias/restaurantes",
   "seo": {
-    "title": "Audio y Video para Restaurantes en CDMX | DG Audiosound",
-    "description": "Diseñamos audio y video para restaurantes en CDMX y Estado de México: música ambiental, audio por zonas, terrazas, pantallas, microfonía y control. Proyectos en México.",
+    "title": "Sonido Ambiental para Restaurantes en CDMX | DG Audiosound",
+    "description": "Sonido ambiental para restaurantes en CDMX y Edomex: audio por zonas, terraza, barra, pantallas y microfonía. Diseño e instalación. Cotiza por WhatsApp.",
     "ogImage": "/assets/Imagenes/soluciones/negocios-y-experiencias-comerciales/aplicacion-restaurantes-audio-video-dg-audiosound.webp",
     "ogImageAlt": "Audio y video integrado para restaurantes por DG Audiosound"
   },
@@ -51,8 +51,8 @@ export const restaurantes: ServicePageContent = {
       "@type": "WebPage",
       "@id": "https://www.dgaudiosound.com/negocios-y-experiencias/restaurantes#webpage",
       "url": "https://www.dgaudiosound.com/negocios-y-experiencias/restaurantes",
-      "name": "Audio y Video para Restaurantes en CDMX | DG Audiosound",
-      "description": "Diseñamos audio y video para restaurantes en CDMX y Estado de México: música ambiental, audio por zonas, terrazas, pantallas, microfonía y control. Proyectos en México.",
+      "name": "Sonido Ambiental para Restaurantes en CDMX | DG Audiosound",
+      "description": "Sonido ambiental para restaurantes en CDMX y Edomex: audio por zonas, terraza, barra, pantallas y microfonía. Diseño e instalación. Cotiza por WhatsApp.",
       "isPartOf": {
         "@id": "https://www.dgaudiosound.com/#website"
       },
@@ -249,8 +249,8 @@ export const restaurantes: ServicePageContent = {
     "eyebrow": "La Filosofía",
     "title": "Un restaurante no solo se disfruta por la comida",
     "paragraphs": [
-      "En muchos espacios se intenta cubrir todo con una bocina demasiado fuerte en una sola zona. Esto provoca áreas con volumen excesivo, otras sin claridad, música molesta para conversar, cables visibles o equipos difíciles de operar.",
-      "El reto no es solamente comprar bocinas o amplificadores por separado. Un sistema para restaurante requiere definir cobertura, cantidad y ubicación de altavoces, potencia, zonas, cableado, fuentes, control y procesamiento según el espacio."
+      "En un restaurante el sonido compite con la conversación, la cocina y el ruido de las mesas. Cuando el nivel se ajusta para el salón, la terraza suena demasiado fuerte o la barra queda apagada, y el personal termina subiendo y bajando el volumen toda la noche.",
+      "Por eso el sistema se diseña por zonas: salón, terraza, barra y privados con su propio nivel y fuente, con altavoces distribuidos a baja potencia en lugar de pocas bocinas a todo volumen, y un control que el equipo de piso pueda operar sin tocar la configuración."
     ],
     "cards": [
       {
@@ -388,43 +388,43 @@ export const restaurantes: ServicePageContent = {
   },
   "process": {
     "eyebrow": "Proceso",
-    "title": "Un proceso claro para una solución profesional",
-    "subtitle": "Un proceso estructurado para definir alcance, zonas, cobertura, equipos, cableado, instalación, configuración y operación antes de poner el sistema en servicio.",
+    "title": "Así diseñamos el sonido de tu restaurante",
+    "subtitle": "Recorremos salón, terraza y barra, definimos zonas y niveles, y entregamos el sistema funcionando y explicado a tu equipo.",
     "steps": [
       {
         "icon": "fa-solid fa-headset",
-        "title": "Entendemos tu restaurante",
-        "text": "Conocemos el concepto, tipo de cliente, ambiente y necesidades.",
+        "title": "Conocemos tu concepto",
+        "text": "Tipo de cliente, horarios de mayor ocupación y el ambiente que quieres lograr.",
         "num": "1"
       },
       {
         "icon": "fa-solid fa-magnifying-glass-chart",
-        "title": "Revisamos tus espacios",
-        "text": "Analizamos salón, terraza, barra, privados, espera y eventos.",
+        "title": "Recorremos el local",
+        "text": "Medimos salón, terraza, barra y privados, y revisamos el equipo que ya tienes.",
         "num": "2"
       },
       {
         "icon": "fa-solid fa-pen-ruler",
-        "title": "Diseñamos la solución",
-        "text": "Definimos audio, video, zonas, equipos, conectividad y montaje.",
+        "title": "Diseñamos por zonas",
+        "text": "Cobertura, altavoces, procesamiento, pantallas y control para cada área.",
         "num": "3"
       },
       {
         "icon": "fa-solid fa-file-contract",
-        "title": "Propuesta clara",
-        "text": "Te entregamos alcance, equipos, tiempos e inversión.",
+        "title": "Propuesta por escrito",
+        "text": "Alcance, equipos, tiempos e inversión antes de comprar nada.",
         "num": "4"
       },
       {
         "icon": "fa-solid fa-screwdriver-wrench",
-        "title": "Instalamos",
-        "text": "Montaje, conexión, pruebas, ajustes y puesta en marcha.",
+        "title": "Instalamos y ajustamos",
+        "text": "Montaje, cableado ordenado y ajuste de niveles en sitio, zona por zona.",
         "num": "5"
       },
       {
         "icon": "fa-solid fa-user-check",
-        "title": "Te capacitamos",
-        "text": "Explicamos el uso básico para una operación sencilla.",
+        "title": "Capacitamos a tu equipo",
+        "text": "Tu personal aprende a cambiar fuente, zona y volumen sin ayuda técnica.",
         "num": "6"
       }
     ],
@@ -437,8 +437,8 @@ export const restaurantes: ServicePageContent = {
       "eyebrow": "Diferenciador",
       "title": "No se trata de colocar bocinas: se trata de diseñar el sistema para el restaurante",
       "paragraphs": [
-        "En un restaurante deben revisarse dimensiones, altura, cobertura, ruido ambiental, número de zonas, potencia, cableado, fuentes, control, pantallas y forma de operación del personal.",
-        "Nuestro enfoque es integrar audio, video y control de forma ordenada con la arquitectura del restaurante, buscando cobertura uniforme, operación sencilla y capacidad de mantenimiento o ampliación cuando el proyecto lo requiera."
+        "Un restaurante cambia durante el día: comida, cena, eventos privados y servicio de barra piden niveles y ambientes distintos. El sistema debe permitir esos cambios desde un control simple, sin depender de que alguien reconfigure equipos.",
+        "Integramos audio, pantallas y microfonía con la arquitectura del lugar: altavoces a la altura correcta, cableado oculto y espacio para ampliar una terraza o un salón privado más adelante."
       ]
     },
     "gold": {
