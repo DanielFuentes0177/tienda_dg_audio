@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { LayoutDashboard, Package, LogOut, ShoppingCart, FileText } from "lucide-react";
+import { LayoutDashboard, Package, LogOut, ShoppingCart, FileText, PenLine } from "lucide-react";
 import { signOut } from "next-auth/react";
 import { usePathname } from "next/navigation";
 
@@ -101,7 +101,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               gap: "0.75rem" 
             }}
           >
-            <FileText size={20} />
+            <PenLine size={20} />
             Textos
           </Link>
         </nav>

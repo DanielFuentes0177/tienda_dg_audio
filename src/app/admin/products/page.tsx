@@ -303,11 +303,46 @@ export default function AdminProductsPage() {
 
   return (
     <div className="section-light" style={{ paddingTop: "100px", paddingLeft: "2rem", paddingRight: "2rem", paddingBottom: "2rem", maxWidth: "1400px", margin: "0 auto" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "2rem" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "1.5rem", flexWrap: "wrap", marginBottom: "1.5rem" }}>
         <h1 className="section-title" style={{ margin: 0, fontSize: "2rem" }}>Gestión de Productos</h1>
         
-        <div style={{ display: "flex", gap: "1rem", flex: 1, justifyContent: "flex-end", alignItems: "center" }}>
-          <div style={{ position: "relative", maxWidth: "300px", width: "100%", marginRight: "1rem" }}>
+        <div style={{ display: "flex", gap: "0.75rem", flexShrink: 0, justifyContent: "flex-end", alignItems: "center" }}>
+          <div style={{ display: "flex", gap: "0.75rem", flexWrap: "nowrap" }}>
+          <input 
+            type="file" 
+            accept=".csv" 
+            style={{ display: 'none' }} 
+            ref={fileInputRef} 
+            onChange={handleFileUpload} 
+          />
+          <Button 
+            onClick={() => fileInputRef.current?.click()} 
+            disabled={isUploading}
+            style={{ display: "flex", alignItems: "center", gap: "0.5rem", whiteSpace: "nowrap", backgroundColor: "var(--bg-secondary)", color: "var(--text-primary)", border: "1px solid var(--border-color)" }}
+          >
+            <Upload size={20} />
+            {isUploading ? "Subiendo..." : "Importar CSV"}
+          </Button>
+          <a
+            href="/api/products/export"
+            download
+            className="btn"
+            style={{ display: "flex", alignItems: "center", gap: "0.5rem", whiteSpace: "nowrap", backgroundColor: "var(--bg-secondary)", color: "var(--text-primary)", border: "1px solid var(--border-color)", textDecoration: "none" }}
+          >
+            <Download size={20} />
+            Descargar Excel
+          </a>
+          <Button onClick={() => handleOpenForm()} style={{ display: "flex", alignItems: "center", gap: "0.5rem", whiteSpace: "nowrap" }} disabled={isUploading}>
+            <Plus size={20} />
+            Nuevo Producto
+          </Button>
+        </div>
+        </div>
+      </div>
+
+      {!isFormOpen && (
+        <div style={{ display: "flex", gap: "1rem", marginBottom: "1.5rem", flexWrap: "wrap", alignItems: "center" }}>
+          <div style={{ position: "relative", minWidth: "260px", flex: "1 1 280px", maxWidth: "380px" }}>
             <input
               type="text"
               placeholder="Buscar productos..."
@@ -324,40 +359,6 @@ export default function AdminProductsPage() {
             />
             <Search size={18} style={{ position: "absolute", left: "10px", top: "50%", transform: "translateY(-50%)", color: "var(--text-muted)" }} />
           </div>
-          <div style={{ display: "flex", gap: "1rem" }}>
-          <input 
-            type="file" 
-            accept=".csv" 
-            style={{ display: 'none' }} 
-            ref={fileInputRef} 
-            onChange={handleFileUpload} 
-          />
-          <Button 
-            onClick={() => fileInputRef.current?.click()} 
-            disabled={isUploading}
-            style={{ display: "flex", gap: "0.5rem", backgroundColor: "var(--bg-secondary)", color: "var(--text-primary)", border: "1px solid var(--border-color)" }}
-          >
-            <Upload size={20} />
-            {isUploading ? "Subiendo..." : "Importar CSV"}
-          </Button>
-          <a
-            href="/api/products/export"
-            download
-            style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", padding: "0.75rem 1.25rem", borderRadius: "8px", backgroundColor: "var(--bg-secondary)", color: "var(--text-primary)", border: "1px solid var(--border-color)", textDecoration: "none", fontWeight: 600 }}
-          >
-            <Download size={20} />
-            Descargar Excel
-          </a>
-          <Button onClick={() => handleOpenForm()} style={{ display: "flex", gap: "0.5rem" }} disabled={isUploading}>
-            <Plus size={20} />
-            Nuevo Producto
-          </Button>
-        </div>
-        </div>
-      </div>
-
-      {!isFormOpen && (
-        <div style={{ display: "flex", gap: "1rem", marginBottom: "1.5rem", flexWrap: "wrap" }}>
           <CustomAdminSelect 
             value={filterImage} 
             onChange={setFilterImage}
