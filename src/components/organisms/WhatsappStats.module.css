@@ -1,0 +1,22 @@
+.wrap { margin-bottom: 2rem; }
+.head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.9rem; }
+.title { margin: 0; font-family: var(--font-heading); font-size: 1.25rem; color: var(--text-main); }
+.note { font-size: 0.8rem; color: var(--text-muted); }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.75rem; margin-bottom: 1rem; }
+.card { background: #fff; border: 1px solid var(--border-soft); border-radius: var(--radius-md); padding: 0.9rem 1.1rem; }
+.value { font-family: var(--font-heading); font-size: 1.7rem; font-weight: 700; color: var(--text-main); line-height: 1.1; }
+.label { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem; }
+.panel { background: #fff; border: 1px solid var(--border-soft); border-radius: var(--radius-md); padding: 1.1rem 1.25rem; }
+.panelTitle { margin: 0 0 0.8rem; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }
+.bars { display: flex; align-items: flex-end; gap: 3px; height: 110px; }
+.bar { flex: 1; min-width: 0; background: var(--color-accent); border-radius: 3px 3px 0 0; min-height: 2px; opacity: 0.9; }
+.barZero { background: #e5e7eb; }
+.axis { display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-subtle); margin-top: 0.35rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1rem; }
+.rank { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.55rem; }
+.rankRow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.75rem; align-items: center; font-size: 0.88rem; }
+.rankName { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-main); }
+.rankBar { grid-column: 1 / -1; height: 5px; background: var(--bg-secondary); border-radius: 3px; overflow: hidden; }
+.rankFill { height: 100%; background: var(--color-accent); border-radius: 3px; }
+.rankNum { font-weight: 700; color: var(--text-main); }
+.empty { color: var(--text-muted); font-size: 0.9rem; padding: 0.5rem 0; }

@@ -3,6 +3,7 @@ import { SiteNavbar } from "@/components/containers/SiteNavbar";
 import { SiteFooter } from "@/components/containers/SiteFooter";
 import { ConsentManager } from "@/components/containers/ConsentManager";
 import { Analytics } from "@/components/containers/Analytics";
+import { WhatsappTracker } from "@/components/containers/WhatsappTracker";
 import { Providers } from "@/components/providers";
 import { CartProvider } from "@/context/CartContext";
 import { CartDrawer } from "@/components/organisms/CartDrawer";
@@ -58,6 +59,7 @@ export default function RootLayout({
             </main>
             <SiteFooter />
             <ConsentManager />
+            <WhatsappTracker />
           </CartProvider>
         </Providers>
       </body>

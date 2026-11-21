@@ -11,6 +11,7 @@ export const FloatingWhatsApp = ({ href, label = "Contacto por WhatsApp" }: Floa
   <a
     className={styles.float}
     href={href}
+    data-wa-source="flotante"
     target="_blank"
     rel="noopener noreferrer"
     aria-label={label}

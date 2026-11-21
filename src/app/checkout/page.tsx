@@ -1,5 +1,6 @@
 "use client";
 
+import { trackWhatsapp } from "@/lib/trackWhatsapp";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -76,6 +77,7 @@ export default function CheckoutPage() {
       // 3. Abrir WhatsApp
       const encodedMessage = encodeURIComponent(waMessage);
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+      trackWhatsapp("cotizacion-carrito");
       window.open(whatsappUrl, "_blank");
 
       // 4. Mostrar pantalla de éxito y limpiar carrito

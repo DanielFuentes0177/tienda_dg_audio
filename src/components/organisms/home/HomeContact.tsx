@@ -6,6 +6,7 @@ import { Icon, WHATSAPP_ICON } from "@/components/atoms/Icon";
 import { RichText } from "@/components/atoms/RichText";
 import { cssString } from "@/lib/cssString";
 import { SITE } from "@/content/site";
+import { trackWhatsapp } from "@/lib/trackWhatsapp";
 import type { HomePageContent } from "@/types/service.types";
 
 export const HomeContact = ({ contact }: { contact: HomePageContent["contact"] }) => {
@@ -23,6 +24,7 @@ export const HomeContact = ({ contact }: { contact: HomePageContent["contact"] }
       message: v("cb-message"),
     };
     const msg = contact.whatsappTemplate.replace(/\{(\w+)\}/g, (_, k: string) => values[k] ?? "");
+    trackWhatsapp("formulario");
     window.open(`https://wa.me/${SITE.phoneTel.replace("+", "")}?text=${encodeURIComponent(msg)}`, "_blank");
   };
   const label = (id: string) => contact.labels[id] ?? "";

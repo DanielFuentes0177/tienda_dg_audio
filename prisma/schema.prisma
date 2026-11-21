@@ -92,3 +92,15 @@ model PageText {
   @@unique([path, field])
   @@index([path])
 }
+
+
+/// Clics en botones de WhatsApp (sin datos personales: solo página, botón y fecha).
+model WhatsappClick {
+  id        String   @id @default(uuid())
+  path      String   @db.VarChar(191)
+  source    String   @db.VarChar(64)
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([path])
+}

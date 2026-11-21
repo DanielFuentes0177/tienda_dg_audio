@@ -4,6 +4,7 @@ import React from "react";
 import { Icon, WHATSAPP_ICON } from "@/components/atoms/Icon";
 import { RichText } from "@/components/atoms/RichText";
 import { SITE } from "@/content/site";
+import { trackWhatsapp } from "@/lib/trackWhatsapp";
 import type { HubPageContent } from "@/types/service.types";
 
 type Contact = HubPageContent["contact"];
@@ -23,6 +24,7 @@ export const HubContact = ({ contact }: { contact: Contact }) => {
       message: v("cb-message"),
     };
     const msg = contact.whatsappTemplate.replace(/\{(\w+)\}/g, (_, k: string) => values[k] ?? "");
+    trackWhatsapp("formulario");
     window.open(`https://wa.me/${SITE.phoneTel.replace("+", "")}?text=${encodeURIComponent(msg)}`, "_blank");
   };
   const label = (id: string) => contact.labels[id] ?? "";
