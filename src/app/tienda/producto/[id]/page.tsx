@@ -59,9 +59,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Metadatos SEO solamente: no toca catálogo, DB, URLs ni descripciones visibles.
   const seo = PRODUCT_SEO_PILOT_44[product.id] ?? PRODUCT_SEO_BATCH_002_100[product.id] ?? PRODUCT_SEO_PILOT_4[product.id];
   if (!seo) {
+    // Fallback para productos sin metadatos aprobados: canonical y OG propios
+    // (sin esto heredan el og:title y og:url de la home).
+    const title = `${product.name} | DG Audiosound`;
+    const description = product.description.substring(0, 160);
+    const url = getProductUrl(product.id);
+    const image = getShareImage(product.imageUrl, product.images);
+    const images = image ? [image] : [];
     return {
-      title: `${product.name} | DG Audiosound`,
-      description: product.description.substring(0, 160),
+      title,
+      description,
+      alternates: { canonical: url },
+      openGraph: {
+        title, description, url, images,
+        siteName: "DG Audiosound", locale: "es_MX", type: "website",
+      },
+      twitter: { title, description, images, card: image ? "summary_large_image" : "summary" },
     };
   }
   const { title, description } = seo;

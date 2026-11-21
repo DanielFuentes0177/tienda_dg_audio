@@ -72,7 +72,7 @@ export const Navbar = () => {
   return (
     <header className={`${styles.navbar} ${isScrolled ? styles.scrolled : ""} ${isNavLight ? styles.navLight : ""}`}>
       <div className={styles.navContainer}>
-        <Link href="https://dgaudiosound.com/" className={styles.logo}>
+        <Link href="https://www.dgaudiosound.com/" className={styles.logo}>
           <Image 
             src="/dg_logo@2x.webp" 
             alt="DG AUDIOSOUND Logo" 
@@ -86,7 +86,7 @@ export const Navbar = () => {
         <nav className={`${styles.navMenu} ${isMenuOpen ? styles.open : ""}`}>
           <ul className={styles.navList}>
             <li className={styles.navItem}>
-              <Link href="https://dgaudiosound.com/" className={styles.navLink}>
+              <Link href="https://www.dgaudiosound.com/" className={styles.navLink}>
                 Inicio
               </Link>
             </li>
@@ -101,7 +101,7 @@ export const Navbar = () => {
               </Link>
             </li>
             <li className={styles.navItem}>
-              <Link href="https://dgaudiosound.com/#contacto" className={styles.navLink}>
+              <Link href="https://www.dgaudiosound.com/#contacto" className={styles.navLink}>
                 Contacto
               </Link>
             </li>

@@ -8,10 +8,6 @@ export async function GET() {
     <lastmod>2026-09-16</lastmod>
   </url>
   <url>
-    <loc>https://www.dgaudiosound.com/contacto</loc>
-    <lastmod>2026-09-16</lastmod>
-  </url>
-  <url>
     <loc>https://www.dgaudiosound.com/tienda</loc>
     <lastmod>2026-09-16</lastmod>
   </url>

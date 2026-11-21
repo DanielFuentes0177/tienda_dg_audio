@@ -2,6 +2,7 @@
 
 import prisma from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
+import { assertAdmin } from "@/lib/auth-guard";
 
 // Helper to slugify text
 function slugify(text: string): string {
@@ -33,6 +34,7 @@ interface PostInput {
 }
 
 export async function createPost(data: PostInput) {
+  await assertAdmin();
   try {
     let finalSlug = slugify(data.slug || data.title);
     if (!finalSlug) {
@@ -76,6 +78,7 @@ export async function createPost(data: PostInput) {
 }
 
 export async function updatePost(id: string, data: Partial<PostInput>) {
+  await assertAdmin();
   try {
     let finalSlug = data.slug ? slugify(data.slug) : undefined;
 
@@ -129,6 +132,7 @@ export async function updatePost(id: string, data: Partial<PostInput>) {
 }
 
 export async function deletePost(id: string) {
+  await assertAdmin();
   try {
     const post = await prisma.post.delete({
       where: { id },
@@ -144,6 +148,7 @@ export async function deletePost(id: string) {
 }
 
 export async function togglePublishPost(id: string, published: boolean) {
+  await assertAdmin();
   try {
     const post = await prisma.post.update({
       where: { id },

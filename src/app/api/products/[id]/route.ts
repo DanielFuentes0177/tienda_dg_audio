@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { revalidatePath } from "next/cache";
 import prisma from "@/lib/prisma";
+import { requireAdmin, isAdminSession } from "@/lib/auth-guard";
 
 export async function GET(
   request: Request,
@@ -12,7 +13,7 @@ export async function GET(
       where: { id },
     });
 
-    if (!product) {
+    if (!product || (!product.isActive && !(await isAdminSession()))) {
       return NextResponse.json({ error: "Product not found" }, { status: 404 });
     }
 
@@ -27,6 +28,9 @@ export async function PUT(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  const guard = await requireAdmin();
+  if (!guard.ok) return guard.response;
+
   try {
     const { id } = await params;
     const body = await request.json();
@@ -61,6 +65,9 @@ export async function DELETE(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  const guard = await requireAdmin();
+  if (!guard.ok) return guard.response;
+
   try {
     const { id } = await params;
     

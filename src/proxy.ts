@@ -1,9 +1,14 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { getToken } from "next-auth/jwt";
+import { getAuthSecret } from "@/lib/auth-secret";
 
 export async function proxy(req: NextRequest) {
-  const secret = process.env.NEXTAUTH_SECRET || "fallback_secret_for_development_only";
+  const secret = getAuthSecret();
+  if (!secret) {
+    // Sin secreto configurado en producción: denegar todo acceso al admin.
+    return NextResponse.redirect(new URL("/login", req.url));
+  }
   const isSecure = req.cookies.has("__Secure-next-auth.session-token");
   const cookieName = isSecure ? "__Secure-next-auth.session-token" : "next-auth.session-token";
 

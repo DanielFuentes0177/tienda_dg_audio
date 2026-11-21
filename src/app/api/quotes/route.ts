@@ -1,31 +1,43 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
+import { requireAdmin } from "@/lib/auth-guard";
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { customerName, customerEmail, customerPhone, message, items } = body;
+    const { customerName, customerEmail, customerPhone, message, items } = body ?? {};
 
-    if (!customerName || !customerEmail || !items || !Array.isArray(items) || items.length === 0) {
+    const str = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice(0, max) : "");
+    const name = str(customerName, 120);
+    const email = str(customerEmail, 200);
+    const phone = str(customerPhone, 40);
+    const note = str(message, 2000);
+
+    if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !Array.isArray(items) || items.length === 0 || items.length > 50) {
       return NextResponse.json(
-        { error: "Nombre, email y al menos un producto son requeridos." },
+        { error: "Nombre, email válido y al menos un producto son requeridos." },
         { status: 400 }
       );
+    }
+
+    const cleanItems = items.map((item: { productId?: unknown; quantity?: unknown }) => ({
+      productId: typeof item?.productId === "string" ? item.productId : "",
+      quantity: Number.isInteger(item?.quantity) ? (item.quantity as number) : 0,
+    }));
+    if (cleanItems.some((i) => !i.productId || i.quantity < 1 || i.quantity > 999)) {
+      return NextResponse.json({ error: "Productos o cantidades inválidos." }, { status: 400 });
     }
 
     // Create the quote and its items in a transaction
     const quote = await prisma.quote.create({
       data: {
-        customerName,
-        customerEmail,
-        customerPhone,
-        message,
+        customerName: name,
+        customerEmail: email,
+        customerPhone: phone || null,
+        message: note || null,
         status: "PENDING",
         items: {
-          create: items.map((item: any) => ({
-            productId: item.productId,
-            quantity: item.quantity,
-          })),
+          create: cleanItems,
         },
       },
     });
@@ -41,6 +53,9 @@ export async function POST(req: Request) {
 }
 
 export async function GET() {
+  const guard = await requireAdmin();
+  if (!guard.ok) return guard.response;
+
   try {
     const quotes = await prisma.quote.findMany({
       include: {

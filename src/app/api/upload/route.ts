@@ -3,8 +3,12 @@ import { promises as fs } from "fs";
 import path from "path";
 import { UPLOAD_DIR } from "@/lib/uploads";
 import sharp from "sharp";
+import { requireAdmin } from "@/lib/auth-guard";
 
 export async function POST(request: NextRequest) {
+  const guard = await requireAdmin();
+  if (!guard.ok) return guard.response;
+
   try {
     const data = await request.formData();
     const file: File | null = data.get("file") as unknown as File;
