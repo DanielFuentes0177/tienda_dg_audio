@@ -34,3 +34,20 @@ test("login: solo fallos bloquean y un acierto limpia", () => {
   clearFailures("u");
   assert.equal(failuresLocked("u", 8, 1000).locked, false);
 });
+
+test("sanitize conserva tablas, botones CTA y videos de YouTube del editor", () => {
+  const html = '<table style="min-width: 75px"><colgroup><col style="min-width: 25px"></colgroup><tbody><tr><td colspan="1" style="text-align: left">x</td></tr></tbody></table>'
+    + '<a class="dg-blog-cta-button" href="https://wa.me/525537270177">Cotiza</a>'
+    + '<div data-youtube-video=""><iframe src="https://www.youtube.com/embed/abc" width="640" height="360" allowfullscreen></iframe></div>'
+    + '<img class="image-align-center" data-align="center" src="https://x.com/a.png">';
+  const out = sanitizePostHtml(html);
+  assert.match(out, /<colgroup><col/);
+  assert.match(out, /min-width:\s*25px/);
+  assert.match(out, /dg-blog-cta-button/);
+  assert.match(out, /<iframe src="https:\/\/www\.youtube\.com\/embed\/abc"/);
+  assert.match(out, /data-align="center"/);
+});
+
+test("sanitize bloquea iframes que no son de YouTube", () => {
+  assert.ok(!/<iframe/.test(sanitizePostHtml('<iframe src="https://evil.com/x"></iframe>')));
+});

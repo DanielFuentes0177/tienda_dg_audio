@@ -25,6 +25,7 @@ import {
   Table as TableIcon, Palette, Highlighter,
   AlignHorizontalDistributeStart, AlignHorizontalDistributeCenter, AlignHorizontalDistributeEnd
 } from 'lucide-react';
+import { cleanPastedHtml } from '@/lib/wordPaste';
 import './BlockEditor.css'; 
 
 interface BlockEditorProps {
@@ -226,6 +227,8 @@ export function BlockEditor({ initialHtml, onChange }: BlockEditorProps) {
       TableCell,
     ],
     content: initialHtml || '',
+    // Pegar desde Word: convierte sus listas y limpia estilos de Office (ver lib/wordPaste.ts)
+    editorProps: { transformPastedHTML: cleanPastedHtml },
     onUpdate: ({ editor }) => {
       onChange(editor.getHTML());
     },
