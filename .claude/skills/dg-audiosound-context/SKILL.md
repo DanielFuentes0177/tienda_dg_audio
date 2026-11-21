@@ -21,12 +21,14 @@ Dos proyectos distintos sirven el mismo dominio:
 **Cómo se combinan:** Next.js corre en el dominio principal (`www`). En `next.config.ts` hay un `rewrites().fallback` que manda **toda ruta que Next no conoce** a `https://estatico.dgaudiosound.com/:path*`. Es decir: el HTML se sirve por proxy desde el subdominio `estatico`.
 
 **Despliegue:**
-- Next.js: automático al hacer push (Hostinger desde GitHub).
+- Next.js: **un `git push` NO despliega.** El sitio `dgaudiosound.com` en Hostinger es Node.js (Next 16, Node 22, `npm run build`) y el último build salió de un zip subido (`source_type: archive`, `gitAutoDeployment: null`). Se despliega con `hosting_deploy` (MCP `hostinger-dg`) o el CLI `hostinger up`; el estado se ve con `hosting_get-deployment`. Confirmar con el usuario antes de desplegar (sobrescribe producción). El build lee variables de `.env` del servidor.
 - HTML estático: **manual**, se sube al subdominio `estatico` (Hostinger). No hay CI.
 
 **Hosting:** todo en Hostinger (LiteSpeed). Vercel ya no se usa (hubo migración de Vercel Blob a disco del servidor; las imágenes de producto viven en `/uploads/products/`).
 
 ### Consecuencias que hay que recordar
+- **Bug medido (21-nov-2026): el proxy `fallback` hacia `estatico` devuelve ~10 % de respuestas `200` con cuerpo vacío** (estatico directo: 0/40 vacías; vía `www`: 4/40). Googlebot puede ver páginas en blanco. Cada página migrada a Next elimina el problema para esa URL.
+- `scripts/snapshot-seo.mjs` (`snapshot` / `diff`) guarda y compara título, canonical, H1, JSON-LD y estado de las URLs; reintenta cuando el cuerpo viene vacío. Línea base en `docs/seo-snapshots/`.
 - El HTML estático tiene su propio `.htaccess` (reescritura sin `.html`, 301 de `/subpage/...` viejos, caché). **No aplica a las rutas de Next.**
 - Dos sitios = dos sistemas de canonicals, sitemaps y redirects. Hay que mantenerlos coherentes (ver §4).
 - `/contacto` está en `sitemap-pages.xml` pero **da 404** (no existe ni en Next ni en el HTML). Los servicios enlazan a `/index#contacto`.
