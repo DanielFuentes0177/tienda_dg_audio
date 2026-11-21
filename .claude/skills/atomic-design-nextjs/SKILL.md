@@ -35,6 +35,9 @@ Regla de dependencia: **solo hacia abajo** (página → template → organismo �
 
 - **Hubs** (índice de cada grupo): `python3 scripts/migration/generate.py --hubs` → `src/content/hubs/<grupo>.ts` + `src/app/<grupo>/page.tsx`; plantilla `HubPageTemplate` y organismos `organisms/hub/*` (carrusel de sistemas y plano técnico con estado local). El panel del carrusel arranca con el contenido del HTML (`showcase.initial`) y, tras elegir un sistema, usa `systems` (como el JS original).
 
+- **Home y legales:** `python3 scripts/migration/generate.py --home` → `src/content/pages/{home,aviso-de-privacidad,terminos-y-condiciones}.ts`; `HomePageTemplate` + `organisms/home/*`, `LegalPageTemplate` (+ `LegalIndex` con scroll-spy), rutas `src/app/page.tsx` y `src/app/<legal>/page.tsx`. `serviceMetadata(…, {hreflang:true})` añade hreflang; la verificación de Search Console vive en `layout.tsx`.
+- Redirects `/index` y `/index.html` → `/` en `next.config.ts`. Pendientes en HTML (vía fallback a `estatico`): `/soluciones`, `/aplicaciones`.
+
 ### (histórico) piloto cine-en-casa
 - Contenido tipado en `src/content/services/<slug>.ts` (`ServicePageContent`, `src/types/service.types.ts`). Una página nueva = un archivo de datos + un `page.tsx` de 8 líneas (ver `cine-en-casa/page.tsx`) + añadir su ruta a `NEXT_ROUTE_PREFIXES` y `SERVICE_ROUTE_PREFIXES` en `src/content/site.ts`.
 - Plantilla `templates/ServicePageTemplate` → organismos en `organisms/service/*` → moléculas `ServiceCards`, `FaqItem`. Estado/efectos en contenedores: `ServicePageEffects` (reveal + tilt), `ServiceContactContainer` (WhatsApp).

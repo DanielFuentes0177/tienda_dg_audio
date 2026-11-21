@@ -11,6 +11,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.dgaudiosound.com"),
+  // Verificación de propiedad en Google Search Console (la tenían todas las páginas del sitio HTML)
+  verification: { google: "LTYvaEhYRteW0y2IE0yfsdva3Xlj-y9Lx0XByyAHjPY" },
   title: "Tienda | DG Audiosound",
   description: "Soluciones integrales de audio, video e iluminación premium para hogares y negocios",
   openGraph: {

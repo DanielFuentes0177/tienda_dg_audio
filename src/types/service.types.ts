@@ -1,3 +1,15 @@
+export interface PageSeo {
+  title: string;
+  description: string;
+  ogImage: string;
+  ogImageAlt: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  robots?: string;
+  /** Verificación de Google Search Console (meta google-site-verification). */
+  verification?: string;
+}
+
 /** Fragmento de texto con formato: acento dorado, enlace o negrita. "\n" = salto de línea. */
 export interface InlinePart {
   text: string;
@@ -25,7 +37,7 @@ export interface IconCard {
 
 export interface ServicePageContent {
   path: string; // "/residencial-premium/cine-en-casa"
-  seo: { title: string; description: string; ogImage: string; ogImageAlt: string };
+  seo: PageSeo;
   breadcrumbs: { name: string; href: string }[];
   /** Grafo JSON-LD original de la página (se conserva tal cual; se completa con FAQPage/BreadcrumbList si faltan). */
   jsonLd: Record<string, unknown>[];
@@ -106,7 +118,7 @@ export interface HubImage {
 
 export interface HubPageContent {
   path: string;
-  seo: { title: string; description: string; ogImage: string; ogImageAlt: string };
+  seo: PageSeo;
   breadcrumbs: { name: string; href: string }[];
   jsonLd: Record<string, unknown>[];
   floatMessage: string;
@@ -202,4 +214,118 @@ export interface BlueprintEntry {
   tech1Desc: string;
   tech2Title: string;
   tech2Desc: string;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* HOME                                                                */
+/* ------------------------------------------------------------------ */
+
+export interface HomeCta {
+  label: string;
+  href: string;
+  variant: "btn-primary" | "btn-secondary";
+}
+
+export interface HomePageContent {
+  path: string;
+  seo: PageSeo;
+  jsonLd: Record<string, unknown>[];
+  hero: {
+    kicker: string;
+    kickerStyle: string;
+    title: InlinePart[];
+    subtitle: string;
+    slides: { bgClass: string }[];
+    specialties: { icon: string | null; label: string; href: string }[];
+    buttons: (HomeCta & { style: string })[];
+    subtext: string;
+    subtextStyle: string;
+  };
+  trust: { icon: string | null; title: string; text: string }[];
+  advice: { badge: string; title: Inline; subtitle: string; cards: { title: Inline; text: string; delay: number | null }[]; footer: string };
+  assurance: {
+    title: Inline;
+    subtitle: string;
+    cards: { num: string; icon: string | null; title: string; text: string; delay: number | null }[];
+    closing: string;
+  };
+  solutions: {
+    title: string;
+    subtitle: string;
+    cards: {
+      delay: number | null;
+      img: { src: string; alt: string; width: number; height: number };
+      overlayTitle: string;
+      tags: string[];
+      icon: string | null;
+      title: string;
+      desc: string;
+      linkLabel: string;
+      href: string;
+    }[];
+    closing: string;
+  };
+  applications: {
+    title: string;
+    subtitle: string;
+    categories: { icon: string | null; name: string; intro: string; items: { href: string; icon: string | null; title: string; desc: string }[] }[];
+    footerText: string;
+    ctas: HomeCta[];
+  };
+  process: {
+    title: Inline;
+    subtitle: string;
+    steps: { num: string; icon: string | null; title: string; text: string }[];
+    quote: string;
+    ctaLabel: string;
+    ctaMessage: string;
+  };
+  whyUs: {
+    title: string;
+    subtitle: string;
+    cards: { icon: string | null; title: string; text: string; delay: number | null }[];
+    closing: string;
+    closingClass: string;
+  };
+  brands: { title: Inline; subtitle: string; names: string[]; closing: string };
+  faq: { title: string; items: { question: string; answer: string }[] };
+  contact: {
+    title: InlinePart[];
+    titleStyle: string;
+    sectionStyle: string;
+    subtitle: string;
+    badge: string;
+    panelTitle: InlinePart[];
+    panelText: string;
+    methods: { icon: string | null; label: string; detail: string; href: string }[];
+    formTitle: string;
+    formDescription: string;
+    labels: Record<string, string>;
+    placeholders: Record<string, string>;
+    required: Record<string, boolean>;
+    selectPlaceholder: string;
+    selectPlaceholderDisabled: boolean;
+    projectTypes: { value: string; label: string }[];
+    submitLabel: string;
+    privacyNote: Inline;
+    whatsappTemplate: string;
+  };
+}
+
+/* ------------------------------------------------------------------ */
+/* LEGAL (aviso de privacidad, términos y condiciones)                 */
+/* ------------------------------------------------------------------ */
+
+export type LegalBlock = { type: "p"; text: Inline } | { type: "ul"; items: Inline[] };
+
+export interface LegalPageContent {
+  path: string;
+  seo: PageSeo;
+  jsonLd: Record<string, unknown>[];
+  title: string;
+  updated: string;
+  indexTitle: string;
+  index: { href: string; label: string }[];
+  sections: { id: string; title: string; blocks: LegalBlock[] }[];
 }

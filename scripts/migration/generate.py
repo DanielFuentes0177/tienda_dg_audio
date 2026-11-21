@@ -10,6 +10,7 @@ import sys, os, re, json, glob, shutil
 sys.path.insert(0, os.path.dirname(__file__))
 from extract import extract_page, ROOT
 from extract_hub import extract_hub
+from extract_home import extract_home, extract_legal
 from PIL import Image
 
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
@@ -65,12 +66,51 @@ def hubs(groups):
     lines.append('};\n')
     open(os.path.join(out_dir, 'index.ts'), 'w').write('\n'.join(lines))
 
+def home_and_legal():
+    out = os.path.join(REPO, 'src', 'content', 'pages'); os.makedirs(out, exist_ok=True)
+    d = extract_home()
+    # imágenes de la home: tarjetas de soluciones (con dimensiones) + todo assets/Home (los fondos del hero los pide el CSS)
+    for c in d['solutions']['cards']:
+        c['img']['width'], c['img']['height'] = copy_img(c['img']['src'])
+    home_dir = os.path.join(ROOT, 'assets', 'Home')
+    for f in os.listdir(home_dir):
+        if f.lower().endswith(('.webp', '.png', '.jpg', '.jpeg', '.svg')):  # (hay un .zip suelto en el repo HTML: no se publica)
+            copy_img('/assets/Home/' + f)
+    if not os.path.exists(os.path.join(ROOT, d['seo']['ogImage'].lstrip('/'))):
+        print('  AVISO og:image inexistente en la home')
+    else:
+        copy_img(d['seo']['ogImage'])
+    js = open(os.path.join(ROOT, 'scripts', 'organisms', 'hero-slider.js')).read()
+    kick = json.loads(re.search(r'kickerTexts = (\[.*?\]);', js, re.S).group(1))
+    order = ['path','seo','jsonLd','hero','trust','advice','assurance','solutions','applications','process','whyUs','brands','faq','contact']
+    body = json.dumps({k: d[k] for k in order}, ensure_ascii=False, indent=2)
+    open(os.path.join(out, 'home.ts'), 'w').write(
+        'import type { HomePageContent } from "@/types/service.types";\n\n'
+        '// GENERADO por scripts/migration/generate.py --home desde el sitio HTML. Se puede editar a mano.\n'
+        f'export const homeContent: HomePageContent = {body};\n\n'
+        '/** Textos del kicker del hero que rotan con cada diapositiva (como en el JS original). */\n'
+        f'export const HOME_HERO_KICKERS: string[] = {json.dumps(kick, ensure_ascii=False)};\n')
+    print('ok home')
+    names = {'aviso-de-privacidad': 'avisoDePrivacidad', 'terminos-y-condiciones': 'terminosYCondiciones'}
+    for slug, var in names.items():
+        l = extract_legal(slug)
+        if not os.path.exists(os.path.join(ROOT, l['seo']['ogImage'].lstrip('/'))):
+            print('  AVISO og:image inexistente en', slug)
+        else:
+            copy_img(l['seo']['ogImage'])
+        open(os.path.join(out, slug + '.ts'), 'w').write(
+            'import type { LegalPageContent } from "@/types/service.types";\n\n'
+            '// GENERADO por scripts/migration/generate.py --home desde el sitio HTML. Se puede editar a mano.\n'
+            f'export const {var}: LegalPageContent = {json.dumps(l, ensure_ascii=False, indent=2)};\n')
+        print('ok legal', slug)
+
 def write_paths():
     svc_root = os.path.join(REPO, 'src', 'content', 'services')
     entries = [(g, os.path.basename(f)[:-3]) for g in GROUPS for f in sorted(glob.glob(os.path.join(svc_root, g, '*.ts')))]
     hub_dir = os.path.join(REPO, 'src', 'content', 'hubs')
     hub_paths = [f'/{g}' for g in GROUPS if os.path.exists(os.path.join(hub_dir, g + '.ts'))]
-    paths = ',\n'.join([f'  "{p}"' for p in hub_paths] + [f'  "/{g}/{slug}"' for g, slug in entries])
+    home_path = ['/'] if os.path.exists(os.path.join(REPO, 'src', 'content', 'pages', 'home.ts')) else []
+    paths = ',\n'.join([f'  "{p}"' for p in home_path + hub_paths] + [f'  "/{g}/{slug}"' for g, slug in entries])
     open(os.path.join(REPO, 'src', 'content', 'servicePaths.ts'), 'w').write(
         '/** Rutas de servicio y hubs servidas por Next (generado por scripts/migration/generate.py). Ligero: lo usa el cliente. */\n'
         f'export const SERVICE_PATHS: string[] = [\n{paths},\n];\n')
@@ -130,7 +170,9 @@ def main(groups):
 
 if __name__ == '__main__':
     args = sys.argv[1:]
-    if args and args[0] == '--hubs':
+    if args and args[0] == '--home':
+        home_and_legal()
+    elif args and args[0] == '--hubs':
         hubs(args[1:] or list(GROUPS)); write_paths()
     else:
         main(args or ['residencial-premium'])

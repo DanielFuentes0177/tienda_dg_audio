@@ -6,7 +6,7 @@ import { useEffect } from "react";
  * Contenedor (smart, sin UI): comportamientos de las páginas de servicio que en el sitio HTML
  * hacía subpage.js — revelado al hacer scroll y efecto de inclinación 3D en tarjetas.
  */
-export const ServicePageEffects = ({ variant = "service" }: { variant?: "service" | "hub" }) => {
+export const ServicePageEffects = ({ variant = "service", kickers }: { variant?: "service" | "hub" | "home"; kickers?: string[] }) => {
   useEffect(() => {
     const root = document.querySelector(".svc");
     if (!root) return;
@@ -31,7 +31,15 @@ export const ServicePageEffects = ({ variant = "service" }: { variant?: "service
     });
 
     // Carrusel del hero (crossfade cada 4 s)
-    const slides = Array.from(root.querySelectorAll<HTMLElement>(variant === "hub" ? ".hero-lux-slide" : ".corp-hero-v2 .slide"));
+    const slides = Array.from(root.querySelectorAll<HTMLElement>(variant === "hub" ? ".hero-lux-slide" : variant === "home" ? ".hero .slide" : ".corp-hero-v2 .slide"));
+    const kicker = root.querySelector<HTMLElement>(".hero-kicker");
+    // Home: las diapositivas 2-4 cargan su fondo de forma diferida (rendimiento)
+    const lazyTimer = variant === "home" ? setTimeout(() => {
+      slides.forEach((sl) => {
+        const bg = sl.getAttribute("data-bg-class");
+        if (bg) { sl.classList.add(bg); sl.removeAttribute("data-bg-class"); }
+      });
+    }, 2500) : undefined;
     let slideTimer: ReturnType<typeof setInterval> | undefined;
     if (slides.length > 1) {
       let current = 0;
@@ -39,12 +47,13 @@ export const ServicePageEffects = ({ variant = "service" }: { variant?: "service
         slides[current].classList.remove("active");
         current = (current + 1) % slides.length;
         slides[current].classList.add("active");
-      }, variant === "hub" ? 5500 : 4000);
+        if (variant === "home" && kicker && kickers?.[current]) kicker.textContent = kickers[current];
+      }, variant === "hub" ? 5500 : variant === "home" ? 5000 : 4000);
     }
 
     // Inclinación 3D (solo con puntero fino)
     const cleanups: Array<() => void> = [];
-    if (window.matchMedia("(hover: hover)").matches) {
+    if (variant !== "home" && window.matchMedia("(hover: hover)").matches) {
       root
         .querySelectorAll<HTMLElement>(variant === "hub" ? ".card-lux, .process-bento-item" : ".benefit-v2-card, .process-bento-item, .include-card, .brand-marquee-item, .antithesis-problem-card")
         .forEach((card) => {
@@ -81,9 +90,10 @@ export const ServicePageEffects = ({ variant = "service" }: { variant?: "service
     return () => {
       io.disconnect();
       if (slideTimer) clearInterval(slideTimer);
+      if (lazyTimer) clearTimeout(lazyTimer);
       cleanups.forEach((fn) => fn());
     };
-  }, [variant]);
+  }, [variant, kickers]);
 
   return null;
 };

@@ -20,7 +20,13 @@ def main(base, paths):
     for p in paths:
         f = os.path.join(ROOT, p.strip('/') + '.html')
         if not os.path.exists(f): f = os.path.join(ROOT, p.strip('/'), 'index.html')
-        orig = BeautifulSoup(open(f).read(), 'html.parser').find('main')
+        if p == '/': f = os.path.join(ROOT, 'index.html')
+        soup0 = BeautifulSoup(open(f).read(), 'html.parser')
+        orig = soup0.find('main')
+        if orig is None:  # la home no tiene <main>: se quita el chrome (navbar, footer, cookies, whatsapp)
+            orig = soup0.body
+            for sel in ['header#navbar', 'footer', '.cookie-consent', 'a.whatsapp-float']:
+                for t in orig.select(sel): t.decompose()
         html = urllib.request.urlopen(base + p).read().decode()
         nxt = BeautifulSoup(html, 'html.parser').select_one('.svc')
         c1, c2 = counts(orig), counts(nxt)

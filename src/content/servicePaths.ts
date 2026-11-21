@@ -1,5 +1,6 @@
 /** Rutas de servicio y hubs servidas por Next (generado por scripts/migration/generate.py). Ligero: lo usa el cliente. */
 export const SERVICE_PATHS: string[] = [
+  "/",
   "/residencial-premium",
   "/negocios-y-experiencias",
   "/corporativo-e-institucional",

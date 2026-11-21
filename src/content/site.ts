@@ -70,7 +70,7 @@ import { SERVICE_PATHS } from "@/content/servicePaths";
  * hasta terminar la migración: se enlaza con <a> (navegación completa, sin prefetch
  * de Next). Al migrar una página, añade aquí su prefijo.
  */
-export const NEXT_ROUTE_PREFIXES = ["/tienda", "/blog", "/checkout", "/login", "/admin", ...SERVICE_PATHS];
+export const NEXT_ROUTE_PREFIXES = ["/tienda", "/blog", "/checkout", "/login", "/admin", "/aviso-de-privacidad", "/terminos-y-condiciones", ...SERVICE_PATHS];
 
 /** Páginas de servicio (barra de navegación adaptable al fondo y CTA a su propio formulario). */
 export const isServiceRoute = (pathname: string): boolean =>

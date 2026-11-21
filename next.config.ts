@@ -21,6 +21,9 @@ const nextConfig: NextConfig = {
       { source: '/marca/:path*', destination: '/tienda', statusCode: 301 },
       // Ruta antigua de producto sin /producto/
       { source: `/tienda/:id(${uuid})`, destination: '/tienda/producto/:id', statusCode: 301 },
+      // La home también existía como /index e /index.html
+      { source: '/index', destination: '/', statusCode: 301 },
+      { source: '/index.html', destination: '/', statusCode: 301 },
       // /contacto no existe como página: el formulario vive en la home
       { source: '/contacto', destination: '/#contacto', statusCode: 301 },
       { source: '/tienda/producto/d40b51e9-bb0b-4aa6-bc97-ac9aae7dc1c3', destination: '/tienda/producto/biamp-voltera-d-1200-2m', statusCode: 301 },
