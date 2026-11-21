@@ -9,15 +9,22 @@ export async function proxy(req: NextRequest) {
     // Sin secreto configurado en producción: denegar todo acceso al admin.
     return NextResponse.redirect(new URL("/login", req.url));
   }
-  const isSecure = req.cookies.has("__Secure-next-auth.session-token");
-  const cookieName = isSecure ? "__Secure-next-auth.session-token" : "next-auth.session-token";
+  // Se prueban ambas cookies: un navegador puede traer una "__Secure-" vieja o de otra app en el mismo
+  // host (p. ej. localhost) y eso no debe impedir usar la sesión válida.
+  const candidates = [
+    { cookieName: "__Secure-next-auth.session-token", secureCookie: true },
+    { cookieName: "next-auth.session-token", secureCookie: false },
+  ].filter((c) => req.cookies.has(c.cookieName));
 
-  const token = await getToken({
-    req,
-    secret,
-    cookieName,
-    secureCookie: isSecure,
-  });
+  let token = null;
+  for (const c of candidates) {
+    try {
+      token = await getToken({ req, secret, cookieName: c.cookieName, secureCookie: c.secureCookie });
+    } catch {
+      token = null;
+    }
+    if (token) break;
+  }
 
   if (!token) {
     const signInUrl = new URL("/login", req.url);
