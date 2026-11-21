@@ -10,6 +10,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const pathname = usePathname();
   const isProducts = pathname?.startsWith("/admin/products");
   const isDashboard = pathname === "/admin";
+  const isTextos = pathname?.startsWith("/admin/textos");
   const isBlog = pathname?.startsWith("/admin/blog");
 
   return (
@@ -87,6 +88,21 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           >
             <FileText size={20} />
             Blog
+          </Link>
+          <Link 
+            href="/admin/textos" 
+            style={{ 
+              padding: "0.75rem 1rem", 
+              borderRadius: "8px", 
+              backgroundColor: isTextos ? "rgba(212, 164, 55, 0.1)" : "transparent", 
+              color: isTextos ? "var(--color-accent)" : "var(--text-inverse)", 
+              display: "flex", 
+              alignItems: "center", 
+              gap: "0.75rem" 
+            }}
+          >
+            <FileText size={20} />
+            Textos
           </Link>
         </nav>
 

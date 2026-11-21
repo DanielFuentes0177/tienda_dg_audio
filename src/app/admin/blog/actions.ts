@@ -1,6 +1,7 @@
 "use server";
 
 import prisma from "@/lib/prisma";
+import { sanitizePostHtml } from "@/lib/sanitize";
 import { revalidatePath } from "next/cache";
 import { assertAdmin } from "@/lib/auth-guard";
 
@@ -54,7 +55,7 @@ export async function createPost(data: PostInput) {
       data: {
         title: data.title,
         slug: finalSlug,
-        content: data.content,
+        content: sanitizePostHtml(data.content ?? ""),
         imageUrl: data.imageUrl,
         published: data.published ?? false,
         seoTitle: data.seoTitle || data.title,
@@ -105,7 +106,7 @@ export async function updatePost(id: string, data: Partial<PostInput>) {
       data: {
         title: data.title,
         slug: finalSlug,
-        content: data.content,
+        content: sanitizePostHtml(data.content ?? ""),
         imageUrl: data.imageUrl,
         published: data.published,
         seoTitle: data.seoTitle,

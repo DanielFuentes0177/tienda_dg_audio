@@ -1,5 +1,6 @@
 import React from "react";
 import prisma from "@/lib/prisma";
+import { sanitizePostHtml } from "@/lib/sanitize";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -124,7 +125,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           lineHeight: "1.8",
           color: "var(--text-main)",
         }}
-        dangerouslySetInnerHTML={{ __html: post.content }}
+        dangerouslySetInnerHTML={{ __html: sanitizePostHtml(post.content) }}
       />
 
       {relatedPosts.length > 0 && (

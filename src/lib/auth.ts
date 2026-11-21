@@ -3,6 +3,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import prisma from "@/lib/prisma";
 import bcrypt from "bcryptjs";
 import { getAuthSecret } from "@/lib/auth-secret";
+import { clientIp, rateLimit } from "@/lib/rate-limit";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -12,23 +13,31 @@ export const authOptions: NextAuthOptions = {
         email: { label: "Email", type: "email" },
         password: { label: "Contraseña", type: "password" }
       },
-      async authorize(credentials) {
+      async authorize(credentials, req) {
         if (!credentials?.email || !credentials?.password) {
           throw new Error("Credenciales inválidas");
         }
 
+        const ip = clientIp({ get: (n: string) => (req?.headers as Record<string, string> | undefined)?.[n.toLowerCase()] ?? null });
+        const email = String(credentials.email).trim().toLowerCase();
+        const byIp = rateLimit(`login-ip:${ip}`, 20, 15 * 60_000);
+        const byEmail = rateLimit(`login-email:${email}`, 5, 15 * 60_000);
+        if (!byIp.ok || !byEmail.ok) {
+          throw new Error("Demasiados intentos. Inténtalo más tarde.");
+        }
+
         const user = await prisma.user.findUnique({
-          where: { email: credentials.email }
+          where: { email: credentials.email.trim() }
         });
 
         if (!user) {
-          throw new Error("Usuario no encontrado");
+          throw new Error("Credenciales inválidas");
         }
 
         const isPasswordValid = await bcrypt.compare(credentials.password, user.password);
 
         if (!isPasswordValid) {
-          throw new Error("Contraseña incorrecta");
+          throw new Error("Credenciales inválidas");
         }
 
         return {

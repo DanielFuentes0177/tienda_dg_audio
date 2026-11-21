@@ -127,6 +127,10 @@ export async function GET() {
     <loc>https://www.dgaudiosound.com/eventos-y-produccion/musicos-vocalistas</loc>
     <lastmod>2026-09-19</lastmod>
   </url>
+  <url>
+    <loc>https://www.dgaudiosound.com/contacto</loc>
+    <lastmod>2026-11-21</lastmod>
+  </url>
 </urlset>`;
 
   return new NextResponse(xml, {

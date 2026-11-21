@@ -6,14 +6,16 @@ import { HubPageTemplate } from "@/components/templates/HubPageTemplate";
 import { HUBS } from "@/content/hubs";
 import { SERVICES, servicesInGroup } from "@/content/services";
 import { serviceJsonLd, serviceMetadata } from "@/lib/seo/serviceSeo";
+import { withPageTexts } from "@/lib/pageTexts";
 
 /** Parámetros estáticos de un grupo (/residencial-premium/[slug], etc.). */
 export const serviceParams = (group: string) =>
   servicesInGroup(group).map((s) => ({ slug: s.path.split("/").pop() as string }));
 
-export function serviceMeta(group: string, slug: string): Metadata {
-  const content = SERVICES[`/${group}/${slug}`];
-  return content ? serviceMetadata(content) : {};
+export async function serviceMeta(group: string, slug: string): Promise<Metadata> {
+  const path = `/${group}/${slug}`;
+  const content = SERVICES[path];
+  return content ? withPageTexts(path, serviceMetadata(content)) : {};
 }
 
 export function ServicePage({ group, slug }: { group: string; slug: string }) {
@@ -27,9 +29,9 @@ export function ServicePage({ group, slug }: { group: string; slug: string }) {
   );
 }
 
-export function hubMeta(group: string): Metadata {
+export async function hubMeta(group: string): Promise<Metadata> {
   const content = HUBS[`/${group}`];
-  return content ? serviceMetadata(content) : {};
+  return content ? withPageTexts(`/${group}`, serviceMetadata(content)) : {};
 }
 
 export function HubPage({ group }: { group: string }) {

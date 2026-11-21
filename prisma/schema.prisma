@@ -80,3 +80,15 @@ model Post {
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
 }
+
+/// Textos editables desde el admin (sobrescriben los del código). Un registro por página y campo.
+model PageText {
+  id        String   @id @default(uuid())
+  path      String
+  field     String
+  value     String   @db.Text
+  updatedAt DateTime @updatedAt
+
+  @@unique([path, field])
+  @@index([path])
+}
