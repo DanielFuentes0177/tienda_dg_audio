@@ -148,28 +148,40 @@
     display: flex;
   }
 
+  /* Mismo menú móvil que el sitio HTML: panel oscuro a pantalla completa bajo la barra */
   .navMenu {
     position: fixed;
     top: 90px;
     left: -100%;
-    width: calc(100% - 32px);
-    margin: 0 16px;
-    background: rgba(255, 255, 255, 0.98);
+    width: 100%;
+    height: calc(100vh - 90px);
+    margin: 0;
+    background: #0d0d0f;
     flex-direction: column;
+    justify-content: center;
     padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    align-items: flex-start;
+    border-radius: 0;
+    box-shadow: none;
+    transition: 0.4s ease;
+    align-items: center;
+    visibility: hidden; /* cerrado: evita una franja visible a la izquierda (el header es el bloque contenedor del fixed) */
   }
 
   .navMenu.open {
     left: 0;
+    visibility: visible;
+  }
+
+  .navMenu .navLink {
+    color: var(--color-text-white);
+    font-size: 1.25rem;
   }
 
   .navList {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2.5rem;
     width: 100%;
+    text-align: center;
+    align-items: center;
   }
 }

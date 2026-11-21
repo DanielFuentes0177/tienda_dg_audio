@@ -83,7 +83,13 @@ export const Navbar = ({ links, cta, pathname, homeHref, logoSrc = "/dg_logo@2x.
           <Image src={logoSrc} alt="DG AUDIOSOUND Logo" width={105} height={105} className={styles.logoImg} priority />
         </a>
 
-        <nav className={`${styles.navMenu} ${isMenuOpen ? styles.open : ""}`}>
+        <nav
+          className={`${styles.navMenu} ${isMenuOpen ? styles.open : ""}`}
+          onClick={(e) => {
+            // Cierra el menú móvil al elegir un enlace (también los que solo cambian el hash)
+            if ((e.target as HTMLElement).closest("a")) setMenuOpenPath(null);
+          }}
+        >
           <ul className={styles.navList}>
             {links.map((link) => (
               <li key={link.href} className={styles.navItem}>
