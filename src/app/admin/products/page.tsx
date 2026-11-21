@@ -62,7 +62,6 @@ export default function AdminProductsPage() {
   // Filtros
   const [filterImage, setFilterImage] = useState<"all" | "with" | "without">("all");
   const [filterStatus, setFilterStatus] = useState<"all" | "active" | "inactive">("all");
-  const [filterStock, setFilterStock] = useState<"all" | "in_stock" | "out_of_stock">("all");
 
   const fileInputRef = useRef<HTMLInputElement>(null);
   
@@ -76,7 +75,7 @@ export default function AdminProductsPage() {
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [deferredSearchTerm, filterImage, filterStatus, filterStock]);
+  }, [deferredSearchTerm, filterImage, filterStatus]);
 
   const handleOpenForm = (product?: Product) => {
     setEditingProduct(product || null);
@@ -288,9 +287,6 @@ export default function AdminProductsPage() {
     if (filterStatus === "active" && !p.isActive) return false;
     if (filterStatus === "inactive" && p.isActive) return false;
 
-    // 4. Filtro de Stock
-    if (filterStock === "in_stock" && p.stock <= 0) return false;
-    if (filterStock === "out_of_stock" && p.stock > 0) return false;
 
     return true;
   });
@@ -304,7 +300,19 @@ export default function AdminProductsPage() {
   return (
     <div className="section-light" style={{ paddingTop: "100px", paddingLeft: "2rem", paddingRight: "2rem", paddingBottom: "2rem", maxWidth: "1400px", margin: "0 auto" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "1.5rem", flexWrap: "wrap", marginBottom: "1.5rem" }}>
-        <h1 className="section-title" style={{ margin: 0, fontSize: "2rem" }}>Gestión de Productos</h1>
+        <div style={{ display: "flex", alignItems: "baseline", gap: "1rem", flexWrap: "wrap" }}>
+          <h1 className="section-title" style={{ margin: 0, fontSize: "2rem" }}>Gestión de Productos</h1>
+          {!isLoading && products.length > 0 && (
+            <button
+              type="button"
+              onClick={() => setFilterImage(filterImage === "without" ? "all" : "without")}
+              title="Filtrar productos sin imagen"
+              style={{ border: "1px solid var(--border-color)", background: "white", borderRadius: "999px", padding: "0.25rem 0.75rem", fontSize: "0.85rem", color: "var(--text-muted)", cursor: "pointer" }}
+            >
+              {products.length} productos · {products.filter((p) => !p.imageUrl).length} sin imagen
+            </button>
+          )}
+        </div>
         
         <div style={{ display: "flex", gap: "0.75rem", flexShrink: 0, justifyContent: "flex-end", alignItems: "center" }}>
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "nowrap" }}>
@@ -377,15 +385,6 @@ export default function AdminProductsPage() {
               { value: "inactive", label: "Inactivos" }
             ]}
           />
-          <CustomAdminSelect 
-            value={filterStock} 
-            onChange={setFilterStock}
-            options={[
-              { value: "all", label: "Todo el stock" },
-              { value: "in_stock", label: "En Stock" },
-              { value: "out_of_stock", label: "Agotados" }
-            ]}
-          />
         </div>
       )}
 
@@ -410,7 +409,6 @@ export default function AdminProductsPage() {
               <tr>
                 <th style={{ padding: "1rem", width: "60px" }}>Img</th>
                 <th style={{ padding: "1rem" }}>Producto</th>
-                <th style={{ padding: "1rem" }}>Stock</th>
                 <th style={{ padding: "1rem" }}>Estado</th>
                 <th style={{ padding: "1rem", textAlign: "right" }}>Acciones</th>
               </tr>
@@ -429,12 +427,11 @@ export default function AdminProductsPage() {
                     </div>
                   </td>
                   <td style={{ padding: "1rem" }}>
-                    <div style={{ fontWeight: 600 }}>{product.name}</div>
-                    <div style={{ fontSize: "0.875rem", color: "var(--text-muted)" }}>
-                      {product.description ? `${String(product.description).substring(0, 50)}...` : ""}
+                    <div style={{ fontWeight: 600, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }} title={product.name}>{product.name}</div>
+                    <div style={{ fontSize: "0.875rem", color: "var(--text-muted)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", maxWidth: "560px" }}>
+                      {product.description ? String(product.description).replace(/\s+/g, " ") : ""}
                     </div>
                   </td>
-                  <td style={{ padding: "1rem" }}>{product.stock}</td>
                   <td style={{ padding: "1rem" }}>
                     {product.isActive ? (
                       <span style={{ backgroundColor: "#e8f5e9", color: "#2e7d32", padding: "0.25rem 0.5rem", borderRadius: "4px", fontSize: "0.875rem", fontWeight: 600 }}>
@@ -450,22 +447,22 @@ export default function AdminProductsPage() {
                     <div style={{ display: "flex", gap: "0.75rem", justifyContent: "flex-end", alignItems: "center", flexWrap: "nowrap" }}>
                       <button 
                         onClick={() => handleOpenForm(product)}
-                        style={{ background: "none", border: "none", cursor: "pointer", color: "var(--color-accent)", padding: 0 }}
-                        title="Editar"
+                        style={{ border: "1px solid var(--border-color)", borderRadius: "8px", width: "34px", height: "34px", display: "inline-flex", alignItems: "center", justifyContent: "center", cursor: "pointer", background: "white", padding: 0, color: "var(--color-accent)" }}
+                        title="Editar" aria-label={`Editar ${product.name}`}
                       >
                         <Edit size={18} />
                       </button>
                       <button 
                         onClick={() => handleToggleStatus(product.id, product.isActive)}
-                        style={{ background: "none", border: "none", cursor: "pointer", color: product.isActive ? "#666" : "#2e7d32", padding: 0 }}
-                        title={product.isActive ? "Deshabilitar" : "Habilitar"}
+                        style={{ border: "1px solid var(--border-color)", borderRadius: "8px", width: "34px", height: "34px", display: "inline-flex", alignItems: "center", justifyContent: "center", cursor: "pointer", background: "white", padding: 0, color: product.isActive ? "#666" : "#2e7d32" }}
+                        title={product.isActive ? "Deshabilitar (ocultar de la tienda)" : "Habilitar (mostrar en la tienda)"} aria-label={product.isActive ? `Deshabilitar ${product.name}` : `Habilitar ${product.name}`}
                       >
                         {product.isActive ? <EyeOff size={18} /> : <Eye size={18} />}
                       </button>
                       <button 
                         onClick={() => confirmDelete(product.id, product.name)}
-                        style={{ background: "none", border: "none", cursor: "pointer", color: "#c62828", padding: 0 }}
-                        title="Eliminar permanentemente"
+                        style={{ border: "1px solid var(--border-color)", borderRadius: "8px", width: "34px", height: "34px", display: "inline-flex", alignItems: "center", justifyContent: "center", cursor: "pointer", padding: 0, color: "#c62828", marginLeft: "0.75rem", background: "#fff5f5", borderColor: "#f3c7c7" }}
+                        title="Eliminar permanentemente" aria-label={`Eliminar ${product.name}`}
                       >
                         <Trash2 size={18} />
                       </button>
@@ -475,7 +472,7 @@ export default function AdminProductsPage() {
               ))}
               {filteredProducts.length === 0 && (
                 <tr>
-                  <td colSpan={5} style={{ padding: "2rem", textAlign: "center", color: "var(--text-muted)" }}>
+                  <td colSpan={4} style={{ padding: "2rem", textAlign: "center", color: "var(--text-muted)" }}>
                     No hay productos registrados. Crea uno nuevo.
                   </td>
                 </tr>
