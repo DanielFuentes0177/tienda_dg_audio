@@ -26,7 +26,7 @@ export default function LoginPage() {
       });
 
       if (res?.error) {
-        setError("Credenciales inválidas. Inténtalo de nuevo.");
+        setError(res.error.includes("Demasiados") ? "Demasiados intentos fallidos. Espera unos minutos e inténtalo de nuevo." : "Credenciales inválidas. Inténtalo de nuevo.");
       } else {
         const params = new URLSearchParams(window.location.search);
         const callbackUrl = params.get("callbackUrl") || "/admin";

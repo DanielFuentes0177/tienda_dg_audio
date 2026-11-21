@@ -25,3 +25,27 @@ export function rateLimit(key: string, max: number, windowMs: number): { ok: boo
 export function clientIp(headers: { get(name: string): string | null }): string {
   return (headers.get("x-forwarded-for")?.split(",")[0] || headers.get("x-real-ip") || "unknown").trim();
 }
+
+/**
+ * Variante para login: solo cuentan los intentos FALLIDOS (un acierto limpia el contador),
+ * y consultar el estado no consume intentos.
+ */
+const failures = new Map<string, number[]>();
+
+export function failuresLocked(key: string, max: number, windowMs: number): { locked: boolean; retryAfterSec: number } {
+  const now = Date.now();
+  const hits = (failures.get(key) ?? []).filter((t) => now - t < windowMs);
+  failures.set(key, hits);
+  if (hits.length >= max) return { locked: true, retryAfterSec: Math.max(1, Math.ceil((windowMs - (now - hits[0])) / 1000)) };
+  return { locked: false, retryAfterSec: 0 };
+}
+
+export function recordFailure(key: string): void {
+  const hits = failures.get(key) ?? [];
+  hits.push(Date.now());
+  failures.set(key, hits);
+}
+
+export function clearFailures(key: string): void {
+  failures.delete(key);
+}

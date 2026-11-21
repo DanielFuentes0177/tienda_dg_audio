@@ -3,7 +3,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import prisma from "@/lib/prisma";
 import bcrypt from "bcryptjs";
 import { getAuthSecret } from "@/lib/auth-secret";
-import { clientIp, rateLimit } from "@/lib/rate-limit";
+import { clearFailures, clientIp, failuresLocked, recordFailure } from "@/lib/rate-limit";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -20,10 +20,11 @@ export const authOptions: NextAuthOptions = {
 
         const ip = clientIp({ get: (n: string) => (req?.headers as Record<string, string> | undefined)?.[n.toLowerCase()] ?? null });
         const email = String(credentials.email).trim().toLowerCase();
-        const byIp = rateLimit(`login-ip:${ip}`, 20, 15 * 60_000);
-        const byEmail = rateLimit(`login-email:${email}`, 5, 15 * 60_000);
-        if (!byIp.ok || !byEmail.ok) {
-          throw new Error("Demasiados intentos. Inténtalo más tarde.");
+        const ipKey = `login-ip:${ip}`;
+        const emailKey = `login-email:${email}`;
+        const WINDOW = 15 * 60_000;
+        if (failuresLocked(ipKey, 30, WINDOW).locked || failuresLocked(emailKey, 8, WINDOW).locked) {
+          throw new Error("Demasiados intentos fallidos. Espera unos minutos e inténtalo de nuevo.");
         }
 
         const user = await prisma.user.findUnique({
@@ -31,14 +32,20 @@ export const authOptions: NextAuthOptions = {
         });
 
         if (!user) {
+          recordFailure(ipKey);
+          recordFailure(emailKey);
           throw new Error("Credenciales inválidas");
         }
 
         const isPasswordValid = await bcrypt.compare(credentials.password, user.password);
 
         if (!isPasswordValid) {
+          recordFailure(ipKey);
+          recordFailure(emailKey);
           throw new Error("Credenciales inválidas");
         }
+
+        clearFailures(emailKey);
 
         return {
           id: user.id,

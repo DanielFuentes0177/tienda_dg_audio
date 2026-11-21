@@ -22,3 +22,15 @@ test("rateLimit bloquea tras el máximo", () => {
   assert.equal(r.ok, false);
   assert.ok(r.retryAfterSec >= 1);
 });
+
+import { failuresLocked, recordFailure, clearFailures } from "../src/lib/rate-limit.ts";
+
+test("login: solo fallos bloquean y un acierto limpia", () => {
+  for (let i = 0; i < 8; i++) {
+    assert.equal(failuresLocked("u", 8, 1000).locked, false); // consultar no consume
+    recordFailure("u");
+  }
+  assert.equal(failuresLocked("u", 8, 1000).locked, true);
+  clearFailures("u");
+  assert.equal(failuresLocked("u", 8, 1000).locked, false);
+});
