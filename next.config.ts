@@ -55,11 +55,11 @@ const nextConfig: NextConfig = {
     ];
   },
   async rewrites() {
-    // Todo lo que Next no conoce se pide al sitio HTML (estatico). Con DG_DISABLE_FALLBACK=1 se desactiva
-    // (para auditar qué recursos aún dependen de él antes de apagar el subdominio).
-    const fallback = process.env.DG_DISABLE_FALLBACK === '1'
-      ? []
-      : [{ source: '/:path*', destination: 'https://estatico.dgaudiosound.com/:path*' }];
+    // El sitio HTML ya está migrado por completo: el proxy a `estatico` quedó desactivado.
+    // Para reactivarlo en una emergencia: DG_ENABLE_FALLBACK=1 (y redeploy).
+    const fallback = process.env.DG_ENABLE_FALLBACK === '1'
+      ? [{ source: '/:path*', destination: 'https://estatico.dgaudiosound.com/:path*' }]
+      : [];
     return { beforeFiles: [], afterFiles: [], fallback };
   },
 };
