@@ -2,123 +2,75 @@
 
 import React from "react";
 import Link from "next/link";
-import { LayoutDashboard, Package, LogOut, ShoppingCart, FileText, PenLine } from "lucide-react";
+import { LayoutDashboard, Package, LogOut, ShoppingCart, FileText, PenLine, ExternalLink } from "lucide-react";
 import { signOut } from "next-auth/react";
 import { usePathname } from "next/navigation";
+import styles from "./admin.module.css";
+
+const NAV: { group: string; items: { href: string; label: string; icon: React.ReactNode; exact?: boolean }[] }[] = [
+  {
+    group: "Tienda",
+    items: [
+      { href: "/admin", label: "Resumen", icon: <LayoutDashboard size={19} />, exact: true },
+      { href: "/admin/products", label: "Productos", icon: <Package size={19} /> },
+      { href: "/admin/quotes", label: "Cotizaciones", icon: <ShoppingCart size={19} /> },
+    ],
+  },
+  {
+    group: "Contenido",
+    items: [
+      { href: "/admin/blog", label: "Blog", icon: <FileText size={19} /> },
+      { href: "/admin/textos", label: "Textos SEO", icon: <PenLine size={19} /> },
+    ],
+  },
+];
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-  const isProducts = pathname?.startsWith("/admin/products");
-  const isDashboard = pathname === "/admin";
-  const isTextos = pathname?.startsWith("/admin/textos");
-  const isBlog = pathname?.startsWith("/admin/blog");
+  const pathname = usePathname() ?? "";
+  const isActive = (href: string, exact?: boolean) => (exact ? pathname === href : pathname === href || pathname.startsWith(`${href}/`));
 
   return (
-    <div style={{ display: "flex", minHeight: "100vh", backgroundColor: "var(--bg-secondary)" }}>
-      {/* Sidebar */}
-      <aside style={{ 
-        width: "260px", 
-        backgroundColor: "var(--bg-dark)", 
-        color: "var(--text-inverse)", 
-        padding: "2rem 1rem",
-        display: "flex",
-        flexDirection: "column"
-      }}>
-        <div style={{ marginBottom: "2rem", paddingLeft: "1rem" }}>
-          <h2 style={{ color: "var(--color-accent)", margin: 0 }}>DG ADMIN</h2>
-        </div>
-        
-        <nav style={{ display: "flex", flexDirection: "column", gap: "0.5rem", flex: 1 }}>
-          <Link 
-            href="/admin" 
-            style={{ 
-              padding: "0.75rem 1rem", 
-              borderRadius: "8px", 
-              display: "flex", 
-              alignItems: "center", 
-              gap: "0.75rem", 
-              backgroundColor: isDashboard ? "rgba(212, 164, 55, 0.1)" : "transparent",
-              color: isDashboard ? "var(--color-accent)" : "var(--text-inverse)" 
-            }}
-          >
-            <LayoutDashboard size={20} />
-            Dashboard
-          </Link>
-          <Link 
-            href="/admin/products" 
-            style={{ 
-              padding: "0.75rem 1rem", 
-              borderRadius: "8px", 
-              backgroundColor: isProducts ? "rgba(212, 164, 55, 0.1)" : "transparent", 
-              color: isProducts ? "var(--color-accent)" : "var(--text-inverse)", 
-              display: "flex", 
-              alignItems: "center", 
-              gap: "0.75rem" 
-            }}
-          >
-            <Package size={20} />
-            Productos
-          </Link>
-          <Link 
-            href="/admin/quotes" 
-            style={{ 
-              padding: "0.75rem 1rem", 
-              borderRadius: "8px", 
-              backgroundColor: pathname?.startsWith("/admin/quotes") ? "rgba(212, 164, 55, 0.1)" : "transparent", 
-              color: pathname?.startsWith("/admin/quotes") ? "var(--color-accent)" : "var(--text-inverse)", 
-              display: "flex", 
-              alignItems: "center", 
-              gap: "0.75rem" 
-            }}
-          >
-            <ShoppingCart size={20} />
-            Cotizaciones
-          </Link>
-          <Link 
-            href="/admin/blog" 
-            style={{ 
-              padding: "0.75rem 1rem", 
-              borderRadius: "8px", 
-              backgroundColor: isBlog ? "rgba(212, 164, 55, 0.1)" : "transparent", 
-              color: isBlog ? "var(--color-accent)" : "var(--text-inverse)", 
-              display: "flex", 
-              alignItems: "center", 
-              gap: "0.75rem" 
-            }}
-          >
-            <FileText size={20} />
-            Blog
-          </Link>
-          <Link 
-            href="/admin/textos" 
-            style={{ 
-              padding: "0.75rem 1rem", 
-              borderRadius: "8px", 
-              backgroundColor: isTextos ? "rgba(212, 164, 55, 0.1)" : "transparent", 
-              color: isTextos ? "var(--color-accent)" : "var(--text-inverse)", 
-              display: "flex", 
-              alignItems: "center", 
-              gap: "0.75rem" 
-            }}
-          >
-            <PenLine size={20} />
-            Textos
-          </Link>
+    <div className={styles.shell}>
+      <aside className={styles.sidebar}>
+        <Link href="/admin" className={styles.brand}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/assets/dg_logo.webp" alt="" />
+          <span>
+            <div className={styles.brandName}>DG Audiosound</div>
+            <div className={styles.brandSub}>Administración</div>
+          </span>
+        </Link>
+
+        <nav className={styles.nav} aria-label="Administración">
+          {NAV.map((g) => (
+            <React.Fragment key={g.group}>
+              <div className={styles.group}>{g.group}</div>
+              {g.items.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`${styles.link} ${isActive(item.href, item.exact) ? styles.linkActive : ""}`}
+                  aria-current={isActive(item.href, item.exact) ? "page" : undefined}
+                >
+                  {item.icon}
+                  {item.label}
+                </Link>
+              ))}
+            </React.Fragment>
+          ))}
         </nav>
 
-        <button 
-          onClick={() => signOut({ callbackUrl: '/' })}
-          style={{ padding: "0.75rem 1rem", display: "flex", alignItems: "center", gap: "0.75rem", color: "var(--text-muted)", marginTop: "auto", background: "none", border: "none", cursor: "pointer", fontSize: "1rem", fontFamily: "var(--font-body)" }}
-        >
-          <LogOut size={20} />
-          Cerrar Sesión
-        </button>
+        <div className={styles.foot}>
+          <a href="/" target="_blank" rel="noopener noreferrer" className={styles.footBtn}>
+            <ExternalLink size={18} /> Ver sitio
+          </a>
+          <button type="button" className={styles.footBtn} onClick={() => signOut({ callbackUrl: "/" })}>
+            <LogOut size={18} /> Cerrar sesión
+          </button>
+        </div>
       </aside>
 
-      {/* Main Content */}
-      <main style={{ flex: 1, minWidth: 0 }}>
-        {children}
-      </main>
+      <main className={styles.main}>{children}</main>
     </div>
   );
 }

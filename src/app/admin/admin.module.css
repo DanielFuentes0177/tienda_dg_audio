@@ -1,0 +1,29 @@
+.shell { display: flex; min-height: 100vh; background: var(--bg-secondary); }
+.sidebar { width: 252px; flex: 0 0 252px; background: var(--bg-dark); color: var(--text-inverse); display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh; padding: 1.5rem 0.9rem; box-sizing: border-box; }
+.brand { display: flex; align-items: center; gap: 0.75rem; padding: 0 0.6rem 1.4rem; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 1.1rem; text-decoration: none; color: inherit; }
+.brand img { width: 44px; height: auto; border-radius: 8px; flex: 0 0 auto; }
+.brandName { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; line-height: 1.15; color: #fff; }
+.brandSub { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); margin-top: 2px; }
+.nav { display: flex; flex-direction: column; gap: 0.15rem; flex: 1; overflow-y: auto; }
+.group { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); padding: 0.9rem 0.8rem 0.35rem; }
+.link { position: relative; display: flex; align-items: center; gap: 0.75rem; padding: 0.62rem 0.8rem; border-radius: 10px; color: rgba(255,255,255,0.78); text-decoration: none; font-size: 0.93rem; font-weight: 500; transition: background var(--transition-fast), color var(--transition-fast); }
+.link:hover { background: rgba(255,255,255,0.06); color: #fff; }
+.linkActive { background: rgba(212,164,55,0.14); color: var(--color-accent); font-weight: 600; }
+.linkActive::before { content: ""; position: absolute; left: -0.9rem; top: 8px; bottom: 8px; width: 3px; border-radius: 0 3px 3px 0; background: var(--color-accent); }
+.foot { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.15rem; }
+.footBtn { display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0.8rem; border-radius: 10px; background: none; border: none; color: rgba(255,255,255,0.6); font-size: 0.9rem; font-family: var(--font-body); cursor: pointer; text-decoration: none; text-align: left; }
+.footBtn:hover { background: rgba(255,255,255,0.06); color: #fff; }
+.main { flex: 1; min-width: 0; padding: 2rem 2.25rem 3rem; }
+
+@media (max-width: 860px) {
+  .shell { flex-direction: column; }
+  .sidebar { position: static; width: auto; flex: none; height: auto; flex-direction: row; align-items: center; gap: 0.5rem; padding: 0.6rem 0.75rem; overflow-x: auto; }
+  .brand { border: none; margin: 0; padding: 0 0.5rem 0 0; }
+  .brandName, .brandSub, .group { display: none; }
+  .nav { flex-direction: row; overflow: visible; flex: none; }
+  .linkActive::before { display: none; }
+  .link { white-space: nowrap; padding: 0.5rem 0.7rem; }
+  .foot { border: none; padding: 0; flex-direction: row; margin-left: auto; }
+  .footBtn { white-space: nowrap; padding: 0.5rem 0.7rem; }
+  .main { padding: 1.25rem 1rem 2rem; }
+}
