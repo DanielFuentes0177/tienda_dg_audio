@@ -5,6 +5,8 @@ export const SERVICE_PATHS: string[] = [
   "/negocios-y-experiencias",
   "/corporativo-e-institucional",
   "/eventos-y-produccion",
+  "/soluciones",
+  "/aplicaciones",
   "/residencial-premium/audio-distribuido",
   "/residencial-premium/audio-hi-fi",
   "/residencial-premium/cine-en-casa",

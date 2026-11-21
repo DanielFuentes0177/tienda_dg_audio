@@ -329,3 +329,60 @@ export interface LegalPageContent {
   index: { href: string; label: string }[];
   sections: { id: string; title: string; blocks: LegalBlock[] }[];
 }
+
+/* ------------------------------------------------------------------ */
+/* Páginas heredadas: /soluciones y /aplicaciones                       */
+/* ------------------------------------------------------------------ */
+
+export interface CtaBannerContent {
+  sectionClass: string;
+  sectionStyle: string;
+  title: string;
+  titleClass: string;
+  subtitle: string;
+  subtitleClass: string;
+  btnWrapStyle: string;
+  ctaLabel: string;
+  ctaHref: string;
+  btnClass: string;
+}
+
+export interface SolutionsPageContent {
+  path: string;
+  seo: PageSeo;
+  jsonLd: Record<string, unknown>[];
+  mainStyle: string;
+  hero: { sectionStyle: string; title: string; titleStyle: string; subtitle: string };
+  blocks: {
+    wrapStyle: string;
+    textStyle: string;
+    textClass: string;
+    title: string;
+    subtitle: string;
+    subtitleStyle: string;
+    bulletsStyle: string;
+    bullets: string[];
+    ctaLabel: string;
+    ctaHref: string;
+    ctaStyle: string;
+    imageClass: string;
+    image: { src: string; alt: string; style: string; width: number; height: number };
+  }[];
+  cta: CtaBannerContent;
+}
+
+export interface ApplicationsPageContent {
+  path: string;
+  seo: PageSeo;
+  jsonLd: Record<string, unknown>[];
+  mainStyle: string;
+  hero: { sectionClass: string; sectionStyle: string; title: string; subtitle: string; subtitleClass: string };
+  sectionsClass: string;
+  categories: {
+    icon: string | null;
+    name: string;
+    itemsStyle: string;
+    items: { href: string; style: string; title: string; iconClass: string | null; iconStyle: string; desc: string }[];
+  }[];
+  cta: CtaBannerContent;
+}

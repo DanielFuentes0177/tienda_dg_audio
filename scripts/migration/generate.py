@@ -11,6 +11,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from extract import extract_page, ROOT
 from extract_hub import extract_hub
 from extract_home import extract_home, extract_legal
+from extract_legacy import extract_solutions, extract_applications
 from PIL import Image
 
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
@@ -104,13 +105,37 @@ def home_and_legal():
             f'export const {var}: LegalPageContent = {json.dumps(l, ensure_ascii=False, indent=2)};\n')
         print('ok legal', slug)
 
+def to_webp(src):
+    """/assets/11.webp  <- assets/11.png del repo HTML (convertida: 2-4 MB -> ~150 KB). Devuelve (w,h) de la imagen publicada."""
+    s = os.path.join(ROOT, re.sub(r'\.webp$', '.png', src).lstrip('/')); d = os.path.join(REPO, 'public', src.lstrip('/'))
+    os.makedirs(os.path.dirname(d), exist_ok=True)
+    with Image.open(s) as im:
+        im = im.convert('RGB'); 
+        if im.width > 1400: im = im.resize((1400, round(im.height * 1400 / im.width)))
+        im.save(d, 'WEBP', quality=82, method=6); return im.size
+
+def legacy():
+    out = os.path.join(REPO, 'src', 'content', 'pages'); os.makedirs(out, exist_ok=True)
+    s = extract_solutions()
+    to_webp(re.search(r"url\('([^']+)'\)", s['hero']['sectionStyle']).group(1))
+    for b in s['blocks']:
+        b['image']['width'], b['image']['height'] = to_webp(b['image']['src'])
+    copy_img(s['seo']['ogImage'])
+    open(os.path.join(out, 'soluciones.ts'), 'w').write('import type { SolutionsPageContent } from "@/types/service.types";\n\n// GENERADO por scripts/migration/generate.py --legacy. Se puede editar a mano.\n'
+        f'export const solucionesContent: SolutionsPageContent = {json.dumps(s, ensure_ascii=False, indent=2)};\n')
+    a = extract_applications(); copy_img(a['seo']['ogImage'])
+    open(os.path.join(out, 'aplicaciones.ts'), 'w').write('import type { ApplicationsPageContent } from "@/types/service.types";\n\n// GENERADO por scripts/migration/generate.py --legacy. Se puede editar a mano.\n'
+        f'export const aplicacionesContent: ApplicationsPageContent = {json.dumps(a, ensure_ascii=False, indent=2)};\n')
+    print('ok legacy soluciones/aplicaciones')
+
 def write_paths():
     svc_root = os.path.join(REPO, 'src', 'content', 'services')
     entries = [(g, os.path.basename(f)[:-3]) for g in GROUPS for f in sorted(glob.glob(os.path.join(svc_root, g, '*.ts')))]
     hub_dir = os.path.join(REPO, 'src', 'content', 'hubs')
     hub_paths = [f'/{g}' for g in GROUPS if os.path.exists(os.path.join(hub_dir, g + '.ts'))]
     home_path = ['/'] if os.path.exists(os.path.join(REPO, 'src', 'content', 'pages', 'home.ts')) else []
-    paths = ',\n'.join([f'  "{p}"' for p in home_path + hub_paths] + [f'  "/{g}/{slug}"' for g, slug in entries])
+    legacy_paths = [f'/{n}' for n in ('soluciones', 'aplicaciones') if os.path.exists(os.path.join(REPO, 'src', 'content', 'pages', n + '.ts'))]
+    paths = ',\n'.join([f'  "{p}"' for p in home_path + hub_paths + legacy_paths] + [f'  "/{g}/{slug}"' for g, slug in entries])
     open(os.path.join(REPO, 'src', 'content', 'servicePaths.ts'), 'w').write(
         '/** Rutas de servicio y hubs servidas por Next (generado por scripts/migration/generate.py). Ligero: lo usa el cliente. */\n'
         f'export const SERVICE_PATHS: string[] = [\n{paths},\n];\n')
@@ -170,7 +195,9 @@ def main(groups):
 
 if __name__ == '__main__':
     args = sys.argv[1:]
-    if args and args[0] == '--home':
+    if args and args[0] == '--legacy':
+        legacy(); write_paths()
+    elif args and args[0] == '--home':
         home_and_legal()
     elif args and args[0] == '--hubs':
         hubs(args[1:] or list(GROUPS)); write_paths()
