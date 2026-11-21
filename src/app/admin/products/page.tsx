@@ -6,7 +6,7 @@ import { Product } from "@/types/product.types";
 import { Button } from "@/components/atoms/Button";
 import { ProductForm } from "@/components/organisms/ProductForm";
 import { ImportPreviewModal } from "@/components/organisms/ImportPreviewModal";
-import { Plus, Edit, Trash2, Eye, EyeOff, Upload, Search, ChevronLeft, ChevronRight, ChevronDown, Check } from "lucide-react";
+import { Plus, Edit, Trash2, Eye, EyeOff, Upload, Download, Search, ChevronLeft, ChevronRight, ChevronDown, Check } from "lucide-react";
 import toast from "react-hot-toast";
 import Papa from "papaparse";
 
@@ -340,6 +340,14 @@ export default function AdminProductsPage() {
             <Upload size={20} />
             {isUploading ? "Subiendo..." : "Importar CSV"}
           </Button>
+          <a
+            href="/api/products/export"
+            download
+            style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", padding: "0.75rem 1.25rem", borderRadius: "8px", backgroundColor: "var(--bg-secondary)", color: "var(--text-primary)", border: "1px solid var(--border-color)", textDecoration: "none", fontWeight: 600 }}
+          >
+            <Download size={20} />
+            Descargar Excel
+          </a>
           <Button onClick={() => handleOpenForm()} style={{ display: "flex", gap: "0.5rem" }} disabled={isUploading}>
             <Plus size={20} />
             Nuevo Producto

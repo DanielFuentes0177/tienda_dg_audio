@@ -1,19 +1,22 @@
 const fs = require('fs');
-const xlsx = require('xlsx');
+const readXlsxFile = require('read-excel-file/node');
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 async function main() {
   const filePath = 'catalogo/Catalogo_Tienda_DG_Audiosound_WEB.xlsx';
-  
+
   console.log('Leyendo archivo Excel...');
-  const workbook = xlsx.readFile(filePath);
-  const sheetName = workbook.SheetNames[0];
-  const sheet = workbook.Sheets[sheetName];
-  
-  // Leemos el JSON del excel. La primera fila se asume que tiene los headers
-  const data = xlsx.utils.sheet_to_json(sheet);
-  
+  const sheets = await readXlsxFile(filePath); // [{ sheet, data: [[fila], ...] }]
+  const rows = sheets[0].data;
+  const headers = rows[0].map((h) => String(h ?? '').trim());
+  // Cada fila -> objeto { Encabezado: valor }
+  const data = rows.slice(1).map((r) => {
+    const obj = {};
+    headers.forEach((h, i) => { if (h && r[i] != null && String(r[i]).trim() !== '') obj[h] = typeof r[i] === 'string' ? r[i].trim() : r[i]; });
+    return obj;
+  }).filter((o) => Object.keys(o).length);
+
   console.log(`Leídas ${data.length} filas del Excel.`);
 
   const mappedProducts = data.map(row => {

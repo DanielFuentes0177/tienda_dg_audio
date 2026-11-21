@@ -38,9 +38,11 @@
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-hot-toast": "^2.6.0",
+    "read-excel-file": "^9.3.20",
     "recharts": "^3.10.1",
     "sanitize-html": "^2.18.2",
-    "sharp": "^0.35.5"
+    "sharp": "^0.35.5",
+    "write-excel-file": "^4.1.1"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
@@ -52,7 +54,6 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
     "prisma": "^6.0.0",
-    "typescript": "^5",
-    "xlsx": "^0.18.5"
+    "typescript": "^5"
   }
 }
