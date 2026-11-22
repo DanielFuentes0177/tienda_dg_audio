@@ -4,8 +4,8 @@ import type { SolutionsPageContent } from "@/types/service.types";
 export const solucionesContent: SolutionsPageContent = {
   "path": "/soluciones",
   "seo": {
-    "title": "Soluciones | DG Audiosound",
-    "description": "Sistemas de audio, video e iluminación profesional para hogares, negocios y empresas. Calidad y rendimiento garantizados.",
+    "title": "Soluciones de Audio y Video Profesional | DG Audiosound",
+    "description": "Soluciones de audio, video e iluminación profesional para residencias, negocios, empresas, estudios y creadores en CDMX y México. Diseño e instalación.",
     "ogTitle": "",
     "ogDescription": "",
     "ogImage": "/assets/DG.png",

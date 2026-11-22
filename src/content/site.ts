@@ -42,7 +42,8 @@ export const NAV_LINKS: NavLinkItem[] = [
 
 export const FOOTER_NAV_LINKS: NavLinkItem[] = [
   { label: "Inicio", href: "/" },
-  { label: "Soluciones", href: "/#soluciones" },
+  { label: "Soluciones", href: "/soluciones" },
+  { label: "Aplicaciones", href: "/aplicaciones" },
   { label: "Nuestras Marcas", href: "/#marcas" },
   { label: "Tienda", href: "/tienda" },
   { label: "Blog DG", href: "/blog" },

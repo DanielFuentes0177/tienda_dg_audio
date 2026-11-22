@@ -4,8 +4,8 @@ import type { ApplicationsPageContent } from "@/types/service.types";
 export const aplicacionesContent: ApplicationsPageContent = {
   "path": "/aplicaciones",
   "seo": {
-    "title": "Aplicaciones por Industria | DG Audiosound",
-    "description": "Descubre cómo aplicamos soluciones de audio y video en diferentes industrias: restaurantes, corporativos, gobierno y más.",
+    "title": "Aplicaciones de Audio y Video por Industria | DG Audiosound",
+    "description": "Soluciones de audio y video por industria: restaurantes, hoteles, oficinas, gobierno, educación, centros de culto, residencial y producción en CDMX y México.",
     "ogTitle": "",
     "ogDescription": "",
     "ogImage": "/assets/DG.png",
@@ -45,11 +45,35 @@ export const aplicacionesContent: ApplicationsPageContent = {
         },
         {
           "href": "/negocios-y-experiencias/gimnasios",
-          "style": "display: block; text-decoration: none; color: inherit; transition: var(--transition-base);",
+          "style": "margin-bottom: 1.5rem; display: block; text-decoration: none; color: inherit; transition: var(--transition-base);",
           "title": "Gimnasios y Centros Fitness",
           "iconClass": "fa-solid fa-arrow-trend-up",
           "iconStyle": "font-size: 0.8rem; margin-left: 6px; color: var(--color-primary);",
           "desc": "Potencia sonora para motivar a los usuarios y sistemas de microfonía para instructores de clases grupales."
+        },
+        {
+          "href": "/negocios-y-experiencias/bares-antros",
+          "style": "margin-bottom: 1.5rem; display: block; text-decoration: none; color: inherit; transition: var(--transition-base);",
+          "title": "Bares y Antros",
+          "iconClass": "fa-solid fa-arrow-trend-up",
+          "iconStyle": "font-size: 0.8rem; margin-left: 6px; color: var(--color-primary);",
+          "desc": "Sonido de alto impacto con control por zonas, iluminación y pantallas para la barra y la pista."
+        },
+        {
+          "href": "/negocios-y-experiencias/cafeterias",
+          "style": "margin-bottom: 1.5rem; display: block; text-decoration: none; color: inherit; transition: var(--transition-base);",
+          "title": "Cafeterías",
+          "iconClass": "fa-solid fa-arrow-trend-up",
+          "iconStyle": "font-size: 0.8rem; margin-left: 6px; color: var(--color-primary);",
+          "desc": "Música ambiental y pantallas de menú con volumen cómodo para conversar en cada zona."
+        },
+        {
+          "href": "/negocios-y-experiencias/barberias",
+          "style": "display: block; text-decoration: none; color: inherit; transition: var(--transition-base);",
+          "title": "Barberías",
+          "iconClass": "fa-solid fa-arrow-trend-up",
+          "iconStyle": "font-size: 0.8rem; margin-left: 6px; color: var(--color-primary);",
+          "desc": "Música ambiental, audio por zonas y pantallas de servicios para cada estación de corte."
         }
       ]
     },
@@ -178,11 +202,43 @@ export const aplicacionesContent: ApplicationsPageContent = {
         },
         {
           "href": "/eventos-y-produccion/streamers",
-          "style": "display: block; text-decoration: none; color: inherit; transition: var(--transition-base);",
+          "style": "margin-bottom: 1.5rem; display: block; text-decoration: none; color: inherit; transition: var(--transition-base);",
           "title": "Streaming y Creadores",
           "iconClass": "fa-solid fa-arrow-trend-up",
           "iconStyle": "font-size: 0.8rem; margin-left: 6px; color: var(--color-primary);",
           "desc": "Equipamiento para creadores de contenido que buscan audio cristalino e iluminación profesional."
+        },
+        {
+          "href": "/eventos-y-produccion/centros-de-culto",
+          "style": "margin-bottom: 1.5rem; display: block; text-decoration: none; color: inherit; transition: var(--transition-base);",
+          "title": "Centros de Culto",
+          "iconClass": "fa-solid fa-arrow-trend-up",
+          "iconStyle": "font-size: 0.8rem; margin-left: 6px; color: var(--color-primary);",
+          "desc": "Voz clara en toda la nave, microfonía, monitoreo y transmisión de los servicios."
+        },
+        {
+          "href": "/eventos-y-produccion/cine-independiente",
+          "style": "margin-bottom: 1.5rem; display: block; text-decoration: none; color: inherit; transition: var(--transition-base);",
+          "title": "Cine Independiente",
+          "iconClass": "fa-solid fa-arrow-trend-up",
+          "iconStyle": "font-size: 0.8rem; margin-left: 6px; color: var(--color-primary);",
+          "desc": "Proyección, sonido y control de sala para exhibir películas con la calidad que merecen."
+        },
+        {
+          "href": "/eventos-y-produccion/podcast",
+          "style": "margin-bottom: 1.5rem; display: block; text-decoration: none; color: inherit; transition: var(--transition-base);",
+          "title": "Podcast",
+          "iconClass": "fa-solid fa-arrow-trend-up",
+          "iconStyle": "font-size: 0.8rem; margin-left: 6px; color: var(--color-primary);",
+          "desc": "Captura, monitoreo y producción de audio y video para grabar o transmitir episodios."
+        },
+        {
+          "href": "/eventos-y-produccion/sonidos-dj",
+          "style": "display: block; text-decoration: none; color: inherit; transition: var(--transition-base);",
+          "title": "Sonidos y DJ",
+          "iconClass": "fa-solid fa-arrow-trend-up",
+          "iconStyle": "font-size: 0.8rem; margin-left: 6px; color: var(--color-primary);",
+          "desc": "Sistemas PA, subgraves y consola dimensionados al aforo de tus eventos."
         }
       ]
     }

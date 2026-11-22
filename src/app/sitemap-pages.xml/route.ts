@@ -128,6 +128,14 @@ export async function GET() {
     <lastmod>2026-09-19</lastmod>
   </url>
   <url>
+    <loc>https://www.dgaudiosound.com/soluciones</loc>
+    <lastmod>2026-11-22</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dgaudiosound.com/aplicaciones</loc>
+    <lastmod>2026-11-22</lastmod>
+  </url>
+  <url>
     <loc>https://www.dgaudiosound.com/contacto</loc>
     <lastmod>2026-11-21</lastmod>
   </url>
