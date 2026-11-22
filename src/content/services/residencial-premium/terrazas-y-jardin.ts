@@ -411,46 +411,46 @@ export const terrazasYJardin: ServicePageContent = {
         "gradient": true
       }
     ],
-    "subtitle": "Un proceso claro para pasar de las necesidades del espacio a una solución dimensionada, instalada y configurada.",
+    "subtitle": "Pensamos en exteriores: sol, lluvia, distancia entre zonas y cuánto se escucha hacia los vecinos, para que la música acompañe sin molestar.",
     "steps": [
       {
         "icon": "fa-solid fa-headset",
-        "title": "Nos contactas",
-        "text": "Nos escribes por WhatsApp y nos cuentas qué espacio quieres cubrir, cómo lo utilizas y qué experiencia esperas.",
+        "title": "Platícanos tu exterior",
+        "text": "Si es terraza, jardín o alberca, cuántas personas reciben y qué ambiente quieres.",
         "num": "01"
       },
       {
         "icon": "fa-solid fa-magnifying-glass-chart",
-        "title": "Revisamos el área",
-        "text": "Revisamos fotos o planos, medidas, altura, zonas, exposición, techo, muros, energía y rutas posibles de cableado.",
+        "title": "Recorremos el espacio",
+        "text": "Medimos áreas, cubiertas, vegetación, ubicación de contactos y vecinos cercanos.",
         "num": "02"
       },
       {
         "icon": "fa-solid fa-pen-ruler",
-        "title": "Definimos solución",
-        "text": "Definimos cobertura, cantidad de bocinas, amplificación, video, zonas, cableado, control y margen para crecimiento.",
+        "title": "Diseñamos cobertura",
+        "text": "Bocinas resistentes a la intemperie, ubicación para cobertura pareja y control del volumen por zona.",
         "num": "03"
       },
       {
         "icon": "fa-solid fa-file-contract",
-        "title": "Propuesta clara",
-        "text": "Te entregamos alcance, equipos, supuestos, tiempos e inversión del proyecto.",
+        "title": "Propuesta detallada",
+        "text": "Equipos para exterior, obra eléctrica, tiempo y opciones para ampliar después.",
         "num": "04"
       },
       {
         "icon": "fa-solid fa-screwdriver-wrench",
-        "title": "Instalamos",
-        "text": "Realizamos montaje, cableado, conexiones, pruebas, ajustes y puesta en marcha conforme al alcance aprobado.",
+        "title": "Instalación resistente",
+        "text": "Montaje con materiales para exterior y cableado protegido contra humedad.",
         "num": "05"
       },
       {
         "icon": "fa-solid fa-user-check",
-        "title": "Te capacitamos",
-        "text": "Te explicamos la operación básica, zonas, fuentes y controles incluidos en la solución.",
+        "title": "Prueba al aire libre",
+        "text": "Escuchamos en distintos puntos del jardín y ajustamos niveles.",
         "num": "06"
       }
     ],
-    "quote": "\"En exteriores, la cobertura y la exposición del espacio deben definirse antes de seleccionar los equipos.\"",
+    "quote": "\"Una terraza se disfruta cuando la música se siente en todo el espacio, pero no sale de tu jardín.\"",
     "ctaLabel": "Iniciar mi proyecto por WhatsApp",
     "ctaMessage": "Hola DG Audiosound, quiero cotizar audio y video para mi terraza o jardín en México."
   },
@@ -465,15 +465,15 @@ export const terrazasYJardin: ServicePageContent = {
     },
     "gold": {
       "eyebrow": "Confianza",
-      "title": "Una decisión profesional para tus exteriores",
+      "title": "Música para disfrutar tu exterior todo el año",
       "items": [
-        "Asesoría personalizada",
-        "Propuesta formal",
-        "Equipos originales",
-        "Instalación profesional",
-        "Integración estética",
-        "Capacitación básica de uso",
-        "Acompañamiento técnico"
+        "Recorrido por tu terraza o jardín",
+        "Propuesta con opciones por zona",
+        "Bocinas originales para exterior",
+        "Instalación protegida contra humedad",
+        "Cobertura pareja sin molestar a vecinos",
+        "Prueba en distintos puntos",
+        "Mantenimiento y soporte"
       ]
     },
     "brands": {
@@ -487,7 +487,7 @@ export const terrazasYJardin: ServicePageContent = {
           "gradient": true
         }
       ],
-      "subtitle": "Seleccionamos tecnología de marcas profesionales según cobertura, potencia, compatibilidad, exposición, control y necesidades de cada proyecto.",
+      "subtitle": "Elegimos bocinas y amplificadores de exterior con protección contra lluvia, sol y humedad, y un sonido que se integra con el paisaje.",
       "names": [
         "SONOS",
         "KEF",
@@ -585,7 +585,7 @@ export const terrazasYJardin: ServicePageContent = {
       }
     ],
     "formTitle": "Solicita una cotización",
-    "formDescription": "Indica si tu espacio es terraza, jardín, roof garden, pérgola, asador o área de alberca, y si necesitas audio, video o control por zonas.",
+    "formDescription": "Completa el formulario y se abrirá WhatsApp con tu mensaje. Cuéntanos el tamaño del exterior, si es terraza o jardín y si hay alberca.",
     "labels": {
       "cb-name": "Nombre / Contacto *",
       "cb-company": "Proyecto / Residencia *",

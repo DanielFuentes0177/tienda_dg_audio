@@ -125,50 +125,50 @@ export const gimnasios: ServicePageContent = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "¿Qué tipo de audio necesita un gimnasio?",
+          "name": "¿Qué sistema de sonido necesita un gimnasio?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Depende de dimensiones, altura, distribución, nivel de ruido, tipo de entrenamiento, presión sonora esperada y número de zonas. Con esos datos se definen altavoces, amplificación, procesamiento y control."
+            "text": "Depende del tamaño, la altura, el ruido de las máquinas y el tipo de entrenamiento. Con esos datos se define la cobertura, la potencia y la cantidad de zonas."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Puedo controlar el volumen por zonas?",
+          "name": "¿Puedo manejar el volumen por áreas?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Recepción, cardio, pesas, salones de clases, vestidores o lounge pueden configurarse como zonas independientes para controlar niveles o fuentes según el diseño del sistema."
+            "text": "Sí. Recepción, cardio, pesas, salones de clase y vestidores pueden tener control independiente, para ajustar la música según la actividad."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Pueden instalar audio para clases grupales?",
+          "name": "¿Puede haber micrófono para los instructores?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Podemos integrar audio, microfonía y control para clases grupales como spinning, funcional, yoga, pilates, baile o HIIT, considerando inteligibilidad de voz, nivel musical y cobertura."
+            "text": "Sí. Se integra micrófono inalámbrico y mezcla para clases grupales como spinning, yoga, funcional o baile, cuidando que la voz se entienda sobre la música."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Pueden instalar pantallas para el gimnasio?",
+          "name": "¿Se pueden instalar pantallas?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Podemos integrar pantallas para contenido motivacional, comunicación interna, promociones, eventos deportivos, rutinas o branding del gimnasio."
+            "text": "Sí. Se instalan pantallas para rutinas, mensajes internos, promociones, eventos deportivos o imagen del gimnasio."
           }
         },
         {
           "@type": "Question",
-          "name": "¿La instalación puede ser limpia y segura?",
+          "name": "¿Es seguro instalar equipo en un gimnasio?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Cuidamos la ubicación de bocinas, pantallas, soportes, cableado y puntos de control para mantener una instalación profesional, ordenada y segura."
+            "text": "Se usan soportes y fijaciones adecuados para el peso y el uso del espacio, y se ubican bocinas y pantallas lejos de zonas donde puedan recibir golpes."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Puedo empezar con una zona y crecer después?",
+          "name": "¿Puedo equipar primero una sola zona?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. El proyecto puede plantearse por etapas, dejando capacidad prevista en amplificación, procesamiento, cableado o zonas cuando el crecimiento futuro forme parte del alcance."
+            "text": "Sí. El proyecto puede hacerse por etapas, dejando previsto el cableado y la capacidad para sumar zonas después."
           }
         }
       ]
@@ -315,7 +315,7 @@ export const gimnasios: ServicePageContent = {
   "areas": {
     "eyebrow": "Espacios que sonorizamos",
     "title": "Audio y video adaptados a cada área del gimnasio",
-    "subtitle": "Pesas, cardio, salones de clases, recepción, vestidores y zonas de espera pueden requerir niveles, cobertura, contenido y control diferentes. Diseñamos cada área como parte de un sistema coordinado.",
+    "subtitle": "Sala de pesas, cardio, clases grupales y vestidores necesitan niveles y control distintos. Un instructor debe oírse sin que la música tape la voz, y viceversa, en cada área.",
     "items": [
       {
         "image": {
@@ -380,7 +380,7 @@ export const gimnasios: ServicePageContent = {
         "height": 972
       },
       "eyebrow": "Optimización de sistemas existentes",
-      "title": "Actualiza tu sistema de audio sin perder tus bocinas",
+      "title": "Mejora el audio de tu gimnasio sin cambiarlo todo",
       "text": "Si tu gimnasio ya cuenta con altavoces, amplificación, procesadores, microfonía, pantallas o cableado, podemos evaluar el sistema existente y determinar qué componentes conviene reutilizar, reconfigurar, ampliar o sustituir.",
       "ctaLabel": "Cotizar actualización por WhatsApp",
       "ctaMessage": "Hola DG Audiosound, me interesa cotizar una solución de audio y video para mi gimnasio."
@@ -428,7 +428,7 @@ export const gimnasios: ServicePageContent = {
         "num": "6"
       }
     ],
-    "quote": "\"Un buen proyecto audiovisual empieza entendiendo el espacio, el uso y la experiencia que quieres lograr.\"",
+    "quote": "\"En el gimnasio, la música marca el ritmo de cada entrenamiento y hay que escucharla bien en todas las áreas.\"",
     "ctaLabel": "Iniciar mi proyecto por WhatsApp",
     "ctaMessage": "Hola DG Audiosound, me interesa cotizar una solución de audio y video para mi gimnasio."
   },
@@ -443,15 +443,15 @@ export const gimnasios: ServicePageContent = {
     },
     "gold": {
       "eyebrow": "Confianza",
-      "title": "Una decisión profesional para tu negocio",
+      "title": "Sonido que motiva en cada área",
       "items": [
-        "Asesoría personalizada y real",
-        "Propuesta técnica formal y clara",
-        "Equipos profesionales 100% originales",
-        "Instalación estética y estructurada",
-        "Integración armoniosa con el espacio",
-        "Capacitación práctica de uso",
-        "Acompañamiento técnico post-venta"
+        "Recorrido por todas las áreas",
+        "Propuesta por zona y por escrito",
+        "Equipos originales resistentes",
+        "Instalación reforzada y segura",
+        "Niveles ajustados por área",
+        "Capacitación a instructores",
+        "Acompañamiento técnico posterior"
       ]
     },
     "brands": {
@@ -465,7 +465,7 @@ export const gimnasios: ServicePageContent = {
           "gradient": true
         }
       ],
-      "subtitle": "Seleccionamos tecnología profesional según cobertura, potencia, procesamiento, microfonía, conectividad, compatibilidad, operación y presupuesto de cada proyecto.",
+      "subtitle": "Elegimos bocinas y micrófonos que aguantan humedad, golpes de sonido y uso constante, con control separado por área.",
       "names": [
         "SONOS",
         "KEF",
@@ -503,31 +503,31 @@ export const gimnasios: ServicePageContent = {
   "faq": {
     "eyebrow": "FAQ",
     "title": "Preguntas frecuentes sobre audio y video para gimnasios",
-    "subtitle": "Resolvemos tus dudas principales para ayudarte a planear e invertir con total tranquilidad y claridad técnica.",
+    "subtitle": "Preguntas comunes sobre sonido, micrófonos de instructor y pantallas en gimnasios y estudios.",
     "items": [
       {
-        "question": "¿Qué tipo de audio necesita un gimnasio?",
-        "answer": "Depende de dimensiones, altura, distribución, nivel de ruido, tipo de entrenamiento, presión sonora esperada y número de zonas. Con esos datos se definen altavoces, amplificación, procesamiento y control."
+        "question": "¿Qué sistema de sonido necesita un gimnasio?",
+        "answer": "Depende del tamaño, la altura, el ruido de las máquinas y el tipo de entrenamiento. Con esos datos se define la cobertura, la potencia y la cantidad de zonas."
       },
       {
-        "question": "¿Puedo controlar el volumen por zonas?",
-        "answer": "Sí. Recepción, cardio, pesas, salones de clases, vestidores o lounge pueden configurarse como zonas independientes para controlar niveles o fuentes según el diseño del sistema."
+        "question": "¿Puedo manejar el volumen por áreas?",
+        "answer": "Sí. Recepción, cardio, pesas, salones de clase y vestidores pueden tener control independiente, para ajustar la música según la actividad."
       },
       {
-        "question": "¿Pueden instalar audio para clases grupales?",
-        "answer": "Sí. Podemos integrar audio, microfonía y control para clases grupales como spinning, funcional, yoga, pilates, baile o HIIT, considerando inteligibilidad de voz, nivel musical y cobertura."
+        "question": "¿Puede haber micrófono para los instructores?",
+        "answer": "Sí. Se integra micrófono inalámbrico y mezcla para clases grupales como spinning, yoga, funcional o baile, cuidando que la voz se entienda sobre la música."
       },
       {
-        "question": "¿Pueden instalar pantallas para el gimnasio?",
-        "answer": "Sí. Podemos integrar pantallas para contenido motivacional, comunicación interna, promociones, eventos deportivos, rutinas o branding del gimnasio."
+        "question": "¿Se pueden instalar pantallas?",
+        "answer": "Sí. Se instalan pantallas para rutinas, mensajes internos, promociones, eventos deportivos o imagen del gimnasio."
       },
       {
-        "question": "¿La instalación puede ser limpia y segura?",
-        "answer": "Sí. Cuidamos la ubicación de bocinas, pantallas, soportes, cableado y puntos de control para mantener una instalación profesional, ordenada y segura."
+        "question": "¿Es seguro instalar equipo en un gimnasio?",
+        "answer": "Se usan soportes y fijaciones adecuados para el peso y el uso del espacio, y se ubican bocinas y pantallas lejos de zonas donde puedan recibir golpes."
       },
       {
-        "question": "¿Puedo empezar con una zona y crecer después?",
-        "answer": "Sí. El proyecto puede plantearse por etapas, dejando capacidad prevista en amplificación, procesamiento, cableado o zonas cuando el crecimiento futuro forme parte del alcance."
+        "question": "¿Puedo equipar primero una sola zona?",
+        "answer": "Sí. El proyecto puede hacerse por etapas, dejando previsto el cableado y la capacidad para sumar zonas después."
       }
     ]
   },
@@ -571,7 +571,7 @@ export const gimnasios: ServicePageContent = {
       }
     ],
     "formTitle": "Solicita asesoría para tu gimnasio",
-    "formDescription": "Completa el formulario y se abrirá WhatsApp con la información estructurada. Indica si buscas un sistema nuevo o una actualización y comparte medidas, áreas, clases y equipos existentes cuando los conozcas.",
+    "formDescription": "Completa el formulario y se abrirá WhatsApp con tu mensaje. Cuéntanos áreas del gimnasio, si das clases grupales y el aforo aproximado.",
     "labels": {
       "cb-name": "Nombre / Contacto *",
       "cb-company": "Gimnasio / Empresa *",

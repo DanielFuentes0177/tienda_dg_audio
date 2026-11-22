@@ -436,46 +436,46 @@ export const salasDeJuntas: ServicePageContent = {
         "gradient": true
       }
     ],
-    "subtitle": "Un proceso estructurado para definir usuarios, acústica, visualización, cámaras, microfonía, plataformas, señal, cableado y control antes de cerrar el proyecto.",
+    "subtitle": "Una sola sala bien resuelta: imagen para presentar, micrófonos que capten a todos en la mesa y una videollamada que funcione al conectar un solo cable.",
     "steps": [
       {
         "icon": "fa-solid fa-headset",
-        "title": "Nos contactas",
-        "text": "Cuéntanos medidas, número de participantes, uso principal, plataformas y necesidades de videoconferencia o presentación.",
+        "title": "Platícanos la sala",
+        "text": "Tamaño de mesa, número de asistentes y qué plataforma de videollamada usan.",
         "num": "01"
       },
       {
         "icon": "fa-solid fa-magnifying-glass-chart",
-        "title": "Revisamos el espacio",
-        "text": "Analizamos distribución, ruido, reverberación, visibilidad, cámaras, puntos de red y energía, mobiliario y condiciones de montaje.",
+        "title": "Revisamos la mesa y la pared",
+        "text": "Distancia a la pantalla, altura de cámara, ruido del aire acondicionado y cableado existente.",
         "num": "02"
       },
       {
         "icon": "fa-solid fa-pen-ruler",
-        "title": "Diseñamos la solución",
-        "text": "Definimos microfonía, altavoces, cámaras, visualización, plataforma, señal, cableado, control y capacidad de crecimiento.",
+        "title": "Elegimos el equipo",
+        "text": "Pantalla o proyector, micrófonos de mesa o de techo, cámara y control de un solo botón.",
         "num": "03"
       },
       {
         "icon": "fa-solid fa-file-contract",
-        "title": "Propuesta clara",
-        "text": "Te entregamos alcance, equipos, servicios, tiempos, supuestos, exclusiones y pendientes técnicos por confirmar.",
+        "title": "Presupuesto claro",
+        "text": "Un costo cerrado con opciones, por si quieres empezar con lo esencial y ampliar después.",
         "num": "04"
       },
       {
         "icon": "fa-solid fa-screwdriver-wrench",
-        "title": "Instalamos",
-        "text": "Realizamos montaje, cableado, conexión, configuración, pruebas y ajustes conforme al alcance aprobado.",
+        "title": "Instalación limpia",
+        "text": "Cableado oculto o con canaleta, y equipo montado a la medida de la sala.",
         "num": "05"
       },
       {
         "icon": "fa-solid fa-user-check",
-        "title": "Te capacitamos",
-        "text": "Explicamos las funciones y la operación básica al personal responsable de la sala.",
+        "title": "Reunión de prueba",
+        "text": "Conectamos una laptop, hacemos una llamada y ajustamos hasta que todos se oigan con claridad.",
         "num": "06"
       }
     ],
-    "quote": "\"Un buen proyecto audiovisual empieza entendiendo el espacio, el uso y la experiencia que quieres lograr.\"",
+    "quote": "\"Que toda la mesa se escuche igual, esa es la diferencia entre una reunión útil y una que se repite.\"",
     "ctaLabel": "Iniciar mi proyecto por WhatsApp",
     "ctaMessage": "Hola DG Audiosound, quiero cotizar audio y video para salas de juntas."
   },
@@ -490,15 +490,15 @@ export const salasDeJuntas: ServicePageContent = {
     },
     "gold": {
       "eyebrow": "Confianza",
-      "title": "Una decisión profesional para tu negocio",
+      "title": "Una sala lista para reunirse sin fallas",
       "items": [
-        "Asesoría personalizada",
-        "Propuesta formal",
-        "Equipos originales",
-        "Instalación profesional",
-        "Integración estética",
-        "Capacitación básica de uso",
-        "Acompañamiento técnico"
+        "Visita a tu sala de juntas",
+        "Presupuesto cerrado con opciones",
+        "Equipo original compatible con tu plataforma",
+        "Cableado oculto y ordenado",
+        "Control sencillo de un botón",
+        "Reunión de prueba al entregar",
+        "Ayuda si algo falla después"
       ]
     },
     "brands": {
@@ -512,7 +512,7 @@ export const salasDeJuntas: ServicePageContent = {
           "gradient": true
         }
       ],
-      "subtitle": "Seleccionamos tecnología profesional según acústica, visualización, plataforma, compatibilidad, conectividad, operación y presupuesto del proyecto.",
+      "subtitle": "Escogemos equipos de colaboración que se conectan con un solo cable y funcionan con Teams, Meet y Zoom sin configuraciones complicadas.",
       "names": [
         "SONOS",
         "KEF",
@@ -614,7 +614,7 @@ export const salasDeJuntas: ServicePageContent = {
       }
     ],
     "formTitle": "Solicita asesoría para tu sala de juntas",
-    "formDescription": "Completa el formulario y se abrirá WhatsApp con la información estructurada. Incluye medidas, número de participantes, plataforma y equipos existentes cuando los conozcas.",
+    "formDescription": "Completa el formulario y se abrirá WhatsApp con tu mensaje. Indica tamaño de mesa, número de personas y si ya tienes pantalla.",
     "labels": {
       "cb-name": "Nombre / Contacto *",
       "cb-company": "Empresa / Institución *",

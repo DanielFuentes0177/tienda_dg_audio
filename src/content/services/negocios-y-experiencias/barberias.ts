@@ -124,50 +124,50 @@ export const barberias: ServicePageContent = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "¿Qué incluye una solución de audio y video para barberías?",
+          "name": "¿Qué incluye el sonido y video para una barbería?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Puede incluir música ambiental, bocinas de plafón o muro, audio por zonas, amplificadores, pantallas para promociones o contenido visual, sonido para sala de espera, cableado, soportes, configuración, pruebas y asesoría profesional."
+            "text": "Música ambiental con bocinas en plafón o muro, amplificación, control de volumen y, si lo quieres, pantallas para lista de servicios, promociones o contenido de la marca."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Qué tipo de audio conviene para una barbería?",
+          "name": "¿Cómo se evita que la música tape la plática entre barbero y cliente?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Generalmente conviene un sistema de audio ambiental con cobertura uniforme y nivel controlado. La selección depende de dimensiones, altura de montaje, ruido ambiental, distribución de estaciones, número de zonas y nivel de presión sonora esperado."
+            "text": "Se reparte el sonido en varias bocinas de menor potencia en lugar de pocas fuertes, y se ajusta el nivel de cada zona para que sea cómodo en las sillas de corte."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Puedo tener volumen distinto en sala de espera y zona de corte?",
+          "name": "¿Puedo tener volumen distinto en espera y en las sillas?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. En barberías se pueden manejar zonas como recepción, sala de espera, estaciones de corte, lavado o área VIP con volúmenes independientes según el alcance del sistema."
+            "text": "Sí. Recepción, espera, estaciones de corte, lavado o zona VIP pueden manejarse como zonas independientes, cada una con su propio volumen."
           }
         },
         {
           "@type": "Question",
-          "name": "¿También instalan pantallas para promociones o contenido visual?",
+          "name": "¿Se pueden poner pantallas para mostrar cortes o promociones?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. DG Audiosound puede integrar pantallas para promociones, lista de servicios, productos, contenido de marca, videos o información para clientes, cuidando ubicación, visibilidad, soporte, cableado y conectividad."
+            "text": "Sí. Se integran pantallas con soportes seguros y cableado oculto para mostrar servicios, precios, productos o videos, según el diseño de tu local."
           }
         },
         {
           "@type": "Question",
-          "name": "¿La instalación puede verse discreta y estética?",
+          "name": "¿Se ve discreta la instalación?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. El objetivo es integrar bocinas, pantallas, soportes, cableado y equipos de forma limpia, segura y acorde al diseño de la barbería."
+            "text": "El objetivo es que bocinas, soportes y cables se integren al estilo del local: cableado por canaleta o dentro de muro cuando es posible, y equipos en lugares poco visibles."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Qué datos necesitan para cotizar mi barbería?",
+          "name": "¿Qué datos necesito para pedir una cotización?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ayudan las medidas del local, fotos, número de estaciones de corte, sala de espera, áreas o zonas, tipo de música deseada, si se requieren pantallas, presupuesto aproximado y si ya existen equipos instalados."
+            "text": "Medidas del local, fotos, número de sillas, si hay sala de espera o zona VIP, el tipo de música que prefieres y si quieres pantallas. Con eso se prepara una propuesta."
           }
         }
       ]
@@ -317,7 +317,7 @@ export const barberias: ServicePageContent = {
   "areas": {
     "eyebrow": "Espacios que sonorizamos",
     "title": "Comunica servicios, promociones y estilo sin perder la estética del local.",
-    "subtitle": "Una pantalla bien ubicada puede mostrar paquetes, servicios, productos de cuidado, promociones o contenido visual de la barbería. Combinada con música ambiental bien distribuida, ayuda a construir una experiencia más profesional y memorable.",
+    "subtitle": "Estaciones de corte, recepción, zona de espera y barra de bebidas necesitan cada una su propio nivel de sonido y contenido. Los resolvemos juntos para que la música cubra todo el local sin saturar.",
     "items": [
       {
         "image": {
@@ -382,7 +382,7 @@ export const barberias: ServicePageContent = {
         "height": 971
       },
       "eyebrow": "Optimización de sistemas existentes",
-      "title": "Actualiza tu sistema de audio sin perder tus bocinas",
+      "title": "Aprovecha las bocinas que ya tienes en tu barbería",
       "text": "Si tu barbería ya cuenta con bocinas, amplificación o cableado, podemos evaluar el sistema existente y determinar qué componentes conviene reutilizar, actualizar o sustituir. También podemos integrar nuevas fuentes de reproducción y control por zonas cuando sean compatibles con el proyecto.",
       "ctaLabel": "Cotizar actualización por WhatsApp",
       "ctaMessage": "Hola DG Audiosound, me interesa cotizar una solución de audio y video para mi barbería."
@@ -430,7 +430,7 @@ export const barberias: ServicePageContent = {
         "num": "6"
       }
     ],
-    "quote": "\"Un buen proyecto audiovisual empieza entendiendo el espacio, el uso y la experiencia que quieres lograr.\"",
+    "quote": "\"En una barbería, la música y la pantalla forman parte del servicio, igual que el corte.\"",
     "ctaLabel": "Iniciar mi proyecto por WhatsApp",
     "ctaMessage": "Hola DG Audiosound, me interesa cotizar una solución de audio y video para mi barbería."
   },
@@ -445,15 +445,15 @@ export const barberias: ServicePageContent = {
     },
     "gold": {
       "eyebrow": "Confianza",
-      "title": "Una decisión profesional para tu negocio",
+      "title": "Un ambiente que tus clientes quieren repetir",
       "items": [
-        "Asesoría personalizada y real",
-        "Propuesta técnica formal y clara",
-        "Equipos profesionales 100% originales",
-        "Instalación estética y estructurada",
-        "Integración armoniosa con el espacio",
-        "Capacitación práctica de uso",
-        "Acompañamiento técnico post-venta"
+        "Visita al local",
+        "Propuesta clara por escrito",
+        "Equipos originales",
+        "Instalación limpia, sin cables a la vista",
+        "Volumen cómodo para conversar",
+        "Te enseñamos a controlarlo",
+        "Soporte si necesitas ajustes"
       ]
     },
     "brands": {
@@ -467,7 +467,7 @@ export const barberias: ServicePageContent = {
           "gradient": true
         }
       ],
-      "subtitle": "Seleccionamos tecnología profesional según cobertura, potencia, compatibilidad, operación y presupuesto de cada proyecto.",
+      "subtitle": "Elegimos bocinas discretas y pantallas que resisten el uso diario, con un control sencillo para el barbero o el encargado.",
       "names": [
         "SONOS",
         "KEF",
@@ -505,31 +505,31 @@ export const barberias: ServicePageContent = {
   "faq": {
     "eyebrow": "FAQ",
     "title": "Preguntas frecuentes sobre audio y video para barberías",
-    "subtitle": "Resolvemos tus dudas principales para ayudarte a planear e invertir con total tranquilidad y claridad técnica.",
+    "subtitle": "Lo que más nos preguntan los dueños de barberías antes de decidir el sonido y las pantallas.",
     "items": [
       {
-        "question": "¿Qué incluye una solución de audio y video para barberías?",
-        "answer": "Puede incluir música ambiental, bocinas de plafón o muro, audio por zonas, amplificadores, pantallas para promociones o contenido visual, sonido para sala de espera, cableado, soportes, configuración, pruebas y asesoría profesional."
+        "question": "¿Qué incluye el sonido y video para una barbería?",
+        "answer": "Música ambiental con bocinas en plafón o muro, amplificación, control de volumen y, si lo quieres, pantallas para lista de servicios, promociones o contenido de la marca."
       },
       {
-        "question": "¿Qué tipo de audio conviene para una barbería?",
-        "answer": "Generalmente conviene un sistema de audio ambiental con cobertura uniforme y nivel controlado. La selección depende de dimensiones, altura de montaje, ruido ambiental, distribución de estaciones, número de zonas y nivel de presión sonora esperado."
+        "question": "¿Cómo se evita que la música tape la plática entre barbero y cliente?",
+        "answer": "Se reparte el sonido en varias bocinas de menor potencia en lugar de pocas fuertes, y se ajusta el nivel de cada zona para que sea cómodo en las sillas de corte."
       },
       {
-        "question": "¿Puedo tener volumen distinto en sala de espera y zona de corte?",
-        "answer": "Sí. En barberías se pueden manejar zonas como recepción, sala de espera, estaciones de corte, lavado o área VIP con volúmenes independientes según el alcance del sistema."
+        "question": "¿Puedo tener volumen distinto en espera y en las sillas?",
+        "answer": "Sí. Recepción, espera, estaciones de corte, lavado o zona VIP pueden manejarse como zonas independientes, cada una con su propio volumen."
       },
       {
-        "question": "¿También instalan pantallas para promociones o contenido visual?",
-        "answer": "Sí. DG Audiosound puede integrar pantallas para promociones, lista de servicios, productos, contenido de marca, videos o información para clientes, cuidando ubicación, visibilidad, soporte, cableado y conectividad."
+        "question": "¿Se pueden poner pantallas para mostrar cortes o promociones?",
+        "answer": "Sí. Se integran pantallas con soportes seguros y cableado oculto para mostrar servicios, precios, productos o videos, según el diseño de tu local."
       },
       {
-        "question": "¿La instalación puede verse discreta y estética?",
-        "answer": "Sí. El objetivo es integrar bocinas, pantallas, soportes, cableado y equipos de forma limpia, segura y acorde al diseño de la barbería."
+        "question": "¿Se ve discreta la instalación?",
+        "answer": "El objetivo es que bocinas, soportes y cables se integren al estilo del local: cableado por canaleta o dentro de muro cuando es posible, y equipos en lugares poco visibles."
       },
       {
-        "question": "¿Qué datos necesitan para cotizar mi barbería?",
-        "answer": "Ayudan las medidas del local, fotos, número de estaciones de corte, sala de espera, áreas o zonas, tipo de música deseada, si se requieren pantallas, presupuesto aproximado y si ya existen equipos instalados."
+        "question": "¿Qué datos necesito para pedir una cotización?",
+        "answer": "Medidas del local, fotos, número de sillas, si hay sala de espera o zona VIP, el tipo de música que prefieres y si quieres pantallas. Con eso se prepara una propuesta."
       }
     ]
   },
@@ -573,7 +573,7 @@ export const barberias: ServicePageContent = {
       }
     ],
     "formTitle": "Solicita asesoría para tu barbería",
-    "formDescription": "Completa el formulario y se abrirá WhatsApp con la información estructurada. Indica si buscas un sistema nuevo o una actualización y comparte medidas, zonas y equipos existentes cuando los conozcas.",
+    "formDescription": "Completa el formulario y se abrirá WhatsApp con tu mensaje. Cuéntanos cuántas sillas tienes, el tamaño del local y si buscas pantallas.",
     "labels": {
       "cb-name": "Nombre / Contacto *",
       "cb-company": "Barbería / Empresa *",

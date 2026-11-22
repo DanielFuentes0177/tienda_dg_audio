@@ -405,46 +405,46 @@ export const podcast: ServicePageContent = {
         "accent": true
       }
     ],
-    "subtitle": "Un proceso estructurado para definir participantes, captura, monitoreo, video, software, conectividad y equipos antes de cerrar el proyecto.",
+    "subtitle": "Definimos cuántas voces grabas, si hay video y dónde lo haces, para armar un set de captura limpio, cómodo para tus invitados y listo para publicar.",
     "steps": [
       {
         "icon": "fa-solid fa-headset",
-        "title": "Entendemos el formato",
-        "text": "Definimos si será podcast de audio, video podcast, entrevista, streaming, contenido corporativo o un formato mixto.",
+        "title": "Cuéntanos tu formato",
+        "text": "Número de voces, si grabas video y si transmites en vivo o publicas editado.",
         "num": "1"
       },
       {
         "icon": "fa-solid fa-magnifying-glass-chart",
-        "title": "Revisamos el espacio",
-        "text": "Consideramos dimensiones, ruido, condiciones acústicas, iluminación, participantes, posiciones de cámara, energía, red y cableado.",
+        "title": "Revisamos tu cuarto",
+        "text": "Eco, ruido externo, tamaño y qué tanto conviene tratar acústicamente el espacio.",
         "num": "2"
       },
       {
         "icon": "fa-solid fa-pen-ruler",
-        "title": "Diseñamos la solución",
-        "text": "Definimos micrófonos, preamplificación, entradas, salidas, monitoreo, consola o interfaz, cámaras, captura, software, señal y accesorios.",
+        "title": "Diseñamos tu set",
+        "text": "Micrófonos por persona, interfaz o mezcladora, audífonos, cámaras y luces si hacen video.",
         "num": "3"
       },
       {
         "icon": "fa-solid fa-file-contract",
-        "title": "Cotización formal",
-        "text": "Te entregamos alcance, equipos, servicios, tiempos, supuestos, exclusiones y pendientes técnicos por confirmar.",
+        "title": "Cotización clara",
+        "text": "Equipo en paquetes para que decidas entre un set sencillo o uno completo.",
         "num": "4"
       },
       {
         "icon": "fa-solid fa-screwdriver-wrench",
-        "title": "Integración",
-        "text": "Realizamos suministro, conexión, configuración, pruebas y ajustes conforme al alcance aprobado.",
+        "title": "Instalación y pruebas",
+        "text": "Conectamos, grabamos una prueba y ajustamos para que todas las voces queden parejas.",
         "num": "5"
       },
       {
         "icon": "fa-solid fa-user-check",
-        "title": "Capacitación",
-        "text": "Explicamos ganancia, monitoreo, ruteo, grabación, selección de fuentes y operación básica del sistema integrado.",
+        "title": "Flujo de grabación",
+        "text": "Te mostramos cómo grabar, monitorear y entregar archivos listos para edición.",
         "num": "6"
       }
     ],
-    "quote": "\"Un estudio de podcast se diseña desde participantes, fuentes, captura, monitoreo y flujo de producción; los equipos se seleccionan después.\"",
+    "quote": "\"En un podcast, el audio es el producto: si suena claro, la gente se queda.\"",
     "ctaLabel": "Iniciar mi proyecto por WhatsApp",
     "ctaMessage": "Hola DG Audiosound, me interesa cotizar una solución de audio y video para mi estudio de podcast."
   },
@@ -459,15 +459,15 @@ export const podcast: ServicePageContent = {
     },
     "gold": {
       "eyebrow": "Confianza",
-      "title": "Tecnología profesional para podcast, grabación y creación de contenido",
+      "title": "Un set que se escucha profesional desde el primer episodio",
       "items": [
-        "Definición del formato y flujo de producción",
-        "Dimensionamiento de entradas, salidas y monitoreo",
-        "Equipos originales y tecnología profesional",
-        "Integración de audio, video y captura",
-        "Cableado y conexiones según el sistema",
-        "Pruebas, ajustes y capacitación básica",
-        "Capacidad de crecimiento según alcance"
+        "Diagnóstico de tu cuarto",
+        "Paquetes claros de equipo",
+        "Micrófonos y audio profesional original",
+        "Prueba de grabación incluida",
+        "Cableado y soportes ordenados",
+        "Flujo de trabajo explicado",
+        "Ayuda para ampliar tu estudio"
       ]
     },
     "brands": {
@@ -481,7 +481,7 @@ export const podcast: ServicePageContent = {
           "gradient": true
         }
       ],
-      "subtitle": "Seleccionamos tecnología profesional según captura, ganancia, entradas, salidas, monitoreo, video, conectividad, compatibilidad, operación y presupuesto.",
+      "subtitle": "Usamos micrófonos, interfaces y cámaras de uso común en podcasts profesionales, dimensionados para el número de voces que grabas.",
       "names": [
         "SHURE",
         "ALLEN & HEATH",
@@ -585,7 +585,7 @@ export const podcast: ServicePageContent = {
       }
     ],
     "formTitle": "Solicita asesoría para tu estudio de podcast",
-    "formDescription": "Completa el formulario y se abrirá WhatsApp con la información estructurada. Incluye participantes, formato, equipos existentes y si necesitas audio, video, grabación o streaming.",
+    "formDescription": "Completa el formulario y se abrirá WhatsApp con tu mensaje. Dinos cuántas personas graban, si hay video y el tamaño del cuarto.",
     "labels": {
       "cb-name": "Nombre / Contacto *",
       "cb-company": "Podcast / Empresa / Proyecto *",

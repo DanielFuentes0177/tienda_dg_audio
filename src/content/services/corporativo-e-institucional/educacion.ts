@@ -141,7 +141,7 @@ export const educacion: ServicePageContent = {
         },
         {
           "@type": "Question",
-          "name": "¿Qué conviene más para un aula: pantalla interactiva, display o proyector?",
+          "name": "¿Qué conviene más para un aula: pantalla inteligente, display o proyector?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Depende del tamaño del aula, iluminación, distancia de visualización, resolución, tipo de contenido, nivel de interacción, mantenimiento y presupuesto. La selección debe hacerse con esos datos."
@@ -160,7 +160,7 @@ export const educacion: ServicePageContent = {
           "name": "¿Pueden integrar clases híbridas o videoconferencia?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Podemos integrar cámaras, micrófonos, altavoces, pantallas y conectividad para clases híbridas, capacitación remota, juntas académicas y sesiones con participantes externos."
+            "text": "Sí. Podemos integrar cámaras, micrófonos, bocinas, pantallas y conexiones para clases híbridas, capacitación remota, juntas académicas y sesiones con participantes externos."
           }
         },
         {
@@ -168,7 +168,7 @@ export const educacion: ServicePageContent = {
           "name": "¿La instalación queda preparada para uso diario?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "La solución puede incluir montaje, cableado, configuración, pruebas y capacitación básica para que el personal responsable conozca la operación del sistema instalado."
+            "text": "Sí. La solución puede incluir montaje, cableado, configuración, pruebas y capacitación básica para que el personal responsable conozca la operación del sistema instalado."
           }
         }
       ]
@@ -438,46 +438,46 @@ export const educacion: ServicePageContent = {
         "gradient": true
       }
     ],
-    "subtitle": "Un proceso estructurado para definir uso, visualización, cobertura de audio, plataformas, conectividad, equipos, instalación y operación antes de cerrar el proyecto.",
+    "subtitle": "Partimos de cómo se imparte la clase: presencial, híbrida o remota, y de quién va a operar el equipo cada día, para elegir soluciones que el personal realmente use.",
     "steps": [
       {
         "icon": "fa-solid fa-headset",
-        "title": "Nos contactas",
-        "text": "Cuéntanos qué espacios necesitas equipar, cuántos usuarios tendrán y qué tipo de clases, presentaciones o sesiones se realizarán.",
+        "title": "Cuéntanos del plantel",
+        "text": "Número de aulas, nivel educativo, modalidad de clase y presupuesto por etapas.",
         "num": "01"
       },
       {
         "icon": "fa-solid fa-magnifying-glass-chart",
-        "title": "Revisamos necesidades",
-        "text": "Analizamos medidas, iluminación, ruido, cobertura, distancias, conectividad, plataformas, infraestructura y equipos existentes.",
+        "title": "Visitamos las aulas",
+        "text": "Medimos fondo y ancho del salón, revisamos ruido de pasillo, luz natural y puntos de conexión.",
         "num": "02"
       },
       {
         "icon": "fa-solid fa-pen-ruler",
-        "title": "Diseñamos la solución",
-        "text": "Definimos visualización, audio, microfonía, cámaras, videoconferencia, cableado, control y capacidad de crecimiento.",
+        "title": "Diseñamos un aula tipo",
+        "text": "Definimos un estándar replicable: pantalla o proyector, micrófono, bocinas y cámara para clase híbrida.",
         "num": "03"
       },
       {
         "icon": "fa-solid fa-file-contract",
-        "title": "Propuesta clara",
-        "text": "Te entregamos alcance, equipos, servicios, tiempos, supuestos, exclusiones y pendientes técnicos por confirmar.",
+        "title": "Propuesta por etapas",
+        "text": "Costo por aula y por bloque, para que puedas equipar poco a poco sin perder compatibilidad.",
         "num": "04"
       },
       {
         "icon": "fa-solid fa-screwdriver-wrench",
-        "title": "Instalamos",
-        "text": "Realizamos montaje, cableado, conexión, configuración, pruebas y ajustes conforme al alcance aprobado.",
+        "title": "Instalamos en horarios libres",
+        "text": "Trabajamos entre turnos o en vacaciones para no interrumpir clases.",
         "num": "05"
       },
       {
         "icon": "fa-solid fa-user-check",
-        "title": "Te capacitamos",
-        "text": "Explicamos las funciones y la operación básica al personal responsable del sistema.",
+        "title": "Capacitamos a docentes",
+        "text": "Sesión breve con maestros y con el área técnica para que sepan operar el aula y resolver lo básico.",
         "num": "06"
       }
     ],
-    "quote": "\"Un buen proyecto audiovisual empieza entendiendo el espacio, el uso y la experiencia que quieres lograr.\"",
+    "quote": "\"Un aula bien equipada es la que el profesor enciende y usa sin pedir ayuda.\"",
     "ctaLabel": "Iniciar mi proyecto por WhatsApp",
     "ctaMessage": "Hola DG Audiosound, quiero cotizar una solución de audio y video para educación."
   },
@@ -492,15 +492,15 @@ export const educacion: ServicePageContent = {
     },
     "gold": {
       "eyebrow": "Confianza",
-      "title": "Una decisión profesional para tu institución",
+      "title": "Equipamiento que los docentes sí usan",
       "items": [
-        "Asesoría personalizada",
-        "Propuesta formal",
-        "Equipos originales",
-        "Instalación profesional",
-        "Integración estética",
-        "Capacitación básica de uso",
-        "Acompañamiento técnico"
+        "Aula piloto antes de replicar",
+        "Propuesta por etapas y por aula",
+        "Equipo de uso institucional original",
+        "Instalación sin detener clases",
+        "Guía de uso para docentes",
+        "Capacitación a docentes y soporte",
+        "Atención posterior al ciclo escolar"
       ]
     },
     "brands": {
@@ -514,7 +514,7 @@ export const educacion: ServicePageContent = {
           "gradient": true
         }
       ],
-      "subtitle": "Seleccionamos tecnología profesional según visualización, cobertura, conectividad, compatibilidad, plataforma, operación y presupuesto de cada proyecto.",
+      "subtitle": "Seleccionamos equipos resistentes y fáciles de operar para uso diario con grupos, pensando en mantenimiento y reposición.",
       "names": [
         "SONOS",
         "KEF",
@@ -616,7 +616,7 @@ export const educacion: ServicePageContent = {
       }
     ],
     "formTitle": "Solicita asesoría para tu proyecto educativo",
-    "formDescription": "Completa el formulario y se abrirá WhatsApp con la información estructurada. Incluye medidas, número de espacios, usuarios, plataformas y equipos existentes cuando los conozcas.",
+    "formDescription": "Completa el formulario y se abrirá WhatsApp con tu mensaje. Indica cuántas aulas, nivel educativo y si buscas clases híbridas.",
     "labels": {
       "cb-name": "Nombre / Contacto *",
       "cb-company": "Empresa / Institución *",

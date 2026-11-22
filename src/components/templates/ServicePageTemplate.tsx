@@ -10,13 +10,14 @@ import { AreasSection } from "@/components/organisms/service/AreasSection";
 import { ProcessSection } from "@/components/organisms/service/ProcessSection";
 import { DifferentiatorSection } from "@/components/organisms/service/DifferentiatorSection";
 import { FaqSection } from "@/components/organisms/service/FaqSection";
+import { RelatedServices, type RelatedServicesProps } from "@/components/organisms/service/RelatedServices";
 import { ServiceContactContainer } from "@/components/containers/ServiceContactContainer";
 import { ServicePageEffects } from "@/components/containers/ServicePageEffects";
 import { whatsappUrl } from "@/lib/whatsapp";
 import type { ServicePageContent } from "@/types/service.types";
 
 /** Template (sin datos propios): compone la página de servicio a partir del contenido tipado. */
-export const ServicePageTemplate = ({ content }: { content: ServicePageContent }) => {
+export const ServicePageTemplate = ({ content, related }: { content: ServicePageContent; related?: RelatedServicesProps }) => {
   const quote = whatsappUrl(content.hero.ctaMessage);
   const update = whatsappUrl(content.areas.banner?.ctaMessage ?? content.hero.ctaMessage);
   const process = whatsappUrl(content.process.ctaMessage);
@@ -37,6 +38,7 @@ export const ServicePageTemplate = ({ content }: { content: ServicePageContent }
         <ProcessSection process={content.process} ctaHref={process} />
         <DifferentiatorSection data={content.differentiator} />
         <FaqSection faq={content.faq} />
+        {related && <RelatedServices {...related} />}
         <ServiceContactContainer contact={content.contact} whatsappMessage={content.hero.ctaMessage} />
       </div>
       <ServicePageEffects />

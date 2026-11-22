@@ -293,46 +293,46 @@ export const cineEnCasa: ServicePageContent = {
   "process": {
     "eyebrow": "Proceso",
     "title": "Un proceso claro para una solución profesional",
-    "subtitle": "Un proceso estructurado para definir el alcance, seleccionar la solución e integrar el sistema con claridad en cada etapa.",
+    "subtitle": "Definimos pantalla o proyección, sonido envolvente y control según tu sala, la luz que entra y cómo la usa tu familia, para una experiencia de cine real.",
     "steps": [
       {
         "icon": "fa-solid fa-headset",
-        "title": "Nos contactas",
-        "text": "Nos escribes por WhatsApp y nos cuentas qué experiencia quieres lograr.",
+        "title": "Cuéntanos tu idea",
+        "text": "Si es sala dedicada o un espacio compartido, cuántas personas y qué tipo de películas ven.",
         "num": "1"
       },
       {
         "icon": "fa-solid fa-magnifying-glass-chart",
-        "title": "Revisamos tu espacio",
-        "text": "Solicitamos medidas, fotos, iluminación, muebles y ubicación deseada.",
+        "title": "Medimos tu sala",
+        "text": "Dimensiones, altura, luz natural, ubicación de asientos y distancia de proyección.",
         "num": "2"
       },
       {
         "icon": "fa-solid fa-pen-ruler",
-        "title": "Definimos la solución",
-        "text": "Definimos tamaño de imagen, proyección o pantalla, configuración de audio, amplificación, cableado, soportes y accesorios según el proyecto.",
+        "title": "Diseñamos imagen y sonido",
+        "text": "Proyector o pantalla grande, formato de audio envolvente, control y tratamiento acústico.",
         "num": "3"
       },
       {
         "icon": "fa-solid fa-file-contract",
-        "title": "Propuesta clara",
-        "text": "Te entregamos alcance, equipos, tiempos e inversión.",
+        "title": "Propuesta en detalle",
+        "text": "Cada componente con su función y opciones para una versión esencial y una completa.",
         "num": "4"
       },
       {
         "icon": "fa-solid fa-screwdriver-wrench",
-        "title": "Instalamos",
-        "text": "Montaje, conexión, pruebas, ajustes y puesta en marcha.",
+        "title": "Instalación y calibración",
+        "text": "Montaje de pantalla y bocinas, cableado oculto y calibración de imagen y sonido.",
         "num": "5"
       },
       {
         "icon": "fa-solid fa-user-check",
-        "title": "Te capacitamos",
-        "text": "Explicamos el uso básico para una operación sencilla.",
+        "title": "Función de prueba",
+        "text": "Vemos una película contigo, ajustamos niveles y te enseñamos a controlarlo todo.",
         "num": "6"
       }
     ],
-    "quote": "\"Un buen proyecto audiovisual empieza entendiendo el espacio, el uso y la experiencia que quieres lograr.\"",
+    "quote": "\"Un cine en casa se logra cuando apagas la luz y ya no recuerdas que estás en la sala.\"",
     "ctaLabel": "Iniciar mi proyecto por WhatsApp",
     "ctaMessage": "Hola DG Audiosound, quiero cotizar un proyecto de cine en casa."
   },
@@ -347,15 +347,15 @@ export const cineEnCasa: ServicePageContent = {
     },
     "gold": {
       "eyebrow": "Confianza",
-      "title": "Una decisión profesional para tu hogar",
+      "title": "Una sala de cine pensada para tu familia",
       "items": [
-        "Asesoría personalizada y real",
-        "Propuesta técnica formal y clara",
-        "Equipos profesionales seleccionados para el proyecto",
-        "Instalación estética y estructurada",
-        "Integración armoniosa con el espacio",
-        "Capacitación práctica de uso",
-        "Acompañamiento técnico posventa"
+        "Visita a tu sala con medición",
+        "Versión esencial y versión completa",
+        "Proyectores y audio originales",
+        "Cableado oculto y ordenado",
+        "Calibración de imagen y sonido",
+        "Función de prueba al entregar",
+        "Atención para futuras mejoras"
       ]
     },
     "brands": {
@@ -369,7 +369,7 @@ export const cineEnCasa: ServicePageContent = {
           "gradient": true
         }
       ],
-      "subtitle": "Seleccionamos marcas y componentes de audio y video según el espacio, la compatibilidad del sistema, el desempeño requerido y las necesidades de cada proyecto.",
+      "subtitle": "Seleccionamos proyectores, pantallas y sistemas de audio envolvente de marcas reconocidas, según el tamaño de tu sala y tu presupuesto.",
       "names": [
         "SONOS",
         "KEF",
@@ -475,7 +475,7 @@ export const cineEnCasa: ServicePageContent = {
       }
     ],
     "formTitle": "Solicita asesoría para tu cine en casa",
-    "formDescription": "Completa el formulario y se abrirá WhatsApp con la información del proyecto. Si tienes medidas, fotos, planos o equipos existentes, menciónalos en los detalles.",
+    "formDescription": "Completa el formulario y se abrirá WhatsApp con tu mensaje. Cuéntanos las medidas de la sala, si es dedicada y el presupuesto aproximado.",
     "labels": {
       "cb-name": "Nombre *",
       "cb-company": "Residencia / Proyecto (Opcional)",

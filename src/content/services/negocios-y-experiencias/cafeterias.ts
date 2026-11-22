@@ -125,50 +125,50 @@ export const cafeterias: ServicePageContent = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "¿Qué incluye una solución de audio y video para cafeterías?",
+          "name": "¿Qué necesita una cafetería para tener buena música y pantallas?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Puede incluir música ambiental, bocinas de plafón o muro, audio distribuido, amplificadores, control por zonas, pantallas para menú o promociones, cableado, soportes, configuración, pruebas y asesoría profesional."
+            "text": "Bocinas en plafón o muro, amplificación, control de volumen y, si lo deseas, pantallas para menú digital o promociones, todo pensado para un local acogedor."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Qué tipo de audio conviene para una cafetería?",
+          "name": "¿Qué sistema de audio conviene para un local pequeño?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Generalmente conviene un sistema de audio ambiental con cobertura uniforme y nivel controlado. La selección depende de dimensiones, altura de montaje, materiales, ruido ambiental, distribución de mesas, barra, terraza, número de zonas y nivel de presión sonora esperado."
+            "text": "Un sistema ambiental con varias bocinas pequeñas y volumen moderado, para que la música se escuche pareja en todas las mesas sin molestar la conversación."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Puedo tener música diferente o volumen distinto por zonas?",
+          "name": "¿Puedo tener un volumen distinto en la terraza y en el interior?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Barra, comedor, terraza, área de espera o planta alta pueden configurarse como zonas independientes para controlar volumen o fuentes según el diseño del sistema."
+            "text": "Sí. Barra, comedor, terraza o planta alta pueden manejarse como zonas independientes, cada una con su volumen y fuente de música."
           }
         },
         {
           "@type": "Question",
-          "name": "¿También instalan pantallas para menú o promociones?",
+          "name": "¿Se pueden instalar pantallas para el menú?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. DG Audiosound puede integrar pantallas para menú, promociones, contenido visual, anuncios internos o información para clientes, cuidando ubicación, visibilidad, soporte, cableado y conectividad."
+            "text": "Sí. Se instalan pantallas para menú, promociones o anuncios internos, cuidando ubicación, altura y que el contenido se lea desde la barra y las mesas."
           }
         },
         {
           "@type": "Question",
-          "name": "¿La instalación puede verse discreta y estética?",
+          "name": "¿Se puede instalar sin estorbar el servicio?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. El objetivo es integrar bocinas, pantallas, cableado y equipos de forma limpia, segura y acorde al diseño de la cafetería."
+            "text": "Se puede coordinar el trabajo en horarios de menor afluencia y con cuidado de mobiliario y acabados, según el alcance del proyecto."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Qué datos necesitan para cotizar mi cafetería?",
+          "name": "¿Qué información necesito para cotizar?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ayudan las medidas del local, fotos, número de zonas, si cuenta con terraza, cantidad aproximada de mesas, tipo de música deseada, si se requieren pantallas, presupuesto aproximado y si ya existen equipos instalados."
+            "text": "Medidas del local, fotos, número de zonas, si hay terraza, cantidad aproximada de mesas, tipo de música y si quieres pantallas para menú."
           }
         }
       ]
@@ -318,7 +318,7 @@ export const cafeterias: ServicePageContent = {
   "areas": {
     "eyebrow": "Espacios que sonorizamos",
     "title": "Audio y video adaptados a la operación de cada área de la cafetería.",
-    "subtitle": "Barra, mesas, terraza, espera y segundo nivel pueden requerir cobertura, volumen o contenido diferentes. Diseñamos cada área como parte de un sistema coordinado.",
+    "subtitle": "Barra, mesas, terraza y zona de espera tienen ritmos distintos a lo largo del día. Ajustamos niveles y contenido para que el local siga cómodo en la mañana y en la tarde.",
     "items": [
       {
         "image": {
@@ -383,7 +383,7 @@ export const cafeterias: ServicePageContent = {
         "height": 971
       },
       "eyebrow": "Optimización de sistemas existentes",
-      "title": "Actualiza tu sistema de audio sin perder tus bocinas",
+      "title": "Renueva el sonido de tu cafetería con lo que ya tienes",
       "text": "Si tu cafetería ya cuenta con bocinas, amplificación, pantallas o cableado, podemos evaluar el sistema existente y determinar qué componentes conviene reutilizar, reconfigurar, ampliar o sustituir.",
       "ctaLabel": "Cotizar actualización por WhatsApp",
       "ctaMessage": "Hola DG Audiosound, me interesa cotizar una solución de audio y video para mi cafetería."
@@ -431,7 +431,7 @@ export const cafeterias: ServicePageContent = {
         "num": "6"
       }
     ],
-    "quote": "\"Un buen proyecto audiovisual empieza entendiendo el espacio, el uso y la experiencia que quieres lograr.\"",
+    "quote": "\"Una cafetería con buena música y buen ambiente hace que el cliente se quede más tiempo y regrese.\"",
     "ctaLabel": "Iniciar mi proyecto por WhatsApp",
     "ctaMessage": "Hola DG Audiosound, me interesa cotizar una solución de audio y video para mi cafetería."
   },
@@ -446,15 +446,15 @@ export const cafeterias: ServicePageContent = {
     },
     "gold": {
       "eyebrow": "Confianza",
-      "title": "Una decisión profesional para tu negocio",
+      "title": "Un ambiente cálido que invita a quedarse",
       "items": [
-        "Asesoría personalizada y real",
-        "Propuesta técnica formal y clara",
-        "Equipos profesionales 100% originales",
-        "Instalación estética y estructurada",
-        "Integración armoniosa con el espacio",
-        "Capacitación práctica de uso",
-        "Acompañamiento técnico post-venta"
+        "Visita a tu cafetería",
+        "Propuesta clara y sin sorpresas",
+        "Equipos originales y duraderos",
+        "Instalación sin cerrar el local",
+        "Volumen que permite conversar",
+        "Control fácil para tu equipo",
+        "Atención si cambias el concepto"
       ]
     },
     "brands": {
@@ -468,7 +468,7 @@ export const cafeterias: ServicePageContent = {
           "gradient": true
         }
       ],
-      "subtitle": "Seleccionamos tecnología profesional según cobertura, potencia, conectividad, compatibilidad, operación y presupuesto de cada proyecto.",
+      "subtitle": "Usamos bocinas discretas y pantallas de menú que se integran con la decoración y no estorban en un local pequeño.",
       "names": [
         "SONOS",
         "KEF",
@@ -506,31 +506,31 @@ export const cafeterias: ServicePageContent = {
   "faq": {
     "eyebrow": "FAQ",
     "title": "Preguntas frecuentes sobre audio y video para cafeterías",
-    "subtitle": "Resolvemos tus dudas principales para ayudarte a planear e invertir con total tranquilidad y claridad técnica.",
+    "subtitle": "Las dudas más frecuentes de quienes quieren mejorar la música y las pantallas de su cafetería.",
     "items": [
       {
-        "question": "¿Qué incluye una solución de audio y video para cafeterías?",
-        "answer": "Puede incluir música ambiental, bocinas de plafón o muro, audio distribuido, amplificadores, control por zonas, pantallas para menú o promociones, cableado, soportes, configuración, pruebas y asesoría profesional."
+        "question": "¿Qué necesita una cafetería para tener buena música y pantallas?",
+        "answer": "Bocinas en plafón o muro, amplificación, control de volumen y, si lo deseas, pantallas para menú digital o promociones, todo pensado para un local acogedor."
       },
       {
-        "question": "¿Qué tipo de audio conviene para una cafetería?",
-        "answer": "Generalmente conviene un sistema de audio ambiental con cobertura uniforme y nivel controlado. La selección depende de dimensiones, altura de montaje, materiales, ruido ambiental, distribución de mesas, barra, terraza, número de zonas y nivel de presión sonora esperado."
+        "question": "¿Qué sistema de audio conviene para un local pequeño?",
+        "answer": "Un sistema ambiental con varias bocinas pequeñas y volumen moderado, para que la música se escuche pareja en todas las mesas sin molestar la conversación."
       },
       {
-        "question": "¿Puedo tener música diferente o volumen distinto por zonas?",
-        "answer": "Sí. Barra, comedor, terraza, área de espera o planta alta pueden configurarse como zonas independientes para controlar volumen o fuentes según el diseño del sistema."
+        "question": "¿Puedo tener un volumen distinto en la terraza y en el interior?",
+        "answer": "Sí. Barra, comedor, terraza o planta alta pueden manejarse como zonas independientes, cada una con su volumen y fuente de música."
       },
       {
-        "question": "¿También instalan pantallas para menú o promociones?",
-        "answer": "Sí. DG Audiosound puede integrar pantallas para menú, promociones, contenido visual, anuncios internos o información para clientes, cuidando ubicación, visibilidad, soporte, cableado y conectividad."
+        "question": "¿Se pueden instalar pantallas para el menú?",
+        "answer": "Sí. Se instalan pantallas para menú, promociones o anuncios internos, cuidando ubicación, altura y que el contenido se lea desde la barra y las mesas."
       },
       {
-        "question": "¿La instalación puede verse discreta y estética?",
-        "answer": "Sí. El objetivo es integrar bocinas, pantallas, cableado y equipos de forma limpia, segura y acorde al diseño de la cafetería."
+        "question": "¿Se puede instalar sin estorbar el servicio?",
+        "answer": "Se puede coordinar el trabajo en horarios de menor afluencia y con cuidado de mobiliario y acabados, según el alcance del proyecto."
       },
       {
-        "question": "¿Qué datos necesitan para cotizar mi cafetería?",
-        "answer": "Ayudan las medidas del local, fotos, número de zonas, si cuenta con terraza, cantidad aproximada de mesas, tipo de música deseada, si se requieren pantallas, presupuesto aproximado y si ya existen equipos instalados."
+        "question": "¿Qué información necesito para cotizar?",
+        "answer": "Medidas del local, fotos, número de zonas, si hay terraza, cantidad aproximada de mesas, tipo de música y si quieres pantallas para menú."
       }
     ]
   },
@@ -574,7 +574,7 @@ export const cafeterias: ServicePageContent = {
       }
     ],
     "formTitle": "Solicita asesoría para tu cafetería",
-    "formDescription": "Completa el formulario y se abrirá WhatsApp con la información estructurada. Indica si buscas un sistema nuevo o una actualización y comparte medidas, zonas y equipos existentes cuando los conozcas.",
+    "formDescription": "Completa el formulario y se abrirá WhatsApp con tu mensaje. Cuéntanos el tamaño de tu cafetería, si tienes terraza y si usas pantallas de menú.",
     "labels": {
       "cb-name": "Nombre / Contacto *",
       "cb-company": "Cafetería / Empresa *",

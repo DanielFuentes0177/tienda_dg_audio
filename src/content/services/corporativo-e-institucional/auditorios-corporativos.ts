@@ -428,46 +428,46 @@ export const auditoriosCorporativos: ServicePageContent = {
         "gradient": true
       }
     ],
-    "subtitle": "Un proceso estructurado para definir usuarios, acústica, visualización, cámaras, microfonía, plataformas, señal, cableado y control antes de cerrar el proyecto.",
+    "subtitle": "Medimos el auditorio con público y escenario en mente, definimos cobertura de voz, retorno y proyección, y probamos todo con ensayo antes del primer evento.",
     "steps": [
       {
         "icon": "fa-solid fa-headset",
-        "title": "Nos contactas",
-        "text": "Cuéntanos medidas, aforo, tipo de eventos, plataformas y necesidades del auditorio.",
+        "title": "Nos cuentas el evento",
+        "text": "Aforo, tipo de presentaciones, ponentes invitados y si se transmite o se graba.",
         "num": "01"
       },
       {
         "icon": "fa-solid fa-magnifying-glass-chart",
-        "title": "Revisamos el espacio",
-        "text": "Analizamos dimensiones, reverberación, ruido ambiental, puntos de red, altura y visibilidad.",
+        "title": "Medimos el recinto",
+        "text": "Altura, reverberación, ángulos de visión desde las últimas filas y rutas posibles para el cableado.",
         "num": "02"
       },
       {
         "icon": "fa-solid fa-pen-ruler",
-        "title": "Diseñamos la solución",
-        "text": "Definimos refuerzo sonoro, microfonía, proyección, cableado, rack y control audiovisual.",
+        "title": "Armamos el sistema",
+        "text": "Distribución de bocinas, microfonía de atril y de solapa, proyección o pantalla LED, y mezcla centralizada.",
         "num": "03"
       },
       {
         "icon": "fa-solid fa-file-contract",
-        "title": "Propuesta clara",
-        "text": "Te entregamos especificaciones técnicas, equipos, tiempos de entrega y cotización formal.",
+        "title": "Propuesta con alcance",
+        "text": "Lista de equipos, obra necesaria, tiempos de entrega y lo que queda fuera del proyecto.",
         "num": "04"
       },
       {
         "icon": "fa-solid fa-screwdriver-wrench",
-        "title": "Instalamos",
-        "text": "Montaje estructural, cableado certificado, conexión, calibración de DSP y pruebas en sala.",
+        "title": "Instalación y ajuste",
+        "text": "Montaje, afinación de la sala y calibración de niveles por zona de butacas.",
         "num": "05"
       },
       {
         "icon": "fa-solid fa-user-check",
-        "title": "Te capacitamos",
-        "text": "Explicamos la operación del sistema, interfaces táctiles y mejores prácticas a los operadores.",
+        "title": "Ensayo con tu equipo",
+        "text": "Corremos una presentación completa con quien operará el auditorio y dejamos una guía de uso.",
         "num": "06"
       }
     ],
-    "quote": "\"Un buen proyecto audiovisual empieza entendiendo el espacio, el uso y la experiencia que quieres lograr.\"",
+    "quote": "\"Un auditorio bien resuelto se nota cuando nadie en la última fila tiene que pedir que repitan.\"",
     "ctaLabel": "Iniciar mi proyecto por WhatsApp",
     "ctaMessage": "Hola DG Audiosound, quiero cotizar una solución de audio y video para un auditorio corporativo."
   },
@@ -482,15 +482,15 @@ export const auditoriosCorporativos: ServicePageContent = {
     },
     "gold": {
       "eyebrow": "Confianza",
-      "title": "Una decisión profesional para tu negocio",
+      "title": "Un auditorio que funciona desde el primer evento",
       "items": [
-        "Asesoría personalizada",
-        "Propuesta formal",
-        "Equipos originales",
-        "Instalación profesional",
-        "Integración estética",
-        "Capacitación básica de uso",
-        "Acompañamiento técnico"
+        "Visita técnica en el recinto",
+        "Propuesta firmada con alcance claro",
+        "Equipo profesional original",
+        "Cableado ordenado y rotulado",
+        "Calibración por zonas de butacas",
+        "Ensayo antes de entregar",
+        "Soporte para el siguiente evento"
       ]
     },
     "brands": {
@@ -504,7 +504,7 @@ export const auditoriosCorporativos: ServicePageContent = {
           "gradient": true
         }
       ],
-      "subtitle": "Seleccionamos tecnología profesional según acústica, visualización, plataforma, compatibilidad, conectividad, operación y presupuesto del proyecto.",
+      "subtitle": "Elegimos equipos según el tamaño del recinto, la inteligibilidad de voz que necesitas y el control que tu personal puede operar.",
       "names": [
         "SONOS",
         "KEF",
@@ -602,7 +602,7 @@ export const auditoriosCorporativos: ServicePageContent = {
       }
     ],
     "formTitle": "Solicita asesoría para tu auditorio",
-    "formDescription": "Completa el formulario y se abrirá WhatsApp con la información estructurada. Incluye medidas, altura, aforo, tipo de eventos, equipos existentes y si el espacio es nuevo o requiere modernización.",
+    "formDescription": "Completa el formulario y se abrirá WhatsApp con tu mensaje listo. Incluye aforo, medidas aproximadas y si necesitas transmisión o grabación.",
     "labels": {
       "cb-name": "Nombre / Contacto *",
       "cb-company": "Empresa / Institución *",

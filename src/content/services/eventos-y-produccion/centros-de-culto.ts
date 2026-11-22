@@ -408,46 +408,46 @@ export const centrosDeCulto: ServicePageContent = {
         "accent": true
       }
     ],
-    "subtitle": "Un proceso estructurado para definir uso, cobertura, potencia, microfonía, monitoreo, video, streaming, cableado, equipos e instalación antes de cerrar el proyecto.",
+    "subtitle": "Entendemos cómo se vive el servicio: voz que se entiende en toda la nave, música sin distorsión y transmisión para quienes siguen la ceremonia desde casa.",
     "steps": [
       {
         "icon": "fa-solid fa-headset",
-        "title": "Entendemos el uso",
-        "text": "Revisamos servicios, prédica, música, asistentes, músicos, streaming, video, equipo técnico y necesidades actuales.",
+        "title": "Escuchamos cómo se usa",
+        "text": "Tipo de servicio, número de asistentes, quién habla o canta y si hay banda, coro o transmisión.",
         "num": "1"
       },
       {
         "icon": "fa-solid fa-magnifying-glass-chart",
-        "title": "Revisamos el espacio",
-        "text": "Consideramos dimensiones, altura, ruido, reverberación, cobertura, escenario, cabina, energía, red, cableado y posiciones de pantalla.",
+        "title": "Recorremos el recinto",
+        "text": "Revisamos eco, columnas, balcones y zonas donde la voz se pierde o rebota.",
         "num": "2"
       },
       {
         "icon": "fa-solid fa-pen-ruler",
-        "title": "Diseñamos la solución",
-        "text": "Definimos cobertura, altavoces, amplificación, carga, potencia, margen, microfonía, mezcla, monitoreo, video, proyección, streaming y accesorios.",
+        "title": "Diseñamos el sistema",
+        "text": "Bocinas bien distribuidas, microfonía para púlpito y coro, mezcla sencilla y monitoreo para quien dirige.",
         "num": "3"
       },
       {
         "icon": "fa-solid fa-file-contract",
-        "title": "Cotización formal",
-        "text": "Te entregamos alcance, equipos, servicios, tiempos, supuestos, exclusiones y pendientes técnicos por confirmar.",
+        "title": "Cotización por etapas",
+        "text": "Puedes empezar por voz y ampliar a música, pantallas o transmisión según el presupuesto de la comunidad.",
         "num": "4"
       },
       {
         "icon": "fa-solid fa-screwdriver-wrench",
-        "title": "Integración",
-        "text": "Realizamos suministro, montaje, cableado, conexión, configuración, pruebas y puesta en marcha conforme al alcance aprobado.",
+        "title": "Integramos con cuidado",
+        "text": "Instalación entre servicios, cableado oculto y respeto por el espacio y su estética.",
         "num": "5"
       },
       {
         "icon": "fa-solid fa-user-check",
-        "title": "Capacitación",
-        "text": "Realizamos ajustes finales y capacitación básica para el personal responsable de mezcla, microfonía, monitoreo y transmisión.",
+        "title": "Enseñamos a los voluntarios",
+        "text": "Capacitación sencilla para quienes operan el sonido cada semana, con guía impresa.",
         "num": "6"
       }
     ],
-    "quote": "\"En un centro de culto, la selección de equipos empieza después de definir cobertura, potencia, canales, monitoreo, señal y operación.\"",
+    "quote": "\"Un buen sonido en el templo acerca a la congregación; uno malo la distrae de lo que viene a escuchar.\"",
     "ctaLabel": "Iniciar mi proyecto por WhatsApp",
     "ctaMessage": "Hola DG Audiosound, me interesa cotizar una solución de audio y video para mi centro de culto."
   },
@@ -462,15 +462,15 @@ export const centrosDeCulto: ServicePageContent = {
     },
     "gold": {
       "eyebrow": "Confianza",
-      "title": "Tecnología profesional para voz, música y transmisión",
+      "title": "Tranquilidad para tu comunidad",
       "items": [
-        "Levantamiento y definición del alcance",
-        "Dimensionamiento técnico del sistema",
-        "Equipos originales y tecnología profesional",
-        "Instalación y cableado según proyecto",
-        "Integración de audio, video y streaming",
-        "Pruebas, ajustes y capacitación básica",
-        "Soporte y ampliación según alcance"
+        "Visita técnica al recinto",
+        "Cotización por etapas",
+        "Equipo original y duradero",
+        "Instalación entre servicios",
+        "Cableado discreto y estético",
+        "Capacitación a voluntarios",
+        "Apoyo ante cualquier duda"
       ]
     },
     "brands": {
@@ -484,7 +484,7 @@ export const centrosDeCulto: ServicePageContent = {
           "gradient": true
         }
       ],
-      "subtitle": "Seleccionamos tecnología profesional según cobertura, potencia, radiofrecuencia, mezcla, monitoreo, video, conectividad, compatibilidad y presupuesto del proyecto.",
+      "subtitle": "Elegimos equipo resistente y fácil de operar, pensado para uso semanal y para operadores que no son técnicos.",
       "names": [
         "SHURE",
         "NEXO",
@@ -588,7 +588,7 @@ export const centrosDeCulto: ServicePageContent = {
       }
     ],
     "formTitle": "Solicita asesoría para tu centro de culto",
-    "formDescription": "Completa el formulario y se abrirá WhatsApp con la información estructurada. Incluye medidas, altura, asistentes, músicos, sistema actual y necesidades de audio, video o streaming cuando las conozcas.",
+    "formDescription": "Completa el formulario y se abrirá WhatsApp con tu mensaje. Cuéntanos tamaño del recinto, número de asistentes y si buscas transmisión.",
     "labels": {
       "cb-name": "Nombre / Contacto *",
       "cb-company": "Centro de culto / Proyecto *",

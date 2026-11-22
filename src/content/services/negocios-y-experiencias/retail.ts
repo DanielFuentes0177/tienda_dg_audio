@@ -125,50 +125,50 @@ export const retail: ServicePageContent = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "¿Qué tipo de audio necesita una tienda o espacio retail?",
+          "name": "¿Qué sistema de audio necesita una tienda?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Depende de dimensiones, altura, distribución, ruido ambiental, tipo de producto, flujo de clientes y número de zonas. Con esos datos se definen altavoces, amplificación, fuentes y control."
+            "text": "Depende del tamaño, la altura, el flujo de clientes y el tipo de producto. Con esos datos se eligen bocinas, amplificación y control para cubrir el piso de venta con volumen cómodo."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Pueden instalar pantallas para promociones o señalización digital?",
+          "name": "¿Se pueden instalar pantallas para promociones o señalización digital?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Podemos integrar pantallas, soportes y distribución de señal para promociones, branding, campañas de temporada o comunicación dentro de tienda. La plataforma de contenidos se define según el alcance del proyecto."
+            "text": "Sí. Se integran pantallas y reproductores de contenido para promociones, campañas de temporada o comunicación de marca dentro de la tienda."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Puedo controlar el volumen por áreas de la tienda?",
+          "name": "¿Puedo controlar el volumen por zonas de la tienda?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Piso de venta, aparador, caja, probadores, showroom o sala de espera pueden configurarse como zonas independientes para controlar niveles o fuentes según el diseño del sistema."
+            "text": "Sí. Piso de venta, aparador, caja, probadores o showroom pueden manejarse como zonas independientes."
           }
         },
         {
           "@type": "Question",
-          "name": "¿La instalación puede ser discreta y estética?",
+          "name": "¿Se ve estética la instalación?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Cuidamos la ubicación de bocinas, pantallas, soportes, cableado y puntos de control para mantener una instalación limpia y alineada con el diseño de la tienda."
+            "text": "Se cuida que bocinas, pantallas y cableado respeten el diseño de la tienda, con soportes discretos y cableado oculto cuando es posible."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Pueden trabajar con tiendas en operación?",
+          "name": "¿Se puede instalar con la tienda en operación?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Dependiendo del alcance del proyecto, podemos coordinar horarios para reducir afectaciones a la operación de la tienda o punto de venta."
+            "text": "Según el alcance, se puede coordinar trabajar fuera del horario de venta o por secciones para reducir molestias."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Puedo empezar con una solución básica y crecer después?",
+          "name": "¿Puedo empezar con una sucursal y replicar después?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. El proyecto puede plantearse por etapas, dejando capacidad prevista en amplificación, distribución, cableado, pantallas o zonas cuando el crecimiento futuro forme parte del alcance."
+            "text": "Sí. Se puede definir una solución base para una sucursal y repetirla o ajustarla en las siguientes."
           }
         }
       ]
@@ -315,7 +315,7 @@ export const retail: ServicePageContent = {
   "areas": {
     "eyebrow": "Espacios que sonorizamos",
     "title": "Audio y video adaptados a cada área del punto de venta",
-    "subtitle": "Piso de venta, aparador, caja, probadores, showroom y lounge pueden requerir niveles, contenido, visibilidad y control diferentes. Diseñamos cada área como parte de un sistema coordinado.",
+    "subtitle": "Piso de venta, aparador, caja, probadores y showroom necesitan distinto volumen, contenido y visibilidad. Lo ajustamos para que el audio acompañe el recorrido del cliente sin estorbar al personal.",
     "items": [
       {
         "image": {
@@ -380,7 +380,7 @@ export const retail: ServicePageContent = {
         "height": 941
       },
       "eyebrow": "Optimización de sistemas existentes",
-      "title": "Actualiza tu sistema de audio sin perder tus bocinas",
+      "title": "Moderniza el audio de tu tienda aprovechando tu instalación",
       "text": "Si tu tienda ya cuenta con altavoces, amplificación, pantallas, reproductores, procesadores o cableado, podemos evaluar el sistema existente y determinar qué componentes conviene reutilizar, reconfigurar, ampliar o sustituir.",
       "ctaLabel": "Cotizar actualización por WhatsApp",
       "ctaMessage": "Hola DG Audiosound, me interesa cotizar una solución de audio y pantallas para mi tienda retail."
@@ -428,7 +428,7 @@ export const retail: ServicePageContent = {
         "num": "6"
       }
     ],
-    "quote": "\"Un buen proyecto audiovisual empieza entendiendo el espacio, el uso y la experiencia que quieres lograr.\"",
+    "quote": "\"En una tienda, la música y la pantalla invitan al cliente a recorrer el local y a quedarse más tiempo.\"",
     "ctaLabel": "Iniciar mi proyecto por WhatsApp",
     "ctaMessage": "Hola DG Audiosound, me interesa cotizar una solución de audio y pantallas para mi tienda retail."
   },
@@ -443,15 +443,15 @@ export const retail: ServicePageContent = {
     },
     "gold": {
       "eyebrow": "Confianza",
-      "title": "Una decisión profesional para tu negocio",
+      "title": "Una tienda con identidad de marca, también en sonido",
       "items": [
-        "Asesoría personalizada y real",
-        "Propuesta técnica formal y clara",
-        "Equipos profesionales 100% originales",
-        "Instalación estética y estructurada",
-        "Integración armoniosa con el espacio",
-        "Capacitación práctica de uso",
-        "Acompañamiento técnico post-venta"
+        "Recorrido por el punto de venta",
+        "Propuesta técnica por sucursal",
+        "Equipos originales",
+        "Instalación fuera del horario de venta",
+        "Contenido y volumen administrables",
+        "Capacitación al personal de tienda",
+        "Soporte para nuevas sucursales"
       ]
     },
     "brands": {
@@ -465,7 +465,7 @@ export const retail: ServicePageContent = {
           "gradient": true
         }
       ],
-      "subtitle": "Seleccionamos tecnología profesional según cobertura, potencia, resolución, conectividad, compatibilidad, operación y presupuesto de cada proyecto.",
+      "subtitle": "Seleccionamos bocinas, pantallas y reproductores de contenido que se pueden administrar de forma centralizada en varias tiendas.",
       "names": [
         "SONOS",
         "KEF",
@@ -503,31 +503,31 @@ export const retail: ServicePageContent = {
   "faq": {
     "eyebrow": "FAQ",
     "title": "Preguntas frecuentes sobre audio y video para retail",
-    "subtitle": "Resolvemos tus dudas principales para ayudarte a planear e invertir con total tranquilidad y claridad técnica.",
+    "subtitle": "Respuestas a las preguntas más comunes sobre música, pantallas y señalización digital en tiendas.",
     "items": [
       {
-        "question": "¿Qué tipo de audio necesita una tienda o espacio retail?",
-        "answer": "Depende de dimensiones, altura, distribución, ruido ambiental, tipo de producto, flujo de clientes y número de zonas. Con esos datos se definen altavoces, amplificación, fuentes y control."
+        "question": "¿Qué sistema de audio necesita una tienda?",
+        "answer": "Depende del tamaño, la altura, el flujo de clientes y el tipo de producto. Con esos datos se eligen bocinas, amplificación y control para cubrir el piso de venta con volumen cómodo."
       },
       {
-        "question": "¿Pueden instalar pantallas para promociones o señalización digital?",
-        "answer": "Sí. Podemos integrar pantallas, soportes y distribución de señal para promociones, branding, campañas de temporada o comunicación dentro de tienda. La plataforma de contenidos se define según el alcance del proyecto."
+        "question": "¿Se pueden instalar pantallas para promociones o señalización digital?",
+        "answer": "Sí. Se integran pantallas y reproductores de contenido para promociones, campañas de temporada o comunicación de marca dentro de la tienda."
       },
       {
-        "question": "¿Puedo controlar el volumen por áreas de la tienda?",
-        "answer": "Sí. Piso de venta, aparador, caja, probadores, showroom o sala de espera pueden configurarse como zonas independientes para controlar niveles o fuentes según el diseño del sistema."
+        "question": "¿Puedo controlar el volumen por zonas de la tienda?",
+        "answer": "Sí. Piso de venta, aparador, caja, probadores o showroom pueden manejarse como zonas independientes."
       },
       {
-        "question": "¿La instalación puede ser discreta y estética?",
-        "answer": "Sí. Cuidamos la ubicación de bocinas, pantallas, soportes, cableado y puntos de control para mantener una instalación limpia y alineada con el diseño de la tienda."
+        "question": "¿Se ve estética la instalación?",
+        "answer": "Se cuida que bocinas, pantallas y cableado respeten el diseño de la tienda, con soportes discretos y cableado oculto cuando es posible."
       },
       {
-        "question": "¿Pueden trabajar con tiendas en operación?",
-        "answer": "Dependiendo del alcance del proyecto, podemos coordinar horarios para reducir afectaciones a la operación de la tienda o punto de venta."
+        "question": "¿Se puede instalar con la tienda en operación?",
+        "answer": "Según el alcance, se puede coordinar trabajar fuera del horario de venta o por secciones para reducir molestias."
       },
       {
-        "question": "¿Puedo empezar con una solución básica y crecer después?",
-        "answer": "Sí. El proyecto puede plantearse por etapas, dejando capacidad prevista en amplificación, distribución, cableado, pantallas o zonas cuando el crecimiento futuro forme parte del alcance."
+        "question": "¿Puedo empezar con una sucursal y replicar después?",
+        "answer": "Sí. Se puede definir una solución base para una sucursal y repetirla o ajustarla en las siguientes."
       }
     ]
   },
@@ -571,7 +571,7 @@ export const retail: ServicePageContent = {
       }
     ],
     "formTitle": "Solicita asesoría para tu espacio retail",
-    "formDescription": "Completa el formulario y se abrirá WhatsApp con la información estructurada. Indica si buscas un sistema nuevo o una actualización y comparte medidas, zonas, pantallas y equipos existentes cuando los conozcas.",
+    "formDescription": "Completa el formulario y se abrirá WhatsApp con tu mensaje. Cuéntanos el tamaño de la tienda, cuántas sucursales y si necesitas pantallas.",
     "labels": {
       "cb-name": "Nombre / Contacto *",
       "cb-company": "Tienda / Empresa *",

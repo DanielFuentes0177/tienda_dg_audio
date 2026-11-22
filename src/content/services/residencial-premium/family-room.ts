@@ -94,7 +94,7 @@ export const familyRoom: ServicePageContent = {
           "name": "¿Qué tipo de sonido conviene para un family room?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Depende del espacio, los hábitos de uso y el presupuesto. Puede ser una barra de sonido premium, una barra con subwoofer y bocinas traseras, un sistema 5.1 o 7.1, o una configuración compatible con Dolby Atmos. Para escucha musical dedicada también puede evaluarse un sistema de Audio Hi-Fi."
+            "text": "Depende del espacio, los hábitos de uso y el presupuesto. Puede ser una barra de sonido premium, una barra con subwoofer y bocinas traseras, un sistema 5.1 o 7.1, o una configuración compatible con Dolby Atmos. Para escucha musical dedicada también puede evaluarse un sistema de Audio Hi-Fi ."
           }
         },
         {
@@ -414,46 +414,46 @@ export const familyRoom: ServicePageContent = {
         "gradient": true
       }
     ],
-    "subtitle": "Revisamos el espacio, los usos, los equipos existentes y la infraestructura antes de definir, instalar y configurar la solución.",
+    "subtitle": "Buscamos que el centro de entretenimiento sea fácil para toda la familia: encender, elegir y disfrutar sin menús complicados ni controles de más.",
     "steps": [
       {
         "icon": "fa-solid fa-headset",
-        "title": "Nos contactas",
-        "text": "Nos escribes por WhatsApp y nos cuentas cómo usan el espacio.",
+        "title": "Conversamos sobre tu familia",
+        "text": "Quién usa la sala, qué ven y qué plataformas, consolas o juegos conectan.",
         "num": "01"
       },
       {
         "icon": "fa-solid fa-magnifying-glass-chart",
-        "title": "Revisamos tu sala",
-        "text": "Analizamos fotos, medidas, muebles, pantalla actual y fuentes de contenido.",
+        "title": "Vemos el espacio",
+        "text": "Muro principal, asientos, luz natural y cómo se mueven las personas en el cuarto.",
         "num": "02"
       },
       {
         "icon": "fa-solid fa-pen-ruler",
-        "title": "Definimos solución",
-        "text": "Recomendamos pantalla, audio, subwoofer, consola, streaming, soportes y cableado.",
+        "title": "Definimos la solución",
+        "text": "Pantalla adecuada, barra o sistema de sonido, y un control unificado fácil de entender.",
         "num": "03"
       },
       {
         "icon": "fa-solid fa-file-contract",
         "title": "Propuesta clara",
-        "text": "Te entregamos alcance, equipos, tiempos e inversión.",
+        "text": "Equipos y costos explicados, con opciones para empezar y crecer después.",
         "num": "04"
       },
       {
         "icon": "fa-solid fa-screwdriver-wrench",
-        "title": "Instalamos",
-        "text": "Montaje, conexión, pruebas, ajustes y puesta en marcha.",
+        "title": "Instalación ordenada",
+        "text": "Montaje en pared o mueble, cables escondidos y todo conectado desde el primer día.",
         "num": "05"
       },
       {
         "icon": "fa-solid fa-user-check",
-        "title": "Te capacitamos",
-        "text": "Explicamos el uso básico para una operación sencilla.",
+        "title": "Todos aprenden a usarlo",
+        "text": "Dejamos configurado y enseñamos a toda la familia, incluidos niños y abuelos.",
         "num": "06"
       }
     ],
-    "quote": "\"Un buen proyecto audiovisual empieza entendiendo el espacio, el uso y la experiencia que quieres lograr.\"",
+    "quote": "\"En el family room, lo mejor es que cualquiera encienda y todo funcione.\"",
     "ctaLabel": "Iniciar mi proyecto por WhatsApp",
     "ctaMessage": "Hola DG Audiosound, quiero cotizar audio y video para mi Family Room."
   },
@@ -468,15 +468,15 @@ export const familyRoom: ServicePageContent = {
     },
     "gold": {
       "eyebrow": "Confianza",
-      "title": "Una decisión profesional para tu sala familiar",
+      "title": "Entretenimiento sencillo para todos en casa",
       "items": [
-        "Asesoría personalizada",
-        "Propuesta formal",
+        "Entendemos cómo usa tu familia la sala",
+        "Propuesta con opciones claras",
         "Equipos originales",
-        "Instalación profesional",
-        "Integración estética",
-        "Configuración de fuentes",
-        "Capacitación básica de uso"
+        "Cables escondidos y todo ordenado",
+        "Un solo control para todo",
+        "Explicamos a toda la familia",
+        "Soporte cuando lo necesites"
       ]
     },
     "brands": {
@@ -490,7 +490,7 @@ export const familyRoom: ServicePageContent = {
           "gradient": true
         }
       ],
-      "subtitle": "Integramos equipos adecuados al espacio, los usos, la compatibilidad requerida y el nivel de experiencia definido para cada proyecto.",
+      "subtitle": "Seleccionamos pantallas, barras de sonido y sistemas de control que se manejan con un solo control o desde el celular.",
       "names": [
         "SONOS",
         "KEF",
@@ -588,7 +588,7 @@ export const familyRoom: ServicePageContent = {
       }
     ],
     "formTitle": "Solicita una cotización",
-    "formDescription": "Cuéntanos cómo usa tu familia el espacio: películas, deportes, videojuegos, streaming, música o convivencia diaria.",
+    "formDescription": "Completa el formulario y se abrirá WhatsApp con tu mensaje. Cuéntanos el tamaño de la sala, quiénes la usan y qué plataformas ven.",
     "labels": {
       "cb-name": "Nombre / Contacto *",
       "cb-company": "Nombre de tu casa / Proyecto (opcional)",

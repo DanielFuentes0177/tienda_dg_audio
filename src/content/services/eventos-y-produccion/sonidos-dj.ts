@@ -405,46 +405,46 @@ export const sonidosDj: ServicePageContent = {
         "accent": true
       }
     ],
-    "subtitle": "Un proceso estructurado para definir audiencia, cobertura, SPL, potencia, señal, energía, montaje y equipos antes de cerrar el proyecto.",
+    "subtitle": "Calculamos el sistema según el tipo de evento y el aforo, para que el sonido llegue parejo, con graves controlados y sin saturar la sala o la pista.",
     "steps": [
       {
         "icon": "fa-solid fa-headset",
-        "title": "Entendemos tu uso",
-        "text": "Definimos si eres DJ móvil, proveedor de sonido, operador, salón, producción o proyecto de entretenimiento, y qué tipo de eventos cubrirás.",
+        "title": "Platícanos tus eventos",
+        "text": "Tipo de eventos, aforo, si es interior o exterior y cómo transportas el equipo.",
         "num": "1"
       },
       {
         "icon": "fa-solid fa-magnifying-glass-chart",
-        "title": "Revisamos capacidad",
-        "text": "Consideramos dimensiones, asistentes, ruido, montaje, cobertura, SPL esperado, contenido, energía, transporte, cableado y frecuencia de uso.",
+        "title": "Calculamos la capacidad",
+        "text": "Potencia, número de cajas y subgraves necesarios para el lugar y el público.",
         "num": "2"
       },
       {
         "icon": "fa-solid fa-pen-ruler",
         "title": "Diseñamos el sistema",
-        "text": "Calculamos cantidad de altavoces, subwoofers, impedancia, potencia, margen, procesamiento, consola, microfonía, monitoreo, energía y accesorios.",
+        "text": "Cajas principales, subwoofers, monitoreo, consola o controlador y cableado para montaje rápido.",
         "num": "3"
       },
       {
         "icon": "fa-solid fa-file-contract",
-        "title": "Cotización formal",
-        "text": "Te entregamos alcance, equipos, servicios, tiempos, supuestos, exclusiones y pendientes técnicos por confirmar.",
+        "title": "Cotización en paquetes",
+        "text": "Sistema base y opciones para ampliar según tu agenda de eventos.",
         "num": "4"
       },
       {
         "icon": "fa-solid fa-screwdriver-wrench",
-        "title": "Integración",
-        "text": "Realizamos suministro, conexión, configuración, pruebas y ajustes conforme al alcance aprobado.",
+        "title": "Armado y pruebas",
+        "text": "Montamos el sistema, medimos cobertura y ajustamos para que suene bien en distintos espacios.",
         "num": "5"
       },
       {
         "icon": "fa-solid fa-user-check",
-        "title": "Capacitación",
-        "text": "Explicamos ganancia, ruteo, procesamiento, niveles, monitoreo, conexiones y operación básica del sistema integrado.",
+        "title": "Montaje en tus manos",
+        "text": "Te enseñamos el montaje, la ganancia correcta y el cuidado del equipo.",
         "num": "6"
       }
     ],
-    "quote": "\"En un sistema PA, primero se definen audiencia, cobertura, SPL, potencia, impedancia, señal y operación; los equipos se seleccionan después.\"",
+    "quote": "\"Un sistema bien dimensionado suena fuerte sin lastimar y cubre toda la pista por igual.\"",
     "ctaLabel": "Iniciar mi proyecto por WhatsApp",
     "ctaMessage": "Hola DG Audiosound, me interesa cotizar un sistema de sonido e iluminación para DJ o evento."
   },
@@ -459,15 +459,15 @@ export const sonidosDj: ServicePageContent = {
     },
     "gold": {
       "eyebrow": "Confianza",
-      "title": "Tecnología profesional para Sonidos, DJs y eventos",
+      "title": "Un sistema listo para cada evento",
       "items": [
-        "Definición de audiencia y tipo de evento",
-        "Dimensionamiento de cobertura, SPL y potencia",
-        "Equipos originales y tecnología profesional",
-        "Compatibilidad de altavoces, amplificación y señal",
-        "Cableado, energía y montaje según proyecto",
-        "Pruebas, ajustes y capacitación básica",
-        "Capacidad de crecimiento según alcance"
+        "Cálculo de potencia por aforo",
+        "Paquetes por tipo de evento",
+        "Cajas y subgraves originales",
+        "Pruebas de cobertura reales",
+        "Cableado reforzado para traslado",
+        "Guía de montaje y ajustes",
+        "Acompañamiento técnico posterior"
       ]
     },
     "brands": {
@@ -481,7 +481,7 @@ export const sonidosDj: ServicePageContent = {
           "gradient": true
         }
       ],
-      "subtitle": "Seleccionamos tecnología profesional según cobertura, SPL, potencia, impedancia, procesamiento, mezcla, microfonía, monitoreo, conectividad, montaje y presupuesto.",
+      "subtitle": "Seleccionamos cajas, subgraves y consolas con la potencia y el peso que necesitas, para eventos pequeños o de gran formato.",
       "names": [
         "NEXO",
         "QSC",
@@ -585,7 +585,7 @@ export const sonidosDj: ServicePageContent = {
       }
     ],
     "formTitle": "Solicita asesoría para tu sistema PA o DJ",
-    "formDescription": "Completa el formulario y se abrirá WhatsApp con la información estructurada. Incluye tipo de evento, audiencia, medidas aproximadas, equipo actual, montaje, energía disponible y necesidades de crecimiento cuando las conozcas.",
+    "formDescription": "Completa el formulario y se abrirá WhatsApp con tu mensaje. Indica tipo de eventos, aforo aproximado y si necesitas iluminación.",
     "labels": {
       "cb-name": "Nombre / Contacto *",
       "cb-company": "Sonido / DJ / Empresa / Proyecto *",

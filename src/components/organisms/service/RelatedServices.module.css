@@ -1,0 +1,43 @@
+.title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  max-width: 900px;
+}
+
+.link {
+  display: inline-block;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--color-primary, #d4a437);
+  border-radius: 999px;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.link:hover,
+.link:focus-visible {
+  background: var(--color-primary, #d4a437);
+  color: #0d0d0f;
+}
+
+.hub {
+  text-align: center;
+  margin-top: 1.25rem;
+}
+
+.hub a {
+  color: var(--color-primary, #d4a437);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

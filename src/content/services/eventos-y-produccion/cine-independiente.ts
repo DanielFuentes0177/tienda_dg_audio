@@ -405,46 +405,46 @@ export const cineIndependiente: ServicePageContent = {
         "accent": true
       }
     ],
-    "subtitle": "Un proceso estructurado para definir visualización, audio, reproducción, señal, cableado, equipos e instalación antes de cerrar el proyecto.",
+    "subtitle": "Definimos qué se proyecta y cómo: calidad de imagen, formato de archivo, sonido envolvente y la experiencia de quien ve tu película en sala o en tu espacio.",
     "steps": [
       {
         "icon": "fa-solid fa-headset",
-        "title": "Entendemos el uso",
-        "text": "Revisamos si será cine, documentales, conciertos grabados, cineforos, festivales, eventos privados o contenido mixto.",
+        "title": "Hablamos de tu proyecto",
+        "text": "Tipo de sala o festival, formatos que proyectas y el público que recibes.",
         "num": "1"
       },
       {
         "icon": "fa-solid fa-magnifying-glass-chart",
-        "title": "Revisamos el espacio",
-        "text": "Consideramos dimensiones, audiencia, distancias de visualización y tiro, luz ambiental, pantalla, ruido, reverberación, energía y cableado.",
+        "title": "Medimos la sala",
+        "text": "Distancia de proyección, tamaño de pantalla posible, luz ambiente y acústica del espacio.",
         "num": "2"
       },
       {
         "icon": "fa-solid fa-pen-ruler",
-        "title": "Diseñamos la solución",
-        "text": "Definimos proyector, óptica, pantalla, altavoces, subwoofers, amplificación, procesamiento, reproducción, conectividad, microfonía y control.",
+        "title": "Diseñamos imagen y sonido",
+        "text": "Proyector o pantalla, bocinas para el formato de audio de tus películas y control de sala.",
         "num": "3"
       },
       {
         "icon": "fa-solid fa-file-contract",
-        "title": "Cotización formal",
-        "text": "Te entregamos alcance, equipos, servicios, tiempos, supuestos, exclusiones y pendientes técnicos por confirmar.",
+        "title": "Cotización por equipos",
+        "text": "Detalle de cada pieza y opciones de menor a mayor inversión.",
         "num": "4"
       },
       {
         "icon": "fa-solid fa-screwdriver-wrench",
-        "title": "Integración",
-        "text": "Realizamos suministro, montaje, cableado, conexión, configuración, pruebas y puesta en marcha conforme al alcance aprobado.",
+        "title": "Montaje y calibración",
+        "text": "Alineamos imagen, ajustamos niveles de sonido y corregimos la sala con base en una proyección real.",
         "num": "5"
       },
       {
         "icon": "fa-solid fa-user-check",
-        "title": "Capacitación",
-        "text": "Realizamos ajustes finales y capacitación básica para el personal responsable de reproducción, audio, fuentes y operación del sistema.",
+        "title": "Funcionamiento de sala",
+        "text": "Te enseñamos a operar proyecciones, cambiar formatos y atender fallas comunes.",
         "num": "6"
       }
     ],
-    "quote": "\"La selección de equipos empieza después de definir imagen, cobertura, potencia, fuentes, señal y forma de operación.\"",
+    "quote": "\"Una película independiente merece verse y escucharse tal como se pensó en la edición.\"",
     "ctaLabel": "Iniciar mi proyecto por WhatsApp",
     "ctaMessage": "Hola DG Audiosound, me interesa cotizar una solución de proyección y sonido para cine independiente."
   },
@@ -459,15 +459,15 @@ export const cineIndependiente: ServicePageContent = {
     },
     "gold": {
       "eyebrow": "Confianza",
-      "title": "Tecnología profesional para proyección, sonido y control",
+      "title": "Proyecciones a la altura de tu cine",
       "items": [
-        "Levantamiento y definición del alcance",
-        "Dimensionamiento de imagen y audio",
-        "Equipos originales y tecnología profesional",
-        "Integración de reproducción y señal",
-        "Instalación y cableado según proyecto",
-        "Pruebas, ajustes y capacitación básica",
-        "Soporte y ampliación según alcance"
+        "Visita a la sala o espacio",
+        "Opciones de menor a mayor inversión",
+        "Proyector y audio originales",
+        "Calibración con película real",
+        "Instalación limpia y segura",
+        "Manual de operación de sala",
+        "Seguimiento para tus festivales"
       ]
     },
     "brands": {
@@ -481,7 +481,7 @@ export const cineIndependiente: ServicePageContent = {
           "gradient": true
         }
       ],
-      "subtitle": "Seleccionamos tecnología profesional según imagen, audio, cobertura, potencia, conectividad, compatibilidad, operación y presupuesto del proyecto.",
+      "subtitle": "Seleccionamos proyectores, pantallas y sistemas de sonido según el formato de tu cine, el tamaño de la sala y tu presupuesto.",
       "names": [
         "BARCO",
         "OPTOMA",
@@ -585,7 +585,7 @@ export const cineIndependiente: ServicePageContent = {
       }
     ],
     "formTitle": "Solicita asesoría para tu proyecto de exhibición",
-    "formDescription": "Completa el formulario y se abrirá WhatsApp con la información estructurada. Incluye medidas, audiencia, distancia aproximada de proyección, pantalla, contenido, audio y equipos existentes cuando los conozcas.",
+    "formDescription": "Completa el formulario y se abrirá WhatsApp con tu mensaje. Incluye tamaño de sala, número de butacas y formatos que proyectas.",
     "labels": {
       "cb-name": "Nombre / Contacto *",
       "cb-company": "Sala / Proyecto *",

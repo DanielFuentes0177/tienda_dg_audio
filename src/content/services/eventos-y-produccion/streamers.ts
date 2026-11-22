@@ -405,46 +405,46 @@ export const streamers: ServicePageContent = {
         "accent": true
       }
     ],
-    "subtitle": "Un proceso estructurado para definir contenido, fuentes, captura, software, red, energía, cableado y equipos antes de cerrar el proyecto.",
+    "subtitle": "Hablamos de tu plataforma, tu juego o contenido y tu espacio, para armar un setup que se vea y suene bien en vivo y que puedas operar tú solo.",
     "steps": [
       {
         "icon": "fa-solid fa-headset",
-        "title": "Entendemos tu contenido",
-        "text": "Revisamos si será gaming, clases, podcast en vivo, directos, entrevistas, webinars, contenido corporativo o un formato mixto.",
+        "title": "Cuéntanos tu canal",
+        "text": "Plataforma, tipo de contenido, si juegas o conversas y cuántas horas transmites.",
         "num": "1"
       },
       {
         "icon": "fa-solid fa-magnifying-glass-chart",
-        "title": "Revisamos el espacio",
-        "text": "Consideramos espacio, ruido, fondo, iluminación, posiciones de cámara, computadora, puertos, energía, red, cableado y operación.",
+        "title": "Revisamos tu setup",
+        "text": "Computadora, escritorio, iluminación y ruido de la habitación.",
         "num": "2"
       },
       {
         "icon": "fa-solid fa-pen-ruler",
-        "title": "Diseñamos el setup",
-        "text": "Definimos micrófono, preamplificación, entradas, salidas, monitoreo, cámaras, resolución, frame rate, captura, software, red, iluminación, soportes y cableado.",
+        "title": "Diseñamos tu estudio",
+        "text": "Micrófono, cámara, interfaz, iluminación, escena de captura y monitoreo sin eco.",
         "num": "3"
       },
       {
         "icon": "fa-solid fa-file-contract",
-        "title": "Cotización formal",
-        "text": "Te entregamos alcance, equipos, servicios, tiempos, supuestos, exclusiones y pendientes técnicos por confirmar.",
+        "title": "Cotización por niveles",
+        "text": "Setup inicial, intermedio y completo, para que avances sin comprar de más.",
         "num": "4"
       },
       {
         "icon": "fa-solid fa-screwdriver-wrench",
-        "title": "Integración",
-        "text": "Realizamos suministro, conexión, configuración, pruebas y ajustes conforme al alcance aprobado.",
+        "title": "Instalamos y configuramos",
+        "text": "Conectamos todo, ajustamos tu software de transmisión y calibramos audio y video.",
         "num": "5"
       },
       {
         "icon": "fa-solid fa-user-check",
-        "title": "Capacitación",
-        "text": "Explicamos ganancia, monitoreo, selección de fuentes, escenas, captura, grabación y operación básica del sistema integrado.",
+        "title": "Primer directo guiado",
+        "text": "Hacemos un directo de prueba contigo y corregimos lo que no se vea o escuche bien.",
         "num": "6"
       }
     ],
-    "quote": "\"Un setup de streaming se diseña desde fuentes, captura, resolución, audio, red y operación; los equipos se seleccionan después.\"",
+    "quote": "\"Un streaming con buen audio retiene más que uno con buena imagen y mal sonido.\"",
     "ctaLabel": "Iniciar mi proyecto por WhatsApp",
     "ctaMessage": "Hola DG Audiosound, me interesa cotizar una solución de audio, video e iluminación para streaming."
   },
@@ -459,15 +459,15 @@ export const streamers: ServicePageContent = {
     },
     "gold": {
       "eyebrow": "Confianza",
-      "title": "Tecnología profesional para audio, video y streaming",
+      "title": "Un setup que te deja concentrarte en tu contenido",
       "items": [
-        "Definición del formato y plataforma",
-        "Dimensionamiento de audio, video y captura",
-        "Equipos originales y tecnología profesional",
-        "Compatibilidad entre computadora, cámaras y señal",
-        "Red, energía y cableado según proyecto",
-        "Pruebas, ajustes y capacitación básica",
-        "Capacidad de crecimiento según alcance"
+        "Revisamos tu espacio y tu equipo actual",
+        "Cotización por niveles",
+        "Micrófonos y cámaras originales",
+        "Configuración del software incluida",
+        "Cableado limpio y ordenado",
+        "Directo de prueba contigo",
+        "Asesoría cuando quieras crecer"
       ]
     },
     "brands": {
@@ -481,7 +481,7 @@ export const streamers: ServicePageContent = {
           "gradient": true
         }
       ],
-      "subtitle": "Seleccionamos tecnología profesional según audio, video, captura, resolución, conectividad, compatibilidad, software, red, operación y presupuesto.",
+      "subtitle": "Usamos micrófonos, cámaras e interfaces comunes entre streamers, elegidos por calidad y compatibilidad con tu plataforma.",
       "names": [
         "SHURE",
         "ALLEN & HEATH",
@@ -595,7 +595,7 @@ export const streamers: ServicePageContent = {
       }
     ],
     "formTitle": "Solicita asesoría para tu setup de streaming",
-    "formDescription": "Completa el formulario y se abrirá WhatsApp con la información estructurada. Incluye plataforma, computadora, audio, cámaras, resolución, iluminación, capturadora, red y si buscas un sistema nuevo o una actualización.",
+    "formDescription": "Completa el formulario y se abrirá WhatsApp con tu mensaje. Cuéntanos tu plataforma, tu equipo actual y tu presupuesto aproximado.",
     "labels": {
       "cb-name": "Nombre / Contacto *",
       "cb-company": "Canal / Marca / Empresa / Proyecto *",

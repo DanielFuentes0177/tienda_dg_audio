@@ -437,46 +437,46 @@ export const oficinasCorporativas: ServicePageContent = {
         "gradient": true
       }
     ],
-    "subtitle": "Un proceso estructurado para definir espacios, usuarios, plataformas, cobertura, visualización, señal, cableado, control e instalación antes de cerrar el proyecto.",
+    "subtitle": "Analizamos cómo se reúne tu equipo: salas pequeñas con videollamada diaria, espacios abiertos y áreas de capacitación, para estandarizar la experiencia en toda la oficina.",
     "steps": [
       {
         "icon": "fa-solid fa-headset",
-        "title": "Nos contactas",
-        "text": "Cuéntanos qué áreas de tu oficina quieres equipar o mejorar.",
+        "title": "Entendemos tu operación",
+        "text": "Cuántas salas, qué plataformas usan (Teams, Meet, Zoom) y qué problemas hay hoy.",
         "num": "01"
       },
       {
         "icon": "fa-solid fa-magnifying-glass-chart",
-        "title": "Entendemos tu operación",
-        "text": "Revisamos medidas, usuarios, tipo de reuniones, plataformas, ruido, infraestructura y equipos existentes.",
+        "title": "Evaluamos cada sala",
+        "text": "Medimos tamaño, acústica y ubicación de pantallas, y vemos cómo llega la red y la corriente.",
         "num": "02"
       },
       {
         "icon": "fa-solid fa-pen-ruler",
-        "title": "Evaluamos el espacio",
-        "text": "Cuando es necesario, revisamos planos, puntos de red y energía, rutas de cableado, posiciones de equipos y condiciones de montaje.",
+        "title": "Estandarizamos la solución",
+        "text": "Un kit por tamaño de sala: micrófono, cámara, barra de audio y pantalla, fáciles de administrar.",
         "num": "03"
       },
       {
         "icon": "fa-solid fa-file-contract",
         "title": "Propuesta clara",
-        "text": "Te entregamos alcance, equipos, servicios, tiempos, supuestos, exclusiones y pendientes técnicos por confirmar.",
+        "text": "Costo por sala y por kit, con opciones para crecer a más oficinas o sedes.",
         "num": "04"
       },
       {
         "icon": "fa-solid fa-screwdriver-wrench",
-        "title": "Instalamos",
-        "text": "Realizamos montaje, cableado, conexión, configuración, pruebas y ajustes conforme al alcance aprobado.",
+        "title": "Instalación sin parar la oficina",
+        "text": "Trabajo por turnos o fines de semana para mantener operación.",
         "num": "05"
       },
       {
         "icon": "fa-solid fa-user-check",
-        "title": "Te capacitamos",
-        "text": "Explicamos las funciones y la operación básica al personal responsable del sistema.",
+        "title": "Entrega y primera reunión",
+        "text": "Probamos con tu equipo una videollamada real y dejamos soporte para TI.",
         "num": "06"
       }
     ],
-    "quote": "\"Un buen proyecto audiovisual empieza entendiendo el espacio, el uso y la experiencia que quieres lograr.\"",
+    "quote": "\"Una videollamada bien resuelta no distrae: el equipo se concentra en la reunión, no en la tecnología.\"",
     "ctaLabel": "Iniciar mi proyecto por WhatsApp",
     "ctaMessage": "Hola DG Audiosound, quiero cotizar audio y video para oficinas corporativas."
   },
@@ -491,15 +491,15 @@ export const oficinasCorporativas: ServicePageContent = {
     },
     "gold": {
       "eyebrow": "Confianza",
-      "title": "Una decisión profesional para tu empresa",
+      "title": "Salas de reunión que no dan problemas",
       "items": [
-        "Asesoría personalizada",
-        "Propuesta formal",
-        "Equipos originales",
-        "Instalación profesional",
-        "Integración estética",
-        "Capacitación básica de uso",
-        "Acompañamiento técnico"
+        "Diagnóstico por sala",
+        "Kits estandarizados por tamaño",
+        "Compatibilidad con tus plataformas",
+        "Instalación fuera de horas pico",
+        "Prueba en videollamada real",
+        "Guía de uso para tu equipo y TI",
+        "Soporte técnico posterior"
       ]
     },
     "brands": {
@@ -513,7 +513,7 @@ export const oficinasCorporativas: ServicePageContent = {
           "gradient": true
         }
       ],
-      "subtitle": "Seleccionamos tecnología profesional según cobertura, visualización, conectividad, compatibilidad, plataforma, operación y presupuesto del proyecto.",
+      "subtitle": "Usamos equipos certificados con las plataformas de videoconferencia más comunes, para evitar sorpresas con tu red y tu software.",
       "names": [
         "SONOS",
         "KEF",
@@ -611,7 +611,7 @@ export const oficinasCorporativas: ServicePageContent = {
       }
     ],
     "formTitle": "Solicita asesoría para tu proyecto corporativo",
-    "formDescription": "Completa el formulario y se abrirá WhatsApp con la información estructurada. Incluye medidas, número de salas, usuarios, plataformas y equipos existentes cuando los conozcas.",
+    "formDescription": "Completa el formulario y se abrirá WhatsApp con tu mensaje. Indica cuántas salas, tamaño aproximado y qué plataforma usan.",
     "labels": {
       "cb-name": "Nombre / Contacto *",
       "cb-company": "Empresa / Institución *",

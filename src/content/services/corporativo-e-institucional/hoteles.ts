@@ -152,7 +152,7 @@ export const hoteles: ServicePageContent = {
           "name": "¿También pueden equipar salones de eventos y conferencias?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Podemos integrar refuerzo sonoro, microfonía, pantallas o proyección, conexiones para presentaciones y control para salones, conferencias, capacitación y reuniones."
+            "text": "Sí. Integramos audio profesional, microfonía, pantallas, proyectores, conexión para presentaciones y control para salones de eventos, conferencias, capacitaciones, banquetes y reuniones corporativas."
           }
         },
         {
@@ -438,46 +438,46 @@ export const hoteles: ServicePageContent = {
         "gradient": true
       }
     ],
-    "subtitle": "Un proceso estructurado para definir zonas, cobertura, carga, visualización, fuentes, control, cableado, instalación y operación antes de cerrar el proyecto.",
+    "subtitle": "Distinguimos las áreas públicas, los salones de eventos y las habitaciones, porque cada una pide un nivel de sonido, un control y un horario de obra distintos.",
     "steps": [
       {
         "icon": "fa-solid fa-headset",
-        "title": "Cuéntanos tu proyecto",
-        "text": "Compártenos qué áreas del hotel quieres mejorar: lobby, salones, restaurante, terraza, salas o amenidades.",
+        "title": "Conocemos tu propiedad",
+        "text": "Categoría del hotel, número de áreas, eventos que atiendes y la imagen que quieres transmitir.",
         "num": "01"
       },
       {
         "icon": "fa-solid fa-magnifying-glass-chart",
-        "title": "Revisamos el espacio",
-        "text": "Analizamos medidas, altura, aforo, ruido, zonas, operación, fuentes, visualización, infraestructura y equipos existentes.",
+        "title": "Recorremos las áreas",
+        "text": "Lobby, restaurante, salones, spa y exteriores: medimos ruido, alturas y rutas de cableado.",
         "num": "02"
       },
       {
         "icon": "fa-solid fa-pen-ruler",
-        "title": "Diseñamos la solución",
-        "text": "Definimos zonas, cobertura, altavoces, amplificación, pantallas, fuentes, control, cableado y capacidad de crecimiento.",
+        "title": "Diseñamos por zonas",
+        "text": "Música ambiental con niveles distintos, audio para salones de eventos y pantallas para recepción.",
         "num": "03"
       },
       {
         "icon": "fa-solid fa-file-contract",
-        "title": "Propuesta clara",
-        "text": "Te entregamos alcance, equipos, servicios, tiempos, supuestos, exclusiones y pendientes técnicos por confirmar.",
+        "title": "Propuesta por fases",
+        "text": "Se puede ejecutar área por área para mantener el hotel operando y repartir la inversión.",
         "num": "04"
       },
       {
         "icon": "fa-solid fa-screwdriver-wrench",
-        "title": "Instalamos",
-        "text": "Realizamos montaje, cableado, conexión, configuración, pruebas y ajustes conforme al alcance aprobado.",
+        "title": "Instalamos sin molestar",
+        "text": "Obra en horarios de baja ocupación y con cuidado de acabados y mobiliario.",
         "num": "05"
       },
       {
         "icon": "fa-solid fa-user-check",
-        "title": "Te capacitamos",
-        "text": "Explicamos las funciones y la operación básica al personal responsable del sistema.",
+        "title": "Entregamos a operaciones",
+        "text": "Capacitación a mantenimiento y eventos, con control sencillo por área.",
         "num": "06"
       }
     ],
-    "quote": "\"Un buen proyecto audiovisual empieza entendiendo el espacio, el uso y la experiencia que quieres lograr.\"",
+    "quote": "\"El sonido de un hotel se diseña para que el huésped lo sienta y casi nunca lo note.\"",
     "ctaLabel": "Iniciar mi proyecto por WhatsApp",
     "ctaMessage": "Hola DG Audiosound, quiero cotizar audio, video y pantallas profesionales para hoteles."
   },
@@ -492,15 +492,15 @@ export const hoteles: ServicePageContent = {
     },
     "gold": {
       "eyebrow": "Confianza",
-      "title": "Una decisión profesional para tu hotel",
+      "title": "Tecnología a la altura de tu hospitalidad",
       "items": [
-        "Asesoría personalizada",
-        "Propuesta formal",
-        "Equipos originales",
-        "Instalación profesional",
-        "Integración estética y discreta",
-        "Capacitación básica de uso",
-        "Acompañamiento técnico"
+        "Recorrido por todas las áreas",
+        "Propuesta por fases y por zona",
+        "Equipo profesional original",
+        "Obra sin afectar a huéspedes",
+        "Acabados cuidados y cableado oculto",
+        "Capacitación a mantenimiento y eventos",
+        "Acompañamiento técnico posterior"
       ]
     },
     "brands": {
@@ -514,7 +514,7 @@ export const hoteles: ServicePageContent = {
           "gradient": true
         }
       ],
-      "subtitle": "Seleccionamos tecnología profesional según cobertura, potencia, zonificación, visualización, conectividad, compatibilidad, operación y presupuesto del proyecto.",
+      "subtitle": "Combinamos equipo discreto para áreas públicas y sistemas de eventos con potencia y control, según cada espacio del hotel.",
       "names": [
         "SONOS",
         "KEF",
@@ -616,7 +616,7 @@ export const hoteles: ServicePageContent = {
       }
     ],
     "formTitle": "Solicita asesoría para tu proyecto hotelero",
-    "formDescription": "Completa el formulario y se abrirá WhatsApp con la información estructurada. Incluye áreas, medidas, zonas, eventos, equipos existentes y etapa del proyecto cuando los conozcas.",
+    "formDescription": "Completa el formulario y se abrirá WhatsApp con tu mensaje. Cuéntanos tipo de hotel, áreas a cubrir y si hay salones de eventos.",
     "labels": {
       "cb-name": "Nombre / Contacto *",
       "cb-company": "Empresa / Institución *",

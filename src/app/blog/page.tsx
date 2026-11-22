@@ -12,6 +12,7 @@ import BlogControls from "@/components/organisms/BlogControls";
 export const metadata: Metadata = {
   title: "Blog | DG AUDIOSOUND",
   description: "Últimas noticias, artículos y guías sobre audio profesional, amplificación y tecnología de redes.",
+  alternates: { canonical: "https://www.dgaudiosound.com/blog" },
 };
 
 function stripHtml(html: string) {

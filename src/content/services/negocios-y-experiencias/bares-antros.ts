@@ -125,50 +125,50 @@ export const baresAntros: ServicePageContent = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "¿Qué tipo de audio necesita un bar o antro?",
+          "name": "¿Qué sistema de audio necesita un bar o antro?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Depende de dimensiones, altura, distribución, tipo de música, nivel de presión sonora esperado, ruido ambiental, cobertura y número de zonas. A partir de esos datos se dimensionan altavoces, subwoofers, amplificación y procesamiento."
+            "text": "Depende del tamaño, la altura, el tipo de música y el nivel de volumen que buscas. Con esos datos se definen cajas, subgraves, amplificación y procesamiento."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Puedo controlar diferentes zonas del lugar?",
+          "name": "¿Puedo controlar el volumen de la barra y de la pista por separado?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Barra, pista, lounge, terraza, VIP y otras áreas pueden configurarse como zonas independientes para controlar niveles, fuentes o contenido según el diseño del sistema."
+            "text": "Sí. Barra, pista, lounge, terraza o reservados se configuran como zonas independientes, para que el volumen de la pista no sature la barra."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Pueden instalar pantallas para deportes y eventos especiales?",
+          "name": "¿Pueden instalar pantallas para partidos y eventos?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Podemos integrar pantallas, proyectores, soportes y distribución de señal para partidos, finales, conciertos y transmisiones especiales."
+            "text": "Sí. Se integran pantallas o proyectores con distribución de señal y audio, para transmitir partidos, finales o conciertos sin afectar el sonido de la noche."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Pueden integrar iluminación?",
+          "name": "¿Es posible integrar iluminación?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Podemos integrar iluminación ambiental o de efecto cuando forme parte del alcance, definiendo zonas, control, escenas y coordinación con audio y video según las necesidades del proyecto."
+            "text": "Sí. Se puede coordinar iluminación ambiental o de efectos con el audio y el video, definiendo escenas y control cuando forma parte del proyecto."
           }
         },
         {
           "@type": "Question",
-          "name": "¿La instalación puede verse limpia y profesional?",
+          "name": "¿Cómo se ve la instalación?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Cuidamos cableado, soportes, ubicación de equipos, racks y puntos de control para que la instalación se vea ordenada y alineada al diseño del lugar."
+            "text": "Se cuida la ubicación de cajas, racks y soportes, y el cableado se ordena y rotula, para que el lugar se vea limpio y el equipo sea fácil de revisar."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Pueden trabajar con espacios que ya tienen equipo?",
+          "name": "¿Pueden aprovechar el equipo que ya tengo?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Revisamos altavoces, subwoofers, amplificación, procesamiento, cableado, pantallas y control para determinar qué puede reutilizarse y qué requiere actualización o ampliación."
+            "text": "Sí. Se revisa el equipo existente para decidir qué se puede reutilizar y qué conviene cambiar o ampliar."
           }
         }
       ]
@@ -315,7 +315,7 @@ export const baresAntros: ServicePageContent = {
   "areas": {
     "eyebrow": "Espacios que sonorizamos",
     "title": "Audio, video e iluminación adaptados a las distintas áreas del venue",
-    "subtitle": "Barra, pista, lounge, terraza, zonas VIP y accesos pueden requerir niveles, cobertura, contenido y control diferentes. Diseñamos cada área como parte de un sistema coordinado.",
+    "subtitle": "Pista, barra, reservados, terraza y cabina de DJ suenan distinto y piden control propio. Dimensionamos cada zona para que el volumen se sienta en la pista sin ensordecer en la barra.",
     "items": [
       {
         "image": {
@@ -380,7 +380,7 @@ export const baresAntros: ServicePageContent = {
         "height": 971
       },
       "eyebrow": "Optimización de sistemas existentes",
-      "title": "Actualiza tu sistema de audio sin perder tus bocinas",
+      "title": "Mejora el sonido de tu bar sin empezar de cero",
       "text": "Si tu bar o antro ya cuenta con altavoces, subwoofers, amplificación, procesadores, pantallas o cableado, podemos evaluar el sistema existente y determinar qué componentes conviene reutilizar, reconfigurar, ampliar o sustituir.",
       "ctaLabel": "Cotizar actualización por WhatsApp",
       "ctaMessage": "Hola DG Audiosound, me interesa cotizar una solución de audio, video e iluminación para mi bar o antro."
@@ -428,7 +428,7 @@ export const baresAntros: ServicePageContent = {
         "num": "6"
       }
     ],
-    "quote": "\"Un buen proyecto audiovisual empieza entendiendo el espacio, el uso y la experiencia que quieres lograr.\"",
+    "quote": "\"En un bar, el sonido y las luces son el ambiente: de ahí depende que la gente se quede a la segunda ronda.\"",
     "ctaLabel": "Iniciar mi proyecto por WhatsApp",
     "ctaMessage": "Hola DG Audiosound, me interesa cotizar una solución de audio, video e iluminación para mi bar o antro."
   },
@@ -443,15 +443,15 @@ export const baresAntros: ServicePageContent = {
     },
     "gold": {
       "eyebrow": "Confianza",
-      "title": "Una decisión profesional para tu negocio",
+      "title": "Un sistema pensado para la noche completa",
       "items": [
-        "Asesoría personalizada y real",
-        "Propuesta técnica formal y clara",
-        "Equipos profesionales 100% originales",
-        "Instalación estética y estructurada",
-        "Integración armoniosa con el espacio",
-        "Capacitación práctica de uso",
-        "Acompañamiento técnico post-venta"
+        "Visita al lugar con medición de ruido",
+        "Propuesta técnica por escrito",
+        "Equipos profesionales originales",
+        "Instalación segura y bien fijada",
+        "Calibración con música a nivel real",
+        "Capacitación para tu DJ o encargado",
+        "Acompañamiento técnico posterior"
       ]
     },
     "brands": {
@@ -465,7 +465,7 @@ export const baresAntros: ServicePageContent = {
           "gradient": true
         }
       ],
-      "subtitle": "Seleccionamos tecnología profesional según cobertura, potencia, procesamiento, conectividad, operación, compatibilidad y presupuesto de cada proyecto.",
+      "subtitle": "Seleccionamos sistemas de audio, iluminación y video que soportan horas de uso intenso con niveles altos y buen control.",
       "names": [
         "SONOS",
         "KEF",
@@ -503,31 +503,31 @@ export const baresAntros: ServicePageContent = {
   "faq": {
     "eyebrow": "FAQ",
     "title": "Preguntas frecuentes sobre audio, video e iluminación para bares y antros",
-    "subtitle": "Resolvemos tus dudas principales para ayudarte a planear e invertir con total tranquilidad y claridad técnica.",
+    "subtitle": "Respuestas a las dudas más comunes sobre audio, iluminación y control de volumen en bares y antros.",
     "items": [
       {
-        "question": "¿Qué tipo de audio necesita un bar o antro?",
-        "answer": "Depende de dimensiones, altura, distribución, tipo de música, nivel de presión sonora esperado, ruido ambiental, cobertura y número de zonas. A partir de esos datos se dimensionan altavoces, subwoofers, amplificación y procesamiento."
+        "question": "¿Qué sistema de audio necesita un bar o antro?",
+        "answer": "Depende del tamaño, la altura, el tipo de música y el nivel de volumen que buscas. Con esos datos se definen cajas, subgraves, amplificación y procesamiento."
       },
       {
-        "question": "¿Puedo controlar diferentes zonas del lugar?",
-        "answer": "Sí. Barra, pista, lounge, terraza, VIP y otras áreas pueden configurarse como zonas independientes para controlar niveles, fuentes o contenido según el diseño del sistema."
+        "question": "¿Puedo controlar el volumen de la barra y de la pista por separado?",
+        "answer": "Sí. Barra, pista, lounge, terraza o reservados se configuran como zonas independientes, para que el volumen de la pista no sature la barra."
       },
       {
-        "question": "¿Pueden instalar pantallas para deportes y eventos especiales?",
-        "answer": "Sí. Podemos integrar pantallas, proyectores, soportes y distribución de señal para partidos, finales, conciertos y transmisiones especiales."
+        "question": "¿Pueden instalar pantallas para partidos y eventos?",
+        "answer": "Sí. Se integran pantallas o proyectores con distribución de señal y audio, para transmitir partidos, finales o conciertos sin afectar el sonido de la noche."
       },
       {
-        "question": "¿Pueden integrar iluminación?",
-        "answer": "Sí. Podemos integrar iluminación ambiental o de efecto cuando forme parte del alcance, definiendo zonas, control, escenas y coordinación con audio y video según las necesidades del proyecto."
+        "question": "¿Es posible integrar iluminación?",
+        "answer": "Sí. Se puede coordinar iluminación ambiental o de efectos con el audio y el video, definiendo escenas y control cuando forma parte del proyecto."
       },
       {
-        "question": "¿La instalación puede verse limpia y profesional?",
-        "answer": "Sí. Cuidamos cableado, soportes, ubicación de equipos, racks y puntos de control para que la instalación se vea ordenada y alineada al diseño del lugar."
+        "question": "¿Cómo se ve la instalación?",
+        "answer": "Se cuida la ubicación de cajas, racks y soportes, y el cableado se ordena y rotula, para que el lugar se vea limpio y el equipo sea fácil de revisar."
       },
       {
-        "question": "¿Pueden trabajar con espacios que ya tienen equipo?",
-        "answer": "Sí. Revisamos altavoces, subwoofers, amplificación, procesamiento, cableado, pantallas y control para determinar qué puede reutilizarse y qué requiere actualización o ampliación."
+        "question": "¿Pueden aprovechar el equipo que ya tengo?",
+        "answer": "Sí. Se revisa el equipo existente para decidir qué se puede reutilizar y qué conviene cambiar o ampliar."
       }
     ]
   },
@@ -574,7 +574,7 @@ export const baresAntros: ServicePageContent = {
       }
     ],
     "formTitle": "Solicita asesoría para tu bar o antro",
-    "formDescription": "Completa el formulario y se abrirá WhatsApp con la información estructurada. Indica si buscas un sistema nuevo o una actualización y comparte medidas, áreas y equipos existentes cuando los conozcas.",
+    "formDescription": "Completa el formulario y se abrirá WhatsApp con tu mensaje. Cuéntanos el tamaño del lugar, aforo, si hay pista o DJ y tu presupuesto.",
     "labels": {
       "cb-name": "Nombre / Contacto *",
       "cb-company": "Bar / Antro / Empresa *",

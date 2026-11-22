@@ -21,10 +21,20 @@ export async function serviceMeta(group: string, slug: string): Promise<Metadata
 export function ServicePage({ group, slug }: { group: string; slug: string }) {
   const content = SERVICES[`/${group}/${slug}`];
   if (!content) notFound();
+  const hub = content.breadcrumbs.length >= 2 ? content.breadcrumbs[content.breadcrumbs.length - 2] : undefined;
+  const siblings = Object.values(SERVICES).filter((c) => c.path !== content.path && c.path.startsWith(`/${group}/`));
+  const related = hub
+    ? {
+        title: "Otras soluciones de esta categoría",
+        hubHref: hub.href,
+        hubLabel: `Ver todas las soluciones de ${hub.name}`,
+        items: siblings.map((c) => ({ href: c.path, label: c.breadcrumbs[c.breadcrumbs.length - 1].name })),
+      }
+    : undefined;
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd(content)) }} />
-      <ServicePageTemplate content={content} />
+      <ServicePageTemplate content={content} related={related} />
     </>
   );
 }

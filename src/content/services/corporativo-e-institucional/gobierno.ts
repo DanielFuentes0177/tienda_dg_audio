@@ -136,7 +136,7 @@ export const gobierno: ServicePageContent = {
           "name": "¿Pueden equipar salas institucionales o salas de juntas de gobierno?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Podemos diseñar e integrar soluciones para salas de juntas, salas institucionales, cabildos, capacitación, auditorios, salas de prensa y espacios administrativos."
+            "text": "Sí. Podemos diseñar e instalar soluciones para salas de juntas, salas de consejo, salas de capacitación, cabildos, auditorios, atención ciudadana y espacios administrativos."
           }
         },
         {
@@ -152,7 +152,7 @@ export const gobierno: ServicePageContent = {
           "name": "¿También pueden integrar videoconferencia institucional?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Podemos integrar cámaras, microfonía, audio, pantallas y conectividad para reuniones híbridas, coordinación entre sedes y sesiones con participantes externos."
+            "text": "Sí. Integramos cámaras, micrófonos, bocinas, pantallas y conectividad para reuniones híbridas, capacitación remota, coordinación entre sedes y sesiones con participantes externos."
           }
         },
         {
@@ -438,46 +438,46 @@ export const gobierno: ServicePageContent = {
         "gradient": true
       }
     ],
-    "subtitle": "Un proceso estructurado para definir usuarios, cobertura, visualización, microfonía, conectividad, señal, control, instalación y operación antes de cerrar el proyecto.",
+    "subtitle": "Trabajamos con requerimientos de licitación y de uso institucional: salas de cabildo, atención ciudadana y comunicación oficial, con documentación clara para cada partida.",
     "steps": [
       {
         "icon": "fa-solid fa-headset",
-        "title": "Nos contactas",
-        "text": "Cuéntanos si necesitas equipar una sala, auditorio, área de capacitación, atención ciudadana o espacio institucional.",
+        "title": "Recibimos tu requerimiento",
+        "text": "Si hay bases, anexo técnico o presupuesto asignado, lo revisamos contigo desde el inicio.",
         "num": "01"
       },
       {
         "icon": "fa-solid fa-magnifying-glass-chart",
-        "title": "Revisamos necesidades",
-        "text": "Analizamos medidas, aforo, ruido, reverberación, visualización, conectividad, operación, infraestructura y equipos existentes.",
+        "title": "Inspección del espacio",
+        "text": "Revisamos sala, mobiliario, instalaciones y condiciones eléctricas del inmueble.",
         "num": "02"
       },
       {
         "icon": "fa-solid fa-pen-ruler",
-        "title": "Diseñamos la solución",
-        "text": "Definimos audio, microfonía, cámaras, visualización, videoconferencia, grabación o transmisión cuando aplica, cableado y control.",
+        "title": "Ingeniería de la solución",
+        "text": "Definimos microfonía por asiento, sistema de votación o debate si aplica, cámaras y transmisión oficial.",
         "num": "03"
       },
       {
         "icon": "fa-solid fa-file-contract",
-        "title": "Propuesta clara",
-        "text": "Te entregamos alcance, equipos, servicios, tiempos, supuestos, exclusiones y pendientes técnicos por confirmar.",
+        "title": "Cotización documentada",
+        "text": "Partidas separadas, fichas técnicas y tiempos de entrega listos para tu expediente.",
         "num": "04"
       },
       {
         "icon": "fa-solid fa-screwdriver-wrench",
-        "title": "Instalamos",
-        "text": "Realizamos montaje, cableado, conexión, configuración, pruebas y ajustes conforme al alcance aprobado.",
+        "title": "Instalación supervisada",
+        "text": "Montaje con coordinación del área responsable del inmueble y bitácora de actividades.",
         "num": "05"
       },
       {
         "icon": "fa-solid fa-user-check",
-        "title": "Te capacitamos",
-        "text": "Explicamos las funciones y la operación básica al personal responsable del sistema.",
+        "title": "Entrega y capacitación",
+        "text": "Pruebas con el personal operador y manual de operación entregado por escrito.",
         "num": "06"
       }
     ],
-    "quote": "\"Un buen proyecto audiovisual empieza entendiendo el espacio, el uso y la experiencia que quieres lograr.\"",
+    "quote": "\"En una sala institucional, cada palabra debe quedar clara y quedar registrada.\"",
     "ctaLabel": "Iniciar mi proyecto por WhatsApp",
     "ctaMessage": "Hola DG Audiosound, quiero cotizar una solución audiovisual para sala institucional o cabildo."
   },
@@ -492,15 +492,15 @@ export const gobierno: ServicePageContent = {
     },
     "gold": {
       "eyebrow": "Confianza",
-      "title": "Una decisión profesional para tu institución",
+      "title": "Respaldo técnico para proyectos institucionales",
       "items": [
-        "Asesoría personalizada",
-        "Propuesta formal",
-        "Equipos originales",
-        "Instalación profesional",
-        "Integración formal y ordenada",
-        "Capacitación básica de uso",
-        "Acompañamiento técnico"
+        "Revisión de bases y anexos técnicos",
+        "Cotización por partidas documentada",
+        "Fichas técnicas de cada equipo",
+        "Instalación con bitácora",
+        "Entrega con manual de operación",
+        "Capacitación al personal operador",
+        "Soporte técnico posterior"
       ]
     },
     "brands": {
@@ -514,7 +514,7 @@ export const gobierno: ServicePageContent = {
           "gradient": true
         }
       ],
-      "subtitle": "Seleccionamos tecnología profesional según cobertura, procesamiento, visualización, conectividad, compatibilidad, operación y presupuesto del proyecto.",
+      "subtitle": "Proponemos marcas con respaldo de distribución en México, para que el proyecto cumpla requerimientos de compra pública.",
       "names": [
         "SONOS",
         "KEF",
@@ -616,7 +616,7 @@ export const gobierno: ServicePageContent = {
       }
     ],
     "formTitle": "Solicita asesoría para tu proyecto institucional",
-    "formDescription": "Completa el formulario y se abrirá WhatsApp con la información estructurada. Incluye medidas, aforo, uso, plataformas y equipos existentes cuando los conozcas.",
+    "formDescription": "Completa el formulario y se abrirá WhatsApp con tus datos. Menciona tipo de sala, número de asientos y si existe anexo técnico.",
     "labels": {
       "cb-name": "Nombre / Contacto *",
       "cb-company": "Empresa / Institución *",

@@ -441,46 +441,46 @@ export const homeOffice: ServicePageContent = {
         "gradient": true
       }
     ],
-    "subtitle": "Un proceso claro para pasar de las necesidades del espacio a una solución dimensionada, instalada y configurada.",
+    "subtitle": "Pensamos en tu jornada de trabajo: videollamadas claras, buen sonido para concentrarte y un escritorio ordenado que se vea bien en cámara.",
     "steps": [
       {
         "icon": "fa-solid fa-headset",
-        "title": "Nos contactas",
-        "text": "Nos escribes por WhatsApp y nos cuentas qué espacio quieres equipar y tus dinámicas de trabajo.",
+        "title": "Cuéntanos cómo trabajas",
+        "text": "Cuántas horas en videollamada, qué plataformas usas y qué te molesta de tu setup.",
         "num": "01"
       },
       {
         "icon": "fa-solid fa-magnifying-glass-chart",
-        "title": "Revisamos el área",
-        "text": "Analizamos posición de escritorio, iluminación natural, ruido de fondo y equipo existente.",
+        "title": "Revisamos tu área",
+        "text": "Escritorio, fondo visible en cámara, luz y ruido de la casa.",
         "num": "02"
       },
       {
         "icon": "fa-solid fa-pen-ruler",
-        "title": "Definimos solución",
-        "text": "Diseñamos el paquete ideal de cámara, micrófono, luces, audio y gestión de cables.",
+        "title": "Elegimos tu equipo",
+        "text": "Cámara, micrófono o barra de audio, monitor, iluminación y organización de cables.",
         "num": "03"
       },
       {
         "icon": "fa-solid fa-file-contract",
-        "title": "Propuesta clara",
-        "text": "Te entregamos el desglose de equipos, compatibilidad, tiempos de entrega e inversión.",
+        "title": "Propuesta a tu medida",
+        "text": "Equipos agrupados por necesidad: esencial, recomendado y completo.",
         "num": "04"
       },
       {
         "icon": "fa-solid fa-screwdriver-wrench",
-        "title": "Instalamos",
-        "text": "Montamos soportes, organizamos cableado y calibramos audio y cámara en tu computadora.",
+        "title": "Instalación en tu escritorio",
+        "text": "Dejamos todo conectado, con cables ordenados y listo para tu próxima llamada.",
         "num": "05"
       },
       {
         "icon": "fa-solid fa-user-check",
-        "title": "Prueba guiada",
-        "text": "Hacemos una llamada de prueba juntos para verificar que todo opere con máxima claridad.",
+        "title": "Prueba en llamada real",
+        "text": "Hacemos una videollamada contigo para ajustar imagen, voz y fondo.",
         "num": "06"
       }
     ],
-    "quote": "\"Una oficina en casa profesional debe operar sin complicaciones: sentarte, conectarte y hablar.\"",
+    "quote": "\"Trabajar desde casa se nota cuando tu imagen y tu voz llegan tan bien como en la oficina.\"",
     "ctaLabel": "Iniciar mi proyecto por WhatsApp",
     "ctaMessage": "Hola DG Audiosound, quiero cotizar audio y video para mi Home Office."
   },
@@ -495,15 +495,15 @@ export const homeOffice: ServicePageContent = {
     },
     "gold": {
       "eyebrow": "Confianza",
-      "title": "Una decisión profesional para tu oficina en casa",
+      "title": "Un home office a la altura de tus reuniones",
       "items": [
-        "Asesoría personalizada",
-        "Propuesta formal",
-        "Equipos originales",
-        "Instalación profesional",
-        "Integración estética",
-        "Calibración de audio y luz",
-        "Acompañamiento técnico"
+        "Revisamos cómo trabajas",
+        "Equipos por nivel: esencial a completo",
+        "Cámaras y audio originales",
+        "Escritorio ordenado y sin cables sueltos",
+        "Iluminación ajustada para cámara",
+        "Prueba en videollamada real",
+        "Ayuda si cambias de plataforma"
       ]
     },
     "brands": {
@@ -517,7 +517,7 @@ export const homeOffice: ServicePageContent = {
           "gradient": true
         }
       ],
-      "subtitle": "Seleccionamos marcas líderes en captura de voz, óptica, procesamiento acústico y monitoreo profesional.",
+      "subtitle": "Usamos cámaras, micrófonos y barras de audio certificados para Teams, Meet y Zoom, fáciles de conectar y de usar todos los días.",
       "names": [
         "SHURE",
         "SONOS",
@@ -611,7 +611,7 @@ export const homeOffice: ServicePageContent = {
       }
     ],
     "formTitle": "Solicita una cotización",
-    "formDescription": "Indica tus requerimientos principales para preparar una propuesta a tu medida.",
+    "formDescription": "Completa el formulario y se abrirá WhatsApp con tu mensaje. Cuéntanos tu escritorio, cuántas llamadas haces y tu presupuesto.",
     "labels": {
       "cb-name": "Nombre / Contacto *",
       "cb-company": "Empresa / Proyecto (opcional)",

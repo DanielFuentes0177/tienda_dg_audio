@@ -311,46 +311,46 @@ export const audioDistribuido: ServicePageContent = {
         "gradient": true
       }
     ],
-    "subtitle": "Un proceso claro para definir las zonas, seleccionar los componentes e integrar el sistema de acuerdo con tu espacio.",
+    "subtitle": "Planeamos cada zona de la casa: cuáles se escuchan juntas, cuáles por separado y desde dónde controlas todo, para que la música te siga de cuarto en cuarto.",
     "steps": [
       {
         "icon": "fa-solid fa-headset",
-        "title": "Nos contactas",
-        "text": "Platícanos sobre las zonas o habitaciones que deseas sonorizar y el tipo de música que disfrutas.",
+        "title": "Conversamos sobre tu casa",
+        "text": "Cuántas zonas quieres, quién usa la música y si hay obra en proceso o ya está terminada.",
         "num": "01"
       },
       {
         "icon": "fa-solid fa-magnifying-glass-chart",
-        "title": "Diagnóstico",
-        "text": "Revisamos planos o fotografías, condiciones de los espacios, cableado existente y posibles trayectorias para la instalación.",
+        "title": "Recorrido por la casa",
+        "text": "Revisamos plafones, muros y rutas para cableado, y dónde conviene ubicar cada bocina.",
         "num": "02"
       },
       {
         "icon": "fa-solid fa-pen-ruler",
-        "title": "Diseño e Ingeniería",
-        "text": "Definimos zonas, ubicación y tipo de bocinas, amplificación, fuentes, controles y centralización de equipos.",
+        "title": "Diseño por zonas",
+        "text": "Definimos bocinas empotradas o aparentes, amplificación, fuentes de música y control por zona.",
         "num": "03"
       },
       {
         "icon": "fa-solid fa-file-contract",
-        "title": "Propuesta",
-        "text": "Te entregamos una propuesta con alcance, equipos, servicios, tiempos e inversión.",
+        "title": "Propuesta por escrito",
+        "text": "Equipos, mano de obra y obra complementaria detalladas, con opciones por zona.",
         "num": "04"
       },
       {
         "icon": "fa-solid fa-screwdriver-wrench",
-        "title": "Instalación",
-        "text": "Montamos las bocinas y equipos, realizamos las conexiones acordadas y organizamos el sistema para una instalación limpia.",
+        "title": "Instalación en obra o acabados",
+        "text": "Coordinación con tu arquitecto o contratista para cableado antes de cerrar muros.",
         "num": "05"
       },
       {
         "icon": "fa-solid fa-user-check",
         "title": "Puesta en marcha",
-        "text": "Configuramos fuentes, zonas, niveles y controles; realizamos pruebas y te explicamos cómo utilizar el sistema.",
+        "text": "Calibramos cada zona, configuramos la app de control y te enseñamos a usarla.",
         "num": "06"
       }
     ],
-    "quote": "\"Un buen proyecto audiovisual empieza entendiendo el espacio, el uso y la experiencia que quieres lograr.\"",
+    "quote": "\"La mejor instalación es la que no ves: solo la música, en cada rincón de la casa.\"",
     "ctaLabel": "Iniciar mi proyecto por WhatsApp",
     "ctaMessage": "Hola DG Audiosound, quiero cotizar un proyecto de audio distribuido."
   },
@@ -365,15 +365,15 @@ export const audioDistribuido: ServicePageContent = {
     },
     "gold": {
       "eyebrow": "Confianza",
-      "title": "Una decisión profesional para tu hogar",
+      "title": "Música en toda tu casa, sin cables a la vista",
       "items": [
-        "Asesoría personalizada y real",
-        "Propuesta técnica formal y clara",
-        "Equipos seleccionados para el proyecto",
-        "Instalación estética y estructurada",
-        "Integración armoniosa con el espacio",
-        "Capacitación práctica de uso",
-        "Acompañamiento técnico posventa"
+        "Recorrido por cada zona",
+        "Propuesta detallada por zona",
+        "Equipo original",
+        "Coordinación con arquitecto y obra",
+        "Cableado oculto y bien rotulado",
+        "Control sencillo desde tu celular",
+        "Soporte después de la entrega"
       ]
     },
     "brands": {
@@ -387,7 +387,7 @@ export const audioDistribuido: ServicePageContent = {
           "gradient": true
         }
       ],
-      "subtitle": "Seleccionamos marcas y componentes de audio según el número de zonas, la compatibilidad, el nivel de desempeño y las necesidades de cada residencia.",
+      "subtitle": "Elegimos sistemas multizona de marcas reconocidas, con bocinas que se integran a tu arquitectura y una app que toda la familia puede usar.",
       "names": [
         "SONOS",
         "KEF",
@@ -501,7 +501,7 @@ export const audioDistribuido: ServicePageContent = {
       }
     ],
     "formTitle": "Solicita asesoría para tu audio distribuido",
-    "formDescription": "Completa el formulario y se abrirá WhatsApp con la información del proyecto. Si tienes medidas, fotografías, planos, canalizaciones o equipos existentes, menciónalos en los detalles.",
+    "formDescription": "Completa el formulario y se abrirá WhatsApp con tu mensaje. Cuéntanos cuántas zonas quieres, si hay obra en proceso y tu estilo de música.",
     "labels": {
       "cb-name": "Nombre *",
       "cb-company": "Residencia / Proyecto (Opcional)",

@@ -5,6 +5,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Catálogo | DG Audiosound",
   description: "Explora nuestro catálogo de productos de audio y accesorios premium.",
+  alternates: { canonical: "https://www.dgaudiosound.com/tienda" },
 };
 
 import prisma from "@/lib/prisma";

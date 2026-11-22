@@ -125,50 +125,50 @@ export const restaurantes: ServicePageContent = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "¿Qué tipo de audio necesita un restaurante?",
+          "name": "¿Qué sistema de sonido necesita un restaurante?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Depende de dimensiones, altura, distribución, ruido ambiental, concepto, cobertura y número de zonas. Con esos datos se definen altavoces, amplificación, procesamiento y control."
+            "text": "Depende del tamaño, la altura, el ruido ambiental y el concepto. Con esos datos se eligen bocinas, amplificación y control para que la música cubra el salón de forma pareja."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Puedo controlar el volumen por áreas?",
+          "name": "¿Puedo manejar distinto volumen en terraza, barra y salón?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Salón principal, terraza, barra, privados o área de espera pueden configurarse como zonas independientes para controlar niveles o fuentes según el diseño del sistema."
+            "text": "Sí. Salón, terraza, barra, privados o espera pueden configurarse como zonas independientes para ajustar volumen y fuente según la hora del servicio."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Pueden instalar pantallas para partidos o eventos deportivos?",
+          "name": "¿Pueden instalar pantallas para partidos?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Podemos integrar pantallas, proyectores, soportes, distribución de señal y audio adecuado para mejorar la experiencia durante partidos, finales o transmisiones especiales."
+            "text": "Sí. Se integran pantallas o proyectores con distribución de señal y audio adecuado para partidos, finales o eventos, sin afectar la música del resto del local."
           }
         },
         {
           "@type": "Question",
-          "name": "¿La instalación puede ser discreta?",
+          "name": "¿Se pueden ocultar bocinas y cables?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Cuidamos la ubicación de bocinas, pantallas, cableado, soportes y puntos de control para mantener una imagen limpia y profesional."
+            "text": "Se busca que la instalación sea discreta: bocinas integradas en plafón o muro y cableado por canaleta o dentro de muro, según el diseño del restaurante."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Pueden trabajar con el restaurante en operación?",
+          "name": "¿Se puede trabajar con el restaurante abierto?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Dependiendo del alcance del proyecto, podemos coordinar horarios para reducir afectaciones a la operación del restaurante."
+            "text": "Según el alcance, se pueden coordinar horarios para reducir el impacto en la operación, por ejemplo trabajando en horas de menor servicio."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Puedo empezar con una solución básica y crecer después?",
+          "name": "¿Puedo empezar con una zona y ampliar después?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. El proyecto puede plantearse por etapas, dejando capacidad prevista en amplificación, procesamiento, cableado o zonas cuando el crecimiento futuro forme parte del alcance."
+            "text": "Sí. El proyecto se puede hacer por etapas, dejando previstos amplificación, procesamiento y cableado para sumar zonas más adelante."
           }
         }
       ]
@@ -315,7 +315,7 @@ export const restaurantes: ServicePageContent = {
   "areas": {
     "eyebrow": "Espacios que sonorizamos",
     "title": "Audio y video adaptados a cada área del restaurante",
-    "subtitle": "Salón principal, terraza, barra, privados, espera y zona de eventos pueden requerir niveles, cobertura, contenido y control diferentes. Diseñamos cada área como parte de un sistema coordinado.",
+    "subtitle": "Salón, terraza, barra, privados y zona de espera cambian de ambiente durante el día. Configuramos cada zona con su volumen y música para que el servicio de comida se sienta cómodo en todas.",
     "items": [
       {
         "image": {
@@ -380,7 +380,7 @@ export const restaurantes: ServicePageContent = {
         "height": 971
       },
       "eyebrow": "Optimización de sistemas existentes",
-      "title": "Actualiza tu sistema de audio sin perder tus bocinas",
+      "title": "Actualiza el sonido de tu restaurante sin tirar lo que ya tienes",
       "text": "Si tu restaurante ya cuenta con altavoces, amplificación, procesadores, pantallas o cableado, podemos evaluar el sistema existente y determinar qué componentes conviene reutilizar, reconfigurar, ampliar o sustituir.",
       "ctaLabel": "Cotizar actualización por WhatsApp",
       "ctaMessage": "Hola DG Audiosound, me interesa cotizar una solución de audio y video para mi restaurante."
@@ -428,7 +428,7 @@ export const restaurantes: ServicePageContent = {
         "num": "6"
       }
     ],
-    "quote": "\"Un buen proyecto audiovisual empieza entendiendo el espacio, el uso y la experiencia que quieres lograr.\"",
+    "quote": "\"En un restaurante, la música correcta se siente en la mesa sin interrumpir la plática.\"",
     "ctaLabel": "Iniciar mi proyecto por WhatsApp",
     "ctaMessage": "Hola DG Audiosound, me interesa cotizar una solución de audio y video para mi restaurante."
   },
@@ -443,15 +443,15 @@ export const restaurantes: ServicePageContent = {
     },
     "gold": {
       "eyebrow": "Confianza",
-      "title": "Una decisión profesional para tu negocio",
+      "title": "Un sistema que cuida la experiencia de cada mesa",
       "items": [
-        "Asesoría personalizada y real",
-        "Propuesta técnica formal y clara",
-        "Equipos profesionales 100% originales",
-        "Instalación estética y estructurada",
-        "Integración armoniosa con el espacio",
-        "Capacitación práctica de uso",
-        "Acompañamiento técnico post-venta"
+        "Recorrido por salón, terraza y barra",
+        "Propuesta técnica por escrito",
+        "Equipos profesionales originales",
+        "Instalación sin cerrar el servicio",
+        "Niveles por zona, sin saturar",
+        "Capacitación al gerente y meseros",
+        "Ayuda en horarios de mayor demanda"
       ]
     },
     "brands": {
@@ -465,7 +465,7 @@ export const restaurantes: ServicePageContent = {
           "gradient": true
         }
       ],
-      "subtitle": "Seleccionamos tecnología profesional según cobertura, potencia, procesamiento, conectividad, compatibilidad, operación y presupuesto de cada proyecto.",
+      "subtitle": "Elegimos bocinas y controles que se integran a la decoración y permiten distintos ambientes durante comida, tarde y cena.",
       "names": [
         "SONOS",
         "KEF",
@@ -503,31 +503,31 @@ export const restaurantes: ServicePageContent = {
   "faq": {
     "eyebrow": "FAQ",
     "title": "Preguntas frecuentes sobre audio y video para restaurantes",
-    "subtitle": "Resolvemos tus dudas principales para ayudarte a planear e invertir con total tranquilidad y claridad técnica.",
+    "subtitle": "Lo que dueños de restaurantes preguntan antes de elegir el sistema de música y pantallas.",
     "items": [
       {
-        "question": "¿Qué tipo de audio necesita un restaurante?",
-        "answer": "Depende de dimensiones, altura, distribución, ruido ambiental, concepto, cobertura y número de zonas. Con esos datos se definen altavoces, amplificación, procesamiento y control."
+        "question": "¿Qué sistema de sonido necesita un restaurante?",
+        "answer": "Depende del tamaño, la altura, el ruido ambiental y el concepto. Con esos datos se eligen bocinas, amplificación y control para que la música cubra el salón de forma pareja."
       },
       {
-        "question": "¿Puedo controlar el volumen por áreas?",
-        "answer": "Sí. Salón principal, terraza, barra, privados o área de espera pueden configurarse como zonas independientes para controlar niveles o fuentes según el diseño del sistema."
+        "question": "¿Puedo manejar distinto volumen en terraza, barra y salón?",
+        "answer": "Sí. Salón, terraza, barra, privados o espera pueden configurarse como zonas independientes para ajustar volumen y fuente según la hora del servicio."
       },
       {
-        "question": "¿Pueden instalar pantallas para partidos o eventos deportivos?",
-        "answer": "Sí. Podemos integrar pantallas, proyectores, soportes, distribución de señal y audio adecuado para mejorar la experiencia durante partidos, finales o transmisiones especiales."
+        "question": "¿Pueden instalar pantallas para partidos?",
+        "answer": "Sí. Se integran pantallas o proyectores con distribución de señal y audio adecuado para partidos, finales o eventos, sin afectar la música del resto del local."
       },
       {
-        "question": "¿La instalación puede ser discreta?",
-        "answer": "Sí. Cuidamos la ubicación de bocinas, pantallas, cableado, soportes y puntos de control para mantener una imagen limpia y profesional."
+        "question": "¿Se pueden ocultar bocinas y cables?",
+        "answer": "Se busca que la instalación sea discreta: bocinas integradas en plafón o muro y cableado por canaleta o dentro de muro, según el diseño del restaurante."
       },
       {
-        "question": "¿Pueden trabajar con el restaurante en operación?",
-        "answer": "Dependiendo del alcance del proyecto, podemos coordinar horarios para reducir afectaciones a la operación del restaurante."
+        "question": "¿Se puede trabajar con el restaurante abierto?",
+        "answer": "Según el alcance, se pueden coordinar horarios para reducir el impacto en la operación, por ejemplo trabajando en horas de menor servicio."
       },
       {
-        "question": "¿Puedo empezar con una solución básica y crecer después?",
-        "answer": "Sí. El proyecto puede plantearse por etapas, dejando capacidad prevista en amplificación, procesamiento, cableado o zonas cuando el crecimiento futuro forme parte del alcance."
+        "question": "¿Puedo empezar con una zona y ampliar después?",
+        "answer": "Sí. El proyecto se puede hacer por etapas, dejando previstos amplificación, procesamiento y cableado para sumar zonas más adelante."
       }
     ]
   },
@@ -571,7 +571,7 @@ export const restaurantes: ServicePageContent = {
       }
     ],
     "formTitle": "Solicita asesoría para tu restaurante",
-    "formDescription": "Completa el formulario y se abrirá WhatsApp con la información estructurada. Indica si buscas un sistema nuevo o una actualización y comparte medidas, zonas y equipos existentes cuando los conozcas.",
+    "formDescription": "Completa el formulario y se abrirá WhatsApp con tu mensaje. Cuéntanos tamaño del restaurante, zonas (salón, terraza, barra) y tu presupuesto.",
     "labels": {
       "cb-name": "Nombre / Contacto *",
       "cb-company": "Restaurante / Empresa *",

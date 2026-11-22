@@ -405,46 +405,46 @@ export const musicosVocalistas: ServicePageContent = {
         "accent": true
       }
     ],
-    "subtitle": "Un proceso estructurado para definir fuentes, entradas, salidas, monitoreo, cobertura, potencia, conectividad y equipos antes de cerrar el proyecto.",
+    "subtitle": "Hablamos de tu repertorio, tu espacio de ensayo y de presentación, para armar un equipo que te permita escucharte, mezclar y grabar sin complicaciones.",
     "steps": [
       {
         "icon": "fa-solid fa-headset",
-        "title": "Entendemos tu uso",
-        "text": "Revisamos si necesitas grabar, ensayar, cantar en vivo, tocar con banda, producir contenido o montar un sistema PA.",
+        "title": "Cuéntanos tu proyecto",
+        "text": "Si eres solista o banda, qué instrumentos usas y dónde ensayas o tocas.",
         "num": "1"
       },
       {
         "icon": "fa-solid fa-magnifying-glass-chart",
         "title": "Revisamos tu espacio",
-        "text": "Consideramos espacio, ruido, número de músicos, fuentes, equipo actual, conexiones, energía, cableado y forma de operación.",
+        "text": "Tamaño del cuarto o escenario, ruido de los vecinos y el nivel que necesitas alcanzar.",
         "num": "2"
       },
       {
         "icon": "fa-solid fa-pen-ruler",
-        "title": "Diseñamos la solución",
-        "text": "Definimos microfonía, interfaces, consola, entradas, salidas, monitoreo, PA, subgraves, grabación, accesorios y capacidad de crecimiento.",
+        "title": "Armamos tu rig",
+        "text": "Micrófonos, interfaz, consola, monitoreo personal y bocinas, según tu voz e instrumentos.",
         "num": "3"
       },
       {
         "icon": "fa-solid fa-file-contract",
-        "title": "Cotización formal",
-        "text": "Te entregamos alcance, equipos, servicios, tiempos, supuestos, exclusiones y pendientes técnicos por confirmar.",
+        "title": "Cotización a tu medida",
+        "text": "Equipo por separado para que priorices lo esencial y vayas creciendo.",
         "num": "4"
       },
       {
         "icon": "fa-solid fa-screwdriver-wrench",
-        "title": "Integración",
-        "text": "Realizamos suministro, conexión, configuración, pruebas y ajustes conforme al alcance aprobado.",
+        "title": "Conexión y ajuste",
+        "text": "Dejamos todo conectado, probamos con tu voz e instrumentos y ajustamos ganancias.",
         "num": "5"
       },
       {
         "icon": "fa-solid fa-user-check",
-        "title": "Capacitación",
-        "text": "Explicamos niveles, ganancia, ruteo, monitoreo y operación básica de los equipos integrados.",
+        "title": "Te enseñamos a usarlo",
+        "text": "Cómo mezclar, cuidar tu voz en el monitor y grabar un demo.",
         "num": "6"
       }
     ],
-    "quote": "\"La cadena correcta empieza por definir fuentes, entradas, salidas, monitoreo y nivel requerido; los equipos se seleccionan después.\"",
+    "quote": "\"Cuando te escuchas bien en el monitor, cantas y tocas mejor.\"",
     "ctaLabel": "Iniciar mi proyecto por WhatsApp",
     "ctaMessage": "Hola DG Audiosound, me interesa cotizar una solución de audio y monitoreo para músicos o vocalistas."
   },
@@ -459,15 +459,15 @@ export const musicosVocalistas: ServicePageContent = {
     },
     "gold": {
       "eyebrow": "Confianza",
-      "title": "Tecnología profesional para voz, instrumentos y monitoreo",
+      "title": "Equipo que te acompaña en cada ensayo",
       "items": [
-        "Definición del uso y flujo de señal",
-        "Dimensionamiento de entradas, salidas y monitoreo",
-        "Equipos originales y tecnología profesional",
-        "Compatibilidad entre los componentes",
-        "Cableado y conexiones según el sistema",
-        "Pruebas, ajustes y capacitación básica",
-        "Capacidad de crecimiento según alcance"
+        "Escuchamos tu estilo antes de recomendar",
+        "Cotización por prioridades",
+        "Equipo profesional original",
+        "Pruebas con tu voz e instrumentos",
+        "Cableado ordenado y seguro",
+        "Sesión práctica de mezcla",
+        "Asesoría cuando crezcas"
       ]
     },
     "brands": {
@@ -481,7 +481,7 @@ export const musicosVocalistas: ServicePageContent = {
           "gradient": true
         }
       ],
-      "subtitle": "Seleccionamos tecnología profesional según fuente, conectividad, ganancia, monitoreo, cobertura, potencia, compatibilidad, operación y presupuesto.",
+      "subtitle": "Trabajamos con marcas de micrófonos, consolas e interfaces que usan músicos y estudios, ajustadas a tu presupuesto.",
       "names": [
         "SHURE",
         "ALLEN & HEATH",
@@ -585,7 +585,7 @@ export const musicosVocalistas: ServicePageContent = {
       }
     ],
     "formTitle": "Solicita asesoría para tu cadena de audio",
-    "formDescription": "Completa el formulario y se abrirá WhatsApp con la información estructurada. Incluye tipo de uso, músicos o fuentes, equipo actual, entradas, salidas, monitoreo y si necesitas PA cuando lo conozcas.",
+    "formDescription": "Completa el formulario y se abrirá WhatsApp con tu mensaje. Cuéntanos si eres solista o banda, tu espacio y qué quieres lograr.",
     "labels": {
       "cb-name": "Nombre / Contacto *",
       "cb-company": "Artista / Banda / Proyecto *",

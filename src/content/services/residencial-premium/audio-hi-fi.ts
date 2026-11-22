@@ -339,46 +339,46 @@ export const audioHiFi: ServicePageContent = {
         "gradient": true
       }
     ],
-    "subtitle": "Un proceso claro para entender tu forma de escuchar música, seleccionar una cadena coherente e integrar el sistema en tu espacio.",
+    "subtitle": "Escuchamos primero cómo escuchas tú: qué música prefieres, qué espacio tienes y qué equipos ya posees, para recomendar el sistema que mejor se adapte a tu oído.",
     "steps": [
       {
         "icon": "fa-solid fa-headset",
-        "title": "Nos contactas",
-        "text": "Nos escribes por WhatsApp y nos cuentas cómo escuchas música.",
+        "title": "Hablamos de tu música",
+        "text": "Géneros que escuchas, formatos (vinilo, streaming, CD) y qué equipos tienes.",
         "num": "01"
       },
       {
         "icon": "fa-solid fa-magnifying-glass-chart",
-        "title": "Revisamos tu espacio",
-        "text": "Analizamos medidas, fotos, muebles, ubicación y equipos actuales.",
+        "title": "Revisamos tu sala",
+        "text": "Tamaño, muebles, ventanas y dónde se sentarían tus bocinas y tú.",
         "num": "02"
       },
       {
         "icon": "fa-solid fa-pen-ruler",
-        "title": "Definimos sistema",
-        "text": "Definimos bocinas, amplificación, fuentes, tornamesa, DAC, subwoofer y accesorios.",
+        "title": "Elegimos tu sistema",
+        "text": "Bocinas, amplificación, fuente y cables, con propuestas para distintos presupuestos.",
         "num": "03"
       },
       {
         "icon": "fa-solid fa-file-contract",
-        "title": "Propuesta clara",
-        "text": "Te entregamos alcance, equipos, tiempos e inversión.",
+        "title": "Propuesta transparente",
+        "text": "Cada pieza, su función y alternativas si prefieres otro sonido o presupuesto.",
         "num": "04"
       },
       {
         "icon": "fa-solid fa-screwdriver-wrench",
-        "title": "Instalamos",
-        "text": "Realizamos montaje, conexión, organización, pruebas, ajustes y puesta en marcha.",
+        "title": "Instalación y colocación",
+        "text": "Ubicamos bocinas y ajustamos la posición para lograr escenario y profundidad.",
         "num": "05"
       },
       {
         "icon": "fa-solid fa-user-check",
-        "title": "Te capacitamos",
-        "text": "Explicamos fuentes, controles y operación básica para que disfrutes el sistema.",
+        "title": "Sesión de escucha",
+        "text": "Escuchamos juntos tus discos favoritos y afinamos hasta que suene como lo imaginas.",
         "num": "06"
       }
     ],
-    "quote": "\"Un buen proyecto audiovisual empieza entendiendo el espacio, el uso y la experiencia que quieres lograr.\"",
+    "quote": "\"El Hi-Fi no es potencia: es poder escuchar cada detalle de la música como se grabó.\"",
     "ctaLabel": "Iniciar mi proyecto por WhatsApp",
     "ctaMessage": "Hola DG Audiosound, quiero cotizar un sistema de Audio Hi-Fi para mi casa."
   },
@@ -393,15 +393,15 @@ export const audioHiFi: ServicePageContent = {
     },
     "gold": {
       "eyebrow": "Confianza",
-      "title": "Una decisión profesional para tu música",
+      "title": "Una escucha pensada para ti",
       "items": [
-        "Asesoría personalizada",
-        "Propuesta técnica clara",
-        "Componentes seleccionados para el sistema",
-        "Integración estética",
-        "Instalación profesional",
-        "Ajustes básicos de ubicación",
-        "Capacitación de uso"
+        "Escuchamos tu estilo antes de recomendar",
+        "Propuestas para distintos presupuestos",
+        "Marcas Hi-Fi originales",
+        "Colocación fina de bocinas",
+        "Cableado de calidad y bien ordenado",
+        "Sesión de escucha al entregar",
+        "Asesoría para mejorar con el tiempo"
       ]
     },
     "brands": {
@@ -415,7 +415,7 @@ export const audioHiFi: ServicePageContent = {
           "gradient": true
         }
       ],
-      "subtitle": "Seleccionamos marcas y componentes según compatibilidad, espacio, hábitos de escucha, nivel de desempeño y presupuesto de cada proyecto.",
+      "subtitle": "Seleccionamos bocinas, amplificadores y fuentes de marcas dedicadas al audio de alta fidelidad, emparejadas entre sí y con tu sala.",
       "names": [
         "SONOS",
         "KEF",
@@ -513,7 +513,7 @@ export const audioHiFi: ServicePageContent = {
       }
     ],
     "formTitle": "Solicita asesoría para tu sistema Hi‑Fi",
-    "formDescription": "Completa el formulario y se abrirá WhatsApp con la información del proyecto. Menciona si buscas un sistema nuevo o deseas mejorar componentes existentes.",
+    "formDescription": "Completa el formulario y se abrirá WhatsApp con tu mensaje. Cuéntanos qué música escuchas, tu sala y tu presupuesto aproximado.",
     "labels": {
       "cb-name": "Nombre *",
       "cb-company": "Residencia / Proyecto (Opcional)",
