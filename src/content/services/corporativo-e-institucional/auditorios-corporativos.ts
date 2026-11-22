@@ -4,8 +4,8 @@ import type { ServicePageContent } from "@/types/service.types";
 export const auditoriosCorporativos: ServicePageContent = {
   "path": "/corporativo-e-institucional/auditorios-corporativos",
   "seo": {
-    "title": "Sonido y Proyección para Auditorios en CDMX | DG Audiosound",
-    "description": "Sonido, microfonía y proyección para auditorios y salas de conferencias en CDMX y Edomex: refuerzo sonoro, video, control y puesta en marcha.",
+    "title": "Sonido para Auditorios y Salas en CDMX | DG Audiosound",
+    "description": "Diseño de audio y video para auditorios en CDMX y Edomex: sonido, microfonía y proyección según el aforo y las medidas del recinto. Cotiza por WhatsApp.",
     "ogImage": "/assets/Imagenes/soluciones/corporativo-e-institucional/aplicacion-auditorios-corporativos-dg-audiosound.webp",
     "ogImageAlt": "Audio y video para auditorios corporativos por DG Audiosound"
   },
@@ -51,8 +51,8 @@ export const auditoriosCorporativos: ServicePageContent = {
       "@type": "WebPage",
       "@id": "https://www.dgaudiosound.com/corporativo-e-institucional/auditorios-corporativos#webpage",
       "url": "https://www.dgaudiosound.com/corporativo-e-institucional/auditorios-corporativos",
-      "name": "Sonido y Proyección para Auditorios en CDMX | DG Audiosound",
-      "description": "Sonido, microfonía y proyección para auditorios y salas de conferencias en CDMX y Edomex: refuerzo sonoro, video, control y puesta en marcha.",
+      "name": "Sonido para Auditorios y Salas en CDMX | DG Audiosound",
+      "description": "Diseño de audio y video para auditorios en CDMX y Edomex: sonido, microfonía y proyección según el aforo y las medidas del recinto. Cotiza por WhatsApp.",
       "isPartOf": {
         "@id": "https://www.dgaudiosound.com/#website"
       },
@@ -160,6 +160,14 @@ export const auditoriosCorporativos: ServicePageContent = {
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Sí. Diseñamos interfaces táctiles intuitivas con botones de un solo toque para encendido de escenario, presentaciones o conferencias, y capacitamos al equipo encargado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta un sistema de sonido y proyección para un auditorio en México?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de el aforo, el tamaño y la acústica del recinto, el número de micrófonos, si hay transmisión o grabación y el tipo de proyección. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
           }
         }
       ]
@@ -563,6 +571,10 @@ export const auditoriosCorporativos: ServicePageContent = {
       {
         "question": "¿El personal de la empresa podrá operarlo fácilmente?",
         "answer": "Sí. Diseñamos interfaces táctiles intuitivas con botones de un solo toque para encendido de escenario, presentaciones o conferencias, y capacitamos al equipo encargado."
+      },
+      {
+        "question": "¿Cuánto cuesta un sistema de sonido y proyección para un auditorio en México?",
+        "answer": "Depende de el aforo, el tamaño y la acústica del recinto, el número de micrófonos, si hay transmisión o grabación y el tipo de proyección. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
       }
     ]
   },

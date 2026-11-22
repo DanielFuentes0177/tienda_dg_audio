@@ -170,6 +170,14 @@ export const educacion: ServicePageContent = {
             "@type": "Answer",
             "text": "Sí. La solución puede incluir montaje, cableado, configuración, pruebas y capacitación básica para que el personal responsable conozca la operación del sistema instalado."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta equipar aulas con audio y video en México?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de el número de aulas, su tamaño, si las clases son híbridas y si se instala por etapas. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
+          }
         }
       ]
     }
@@ -577,6 +585,10 @@ export const educacion: ServicePageContent = {
       {
         "question": "¿La instalación queda preparada para uso diario?",
         "answer": "Sí. La solución puede incluir montaje, cableado, configuración, pruebas y capacitación básica para que el personal responsable conozca la operación del sistema instalado."
+      },
+      {
+        "question": "¿Cuánto cuesta equipar aulas con audio y video en México?",
+        "answer": "Depende de el número de aulas, su tamaño, si las clases son híbridas y si se instala por etapas. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
       }
     ]
   },

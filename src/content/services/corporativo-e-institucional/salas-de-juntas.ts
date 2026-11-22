@@ -169,6 +169,14 @@ export const salasDeJuntas: ServicePageContent = {
             "@type": "Answer",
             "text": "Sí. El alcance puede incluir instalación, configuración, pruebas, ajustes y capacitación básica para el personal responsable de operar la sala."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta equipar una sala de juntas con videoconferencia en México?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de el tamaño de la mesa, el número de personas, la pantalla o proyector y el tipo de cámara y micrófonos. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
+          }
         }
       ]
     }
@@ -575,6 +583,10 @@ export const salasDeJuntas: ServicePageContent = {
       {
         "question": "¿Incluyen instalación y capacitación?",
         "answer": "Sí. El alcance puede incluir instalación, configuración, pruebas, ajustes y capacitación básica para el personal responsable de operar la sala."
+      },
+      {
+        "question": "¿Cuánto cuesta equipar una sala de juntas con videoconferencia en México?",
+        "answer": "Depende de el tamaño de la mesa, el número de personas, la pantalla o proyector y el tipo de cámara y micrófonos. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
       }
     ]
   },

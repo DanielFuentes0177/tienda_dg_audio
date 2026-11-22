@@ -4,7 +4,7 @@ import type { ServicePageContent } from "@/types/service.types";
 export const audioDistribuido: ServicePageContent = {
   "path": "/residencial-premium/audio-distribuido",
   "seo": {
-    "title": "Audio Multizona para Casa en CDMX | DG Audiosound",
+    "title": "Audio Multiroom para Casa en CDMX | DG Audiosound",
     "description": "Audio distribuido y sonido ambiental para casas en CDMX y México: música multiroom por zonas, bocinas de techo, terrazas y control por zonas.",
     "ogImage": "/assets/Imagenes/aplicaciones/audio-distribuido/audio-distribuido-dg-audiosound-hero.webp.webp",
     "ogImageAlt": "Sistema de audio distribuido residencial y sonido multiroom de DG Audiosound"
@@ -458,6 +458,10 @@ export const audioDistribuido: ServicePageContent = {
       {
         "question": "¿Cómo puedo cotizar un sistema de audio distribuido?",
         "answer": "Comparte por WhatsApp la ubicación del proyecto, fotografías o planos, número de zonas, etapa de obra, equipos existentes y la forma en que deseas utilizar el sistema. Con esa información podemos orientar el alcance inicial."
+      },
+      {
+        "question": "¿Cuánto cuesta un sistema de audio distribuido o multiroom en casa en México?",
+        "answer": "Depende de el número de zonas, si la casa está en obra o terminada, el tipo de bocinas y la fuente de música. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
       }
     ]
   },

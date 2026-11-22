@@ -4,8 +4,8 @@ import type { ServicePageContent } from "@/types/service.types";
 export const cineEnCasa: ServicePageContent = {
   "path": "/residencial-premium/cine-en-casa",
   "seo": {
-    "title": "Home Theater y Cine en Casa en CDMX | DG Audiosound",
-    "description": "Home theater y cine en casa en CDMX y México: diseño e instalación de proyección 4K, pantallas, audio envolvente Dolby Atmos y calibración. Cotiza por WhatsApp.",
+    "title": "Sala de Cine en Casa y Home Theater en CDMX | DG Audiosound",
+    "description": "Diseño e instalación de sala de cine en casa y home theater en CDMX y México: proyección 4K, audio envolvente Dolby Atmos y calibración. Cotiza por WhatsApp.",
     "ogImage": "/assets/Imagenes/aplicaciones/cine-en-casa/cine-en-casa-premium-dg-audiosound-hero.webp",
     "ogImageAlt": "DG Audiosound — Diseño e instalación de cine en casa"
   },
@@ -432,6 +432,10 @@ export const cineEnCasa: ServicePageContent = {
       {
         "question": "¿La instalación puede verse limpia y estética?",
         "answer": "Sí. El objetivo es integrar una solución funcional y visualmente cuidada, considerando cableado, soportes, ubicación de bocinas, posición de pantalla y facilidad de uso."
+      },
+      {
+        "question": "¿Cuánto cuesta una sala de cine en casa en México?",
+        "answer": "Depende de las medidas de la sala, si es dedicada o compartida, el tamaño de pantalla o proyección y el audio envolvente. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
       }
     ]
   },

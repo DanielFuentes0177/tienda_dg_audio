@@ -4,8 +4,8 @@ import type { ServicePageContent } from "@/types/service.types";
 export const hoteles: ServicePageContent = {
   "path": "/corporativo-e-institucional/hoteles",
   "seo": {
-    "title": "Audio y Video para Hoteles y Salones de Eventos | DG Audiosound",
-    "description": "Audio, video y música ambiental para hoteles en CDMX y Edomex: lobby, salones de eventos, restaurantes, terrazas y salas de juntas con control por zonas.",
+    "title": "Instalación de Audio para Hoteles en CDMX | DG Audiosound",
+    "description": "Instalación de audio y video para hoteles en CDMX y Edomex: música ambiental en lobby, salones de eventos, restaurante y terrazas, con control por zonas.",
     "ogImage": "/assets/Imagenes/soluciones/corporativo-e-institucional/aplicacion-hoteles-audio-video-dg-audiosound.webp",
     "ogImageAlt": "Audio y video para hoteles y hospitalidad por DG Audiosound"
   },
@@ -51,8 +51,8 @@ export const hoteles: ServicePageContent = {
       "@type": "WebPage",
       "@id": "https://www.dgaudiosound.com/corporativo-e-institucional/hoteles#webpage",
       "url": "https://www.dgaudiosound.com/corporativo-e-institucional/hoteles",
-      "name": "Audio y Video para Hoteles y Salones de Eventos | DG Audiosound",
-      "description": "Audio, video y música ambiental para hoteles en CDMX y Edomex: lobby, salones de eventos, restaurantes, terrazas y salas de juntas con control por zonas.",
+      "name": "Instalación de Audio para Hoteles en CDMX | DG Audiosound",
+      "description": "Instalación de audio y video para hoteles en CDMX y Edomex: música ambiental en lobby, salones de eventos, restaurante y terrazas, con control por zonas.",
       "isPartOf": {
         "@id": "https://www.dgaudiosound.com/#website"
       },
@@ -169,6 +169,14 @@ export const hoteles: ServicePageContent = {
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Sí. Para definir el alcance revisamos medidas, zonas, usos, ruido, fuentes, visualización, infraestructura, equipos existentes y crecimiento previsto antes de preparar la propuesta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta el audio y video para un hotel en México?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de las áreas a cubrir (lobby, salones, restaurante, terrazas), el tamaño de cada una y si la obra se hace por fases. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
           }
         }
       ]
@@ -577,6 +585,10 @@ export const hoteles: ServicePageContent = {
       {
         "question": "¿Pueden apoyar desde la planeación si todavía no sabemos qué equipos necesitamos?",
         "answer": "Sí. Para definir el alcance revisamos medidas, zonas, usos, ruido, fuentes, visualización, infraestructura, equipos existentes y crecimiento previsto antes de preparar la propuesta."
+      },
+      {
+        "question": "¿Cuánto cuesta el audio y video para un hotel en México?",
+        "answer": "Depende de las áreas a cubrir (lobby, salones, restaurante, terrazas), el tamaño de cada una y si la obra se hace por fases. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
       }
     ]
   },

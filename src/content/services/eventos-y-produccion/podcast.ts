@@ -170,6 +170,14 @@ export const podcast: ServicePageContent = {
             "@type": "Answer",
             "text": "Puedes solicitarla por WhatsApp al 55 3727 0177 o completar el formulario. Para preparar el alcance necesitaremos número de participantes, formato, espacio, audio, video, streaming, equipo existente y etapa del proyecto."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta montar un estudio de podcast en México?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de el número de voces, si grabas video, el estado acústico del cuarto y la calidad de micrófonos y cámaras. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
+          }
         }
       ]
     }
@@ -542,6 +550,10 @@ export const podcast: ServicePageContent = {
       {
         "question": "¿Cómo solicito una cotización para podcast?",
         "answer": "Puedes solicitarla por WhatsApp al 55 3727 0177 o completar el formulario. Para preparar el alcance necesitaremos número de participantes, formato, espacio, audio, video, streaming, equipo existente y etapa del proyecto."
+      },
+      {
+        "question": "¿Cuánto cuesta montar un estudio de podcast en México?",
+        "answer": "Depende de el número de voces, si grabas video, el estado acústico del cuarto y la calidad de micrófonos y cámaras. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
       }
     ]
   },

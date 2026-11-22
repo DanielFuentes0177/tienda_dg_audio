@@ -170,6 +170,14 @@ export const gobierno: ServicePageContent = {
             "@type": "Answer",
             "text": "Sí. Para definir el alcance revisamos medidas, aforo, uso, plataformas, audio, visualización, microfonía, infraestructura, equipos existentes y crecimiento previsto antes de preparar la propuesta."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta equipar una sala institucional o de cabildo en México?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de el número de asientos, la microfonía por lugar, si hay transmisión oficial y las partidas que pida el requerimiento. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
+          }
         }
       ]
     }
@@ -577,6 +585,10 @@ export const gobierno: ServicePageContent = {
       {
         "question": "¿Pueden apoyar desde la definición del alcance?",
         "answer": "Sí. Para definir el alcance revisamos medidas, aforo, uso, plataformas, audio, visualización, microfonía, infraestructura, equipos existentes y crecimiento previsto antes de preparar la propuesta."
+      },
+      {
+        "question": "¿Cuánto cuesta equipar una sala institucional o de cabildo en México?",
+        "answer": "Depende de el número de asientos, la microfonía por lugar, si hay transmisión oficial y las partidas que pida el requerimiento. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
       }
     ]
   },

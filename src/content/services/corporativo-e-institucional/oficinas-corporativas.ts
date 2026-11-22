@@ -4,8 +4,8 @@ import type { ServicePageContent } from "@/types/service.types";
 export const oficinasCorporativas: ServicePageContent = {
   "path": "/corporativo-e-institucional/oficinas-corporativas",
   "seo": {
-    "title": "Audio y Video para Oficinas Corporativas | DG Audiosound",
-    "description": "Diseñamos audio y video para oficinas corporativas en CDMX y Estado de México: salas de juntas, videoconferencia, audio, pantallas, señalización y control. Proyectos en México.",
+    "title": "Audio Corporativo para Oficinas en CDMX | DG Audiosound",
+    "description": "Audio y video para oficinas corporativas en CDMX y Edomex: salas de juntas, videoconferencia, pantallas, señalización y control. Proyectos en todo México.",
     "ogImage": "/assets/Imagenes/soluciones/corporativo-e-institucional/aplicacion-oficinas-corporativas-dg-audiosound.webp",
     "ogImageAlt": "Audio y video para oficinas corporativas por DG Audiosound"
   },
@@ -51,8 +51,8 @@ export const oficinasCorporativas: ServicePageContent = {
       "@type": "WebPage",
       "@id": "https://www.dgaudiosound.com/corporativo-e-institucional/oficinas-corporativas#webpage",
       "url": "https://www.dgaudiosound.com/corporativo-e-institucional/oficinas-corporativas",
-      "name": "Audio y Video para Oficinas Corporativas | DG Audiosound",
-      "description": "Diseñamos audio y video para oficinas corporativas en CDMX y Estado de México: salas de juntas, videoconferencia, audio, pantallas, señalización y control. Proyectos en México.",
+      "name": "Audio Corporativo para Oficinas en CDMX | DG Audiosound",
+      "description": "Audio y video para oficinas corporativas en CDMX y Edomex: salas de juntas, videoconferencia, pantallas, señalización y control. Proyectos en todo México.",
       "isPartOf": {
         "@id": "https://www.dgaudiosound.com/#website"
       },
@@ -169,6 +169,14 @@ export const oficinasCorporativas: ServicePageContent = {
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Puedes contactarnos por WhatsApp al 55 3727 0177. Para definir el alcance revisamos medidas, número de salas, usuarios, plataformas, audio, video, infraestructura y equipos existentes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta equipar salas de reunión y videoconferencia en una oficina en México?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de el número de salas, su tamaño, la plataforma de videollamada y si se estandariza un kit por sala. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
           }
         }
       ]
@@ -576,6 +584,10 @@ export const oficinasCorporativas: ServicePageContent = {
       {
         "question": "¿Cómo puedo cotizar un proyecto para oficinas corporativas?",
         "answer": "Puedes contactarnos por WhatsApp al 55 3727 0177. Para definir el alcance revisamos medidas, número de salas, usuarios, plataformas, audio, video, infraestructura y equipos existentes."
+      },
+      {
+        "question": "¿Cuánto cuesta equipar salas de reunión y videoconferencia en una oficina en México?",
+        "answer": "Depende de el número de salas, su tamaño, la plataforma de videollamada y si se estandariza un kit por sala. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
       }
     ]
   },

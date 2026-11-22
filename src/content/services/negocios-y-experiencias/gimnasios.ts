@@ -170,6 +170,14 @@ export const gimnasios: ServicePageContent = {
             "@type": "Answer",
             "text": "Sí. El proyecto puede hacerse por etapas, dejando previsto el cableado y la capacidad para sumar zonas después."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta el sonido para un gimnasio en México?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de las áreas a cubrir, el ruido de las máquinas, si das clases grupales con micrófono y si hay pantallas. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
+          }
         }
       ]
     }
@@ -528,6 +536,10 @@ export const gimnasios: ServicePageContent = {
       {
         "question": "¿Puedo equipar primero una sola zona?",
         "answer": "Sí. El proyecto puede hacerse por etapas, dejando previsto el cableado y la capacidad para sumar zonas después."
+      },
+      {
+        "question": "¿Cuánto cuesta el sonido para un gimnasio en México?",
+        "answer": "Depende de las áreas a cubrir, el ruido de las máquinas, si das clases grupales con micrófono y si hay pantallas. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
       }
     ]
   },

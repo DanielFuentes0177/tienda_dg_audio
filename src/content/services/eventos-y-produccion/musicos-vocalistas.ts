@@ -170,6 +170,14 @@ export const musicosVocalistas: ServicePageContent = {
             "@type": "Answer",
             "text": "Puedes solicitarla por WhatsApp al 55 3727 0177 o completar el formulario. Para preparar el alcance necesitaremos tipo de uso, número de músicos, instrumentos, espacio, equipo actual, entradas, salidas, monitoreo, PA si aplica y etapa del proyecto."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta equipo de audio para músicos y vocalistas en México?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de si eres solista o banda, tu espacio de ensayo o presentación y si necesitas monitoreo y grabación. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
+          }
         }
       ]
     }
@@ -542,6 +550,10 @@ export const musicosVocalistas: ServicePageContent = {
       {
         "question": "¿Cómo solicito una cotización para músicos y vocalistas?",
         "answer": "Puedes solicitarla por WhatsApp al 55 3727 0177 o completar el formulario. Para preparar el alcance necesitaremos tipo de uso, número de músicos, instrumentos, espacio, equipo actual, entradas, salidas, monitoreo, PA si aplica y etapa del proyecto."
+      },
+      {
+        "question": "¿Cuánto cuesta equipo de audio para músicos y vocalistas en México?",
+        "answer": "Depende de si eres solista o banda, tu espacio de ensayo o presentación y si necesitas monitoreo y grabación. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
       }
     ]
   },

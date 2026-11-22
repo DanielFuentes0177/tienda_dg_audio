@@ -4,7 +4,7 @@ import type { ServicePageContent } from "@/types/service.types";
 export const retail: ServicePageContent = {
   "path": "/negocios-y-experiencias/retail",
   "seo": {
-    "title": "Audio y Pantallas para Tiendas en CDMX | DG Audiosound",
+    "title": "Audio para Retail y Tiendas en CDMX | DG Audiosound",
     "description": "Música ambiental, pantallas y señalización digital para tiendas en CDMX y Edomex: audio por zonas, control central y capacitación. Cotiza por WhatsApp.",
     "ogImage": "/assets/Imagenes/soluciones/negocios-y-experiencias-comerciales/aplicacion-retail-tiendas-audio-video-dg-audiosound.webp",
     "ogImageAlt": "Audio y video integrado para retail por DG Audiosound"
@@ -51,7 +51,7 @@ export const retail: ServicePageContent = {
       "@type": "WebPage",
       "@id": "https://www.dgaudiosound.com/negocios-y-experiencias/retail#webpage",
       "url": "https://www.dgaudiosound.com/negocios-y-experiencias/retail",
-      "name": "Audio y Pantallas para Tiendas en CDMX | DG Audiosound",
+      "name": "Audio para Retail y Tiendas en CDMX | DG Audiosound",
       "description": "Música ambiental, pantallas y señalización digital para tiendas en CDMX y Edomex: audio por zonas, control central y capacitación. Cotiza por WhatsApp.",
       "isPartOf": {
         "@id": "https://www.dgaudiosound.com/#website"
@@ -169,6 +169,14 @@ export const retail: ServicePageContent = {
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Sí. Se puede definir una solución base para una sucursal y repetirla o ajustarla en las siguientes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta el audio y las pantallas para una tienda en México?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de el tamaño del punto de venta, el número de sucursales, las zonas y si necesitas señalización digital. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
           }
         }
       ]
@@ -528,6 +536,10 @@ export const retail: ServicePageContent = {
       {
         "question": "¿Puedo empezar con una sucursal y replicar después?",
         "answer": "Sí. Se puede definir una solución base para una sucursal y repetirla o ajustarla en las siguientes."
+      },
+      {
+        "question": "¿Cuánto cuesta el audio y las pantallas para una tienda en México?",
+        "answer": "Depende de el tamaño del punto de venta, el número de sucursales, las zonas y si necesitas señalización digital. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
       }
     ]
   },

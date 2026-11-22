@@ -170,6 +170,14 @@ export const baresAntros: ServicePageContent = {
             "@type": "Answer",
             "text": "Sí. Se revisa el equipo existente para decidir qué se puede reutilizar y qué conviene cambiar o ampliar."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta el audio e iluminación de un bar o antro en México?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de el tamaño y la altura del lugar, el aforo, el tipo de música, las zonas y si incluye iluminación y pantallas. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
+          }
         }
       ]
     }
@@ -528,6 +536,10 @@ export const baresAntros: ServicePageContent = {
       {
         "question": "¿Pueden aprovechar el equipo que ya tengo?",
         "answer": "Sí. Se revisa el equipo existente para decidir qué se puede reutilizar y qué conviene cambiar o ampliar."
+      },
+      {
+        "question": "¿Cuánto cuesta el audio e iluminación de un bar o antro en México?",
+        "answer": "Depende de el tamaño y la altura del lugar, el aforo, el tipo de música, las zonas y si incluye iluminación y pantallas. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
       }
     ]
   },

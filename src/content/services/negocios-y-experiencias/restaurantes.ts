@@ -4,8 +4,8 @@ import type { ServicePageContent } from "@/types/service.types";
 export const restaurantes: ServicePageContent = {
   "path": "/negocios-y-experiencias/restaurantes",
   "seo": {
-    "title": "Sonido Ambiental para Restaurantes en CDMX | DG Audiosound",
-    "description": "Sonido ambiental para restaurantes en CDMX y Edomex: audio por zonas, terraza, barra, pantallas y microfonía. Diseño e instalación. Cotiza por WhatsApp.",
+    "title": "Sistema de Sonido para Restaurantes en CDMX | DG Audiosound",
+    "description": "Sistema de sonido y audio ambiental para restaurantes en CDMX y Edomex: audio por zonas, terraza, barra, pantallas y microfonía. Cotiza por WhatsApp.",
     "ogImage": "/assets/Imagenes/soluciones/negocios-y-experiencias-comerciales/aplicacion-restaurantes-audio-video-dg-audiosound.webp",
     "ogImageAlt": "Audio y video integrado para restaurantes por DG Audiosound"
   },
@@ -51,8 +51,8 @@ export const restaurantes: ServicePageContent = {
       "@type": "WebPage",
       "@id": "https://www.dgaudiosound.com/negocios-y-experiencias/restaurantes#webpage",
       "url": "https://www.dgaudiosound.com/negocios-y-experiencias/restaurantes",
-      "name": "Sonido Ambiental para Restaurantes en CDMX | DG Audiosound",
-      "description": "Sonido ambiental para restaurantes en CDMX y Edomex: audio por zonas, terraza, barra, pantallas y microfonía. Diseño e instalación. Cotiza por WhatsApp.",
+      "name": "Sistema de Sonido para Restaurantes en CDMX | DG Audiosound",
+      "description": "Sistema de sonido y audio ambiental para restaurantes en CDMX y Edomex: audio por zonas, terraza, barra, pantallas y microfonía. Cotiza por WhatsApp.",
       "isPartOf": {
         "@id": "https://www.dgaudiosound.com/#website"
       },
@@ -169,6 +169,14 @@ export const restaurantes: ServicePageContent = {
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Sí. El proyecto se puede hacer por etapas, dejando previstos amplificación, procesamiento y cableado para sumar zonas más adelante."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta un sistema de sonido para un restaurante en México?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de el tamaño del local, las zonas (salón, terraza, barra), la altura de los plafones y si incluye pantallas para partidos. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
           }
         }
       ]
@@ -528,6 +536,10 @@ export const restaurantes: ServicePageContent = {
       {
         "question": "¿Puedo empezar con una zona y ampliar después?",
         "answer": "Sí. El proyecto se puede hacer por etapas, dejando previstos amplificación, procesamiento y cableado para sumar zonas más adelante."
+      },
+      {
+        "question": "¿Cuánto cuesta un sistema de sonido para un restaurante en México?",
+        "answer": "Depende de el tamaño del local, las zonas (salón, terraza, barra), la altura de los plafones y si incluye pantallas para partidos. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
       }
     ]
   },

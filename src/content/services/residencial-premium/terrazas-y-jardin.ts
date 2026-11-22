@@ -137,6 +137,14 @@ export const terrazasYJardin: ServicePageContent = {
             "@type": "Answer",
             "text": "Son útiles las medidas, altura de montaje, fotos o planos, tipo de techo y muros, exposición al clima, zonas a cubrir, uso principal, nivel de volumen esperado, ruido ambiental aproximado, necesidad de video, equipos existentes, distancias de cableado y posibilidad de crecimiento."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta audio para una terraza o jardín en México?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de el tamaño del exterior, si es terraza, jardín o alberca, la intemperie y cuántas zonas quieres cubrir. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
+          }
         }
       ]
     }
@@ -550,6 +558,10 @@ export const terrazasYJardin: ServicePageContent = {
       {
         "question": "¿Qué datos necesitan para cotizar audio y video para una terraza o jardín?",
         "answer": "Son útiles las medidas, altura de montaje, fotos o planos, tipo de techo y muros, exposición al clima, zonas a cubrir, uso principal, nivel de volumen esperado, ruido ambiental aproximado, necesidad de video, equipos existentes, distancias de cableado y posibilidad de crecimiento."
+      },
+      {
+        "question": "¿Cuánto cuesta audio para una terraza o jardín en México?",
+        "answer": "Depende de el tamaño del exterior, si es terraza, jardín o alberca, la intemperie y cuántas zonas quieres cubrir. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
       }
     ]
   },

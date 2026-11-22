@@ -4,8 +4,8 @@ import type { ServicePageContent } from "@/types/service.types";
 export const sonidosDj: ServicePageContent = {
   "path": "/eventos-y-produccion/sonidos-dj",
   "seo": {
-    "title": "Audio para Sonidos y DJ | Sistemas PA | DG Audiosound",
-    "description": "Diseñamos audio para Sonidos y DJ en CDMX y Estado de México: sistemas PA, subwoofers, consolas, microfonía, monitoreo, cableado e iluminación. Proyectos en México.",
+    "title": "Sonorización para DJ y Sonidos en CDMX | DG Audiosound",
+    "description": "Sonorización para DJ y sonidos en CDMX y Edomex: sistemas PA, subwoofers, consolas, microfonía y monitoreo dimensionados al aforo de tus eventos.",
     "ogImage": "/assets/Imagenes/soluciones/eventos-creadores-y-produccion/eventos-creadores-produccion-sonidos-dj.webp",
     "ogImageAlt": "Sistema de audio profesional para Sonidos y DJ por DG Audiosound"
   },
@@ -51,8 +51,8 @@ export const sonidosDj: ServicePageContent = {
       "@type": "WebPage",
       "@id": "https://www.dgaudiosound.com/eventos-y-produccion/sonidos-dj#webpage",
       "url": "https://www.dgaudiosound.com/eventos-y-produccion/sonidos-dj",
-      "name": "Audio para Sonidos y DJ | Sistemas PA | DG Audiosound",
-      "description": "Diseñamos audio para Sonidos y DJ en CDMX y Estado de México: sistemas PA, subwoofers, consolas, microfonía, monitoreo, cableado e iluminación. Proyectos en México.",
+      "name": "Sonorización para DJ y Sonidos en CDMX | DG Audiosound",
+      "description": "Sonorización para DJ y sonidos en CDMX y Edomex: sistemas PA, subwoofers, consolas, microfonía y monitoreo dimensionados al aforo de tus eventos.",
       "isPartOf": {
         "@id": "https://www.dgaudiosound.com/#website"
       },
@@ -169,6 +169,14 @@ export const sonidosDj: ServicePageContent = {
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Puedes solicitarla por WhatsApp al 55 3727 0177 o completar el formulario. Para preparar el alcance necesitaremos tipo de evento, dimensiones, audiencia, montaje, música o contenido, equipo existente, energía disponible, transporte y etapa del proyecto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta un sistema de sonido para DJ en México?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de el aforo de tus eventos, si son interiores o exteriores, la cantidad de cajas y subgraves y el monitoreo. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
           }
         }
       ]
@@ -542,6 +550,10 @@ export const sonidosDj: ServicePageContent = {
       {
         "question": "¿Cómo solicito una cotización para Sonidos y DJ?",
         "answer": "Puedes solicitarla por WhatsApp al 55 3727 0177 o completar el formulario. Para preparar el alcance necesitaremos tipo de evento, dimensiones, audiencia, montaje, música o contenido, equipo existente, energía disponible, transporte y etapa del proyecto."
+      },
+      {
+        "question": "¿Cuánto cuesta un sistema de sonido para DJ en México?",
+        "answer": "Depende de el aforo de tus eventos, si son interiores o exteriores, la cantidad de cajas y subgraves y el monitoreo. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
       }
     ]
   },

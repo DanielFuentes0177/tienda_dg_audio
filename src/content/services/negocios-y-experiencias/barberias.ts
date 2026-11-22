@@ -169,6 +169,14 @@ export const barberias: ServicePageContent = {
             "@type": "Answer",
             "text": "Medidas del local, fotos, número de sillas, si hay sala de espera o zona VIP, el tipo de música que prefieres y si quieres pantallas. Con eso se prepara una propuesta."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta el sonido y las pantallas para una barbería en México?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de el tamaño del local, el número de sillas, las zonas a cubrir y si quieres pantallas. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
+          }
         }
       ]
     }
@@ -530,6 +538,10 @@ export const barberias: ServicePageContent = {
       {
         "question": "¿Qué datos necesito para pedir una cotización?",
         "answer": "Medidas del local, fotos, número de sillas, si hay sala de espera o zona VIP, el tipo de música que prefieres y si quieres pantallas. Con eso se prepara una propuesta."
+      },
+      {
+        "question": "¿Cuánto cuesta el sonido y las pantallas para una barbería en México?",
+        "answer": "Depende de el tamaño del local, el número de sillas, las zonas a cubrir y si quieres pantallas. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
       }
     ]
   },

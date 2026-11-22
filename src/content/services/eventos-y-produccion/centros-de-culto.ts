@@ -170,6 +170,14 @@ export const centrosDeCulto: ServicePageContent = {
             "@type": "Answer",
             "text": "Puedes solicitarla por WhatsApp al 55 3727 0177 o completar el formulario. Para preparar el alcance necesitamos medidas, altura, asistentes, músicos, tipo de servicios, equipo existente, audio, video, streaming, infraestructura y etapa del proyecto."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta un sistema de sonido para un templo o centro de culto en México?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de el tamaño del recinto, el número de asistentes, la microfonía para púlpito y coro, y si hay transmisión. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
+          }
         }
       ]
     }
@@ -545,6 +553,10 @@ export const centrosDeCulto: ServicePageContent = {
       {
         "question": "¿Cómo solicito una cotización para un centro de culto?",
         "answer": "Puedes solicitarla por WhatsApp al 55 3727 0177 o completar el formulario. Para preparar el alcance necesitamos medidas, altura, asistentes, músicos, tipo de servicios, equipo existente, audio, video, streaming, infraestructura y etapa del proyecto."
+      },
+      {
+        "question": "¿Cuánto cuesta un sistema de sonido para un templo o centro de culto en México?",
+        "answer": "Depende de el tamaño del recinto, el número de asistentes, la microfonía para púlpito y coro, y si hay transmisión. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
       }
     ]
   },

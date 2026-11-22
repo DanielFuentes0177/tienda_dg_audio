@@ -5,7 +5,7 @@ export const homeContent: HomePageContent = {
   "path": "/",
   "seo": {
     "title": "Audio y Video Profesional en CDMX y México | DG Audiosound",
-    "description": "Integración de audio, video e iluminación para residencias, negocios, empresas y producción. Diseño e instalación en CDMX, Estado de México y México.",
+    "description": "Integración audiovisual profesional en CDMX y México: audio, video e iluminación para residencias, negocios, empresas y producción. Diseño e instalación.",
     "ogTitle": "Audio y Video Profesional en CDMX y México | DG Audiosound",
     "ogDescription": "Integración de audio, video e iluminación para residencias, negocios, empresas y producción en CDMX, Estado de México y México.",
     "ogImage": "/assets/DG.png",
@@ -45,7 +45,7 @@ export const homeContent: HomePageContent = {
       "@id": "https://www.dgaudiosound.com/#webpage",
       "url": "https://www.dgaudiosound.com/",
       "name": "Audio y Video Profesional en CDMX y México | DG Audiosound",
-      "description": "Integración de audio, video e iluminación para residencias, negocios, empresas y producción. Diseño e instalación en CDMX, Estado de México y México.",
+      "description": "Integración audiovisual profesional en CDMX y México: audio, video e iluminación para residencias, negocios, empresas y producción. Diseño e instalación.",
       "isPartOf": {
         "@id": "https://www.dgaudiosound.com/#website"
       },

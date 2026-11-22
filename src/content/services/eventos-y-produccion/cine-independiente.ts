@@ -170,6 +170,14 @@ export const cineIndependiente: ServicePageContent = {
             "@type": "Answer",
             "text": "Puedes solicitarla por WhatsApp al 55 3727 0177 o completar el formulario. Para definir el alcance necesitamos medidas, audiencia, distancias, pantalla deseada, luz ambiental, tipo de contenido, audio, equipos existentes, infraestructura y etapa del proyecto."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta equipar una sala de cine independiente en México?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de el tamaño de la sala, la distancia de proyección, el número de butacas y los formatos de audio que proyectas. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
+          }
         }
       ]
     }
@@ -542,6 +550,10 @@ export const cineIndependiente: ServicePageContent = {
       {
         "question": "¿Cómo solicito una cotización para cine independiente?",
         "answer": "Puedes solicitarla por WhatsApp al 55 3727 0177 o completar el formulario. Para definir el alcance necesitamos medidas, audiencia, distancias, pantalla deseada, luz ambiental, tipo de contenido, audio, equipos existentes, infraestructura y etapa del proyecto."
+      },
+      {
+        "question": "¿Cuánto cuesta equipar una sala de cine independiente en México?",
+        "answer": "Depende de el tamaño de la sala, la distancia de proyección, el número de butacas y los formatos de audio que proyectas. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
       }
     ]
   },

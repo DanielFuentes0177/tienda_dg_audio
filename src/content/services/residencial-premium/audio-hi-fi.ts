@@ -4,8 +4,8 @@ import type { ServicePageContent } from "@/types/service.types";
 export const audioHiFi: ServicePageContent = {
   "path": "/residencial-premium/audio-hi-fi",
   "seo": {
-    "title": "Audio Hi-Fi y Bocinas Estéreo en CDMX | DG Audiosound",
-    "description": "Sistemas de audio Hi-Fi en CDMX y México: bocinas estéreo, amplificadores, tornamesas, streaming y DAC. Diseño, instalación y ajuste a tu sala.",
+    "title": "Audio Hi-Fi y Alta Fidelidad en CDMX | DG Audiosound",
+    "description": "Equipos de audio Hi-Fi y alta fidelidad en CDMX y México: bocinas estéreo, amplificadores, tornamesas, streaming y DAC, con ajuste a tu sala.",
     "ogImage": "/assets/Imagenes/aplicaciones/audio-hi-fi/audio-hi-fi-dg-audiosound-hero.webp",
     "ogImageAlt": "Sistema de audio Hi-Fi residencial de DG Audiosound"
   },
@@ -478,6 +478,10 @@ export const audioHiFi: ServicePageContent = {
       {
         "question": "¿Qué datos necesitan para cotizar un sistema Audio Hi‑Fi?",
         "answer": "Ayudan las medidas y fotografías del espacio, presupuesto aproximado, música que escuchas, preferencia por vinilos o streaming, equipos actuales, volumen habitual y preferencia por bocinas de piso, repisa o una solución compacta."
+      },
+      {
+        "question": "¿Cuánto cuesta un sistema de audio Hi-Fi en México?",
+        "answer": "Depende de tu sala, el tipo de música, la fuente (vinilo, streaming) y el nivel de equipo que busques. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
       }
     ]
   },

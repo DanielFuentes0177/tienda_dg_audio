@@ -170,6 +170,14 @@ export const cafeterias: ServicePageContent = {
             "@type": "Answer",
             "text": "Medidas del local, fotos, número de zonas, si hay terraza, cantidad aproximada de mesas, tipo de música y si quieres pantallas para menú."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta la música ambiental y pantallas de una cafetería en México?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de el tamaño del local, si hay terraza, el número de zonas y si usas pantallas de menú. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
+          }
         }
       ]
     }
@@ -531,6 +539,10 @@ export const cafeterias: ServicePageContent = {
       {
         "question": "¿Qué información necesito para cotizar?",
         "answer": "Medidas del local, fotos, número de zonas, si hay terraza, cantidad aproximada de mesas, tipo de música y si quieres pantallas para menú."
+      },
+      {
+        "question": "¿Cuánto cuesta la música ambiental y pantallas de una cafetería en México?",
+        "answer": "Depende de el tamaño del local, si hay terraza, el número de zonas y si usas pantallas de menú. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
       }
     ]
   },

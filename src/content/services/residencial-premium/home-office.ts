@@ -167,6 +167,14 @@ export const homeOffice: ServicePageContent = {
             "@type": "Answer",
             "text": "Ayudan las medidas y fotos del espacio, posición del escritorio, computadora y pantallas actuales, plataformas de videoconferencia, tipo y frecuencia de reuniones, problemas de audio o imagen, requerimientos de privacidad y presupuesto aproximado."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta equipar un home office con audio y video en México?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de las horas de videollamada, la plataforma, la cámara y el micrófono que necesitas y la iluminación. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
+          }
         }
       ]
     }
@@ -576,6 +584,10 @@ export const homeOffice: ServicePageContent = {
       {
         "question": "¿Qué información necesitan para cotizar un home office?",
         "answer": "Ayudan las medidas y fotos del espacio, posición del escritorio, computadora y pantallas actuales, plataformas de videoconferencia, tipo y frecuencia de reuniones, problemas de audio o imagen, requerimientos de privacidad y presupuesto aproximado."
+      },
+      {
+        "question": "¿Cuánto cuesta equipar un home office con audio y video en México?",
+        "answer": "Depende de las horas de videollamada, la plataforma, la cámara y el micrófono que necesitas y la iluminación. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
       }
     ]
   },

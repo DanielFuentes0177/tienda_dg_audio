@@ -112,6 +112,14 @@ export const familyRoom: ServicePageContent = {
             "@type": "Answer",
             "text": "Ayudan las medidas y fotografías del espacio, sus usos principales, presupuesto aproximado, equipos existentes, número de usuarios e interés en gaming, deportes, películas o audio envolvente."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta el centro de entretenimiento de un family room en México?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de el tamaño de la sala, el tamaño de la pantalla, el sonido y las plataformas o consolas que conectas. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
+          }
         }
       ]
     },
@@ -553,6 +561,10 @@ export const familyRoom: ServicePageContent = {
       {
         "question": "¿Qué datos necesitan para cotizar mi family room?",
         "answer": "Ayudan las medidas y fotografías del espacio, sus usos principales, presupuesto aproximado, equipos existentes, número de usuarios e interés en gaming, deportes, películas o audio envolvente."
+      },
+      {
+        "question": "¿Cuánto cuesta el centro de entretenimiento de un family room en México?",
+        "answer": "Depende de el tamaño de la sala, el tamaño de la pantalla, el sonido y las plataformas o consolas que conectas. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
       }
     ]
   },

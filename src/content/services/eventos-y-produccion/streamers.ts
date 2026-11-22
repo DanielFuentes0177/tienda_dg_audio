@@ -170,6 +170,14 @@ export const streamers: ServicePageContent = {
             "@type": "Answer",
             "text": "Puedes solicitarla por WhatsApp al 55 3727 0177 o completar el formulario. Para preparar el alcance necesitaremos tipo de contenido, plataforma, resolución, espacio, equipo actual, computadora, audio, cámaras, iluminación, captura, red y etapa del proyecto."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta armar un setup de streaming en México?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de la plataforma, el tipo de contenido, el equipo que ya tienes y si necesitas iluminación y cámara. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
+          }
         }
       ]
     }
@@ -552,6 +560,10 @@ export const streamers: ServicePageContent = {
       {
         "question": "¿Cómo solicito una cotización para streaming?",
         "answer": "Puedes solicitarla por WhatsApp al 55 3727 0177 o completar el formulario. Para preparar el alcance necesitaremos tipo de contenido, plataforma, resolución, espacio, equipo actual, computadora, audio, cámaras, iluminación, captura, red y etapa del proyecto."
+      },
+      {
+        "question": "¿Cuánto cuesta armar un setup de streaming en México?",
+        "answer": "Depende de la plataforma, el tipo de contenido, el equipo que ya tienes y si necesitas iluminación y cámara. Como cada espacio es distinto, no damos un precio sin conocerlo: con medidas, fotos y el equipo que ya tienes te preparamos una propuesta por escrito, con alcance y equipos detallados."
       }
     ]
   },
