@@ -494,37 +494,37 @@ export const homeContent: HomePageContent = {
             "href": "/residencial-premium/cine-en-casa",
             "icon": "fa-solid fa-film",
             "title": "Cine en Casa",
-            "desc": "Proyección, pantalla y audio envolvente dimensionados para el espacio y la experiencia de uso."
+            "desc": "Sala de cine en casa y home theater: proyección, pantalla grande y audio envolvente según tu espacio."
           },
           {
             "href": "/residencial-premium/audio-distribuido",
             "icon": "fa-solid fa-music",
             "title": "Audio Distribuido",
-            "desc": "Distribución de música por zonas con control sencillo y equipos integrados al espacio."
+            "desc": "Audio multiroom y multizona: música en cada zona de la casa con un solo control y bocinas integradas."
           },
           {
             "href": "/residencial-premium/audio-hi-fi",
             "icon": "fa-solid fa-wave-square",
             "title": "Audio Hi-Fi",
-            "desc": "Sistemas estéreo de alta fidelidad orientados a detalle, dinámica y equilibrio de la cadena de audio."
+            "desc": "Equipos de alta fidelidad: bocinas estéreo, amplificación y fuentes ajustados a tu sala y tu música."
           },
           {
             "href": "/residencial-premium/terrazas-y-jardin",
             "icon": "fa-solid fa-sun",
             "title": "Terrazas y Jardín",
-            "desc": "Equipos resistentes al exterior que llevan el sonido a tus espacios abiertos."
+            "desc": "Bocinas para exterior resistentes a la intemperie, con sonido parejo en terraza, jardín o alberca."
           },
           {
             "href": "/residencial-premium/family-room",
             "icon": "fa-solid fa-couch",
             "title": "Family Room",
-            "desc": "Diseño de entretenimiento familiar con pantalla, audio envolvente y operación sencilla para toda la familia."
+            "desc": "Pantalla, audio envolvente y control sencillo para el centro de entretenimiento de toda la familia."
           },
           {
             "href": "/residencial-premium/home-office",
             "icon": "fa-solid fa-laptop-house",
             "title": "Home Office",
-            "desc": "Audio, video y conectividad pensados para reuniones remotas, trabajo y uso cotidiano en casa."
+            "desc": "Cámara, micrófono y audio para videollamadas claras y un escritorio ordenado en casa."
           }
         ]
       },
@@ -537,37 +537,37 @@ export const homeContent: HomePageContent = {
             "href": "/negocios-y-experiencias/restaurantes",
             "icon": "fa-solid fa-utensils",
             "title": "Restaurantes",
-            "desc": "Audio ambiental y video diseñados para acompañar la operación y la experiencia del establecimiento."
+            "desc": "Sistema de sonido y audio ambiental por zonas, con pantallas para partidos y control sencillo."
           },
           {
             "href": "/negocios-y-experiencias/bares-antros",
             "icon": "fa-solid fa-glass-cheers",
             "title": "Bares y Antros",
-            "desc": "Audio, subwoofers, control e iluminación seleccionados según cobertura, operación y nivel requerido."
+            "desc": "Sonido con subwoofers, iluminación y control por zonas, dimensionado a tu pista y tu barra."
           },
           {
             "href": "/negocios-y-experiencias/gimnasios",
             "icon": "fa-solid fa-dumbbell",
             "title": "Gimnasios",
-            "desc": "Audio distribuido, refuerzo sonoro y pantallas para clases, entrenamiento y áreas comunes."
+            "desc": "Audio por zonas, micrófono para instructores y pantallas para clases y áreas de entrenamiento."
           },
           {
             "href": "/negocios-y-experiencias/cafeterias",
             "icon": "fa-solid fa-coffee",
             "title": "Cafeterías",
-            "desc": "Audio distribuido para mantener niveles uniformes y una ambientación consistente en el local."
+            "desc": "Música ambiental con volumen parejo, control por zonas y pantallas de menú."
           },
           {
             "href": "/negocios-y-experiencias/retail",
             "icon": "fa-solid fa-tags",
             "title": "Retail",
-            "desc": "Audio ambiental y señalización digital para comunicación de marca y contenidos en el punto de venta."
+            "desc": "Música ambiental, pantallas y señalización digital para tiendas y puntos de venta."
           },
           {
             "href": "/negocios-y-experiencias/barberias",
             "icon": "fa-solid fa-scissors",
             "title": "Barberías",
-            "desc": "Audio ambiental y reproducción musical integrados a la operación y al estilo del establecimiento."
+            "desc": "Música ambiental, audio por zonas y pantallas de servicios para cada estación de corte."
           }
         ]
       },
@@ -580,37 +580,37 @@ export const homeContent: HomePageContent = {
             "href": "/corporativo-e-institucional/salas-de-juntas",
             "icon": "fa-solid fa-users-rectangle",
             "title": "Salas de Juntas",
-            "desc": "Videoconferencia, microfonía y audio orientados a inteligibilidad y colaboración en reuniones."
+            "desc": "Videoconferencia con cámara, micrófonos y audio claros para reuniones presenciales y remotas."
           },
           {
             "href": "/corporativo-e-institucional/auditorios-corporativos",
             "icon": "fa-solid fa-microphone-lines",
             "title": "Auditorios",
-            "desc": "Refuerzo sonoro, microfonía y proyección para presentaciones, conferencias y eventos corporativos."
+            "desc": "Sonido, microfonía y proyección para auditorios, conferencias y eventos corporativos."
           },
           {
             "href": "/corporativo-e-institucional/educacion",
             "icon": "fa-solid fa-graduation-cap",
             "title": "Educación",
-            "desc": "Audio, video y presentación para voz, contenidos y colaboración en aulas y espacios educativos."
+            "desc": "Aulas con audio, video y micrófono para clases presenciales, híbridas y remotas."
           },
           {
             "href": "/corporativo-e-institucional/hoteles",
             "icon": "fa-solid fa-hotel",
             "title": "Hoteles",
-            "desc": "Audio, video y control para áreas comunes, salas, habitaciones y espacios de hospitalidad."
+            "desc": "Instalación de audio para hoteles: música ambiental, salones de eventos y áreas comunes con control por zonas."
           },
           {
             "href": "/corporativo-e-institucional/oficinas-corporativas",
             "icon": "fa-solid fa-building-columns",
             "title": "Oficinas Corporativas",
-            "desc": "Sistemas de audio y videoconferencia integrados para espacios de trabajo colaborativo."
+            "desc": "Audio corporativo y videoconferencia para salas de reunión y espacios de colaboración."
           },
           {
             "href": "/corporativo-e-institucional/gobierno",
             "icon": "fa-solid fa-landmark",
             "title": "Gobierno",
-            "desc": "Soluciones institucionales de audio, video y presentación para espacios públicos y dependencias."
+            "desc": "Salas de cabildo, atención ciudadana y auditorios: audio, video y presentación para instituciones."
           }
         ]
       },
@@ -623,37 +623,37 @@ export const homeContent: HomePageContent = {
             "href": "/eventos-y-produccion/podcast",
             "icon": "fa-solid fa-microphone",
             "title": "Podcast",
-            "desc": "Microfonía, interfaces y monitoreo para captura de voz, grabación y producción de contenido."
+            "desc": "Micrófonos, interfaces y monitoreo para grabar y producir podcast con audio y video."
           },
           {
             "href": "/eventos-y-produccion/streamers",
             "icon": "fa-solid fa-video",
             "title": "Streamers",
-            "desc": "Iluminación, video y audio configurados para transmisiones, grabación y creación de contenido."
+            "desc": "Micrófono, cámara e iluminación para streaming, con captura y monitoreo sin complicaciones."
           },
           {
             "href": "/eventos-y-produccion/centros-de-culto",
             "icon": "fa-solid fa-church",
             "title": "Centros de Culto",
-            "desc": "Inteligibilidad de la palabra y refuerzo sonoro para ceremonias de gran alcance."
+            "desc": "Sonido para iglesias y templos: voz clara en toda la nave, microfonía y transmisión."
           },
           {
             "href": "/eventos-y-produccion/musicos-vocalistas",
             "icon": "fa-solid fa-guitar",
             "title": "Músicos",
-            "desc": "Monitoreo personal, microfonía y grabación para ensayo, presentación y producción musical."
+            "desc": "Micrófonos, monitoreo y grabación para ensayo, presentación y producción musical."
           },
           {
             "href": "/eventos-y-produccion/sonidos-dj",
             "icon": "fa-solid fa-compact-disc",
             "title": "Sonidos y DJ",
-            "desc": "Bocinas, subwoofers y consolas configurados para cobertura, potencia y confiabilidad en cada evento."
+            "desc": "Sonorización para DJ y sonidos: PA, subwoofers y consola dimensionados al aforo de tus eventos."
           },
           {
             "href": "/eventos-y-produccion/cine-independiente",
             "icon": "fa-solid fa-clapperboard",
             "title": "Cine Independiente",
-            "desc": "Audio y proyección de calidad profesional para producciones audiovisuales independientes."
+            "desc": "Proyección, sonido y control de sala para cines independientes y exhibiciones."
           }
         ]
       }
