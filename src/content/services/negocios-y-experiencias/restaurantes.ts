@@ -383,7 +383,7 @@ export const restaurantes: ServicePageContent = {
     "banner": {
       "image": {
         "src": "/assets/Imagenes/aplicaciones/restaurantes/microfonia-para-restaurantes-eventos.webp",
-        "alt": "Optimización de sistemas existentes",
+        "alt": "Actualización del sistema de audio de un restaurante",
         "width": 1619,
         "height": 971
       },

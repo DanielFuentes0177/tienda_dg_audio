@@ -383,7 +383,7 @@ export const retail: ServicePageContent = {
     "banner": {
       "image": {
         "src": "/assets/Imagenes/aplicaciones/retail/audio-y-video-para-retail-hero.webp",
-        "alt": "Optimización de sistemas existentes",
+        "alt": "Actualización del audio y las pantallas de una tienda",
         "width": 1672,
         "height": 941
       },

@@ -383,7 +383,7 @@ export const baresAntros: ServicePageContent = {
     "banner": {
       "image": {
         "src": "/assets/Imagenes/aplicaciones/bares-y-antros/control-por-zonas-bar-antro.webp",
-        "alt": "Optimización de sistemas existentes",
+        "alt": "Mejora del sistema de sonido de un bar o antro",
         "width": 1619,
         "height": 971
       },

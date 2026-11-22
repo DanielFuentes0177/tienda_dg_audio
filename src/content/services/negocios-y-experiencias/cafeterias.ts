@@ -386,7 +386,7 @@ export const cafeterias: ServicePageContent = {
     "banner": {
       "image": {
         "src": "/assets/Imagenes/aplicaciones/cafeterias/bocinas-plafon-cafeteria-dg-audiosound.webp",
-        "alt": "Optimización de sistemas existentes",
+        "alt": "Actualización del sonido de una cafetería",
         "width": 1619,
         "height": 971
       },

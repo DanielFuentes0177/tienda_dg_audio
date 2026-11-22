@@ -4,7 +4,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Catálogo | DG Audiosound",
-  description: "Explora nuestro catálogo de productos de audio y accesorios premium.",
+  description: "Catálogo de equipos de audio y video profesional: bocinas, amplificadores, procesadores, micrófonos y accesorios. Cotiza por WhatsApp con DG Audiosound.",
   alternates: { canonical: "https://www.dgaudiosound.com/tienda" },
 };
 

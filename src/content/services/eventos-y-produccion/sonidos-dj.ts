@@ -336,7 +336,7 @@ export const sonidosDj: ServicePageContent = {
       {
         "image": {
           "src": "/assets/Imagenes/aplicaciones/sonidos-y-dj/audio-sonidos-dj-solucion-integral.webp",
-          "alt": "Solución integral",
+          "alt": "Sistema de sonido PA y consola para DJ",
           "width": 1577,
           "height": 997
         },

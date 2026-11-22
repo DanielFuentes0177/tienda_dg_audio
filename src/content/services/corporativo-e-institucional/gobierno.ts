@@ -5,7 +5,7 @@ export const gobierno: ServicePageContent = {
   "path": "/corporativo-e-institucional/gobierno",
   "seo": {
     "title": "Audio y Video para Gobierno e Instituciones | DG Audiosound",
-    "description": "Diseñamos audio y video para gobierno e instituciones en CDMX y Estado de México: salas, cabildos, auditorios, microfonía, videoconferencia, pantallas y control. Proyectos en México.",
+    "description": "Audio y video para gobierno e instituciones en CDMX y Edomex: salas, cabildos, auditorios, microfonía, videoconferencia y control. Proyectos en todo México.",
     "ogImage": "/assets/Imagenes/soluciones/corporativo-e-institucional/aplicacion-gobierno-audio-video-dg-audiosound.webp",
     "ogImageAlt": "Audio y video para gobierno e instituciones por DG Audiosound"
   },
@@ -52,7 +52,7 @@ export const gobierno: ServicePageContent = {
       "@id": "https://www.dgaudiosound.com/corporativo-e-institucional/gobierno#webpage",
       "url": "https://www.dgaudiosound.com/corporativo-e-institucional/gobierno",
       "name": "Audio y Video para Gobierno e Instituciones | DG Audiosound",
-      "description": "Diseñamos audio y video para gobierno e instituciones en CDMX y Estado de México: salas, cabildos, auditorios, microfonía, videoconferencia, pantallas y control. Proyectos en México.",
+      "description": "Audio y video para gobierno e instituciones en CDMX y Edomex: salas, cabildos, auditorios, microfonía, videoconferencia y control. Proyectos en todo México.",
       "isPartOf": {
         "@id": "https://www.dgaudiosound.com/#website"
       },

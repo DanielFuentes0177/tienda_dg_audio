@@ -385,7 +385,7 @@ export const barberias: ServicePageContent = {
     "banner": {
       "image": {
         "src": "/assets/Imagenes/aplicaciones/barberia/audio-sala-espera-barberia-dg-audiosound.webp",
-        "alt": "Optimización de sistemas existentes",
+        "alt": "Actualización del sonido de una barbería",
         "width": 1619,
         "height": 971
       },

@@ -9,7 +9,7 @@ export const revalidate = 3600;
 
 const TITLE = "Contacto | DG Audiosound — Audio y video en CDMX";
 const DESCRIPTION =
-  "Cuéntanos tu proyecto de audio, video o iluminación. Escríbenos por WhatsApp al +52 55 3727 0177 o a contacto@dgaudiosound.com. Atendemos en Ciudad de México y todo el país.";
+  "Cuéntanos tu proyecto de audio, video o iluminación por WhatsApp (+52 55 3727 0177) o en contacto@dgaudiosound.com. Atendemos en CDMX y todo el país.";
 
 export const generateMetadata = (): Promise<Metadata> => withPageTexts("/contacto", serviceMetadata({
   path: "/contacto",

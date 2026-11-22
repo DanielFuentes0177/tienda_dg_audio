@@ -383,7 +383,7 @@ export const gimnasios: ServicePageContent = {
     "banner": {
       "image": {
         "src": "/assets/Imagenes/aplicaciones/gimnasios/salon-clases-gimnasio-audio-microfonia.webp",
-        "alt": "Optimización de sistemas existentes",
+        "alt": "Actualización del audio de un gimnasio",
         "width": 1619,
         "height": 972
       },

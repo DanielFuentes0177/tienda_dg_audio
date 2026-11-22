@@ -5,7 +5,7 @@ export const educacion: ServicePageContent = {
   "path": "/corporativo-e-institucional/educacion",
   "seo": {
     "title": "Audio y Video para Educación y Aulas | DG Audiosound",
-    "description": "Diseñamos audio y video para educación en CDMX y Estado de México: aulas híbridas, pantallas, audio, microfonía, videoconferencia, proyección y control. Proyectos en México.",
+    "description": "Audio y video para educación en CDMX y Edomex: aulas híbridas, pantallas, microfonía, videoconferencia, proyección y control. Proyectos en todo México.",
     "ogImage": "/assets/Imagenes/soluciones/corporativo-e-institucional/aplicacion-educacion-audio-video-dg-audiosound.webp",
     "ogImageAlt": "Audio y video para educación y aulas por DG Audiosound"
   },
@@ -52,7 +52,7 @@ export const educacion: ServicePageContent = {
       "@id": "https://www.dgaudiosound.com/corporativo-e-institucional/educacion#webpage",
       "url": "https://www.dgaudiosound.com/corporativo-e-institucional/educacion",
       "name": "Audio y Video para Educación y Aulas | DG Audiosound",
-      "description": "Diseñamos audio y video para educación en CDMX y Estado de México: aulas híbridas, pantallas, audio, microfonía, videoconferencia, proyección y control. Proyectos en México.",
+      "description": "Audio y video para educación en CDMX y Edomex: aulas híbridas, pantallas, microfonía, videoconferencia, proyección y control. Proyectos en todo México.",
       "isPartOf": {
         "@id": "https://www.dgaudiosound.com/#website"
       },

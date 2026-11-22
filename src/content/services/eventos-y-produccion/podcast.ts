@@ -381,7 +381,7 @@ export const podcast: ServicePageContent = {
       {
         "image": {
           "src": "/assets/Imagenes/aplicaciones/podcast/audio-video-podcast-solucion-integral.webp",
-          "alt": "Solución integral",
+          "alt": "Estudio de podcast con micrófonos y monitoreo",
           "width": 1577,
           "height": 997
         },

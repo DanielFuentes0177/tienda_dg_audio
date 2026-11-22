@@ -381,7 +381,7 @@ export const streamers: ServicePageContent = {
       {
         "image": {
           "src": "/assets/Imagenes/aplicaciones/streamers/audio-video-streamers-solucion-integral.webp",
-          "alt": "Solución integral",
+          "alt": "Setup de audio, video e iluminación para streaming",
           "width": 1577,
           "height": 997
         },

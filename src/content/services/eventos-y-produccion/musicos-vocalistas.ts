@@ -381,7 +381,7 @@ export const musicosVocalistas: ServicePageContent = {
       {
         "image": {
           "src": "/assets/Imagenes/aplicaciones/musicos-y-vocalistas/audio-musicos-vocalistas-solucion-integral.webp",
-          "alt": "Solución integral",
+          "alt": "Equipo de audio para músicos y vocalistas",
           "width": 1577,
           "height": 997
         },

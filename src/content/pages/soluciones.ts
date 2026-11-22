@@ -41,7 +41,7 @@ export const solucionesContent: SolutionsPageContent = {
       "imageClass": "reveal fade-left",
       "image": {
         "src": "/assets/11.webp",
-        "alt": "Residencial",
+        "alt": "Home theater y audio para casas y departamentos",
         "style": "border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);",
         "width": 1366,
         "height": 768
@@ -67,7 +67,7 @@ export const solucionesContent: SolutionsPageContent = {
       "imageClass": "reveal fade-right",
       "image": {
         "src": "/assets/12.webp",
-        "alt": "Negocios",
+        "alt": "Sonido ambiental y pantallas para restaurantes, tiendas y negocios",
         "style": "border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);",
         "width": 1400,
         "height": 788
@@ -93,7 +93,7 @@ export const solucionesContent: SolutionsPageContent = {
       "imageClass": "reveal fade-left",
       "image": {
         "src": "/assets/13.webp",
-        "alt": "Creadores",
+        "alt": "Estudio de audio y video para creadores y streamers",
         "style": "border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);",
         "width": 1400,
         "height": 788
@@ -119,7 +119,7 @@ export const solucionesContent: SolutionsPageContent = {
       "imageClass": "reveal fade-right",
       "image": {
         "src": "/assets/14.webp",
-        "alt": "Corporativo",
+        "alt": "Sala de juntas con videoconferencia y audio corporativo",
         "style": "border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);",
         "width": 1400,
         "height": 788
