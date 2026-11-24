@@ -232,6 +232,7 @@ export const StoreTemplate: React.FC<StoreTemplateProps> = ({
               value={currentSort}
               onChange={(e) => setCurrentSort(e.target.value)}
               className={styles.sortSelect}
+              aria-label="Ordenar productos"
             >
               <option value="">Más recientes</option>
               <option value="name_asc">Nombre: A - Z</option>

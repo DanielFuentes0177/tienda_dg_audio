@@ -44,7 +44,7 @@ export const CartDrawer = () => {
             <ShoppingBag size={24} />
             Lista de Cotización
           </h2>
-          <button className={styles.closeBtn} onClick={() => setIsDrawerOpen(false)}>
+          <button className={styles.closeBtn} aria-label="Cerrar lista de cotización" onClick={() => setIsDrawerOpen(false)}>
             <X size={24} />
           </button>
         </div>

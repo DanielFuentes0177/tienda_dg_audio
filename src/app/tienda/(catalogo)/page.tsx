@@ -209,6 +209,7 @@ export default function TiendaPage() {
               style={{
                 padding: '0.85rem 2rem',
                 fontSize: '0.95rem',
+                color: 'var(--bg-dark)',
                 boxShadow: '0 4px 15px rgba(212, 164, 55, 0.25)',
                 display: 'inline-block'
               }}

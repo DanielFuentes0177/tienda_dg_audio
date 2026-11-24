@@ -8,7 +8,11 @@ import { Providers } from "@/components/providers";
 import { CartProvider } from "@/context/CartContext";
 import { CartDrawer } from "@/components/organisms/CartDrawer";
 import { Toaster } from "react-hot-toast";
+import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], display: "swap", variable: "--font-inter" });
+const outfit = Outfit({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"], display: "swap", variable: "--font-outfit" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.dgaudiosound.com"),
@@ -46,7 +50,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" className={`${inter.variable} ${outfit.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
+      </head>
       <body>
         <Analytics />
         <Providers>

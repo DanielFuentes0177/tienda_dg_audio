@@ -93,7 +93,7 @@
 }
 
 .filterLabel.active {
-  color: var(--color-primary);
+  color: #8a6410; /* dorado oscuro: contraste AA sobre blanco */
   font-weight: 600;
 }
 
